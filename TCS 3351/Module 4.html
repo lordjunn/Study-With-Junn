@@ -59,7 +59,11 @@ ii)
 
 <h1>Question 2</h1>
 <pre><span id='question'>What kind of attack on double DES makes it useless? Explain briefly.</span>
-
+	
+The attack that makes Double DES (2DES) ineffective is called the Meet-in-the-Middle attack. 
+Although 2DES was designed to increase security by using two keys (encrypting the plaintext twice with different keys), this attack significantly reduces its effectiveness. 
+Instead of trying all possible combinations of two 56-bit keys (which would take 2¹¹² attempts), the Meet-in-the-Middle attack allows an attacker to match encrypted and decrypted values in the middle, reducing the effort to about 2⁵⁷ operations. 
+This is only slightly more secure than regular DES, which requires 2⁵⁶ operations, making 2DES practically useless as a secure encryption method.
 </pre>
 
 	<h1>Question 3</h1>

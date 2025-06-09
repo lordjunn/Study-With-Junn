@@ -135,14 +135,17 @@ function closeDisclaimer() {
 // Example usage
 const countStartDates = [
     new Date("24 Mar, 2025 00:00:00").getTime(),
+    new Date("08 Jun, 2025 00:00:00").getTime(),    
 ];
 
 const countDownDates = [
     new Date("29 Jun, 2025 00:00:00").getTime(),
+    new Date("25 Jun, 2025 20:00:00").getTime(),
 ];
 
 const containerIds = [
     "countdown-container-1",
+    "countdown-container-2",
 ];
 
 initializeCountdowns(countDownDates, countStartDates, containerIds);

@@ -1480,7 +1480,7 @@ document.getElementById('h2-2023-placeholder').innerHTML = h2Content2023;
 document.getElementById('h1-2024-placeholder').innerHTML = h1Content2024;
 document.getElementById('h2-2024-placeholder').innerHTML = h2Content2024;
 /*
-const h2Content2024 = `
+const h1Content2025 = `
 `;
 */
 

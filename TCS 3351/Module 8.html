@@ -46,7 +46,47 @@
 	<input type="checkbox" id="accordion3" class="hidecontent"/>
 	<label for="accordion3">Questions from Tutorials</label>
 	<div class="content hidecontent">
-        
+<h1>Question 1</h1>
+<pre><span id='question'>State the major differences between symmetric-key and asymmetric-key cryptosystems. </span>        
+<u>Symmetric-key cryptosystem</u>:
+Uses only one private key in both encryption and 
+decryption processes. It does not ensure integrity and non-repudiation properties. 
+That is, it does not protect the sender from the receiver forging the message (or signature) or claiming the message (or signature) sent by the sender. 
+
+<u>Asymmetric-key cryptosystem</u>:
+Uses a pair of public and private keys, with the public key used in encryption and the private key used in decryption processes. 
+It ensures integrity and non-repudiation in communication.             
+
+</pre>
+
+<h1>Question 2</h1>
+<pre><span id='question'>With the help of a diagram, explain how the public-key cryptosystem can be used to provide authentication/digital signature.</span>
+<img src="Images/C8/TCS 3351, C8, image 2.png"> 
+</pre>
+
+<h1>Question 3</h1>
+<pre><span id='question'>With the help of a diagram, explain how the public-key cryptosystem can be used to provide both confidentiality and authentication.</span>
+<img src="Images/C8/TCS 3351, C8, image 3.png"> 
+
+Both confidentiality and authentication can be achieved using a hybrid public-key cryptosystem, in which two pairs of public-private keys are used. 
+A pair of public-private keys from the sender A, (PrvA, PubA) will be used in signing-verifying the message, while a pair of public-private keys from the receiver B. 
+(PrvB, PubB) will be used in encrypting-decrypting the message.  
+
+The message is firstly signed using PrvA and next encrypted using PubB.
+When the message is received, it will be decrypted using PrvB and finally verify using PubA.
+
+</pre>
+
+<h1>Question 4</h1>
+<pre><span id='question'>Briefly explain the One-way and Trap-door one-way functions.</span>
+<u>One-way function</u>:
+A function maps every object in a domain into its corresponding unique image in the range, 
+such that the function is easily computable but infeasible (or difficult) to invert it.
+
+<u>Trap-door one-way function</u>:
+A function maps every object in a domain into its corresponding unique image in the range, 
+such that the function is easily computable but infeasible (or difficult) to invert it, except when trap-door information is given.            
+</pre>
 
 	</div>
 

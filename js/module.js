@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // Generate Prev/Next buttons using fixed config
     const prev = configElement.getAttribute('data-prev');
     const next = configElement.getAttribute('data-next');
-    const baseUrl = "Module "; // Fixed base URL
+    const baseUrl = configElement.getAttribute('data-name') || "Module ";
 
     function generateFixedModuleNav(prev, next) {
         const container = document.querySelector('.container2');
@@ -58,11 +58,11 @@ document.addEventListener("DOMContentLoaded", function() {
             let buttonsHTML = '';
 
             if (prev && prev.toLowerCase() !== 'x') {
-                buttonsHTML += `<button class="button-1"><a href="${baseUrl}${prev}.html">Module ${prev}</a></button>`;
+                buttonsHTML += `<button class="button-1"><a href="${baseUrl}${prev}.html">${baseUrl}${prev}</a></button>`;
             }
 
             if (next && next.toLowerCase() !== 'x') {
-                buttonsHTML += `<button class="button-1"><a href="${baseUrl}${next}.html">Module ${next}</a></button>`;
+                buttonsHTML += `<button class="button-1"><a href="${baseUrl}${next}.html">${baseUrl}${next}</a></button>`;
             }
 
             // Only update the container if there's valid content to add

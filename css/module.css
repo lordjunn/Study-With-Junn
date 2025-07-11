@@ -306,3 +306,21 @@ nav {
       font-size: 0.8em;
       background-color: rgb(255, 255, 214);
     }
+
+    /* Default: show text, hide image */
+.logo-text {
+  display: inline;
+}
+.logo-image {
+  display: none;
+}
+
+/* On mobile: hide text, show image */
+@media (max-width: 768px) {
+  .logo-text {
+    display: none;
+  }
+  .logo-image {
+    display: inline;
+  }
+}

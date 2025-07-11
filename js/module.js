@@ -5,9 +5,10 @@ document.addEventListener("DOMContentLoaded", function() {
     // Extract the configuration values from data-attributes
     const config = {
         title: configElement.getAttribute('data-course'),
+        logo: configElement.getAttribute('data-logo') || 'https://www.kindpng.com/picc/m/1-17813_28-collection-of-home-button-clipart-png-house.png',  // Optional fallback
         navLinks: [
             { href: "../index.html#Courses", text: "Courses" },
-            { href: configElement.getAttribute('data-topic-link'), text: "Topic List" },  // Use the value from the data-attribute
+            { href: configElement.getAttribute('data-topic-link'), text: "Topic List" },
             { href: "../index.html#top", text: "Home" }
         ]
     };
@@ -18,7 +19,10 @@ document.addEventListener("DOMContentLoaded", function() {
             <header id="top">
                 <nav>
                     <div class="logo-holder">
-                        <a href="../index.html">Study with Junn</a>
+                        <a href="../index.html" class="logo-text">Study with Junn</a>
+                        <a href="../index.html" class="logo-image">
+                            <img src="${config.logo}" alt="Study with Junn Logo" style="height: 40px;">
+                        </a>
                     </div>
                     <h4>${config.title}</h4>
                     <button class="menu-toggle" id="menu-toggle">

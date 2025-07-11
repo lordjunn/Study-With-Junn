@@ -432,7 +432,9 @@ header.sticky{
 @media (max-width: 1040px){
 	#menu-icon{
 		display: block;
+		color: #000;
 	}
+
 	.stick #menu-icon{
 		color: var(--text-color);
 	}
@@ -445,7 +447,7 @@ header.sticky{
 		right: -100%;
 		width: 270px;
 		height: 120vh;
-		background: #1067cc;
+		background: #926affee;
 		display: flex;
 		flex-direction: column;
 		align-items: center;

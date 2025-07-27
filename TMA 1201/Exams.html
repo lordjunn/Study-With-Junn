@@ -3,28 +3,29 @@
 <html>
 
 <head>
-<link rel="stylesheet" href="../Main.css">
+<link rel="stylesheet" href="../css/module.css">
 <link href="https://fonts.googleapis.com/css?family=Alata | Ibarra+Real+Novaâdiaplay swap" rel="stylesheet">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Exam questions - TMA 1201</title>
 </head>
 
 <body>
-<header id="top">
-<nav>
-<div class="logo-holder"><a href="../index.html">Study with Junn</a></div>
-<h4>Exam questions - Discrete Structures and Probability</h4>
-<ul>
-<li><a href="../index.html#Courses">Courses</a></li>
-<li><a href="#">About</a></li> <li><a href="../index.html#top">Home</a></li>
-</ul>
+<!-- This will hold the dynamically generated header -->
+<div id="header-container"></div>
 
-</nav>
-</header>
+<!-- Configuration for the header is stored here -->
+<div id="header-config"
+     data-course="Exam questions - Discrete Structures and Probability"
+     data-topic-link="../TMA 1201.html">
+</div>
 
 <!-- #end of header -->
-<br/><br/><br/>
-<h1>Some tips given out to ease learning.</h1>
+<br><br><br>
+<h1 id="padded">
+    Some tips given out to ease learning.<br>
+    Yellow text accordions = (guaranteed?) correct answers.
+</h1>
+
 <div id="myaccordion">
 <input class="hidecontent" id="accordion1" type="checkbox"/>
 <label for="accordion1">Trimester 2, 2015/2016 [11 Mar 2016]</label>
@@ -105,7 +106,7 @@
 <img src="Images/Exams/TMA 1201, Exams, image 27.png"/>
 </div>
 <input class="hidecontent" id="accordion7" type="checkbox"/>
-<label for="accordion7">Trimester 1, 2018/2019 [13 Oct 2018]</label>
+<label for="accordion7" style="color: yellow;">Trimester 1, 2018/2019 [13 Oct 2018]</label>
 <div class="content hidecontent"> <!-- https://discord.com/channels/705982671792373841/1025584528695242812/1163790094470226011 -->
 <h1>Question 1</h1>
 <img src="Images/Exams/TMA 1201, Exams, image 28.png"/>
@@ -127,7 +128,7 @@
 <img src="Images/Exams/TMA 1201, Exams, image 34.png"/>
 </div>
 <input class="hidecontent" id="accordion9" type="checkbox"/>
-<label for="accordion9">Trimester 1, 2019/2020 [17 Oct 2019]</label>
+<label for="accordion9" style="color: yellow;">Trimester 1, 2019/2020 [17 Oct 2019]</label>
 <div class="content hidecontent"> <!-- https://discord.com/channels/705982671792373841/1025584528695242812/1164049415649103963 -->
 <h1>Question 1</h1>
 <img src="Images/Exams/TMA 1201, Exams, image 35.png"/>
@@ -194,27 +195,7 @@
 </div>
 </div>
 
-
-
-
-<!-- 
-<h1>Trimester , 20/20</h1> 
-    <img src=""> 
-<h1>Trimester , 20/20</h1> 
-    <img src="">   
--->
-
-<h1>Summary of Topic </h1>
-
-
-
-
-
-<!-- these links to previous & next modules -->
-<div class="container2">
-    <button class="button-1"><a href="" target="_blank">Topic </a></button>
-    <button class="button-1"><a href="" target="_blank">Topic </a></button>
-</div>
+<script type="text/javascript" src="../js/module.js"></script>
 
 </body>
 </html>

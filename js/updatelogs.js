@@ -2054,11 +2054,264 @@ const h1Content2025 = `
 </table><br>
 `;
 
+const h2Content2025 = `
+<h2>H2 2025</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Update(s)</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    <tr>
+      <td>7 Jul 2025</td>
+      <td> 
+        Further work on TCS 3351:
+        <ul>
+          <li>C10: Added images 1 - 5</li>
+        </ul>  
+        Moved H1 2025s table into the js to clean up clutter.<br>
+        Slightly changed up the CSS for the tables to be more consistent looking.
+      </td>
+    </tr>
+    <tr>
+      <td>10 Jul 2025</td>
+      <td> 
+        Obtained official marking scheme for 2 TMA 1201 papers. Hence,<br>
+        Further work on TMA 1201:
+        <ul>
+          <li>Exams: Edited image 28, 29, 30, 35, 36, 37, 38</li>
+          <li>Slightly edited accordions of Exams.html to show those with guaranteed correct(?) answers.</li>
+          <li>Updated Exams.html with new UI.</li>
+        </ul>  
+        Updated module.js + module.css to include changing the logo to an icon on smaller screens. Full change TBA.
+        <br>
+      </td>
+    </tr>
+    <tr>
+      <td>11 Jul 2025</td>
+      <td> 
+        I FORGOT TO CLOSE A DIV ON MATH 3 HOME PAGE<br>
+        FIXED!!!<br><br>
+
+        Sorry for all the juniors who had to see Homura doing a hair flip as their Math 3 help (in defense no one said anything).<br>
+        Updated Math 3.html to the newest UI.
+      </td>
+    </tr>
+    <tr>
+      <td>12 Jul 2025</td>
+      <td> 
+        Updated index.html:
+        <ul>
+          <li>Changed Discord -> Specialisation</li>
+          <li>Specialisation image from default image -> a drawing</li>
+          <li>Minor text updates</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>25 Jul 2025</td>
+      <td> 
+        Updated index.html:
+        <ul>
+          <li>Specialisation image from a drawing -> Kanada Amakusa</li>
+          <li>Changed + added links for contact into my portfolio(s) site</li> <!-- i forgot why i didnt note this down, it was done earlier -->
+          <li>Added an icon</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>10 Aug 2025</td>
+      <td> 
+        Updated index.html:
+        <ul>
+          <li><i>Actually</i> uploaded the image & icon</li>
+          <li>Removed the <code>Time until Trimester 2520 starts</code> timer</li>
+        </ul>
+        Timer changes are reflected in script.js as well.
+      </td>
+    </tr>
+    <tr>
+      <td>19 Oct 2025</td>
+      <td> 
+        Updated index.html:
+        <ul>
+          <li>Added Silverwolf (yes shes back) for TDS 3301, and added Priestess for TDS 3851. Initialised both of their home pages.</li>
+          <li>Changed timer from end of 2520 to start of 2530</li>
+        </ul>
+        Timer changes are reflected in script.js as well.<br>
+        Updated TCS 3351/Exam as there is no exams. Good luck, have fun.<br>
+        Slightly updated subject format.html.
+      </td>
+    </tr>
+    <tr>
+      <td>1 Nov 2025</td>
+      <td> 
+        Created + initialised TDS 3301 Exams.html, along with adding 28 images.<br>
+        Removed timer for start of 2530, added timers for TDS 3851 Test, Start of Exam Week, & Start of Trimester break.
+      </td>
+    </tr>
+    <tr>
+      <td>3 Nov 2025</td>
+      <td>
+        Given titles + links for both TDS 3301 & TDS 3851 topics. 
+      </td>
+    </tr>
+    <tr>
+      <td>7 Nov 2025</td>
+      <td> 
+        Further work on TDS 3851:
+        <ul>
+          <li>Updated exams section to include Quiz, + Test.</li>
+          <li>Started work on Quiz by adding 10 questions.</li>
+          <li>Added Quiz 1 images 1, 2, 3, & 7.</li>
+        </ul>
+        Updated Math 1 + PPP/PDS + Math 2 home page to be the latest UI.
+      </td>
+    </tr>
+    <tr>
+      <td>12 Nov 2025</td>
+      <td> 
+        Further work on TDS 3851:
+        <ul>
+          <li>Asked the quiz owner, it was from 2025, edited that to reflect that.</li>
+          <li>Added Quiz 1 images 4, 5, 6, 8, 9, 10.</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>13 Nov 2025</td>
+      <td> 
+        Further work on TDS 3851:
+        <ul>
+          <li>Initialised Chapter 2</li>
+          <li>Added images for L2 (1, 2, 3)</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>15 Nov 2025</td>
+      <td> 
+        Further work on TDS 3851:
+        <ul>
+          <li>Updated images for L2 (3)</li>
+          <li>Added images for L2 (4)</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>20 Nov 2025</td>
+      <td> 
+        Further work on TDS 3851:
+        <ul>
+          <li>Updated images for L2 (4)</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>1 Dec 2025</td>
+      <td> 
+        Further work on TDS 3851:
+        <ul>
+          <li>Initialised Chapter 3</li>
+          <li>Added images for L3 (1, 2a, 2b)</li>
+        </ul>        
+      </td>
+    </tr>
+    <tr>
+      <td>8 Dec 2025</td>
+      <td> 
+        Further work on TDS 3301 Exams:
+        <ul>
+          <li>Edited image 1, 2, 5</li>
+        </ul>        
+      </td>
+    </tr>
+    <tr>
+      <td>9 Dec 2025</td>
+      <td> 
+        Further work on TDS 3301 Exams:
+        <ul>
+          <li>Edited image 5, 9, 13, 21, 22, 25</li>
+        </ul>        
+      </td>
+    </tr>
+    <tr>
+      <td>10 Dec 2025</td>
+      <td> 
+        Further work on TDS 3301 Exams:
+        <ul>
+          <li>Edited image 25</li>
+        </ul>        
+      </td>
+    </tr>
+    <tr>
+      <td>11 Dec 2025</td>
+      <td> 
+        Further work on TDS 3301:
+        <ul>
+          <li>Initialised Chapter 1 , 2, & 3</li>
+          <li>Added images for L1 (1, 2, 3, 4, 5), L2 (1, 2, 3, 4, 5)</li>
+        </ul>      
+      </td>
+    </tr>
+    <tr>
+      <td>12 Dec 2025</td>
+      <td> 
+        Further work on TDS 3301:
+        <ul>
+          <li>Moved L1 image 5 to become 13 to fit more questions from Lecture Notes</li>
+          <li>Edited images for L1 (4, 5)</li>
+          <li>Added images for L1 (6, 7, 8, 9, 10, 11, 12)</li>
+          <li>Added images for L3 (1, 2, 6, 7, 8, 11)</li>
+        </ul>      
+      </td>
+    </tr>
+    <tr>
+      <td>13 Dec 2025</td>
+      <td> 
+        Further work on TDS 3301:
+        <ul>
+          <li>Edited images for L3 (2, 8, 11)</li>
+          <li>Added images for L3 (3, 4, 5, 9, 10)</li>
+        </ul>  
+        Added timers for TDS 3301 midterm test, and TCS 3451 test.    
+      </td>
+    </tr>
+    <tr>
+      <td>14 Dec 2025</td>
+      <td> 
+        Further work on TDS 3301:
+        <ul>
+          <li>Added H1 & image for L2 (6)</li>
+          <li>Edited images for Exams (6, 11, 12, 18, 23, 24, 26)</li>
+        </ul>  
+        Removed the "small notes" section for TCS 3351, as I did not make any.
+      </td>
+    </tr>
+    <tr>
+      <td>15 Dec 2025</td>
+      <td> 
+        Further work on TDS 3301:
+        <ul>
+          <li>Added images for Exams (Theory, Formula)</li>
+        </ul>  
+        Removed timer for TDS 3301 midterm test, as it is kinda over in some hours after this push is made.
+      </td>
+    </tr>
+  </tbody>
+</table>
+`;
+
+
 // Insert the content into the page at the placeholder
 document.getElementById('h2-2023-placeholder').innerHTML = h2Content2023;
 document.getElementById('h1-2024-placeholder').innerHTML = h1Content2024;
 document.getElementById('h2-2024-placeholder').innerHTML = h2Content2024;
 document.getElementById('h1-2025-placeholder').innerHTML = h1Content2025;
+document.getElementById('h2-2025-placeholder').innerHTML = h2Content2025;
 
 /*
 const h2Content2025 = `

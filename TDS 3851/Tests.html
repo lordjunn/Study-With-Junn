@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<link rel="stylesheet" href="../css/module.css">
+<link href="https://fonts.googleapis.com/css?family=Alata | Ibarra+Real+Novaâdiaplay swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tests - TDS 3851</title>
+</head>
+
+<body>
+<!-- This will hold the dynamically generated header -->
+<div id="header-container"></div>
+
+<!-- Configuration for the header is stored here -->
+<div id="header-config"
+     data-course="Tests - TDS 3851"
+     data-topic-link="../TDS 3851.html">
+</div>
+
+<!-- #end of header -->
+<br><br><br>
+<h1 id="padded">Some tips given out to ease learning.</h1>
+<div id="myaccordion">
+
+<input type="checkbox" id="accordion1" class="hidecontent"/>
+<label for="accordion1">Trimester 2510 [29 May 2025]</label>
+<div class="content hidecontent">
+
+    <h1>Question 1</h1>
+        <img src="Images/Tests/TDS 3851, T1 image 1.png">
+
+    <h1>Question 2<br>
+        What is reinforcement learning? Briefly explain how it differs from supervised learning.</h1>
+        <img src="Images/Tests/TDS 3851, T1 image 2.png">
+        <!-- https://notes.kodekloud.com/docs/AWS-Certified-AI-Practitioner/Fundamentals-of-AI-and-ML/Supervised-Unsupervised-and-Reinforcement-Learning -->
+
+<section>
+    <h1>Q2: Why Use Those Two Points Specifically?</h1>
+    
+    <p>
+        In this specific case, you cannot choose arbitrary points. The exam instructions explicitly state to 
+        <strong>"Use the last two samples from the dataset"</strong> to perform the calculations.
+    </p>
+
+    <p>The student followed this by selecting the values from the final rows of Table 2:</p>
+    <ul>
+        <li><strong>ID 4:</strong> x = 5.5 (Feeling Anxious: 1)</li>
+        <li><strong>ID 5:</strong> x = 6.0 (Feeling Anxious: 0)</li>
+    </ul>
+
+    <h13>1. Compliance with Instructions</h13>
+    <p>
+        The prompt requires you to show mathematical calculations for deriving coefficients using those specific samples. 
+        Using different IDs (like 1 or 2) would result in a loss of marks for failing to follow the constraint.
+    </p>
+
+    <h13>2. Solving for Two Unknowns</h13>
+    <p>
+        The linear component of the model <code>z = a<sub>0</sub> + a<sub>1</sub>x</code> has two unknowns. 
+        To solve for these, you need two distinct data points:
+    </p>
+    <ul>
+        <li>
+            They established two <em>z</em> values: <strong>4.61</strong> and <strong>-4.60</strong> 
+            based on the assumption that Probability (1) &approx; 0.99 and Probability (0) &approx; 0.01.
+        </li>
+        <li>
+            They calculated the slope (a<sub>1</sub>) using the formula: 
+            <code>a<sub>1</sub> = (4.61 - (-4.6)) / (5.5 - 6.0)</code>.
+        </li>
+    </ul>
+
+</div>
+
+
+<input type="checkbox" id="accordion2" class="hidecontent"/>
+<label for="accordion2">Various Questions from Data Mining PYQ</label>
+<div class="content hidecontent">
+<p>Only focusing those that seem like Chapter 3 - 5 (coverage for test)</p>
+
+  <h1>Q4 - Trimester 2, 2017/2018 [5 Mar 2018]</h1>
+    <img src="../TDS 3301/Images/Exams/TDS 3301, Exams, image 12.png">
+
+  <h1>Q2 - Trimester 1, 2018/2019 [25 Oct 2018]</h1>
+    <img src="../TDS 3301/Images/Exams/TDS 3301, Exams, image 14.png">
+
+
+</div>
+
+<input type="checkbox" id="accordion3" class="hidecontent"/>
+<label for="accordion3">Random things I found online</label>
+<div class="content hidecontent">
+
+  <h1>Question </h1>
+    <img src="">
+
+</div>
+
+
+
+
+</div>
+
+
+
+
+
+
+<!-- 
+<h1>Trimester , 20/20</h1> 
+    <img src=""> 
+<h1>Trimester , 20/20</h1> 
+    <img src="">   
+
+<input type="checkbox" id="accordion" class="hidecontent"/>
+<label for="accordion">Trimester , 20/20 []</label>
+<div class="content hidecontent">
+
+  <h1>Question </h1>
+    <img src="">
+
+</div>
+-->
+
+<h1 id="padded">Summary of Topic </h1>
+
+
+
+
+
+<script type="text/javascript" src="../js/module.js"></script>
+
+</body>
+</html>

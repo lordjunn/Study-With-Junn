@@ -1,0 +1,1378 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<link rel="stylesheet" href="../css/base.css">
+<link rel="stylesheet" href="../css/module.css">
+<link href="https://fonts.googleapis.com/css?family=Alata | Ibarra+Real+Nova&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+<!-- and it's easy to individually load additional languages -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/go.min.js"></script>
+
+<script>hljs.highlightAll();</script>
+<title>TCP 1101 - 3</title>
+</head>
+
+<body>
+<!-- Dynamic header -->
+<div id="header-container"></div>
+<div id="header-config"
+    data-course="Programming Fundamentals - Lab 3"
+    data-topic-link="../index.html"
+    data-prev="x"
+    data-next="x">
+</div>
+
+
+<br><br><br>
+<div id="myaccordion">
+    <input type="checkbox" id="accordion1" class="hidecontent"/>
+    <label for="accordion1">Lab 3.1 - Working with the cin Statement</label>
+    <div class="content hidecontent">
+<pre><code class="cpp">// This program will read in the quantity of a particular item and its price.
+// It will then print out the total price.
+// The input will come from the keyboard and the output will go to the screen.
+    
+#include iostream
+#include iomanip
+using namespace std;
+int main() {
+    int quantity;     // contains the amount of items purchased
+    float itemPrice;  // contains the price of each item
+    float totalBill;  // contains the total bill.
+
+    cout << setprecision(2) << fixed << showpoint;  // formatted output
+    cout << "Please input the number of items bought" << endl;
+
+    // Fill in the input statement to bring in the quantity.
+    // Fill in the prompt to ask for the price.
+    // Fill in the input statement to bring in the price of each item.
+    // Fill in the assignment statement to determine the total bill.
+    // Fill in the output statement to print total bill, with a label to the screen.
+
+    return 0;
+}
+</code></pre>
+
+      <h1>Exercise 1</h1>
+      <p>Complete the program so that a sample run inputting 22 for the number of items bought and 10.98 for
+        the price of each item will produce the results of $241.56.</p><br>
+<pre><code class="cpp">
+// This program will read in the quantity of a particular item and its price.
+// It will then print out the total price.
+// The input will come from the keyboard and the output will go to the screen.
+
+#include iostream
+#include iomanip
+#include string
+using namespace std;
+
+int main()
+
+{
+
+    int quantity;    // contains the amount of items purchased
+    float itemPrice; // contains the price of each item
+    float totalBill; // contains the total bill
+
+    cout << setprecision(2) << fixed << showpoint; // formatted output
+    cout << "Please input the number of items bought:" << endl;
+
+    // Fill in the input statement to bring in the quantity.
+    cin >> quantity;
+
+    // Fill in the prompt to ask for the price
+    cout << "Please input the price per item: " << endl;
+
+    // Fill in the input statement to bring in the price of each item.
+    cin >> itemPrice;
+
+    // Fill in the assignment statement to determine the total bill.
+    totalBill = quantity * itemPrice;
+
+    // Fill in the output statement to print total bill, with a label to the screen.
+    cout << "The total bill is: $" << totalBill << endl;
+
+    return 0;
+}
+</code></pre>
+      <h1>Exercise 2</h1>
+      <p>Once you have the program working, change the instruction:</p>
+        <pre><code class="cpp">cout << setprecision (2) << fixed << showpoint;</code></pre>
+        <p>to</P>
+        <pre><code class="cpp">cout << setprecision(2) << showpoint;</code></pre>
+      <p>Rerun the program with the same data given in Exercise 1 above and record your results. What do you
+        think the fixed attribute in the cout statement does?</p><br>
+
+<pre><code class="cpp">// This program will read in the quantity of a particular item and its price.
+// It will then print out the total price.
+// The input will come from the keyboard and the output will go to the screen.
+
+#include iostream
+#include iomanip
+#include string
+using namespace std;
+
+int main()
+
+{
+    int quantity;    // contains the amount of items purchased
+    float itemPrice; // contains the price of each item
+    float totalBill; // contains the total bill
+
+    cout << setprecision(2) << showpoint; // formatted output
+    cout << "Please input the number of items bought:" << endl;
+
+    // Fill in the input statement to bring in the quantity.
+    cin >> quantity;
+
+    // Fill in the prompt to ask for the price
+    cout << "Please input the price per item: " << endl;
+
+    // Fill in the input statement to bring in the price of each item.
+    cin >> itemPrice;
+
+    // Fill in the assignment statement to determine the total bill.
+    totalBill = quantity * itemPrice;
+
+    // Fill in the output statement to print total bill, with a label to the screen.
+    cout << "The total bill is: $" << totalBill << endl;
+
+    return 0;
+}
+</code></pre>
+<div id="ouraccordion">
+    <input type="checkbox" id="accordionx1" class="hidecontent"/>
+    <label for="accordionx1">Explanation (Gemini)</label>
+    <div class="content hidecontent">
+<pre>
+The statement cout << setprecision(2) << showpoint; 
+sets the output format for decimal numbers. 
+
+The setprecision(2) part of the statement tells the output stream to display two decimal places for floating-point numbers. 
+
+The showpoint part of the statement tells the output stream to always display the decimal point for floating-point numbers, 
+even if the fractional part is zero.
+
+If you change the instruction to cout << setprecision(2) << fixed << showpoint;, 
+the program will output the total bill with two decimal places, 
+even if the fractional part is zero. 
+
+This is because the fixed part of the statement tells the output stream to display floating-point numbers in fixed-point notation, 
+which means that the decimal point is always displayed.
+</pre>
+
+    </div>
+
+    <input type="checkbox" id="accordionx2" class="hidecontent"/>
+    <label for="accordionx2">Explanation (Bing)</label>
+    <div class="content hidecontent">
+<pre>
+The fixed attribute in the cout statement sets the decimal precision 
+of the output to a fixed number of digits after the decimal point, as specified by the setprecision manipulator. 
+
+If you remove the fixed attribute and rerun the program, 
+you’ll notice that the output may be represented in scientific notation if 
+it has too many zeros after the decimal point or if the number is very large. 
+
+The fixed attribute ensures that the number is represented as a standard decimal number, not in scientific notation. 
+
+This is particularly useful when dealing with monetary values, where we typically want to see exactly two decimal places.    
+</pre>
+    </div>
+</div>
+
+      <h1>Exercise 3</h1>
+<p>Now put the fixed attribute back in and change the instruction to make the precision 4.<br> 
+    Rerun the program with the same data given in Exercise 1 and record your results.<br>
+    What do you think the</p>
+    <pre>setprecision( )</pre>
+    <p>attribute in the cout statement does?<br>
+    The attribute showpoint forces all floating point output to show a decimal point even if the values are
+    whole numbers. In some environments this is done automatically.</p>
+<pre><code class="cpp">// This program will read in the quantity of a particular item and its price.
+    // It will then print out the total price.
+    // The input will come from the keyboard and the output will go to the screen.
+    
+    #include iostream
+    #include iomanip
+    #include string
+    using namespace std;
+    
+    int main()
+    
+    {
+    
+        int quantity;    // contains the amount of items purchased
+        float itemPrice; // contains the price of each item
+        float totalBill; // contains the total bill
+    
+        cout << setprecision(4) << fixed << showpoint; // formatted output
+        cout << "Please input the number of items bought:" << endl;
+    
+        // Fill in the input statement to bring in the quantity.
+        cin >> quantity;
+    
+        // Fill in the prompt to ask for the price
+        cout << "Please input the price per item: " << endl;
+    
+        // Fill in the input statement to bring in the price of each item.
+        cin >> itemPrice;
+    
+        // Fill in the assignment statement to determine the total bill.
+        totalBill = quantity * itemPrice;
+    
+        // Fill in the output statement to print total bill,
+        // with a label to the screen.
+        cout << "The total bill is: $" << totalBill << endl;
+    
+        return 0;
+    } 
+</code></pre>
+<div id="ouraccordion">
+    <input type="checkbox" id="accordionx3" class="hidecontent"/>
+    <label for="accordionx3">Explanation (Gemini)</label>
+    <div class="content hidecontent">
+<pre>
+The setprecision() attribute in the cout statement sets the number of decimal places to be displayed for floating-point numbers. 
+
+In this case, setprecision(4) will display four decimal places for the total bill.
+    
+As you can see, the total bill is now displayed with four decimal places, 
+even though the fractional part is still zero. 
+
+This is because the setprecision() attribute has been used to explicitly set the precision to four decimal places.
+    
+The setprecision() attribute is useful for controlling the precision of floating-point output. 
+
+This can be important for applications where it is important to display precise numerical values.    
+</pre>
+    </div>
+
+    <input type="checkbox" id="accordionx4" class="hidecontent"/>
+    <label for="accordionx4">Explanation (Bing)</label>
+    <div class="content hidecontent">
+<pre>
+The setprecision() attribute in the cout statement sets the number of digits of precision when outputting floating-point values. 
+
+If you change the precision to 4 with the fixed attribute, 
+it will output the floating-point number to 4 places after the decimal point. 
+
+As for the showpoint attribute, 
+it forces all floating-point output to show a decimal point and trailing zeros, 
+even for whole numbers. 
+
+This can be useful for aligning output in columns or ensuring consistent formatting. 
+
+Without showpoint, trailing zeros might be omitted. 
+
+For example, the number 5.00 would be printed as 5 without showpoint, 
+but with showpoint, it would be printed as 5.0000 when using setprecision(4).     
+</pre>
+    </div>
+</div>
+      <h1>Exercise 4</h1>
+<p>Add the following directive to the program: 
+    <pre>#include string</pre> in the header.<br> 
+    Alter the program so that
+    the program first asks for the name of the product (which can be read into a string object).<br>
+Then, alter the program, if you have not already done so, so that the name of an item could include a
+space within its string.</p>
+<pre><code class="cpp">// This program will read in the quantity of a particular item and its price.
+// It will then print out the total price.
+// The input will come from the keyboard and the output will go to the screen.
+
+#include iostream
+#include iomanip
+#include string
+using namespace std;
+
+int main() {
+    string productName;  // Stores the product name
+    int quantity;        // contains the amount of items purchased
+    float itemPrice;     // contains the price of each item
+    float totalBill;     // contains the total bill
+
+    cout << setprecision(4) << fixed << showpoint;  // formatted output
+
+    // Prompt the user to enter the product name
+    cout << "Please input the name of the item: " << endl;
+    getline(cin, productName);  // Read the product name into a string
+
+    cout << "Please input the number of items bought:" << endl;
+    // Fill in the input statement to bring in the quantity.
+    cin >> quantity;
+
+    // Fill in the prompt to ask for the price
+    cout << "Please input the price per item: " << endl;
+
+    // Fill in the input statement to bring in the price of each item.
+    cin >> itemPrice;
+
+    // Fill in the assignment statement to determine the total bill.
+    totalBill = quantity * itemPrice;
+
+    // Display the product name and total bill
+    cout << "The item that you bought is " << productName << "." << endl;
+    cout << "The total bill is: $" << totalBill << endl;
+
+    return 0;
+}
+</code></pre>
+<div id="ouraccordion">
+    <input type="checkbox" id="accordionx5" class="hidecontent"/>
+    <label for="accordionx5">Explanation (Gemini)</label>
+    <div class="content hidecontent">
+<pre>
+To incorporate the product name into the program, you'll need to include the string library and modify the input and output statements accordingly.
+
+This modified code will prompt the user to enter the product name first, 
+and then follow the same process as before for quantity and price.
+
+The output will include the product name along with the total bill.    
+</pre>
+    </div>
+
+</div>
+
+    </div>
+    
+    <input type="checkbox" id="accordion2" class="hidecontent"/>
+    <label for="accordion2">Lab 3.2- Formatting Output</label>
+    <div class="content hidecontent">
+    <p>Look at the following table:
+        <pre>
+        PRICE QUANTITY
+        1.95  8
+        10.89 9</pre>
+        Assume that from the left margin, the price takes up fifteen spaces. We could say that the numbers are
+        right justified in a 15-width space.<br>
+        Starting where the price ends, the next field (quantity) takes up twelve
+        spaces.<br>
+        We can use the formatted output from Lab 3.1 and the statement setw(n) where n is some integer
+        to indicate the width to produce such tables.</p>
+    <pre><code class="cpp">// This program will bring in two prices and two quantities of items
+// from the keyboard and print those numbers in a formatted chart.
+
+#include iostream
+#include __________  // Fill in the code to bring in the library for
+// formatted output.
+
+using namespace std;
+int main() {
+    float price1, price2;      // The price of 2 items
+    int quantity1, quantity2;  // The quantity of 2 items
+    cout << setprecision(2) << fixed << showpoint;
+    cout << "Please input the price and quantity of the first item" << endl;
+    // Fill in the input statement that reads in price1 and
+    // quantity1 from the keyboard.
+
+    // Fill in the prompt for the second price and quantity.
+
+    // Fill in the input statement that reads in price2 and
+    // quantity2 from the keyboard.
+    cout << setw(15) << "PRICE" << setw(12) << "QUANTITY\n\n";
+    // Fill in the output statement that prints the first price
+    // and quantity. Be sure to use setw() statements.
+
+    // Fill in the output statement that prints the second price
+    // and quantity.
+    return 0;
+}        </code></pre>
+
+    <h1>Exercise 1</h1>
+    <p>Finish the code above by filling in the blanks and the instructions necessary to execute the following
+        sample run. Note that two or more data items can be input at one time by having at least one blank space
+        between them before hitting the enter key.</p>
+    <pre>Please input the price and quantity of the first item
+1.95    8
+Please input the price and quantity of the second item
+10.89   9
+PRICE QUANTITY
+1.95  8
+10.89 9</pre>
+
+<pre><code class="cpp">// This program will bring in two prices and two quantities of items
+// from the keyboard and print those numbers in a formatted chart.
+
+#include iostream
+#include iomanip // Fill in the code to bring in the library for formatted output.
+using namespace std;
+
+int main()
+{
+    float price1, price2;     // The price of 2 items
+    int quantity1, quantity2; // The quantity of 2 items
+    cout << setprecision(2) << fixed << showpoint;
+    cout << "Please input the price and quantity of the first item: " << endl;
+
+    // Fill in the input statement that reads in price1 and
+    // quantity1 from the keyboard.
+    cin >> price1 >> quantity1;
+    
+    // Fill in the prompt for the second price and quantity.
+    cout << "Please input the price and quantity of the second item: " << endl;
+
+    // Fill in the input statement that reads in price2 and
+    // quantity2 from the keyboard.
+    cin >> price2 >> quantity2;
+
+    cout << setw(15) << "PRICE" << setw(12) << "QUANTITY\n\n";
+
+    // Fill in the output statement that prints the first price
+    // and quantity. Be sure to use setw() statements.
+    cout << setw(15) << price1 << setw(12) << quantity1 << endl;
+
+    // Fill in the output statement that prints the second price
+    // and quantity.
+    cout << setw(15) << price2 << setw(12) << quantity2 << endl;
+    
+    return 0;
+}    
+</code></pre>
+    <div id="ouraccordion">
+        <input type="checkbox" id="accordionx7" class="hidecontent"/>
+        <label for="accordionx7">Explanation (Gemini)</label>
+        <div class="content hidecontent">
+    <pre>1. Bringing in the formatted output library:
+
+The #include <iomanip> statement is necessary to bring in the iomanip library, 
+which provides tools for formatting output. 
+This library is essential for creating the formatted table with specific field widths.
+
+2. Input statements for price and quantity:
+
+The input statements cin >> price1 >> quantity1 and cin >> price2 >> quantity2 
+are used to read the price and quantity values for each item from the keyboard. 
+The >> operator is the extraction operator that reads data from the standard input stream (keyboard) 
+and stores it in the corresponding variables.
+
+3. Prompt for the second price and quantity:
+
+The prompt 
+Please input the price and quantity of the second item: 
+is used to instruct the user to enter the data for the second item. 
+The prompt should be clear and concise, guiding the user to provide the required information.
+
+4. Displaying the table header:
+
+The statement 
+cout << setw(15) << "PRICE" << setw(12) << "QUANTITY\n\n"; 
+is used to display the table header with the labels "PRICE" and "QUANTITY". 
+The setw() manipulator is used to set the field width for each column, 
+ensuring proper alignment of the data. 
+The \n\n at the end adds two newlines to provide spacing before displaying the data.
+
+5. Output statements for price and quantity:
+
+The statements 
+cout << setw(15) << price1 << setw(12) << quantity1 << endl; 
+and cout << setw(15) << price2 << setw(12) << quantity2 << endl; 
+are used to display the price and quantity values for each item in a formatted manner. 
+The setw() manipulator is again used to set the field width for each column, aligning the data correctly. 
+The endl manipulator is used to insert a newline character after each row of data.
+
+These specific statements are carefully chosen to achieve the desired output format, 
+which is a formatted table with aligned columns and specific field widths. 
+The iomanip library and its functions provide the necessary tools for precise control over the output format.         
+</pre>
+        </div>
+    
+        <input type="checkbox" id="accordionx8" class="hidecontent"/>
+        <label for="accordionx8">Explanation (Bing)</label>
+        <div class="content hidecontent">
+    <pre>
+#include iomanip: 
+This directive is used to include the input/output manipulation library, 
+which provides functionalities to manipulate the output of the program. 
+
+In this case, it’s needed for the setprecision, fixed, showpoint, and setw functions.
+
+cin >> price1 >> quantity1;: 
+This statement is used to read in the price and quantity of the first item from the user. 
+The cin object is used for input, and the >> operator is used to send data from the stream to the variables price1 and quantity1.
+
+cin >> price2 >> quantity2;: 
+Similar to the previous point, this statement is used to read in the price and quantity of the second item from the user.
+
+cout << setw(15) << price1 << setw(12) << quantity1 << "\n";: 
+This statement is used to print the first price and quantity.
+ 
+The setw(n) function sets the width of the output field to n spaces, 
+ensuring that the output is properly aligned. 
+
+The cout object is used for output, and the << operator is used to send data to the stream.
+
+cout << setw(15) << price2 << setw(12) << quantity2 << "\n";: 
+This statement is similar to the previous one, but it’s used to print the second price and quantity.
+    
+    </pre>
+        </div>
+    </div>
+    
+    </div>
+    
+    <input type="checkbox" id="accordion3" class="hidecontent"/>
+    <label for="accordion3">Lab 3.3 - Arithmetic Operations and Math Functions</label>
+    <div class="content hidecontent">
+<pre><code class="cpp">// This program will input the value of two sides of a right triangle and then
+// determine the size of the hypotenuse.
+
+#include cmath  // needed for math functions like sqrt()
+#include iostream
+using namespace std;
+int main() {
+    float a, b;  // the smaller two sides of the triangle
+    float hyp;   // the hypotenuse calculated by the program
+    cout << "Please input the value of the two sides" << endl;
+    cin >> a >> b;
+
+    // Fill in the assignment statement that determines the hypotenuse
+
+    cout << "The sides of the right triangle are " << a << " and " << b << endl;
+    cout << "The hypotenuse is " << hyp << endl;
+    return 0;
+}</code></pre>
+     
+    <h1>Exercise 1</h1>
+    <p>Fill in the missing statement so that the following sample run is implemented:
+<pre>Please input the value of the two sides
+
+9 3
+
+The sides of the right triangle are 9 and 3
+The hypotenuse is 9.48683</pre></p>
+    <pre><code class="cpp">// This program will input the value of two sides of a right triangle and then
+// determine the size of the hypotenuse.
+
+#include iostream
+#include cmath // needed for math functions like sqrt()
+using namespace std;
+
+int main()
+{
+    float a, b; // the smaller two sides of the triangle
+    float hyp; // the hypotenuse calculated by the program
+
+    cout << "Please input the value of the two sides" << endl;
+    cin >> a >> b;
+
+    // Fill in the assignment statement that determines the hypotenuse
+    hyp=sqrt(a*a+b*b);
+
+    cout << "The sides of the right triangle are " << a << " and " << b << endl;
+
+    cout << "The hypotenuse is " << hyp << endl;
+
+    return 0;
+}        
+    </code></pre>
+    <div id="ouraccordion">
+        <input type="checkbox" id="accordionx13" class="hidecontent"/>
+        <label for="accordionx13">Explanation (Gemini)</label>
+        <div class="content hidecontent">
+<pre>Missing Statement: hyp = sqrt(a * a + b * b);
+
+The missing statement calculates the length of the hypotenuse (hyp) using the Pythagorean theorem, 
+which states that the square of the hypotenuse of a right triangle is equal to the sum of the squares of the other two sides.
+
+Explanation:
+
+1. sqrt() function: 
+The sqrt() function, defined in the cmath library, calculates the square root of a given number. 
+In this case, it's used to find the square root of the expression a * a + b * b to determine the hypotenuse.
+
+2. Pythagorean Theorem: 
+The Pythagorean theorem is a fundamental relationship in right-angled triangles, 
+expressed as c² = a² + b², where c represents the hypotenuse and a and b represent the other two sides.
+
+3. Calculation of Hypotenuse: 
+The missing statement hyp = sqrt(a * a + b * b); 
+directly applies the Pythagorean theorem to calculate the hypotenuse (hyp) based on the given sides (a and b).
+
+The code first inputs the values of the two sides (a and b) from the user. 
+Then, it calculates the hypotenuse (hyp) using the provided statement and displays the values of all three sides. 
+The output matches the given sample run, 
+demonstrating that the missing statement correctly applies the Pythagorean theorem to determine the hypotenuse.    
+</pre>
+    </div>
+    
+        <input type="checkbox" id="accordionx14" class="hidecontent"/>
+        <label for="accordionx14">Explanation (Bing)</label>
+        <div class="content hidecontent">
+<pre>In this code, the missing statement is hyp = sqrt(aa + bb);. 
+This calculates the hypotenuse using the Pythagorean theorem, 
+which states that in a right triangle,
+the square of the length of the hypotenuse (the side opposite the right angle) is equal to the sum of the squares of the lengths of the other two sides. 
+
+This can be written as a^2 + b^2 = c^2, where c represents the length of the hypotenuse, 
+and a and b represent the lengths of the other two sides. The sqrt function is used to take the square root of a number. 
+
+The * operator is used for multiplication, and the + operator is used for addition. The = operator is used for assignment. 
+
+The hyp = sqrt(aa + bb); statement calculates the length of the hypotenuse and assigns it to the hyp variable. 
+The cout statements then print out the lengths of the sides and the hypotenuse. 
+The return 0; statement indicates that the program has finished running successfully.
+</pre>
+        </div>
+    </div>
+    
+    <h1>Exercise 2</h1>
+    <p>Alter the program so that the sample run now looks like the following:
+<pre>Please input the value of the two sides
+9 3
+The sides of the right triangle are 9 and 3
+The hypotenuse is 9.49</pre>
+        Note: This is not a trivial change.<br>
+        You must include another directive as well as use the formatted
+        features discussed in the earlier labs of this lesson.<br>Notice that the change is made only to the value of
+        the hypotenuse and not to the values of 9 and 3.</p>
+    <pre><code class="cpp">// This program will input the value of two sides of a right triangle and then
+// determine the size of the hypotenuse.
+
+#include iostream
+#include cmath // needed for math functions like sqrt()
+#include iomanip // needed for setprecision [New!]
+using namespace std;
+
+int main()
+{
+
+    float a, b; // the smaller two sides of the triangle
+    float hyp; // the hypotenuse calculated by the program
+
+    cout << "Please input the value of the two sides" << endl;
+    cin >> a >> b;
+
+    // Fill in the assignment statement that determines the hypotenuse
+    hyp = sqrt(a * a + b * b);  // Calculate the hypotenuse using the Pythagorean theorem
+
+    cout << "The sides of the right triangle are " << a << " and " << b << endl;
+
+    cout << "The hypotenuse is " << fixed << setprecision(2) << hyp << endl;
+
+    return 0;
+
+}</code></pre>
+    <div id="ouraccordion">
+        <input type="checkbox" id="accordionx15" class="hidecontent"/>
+        <label for="accordionx15">Explanation (Gemini)</label>
+        <div class="content hidecontent">
+<pre>To achieve the desired output format, you need to incorporate the iomanip library and utilize its formatting functions. 
+
+This modified code includes the iomanip library and utilizes the fixed and setprecision() manipulators to round the hypotenuse to two decimal place. 
+The fixed manipulator ensures that the output displays a decimal point, and the setprecision(2) manipulator sets the precision to two decimal place. 
+As a result, the output will only display the hypotenuse with two decimal place, while the values of 9 and 3 remain unchanged.
+</pre>
+        </div>
+    
+        <input type="checkbox" id="accordionx16" class="hidecontent"/>
+        <label for="accordionx16">Explanation (Bing)</label>
+        <div class="content hidecontent">
+<pre>In this code, I’ve added the setprecision(2) function to the output statement for the hypotenuse. 
+This sets the precision of the output to 2 digits, which rounds the hypotenuse to two decimal places. 
+
+The setprecision function is part of the iomanip library, which is used for output formatting. 
+Note that the precision is set to 2 because one digit is used for the integer part of the number, 
+and the remaining two digits are used for the fractional part. 
+This change ensures that the hypotenuse is printed with two decimal places, 
+while the sides of the triangle are printed as integers. 
+
+The rest of the code remains the same: 
+it reads in the sides of the triangle, 
+calculates the hypotenuse using the Pythagorean theorem, 
+and prints out the sides and the hypotenuse. 
+
+The sqrt function is used to calculate the square root of a number, and the * operator is used for multiplication. 
+The << operator is used to send data to the stream, and the endl manipulator is used to insert a newline character. 
+The return 0; statement indicates that the program has finished running successfully. 
+</pre>
+        </div>
+    </div>
+    
+</div>
+    
+    <input type="checkbox" id="accordion4" class="hidecontent"/>
+    <label for="accordion4">Lab 3.4 - Working with Type Casting</label>
+    <div class="content hidecontent">
+<pre><code class="cpp">// This program will determine the batting average of a player.
+// The number of hits and at bats are set internally in the program.
+
+#include <iostream>
+using namespace std;
+const int AT_BAT = 421;
+const int HITS = 123;
+int main() {
+    int batAvg;
+    batAvg = HITS / AT_BAT  // an assignment statement
+                        cout
+                << "The batting average is " << batAvg
+                << endl;  // output the result
+    return 0;
+}</code></pre>
+
+
+    <h1>Exercise 1</h1>
+    <p>Run this program and record the results. The batting average is ____?</p>
+    <pre>The batting average is 0.292162</pre>
+
+    
+    <h1>Exercise 2</h1>
+    <p>There is a logic error in this program centering around data types.<br>
+        Does changing the data type of batavg from int to float solve the problem?<br>
+        Make that change and run the program again and record the result.<br><br>
+        The batting average is __________ ?</p>
+    <pre><code class="cpp">// This program will determine the batting average of a player.
+// The number of hits and at bats are set internally in the program.
+
+#include iostream
+using namespace std;
+
+const int AT_BAT = 421;
+const int HITS = 123;
+
+int main()
+{
+    int batAvg;
+
+    batAvg = HITS / AT_BAT; // Calculate the batting average
+    cout << "The batting average is " << batAvg << endl; // Output the result
+
+    return 0;
+}</code></pre>
+    <pre>The batting average is 0.292162</pre>
+    <div id="ouraccordion">
+        <input type="checkbox" id="accordionx21" class="hidecontent"/>
+        <label for="accordionx21">Explanation (Gemini)</label>
+        <div class="content hidecontent">
+<pre>
+This code accurately calculates the batting average as a decimal value,
+eliminating the truncation issue caused by using an integer data type for batAvg.
+</pre>
+        </div>
+    
+        <input type="checkbox" id="accordionx22" class="hidecontent"/>
+        <label for="accordionx22">Explanation (Bing)</label>
+        <div class="content hidecontent">
+    <pre>
+The program calculates the batting average as an integer division, which means it will truncate the result to an integer. 
+However, a batting average is typically a decimal calculated as hits / at_bats. 
+In this case, with 123 hits out of 421 at bats, the exact batting average should be 123 / 421 = 0.29216.
+But since the calculation HITS / AT_BAT is done using integers, the result will be 0.
+
+In this corrected code, batAvg is declared as a float, and static_cast《float》(HITS) is used to convert HITS to a float before the division. This ensures that the division is carried out in floating-point arithmetic, giving a more accurate batting average. 
+The batting average will now output as 0.29216.
+    </pre>
+        </div>
+    </div>
+    
+    <h1>Exercise 3</h1>
+    <p>Continue to work with this program until you get the correct result. The correct result should be
+        0.292162. Do not change the data type of the two named constants. Instead, use a typecast to solve the
+        problem.</p>
+    <pre><code class="cpp">
+        
+    </code></pre>
+    <div id="ouraccordion">
+        <input type="checkbox" id="accordionx23" class="hidecontent"/>
+        <label for="accordionx23">Explanation (Gemini)</label>
+        <div class="content hidecontent">
+    <pre>
+    
+    </pre>
+        </div>
+    
+        <input type="checkbox" id="accordionx24" class="hidecontent"/>
+        <label for="accordionx24">Explanation (Bing)</label>
+        <div class="content hidecontent">
+    <pre>
+    
+    </pre>
+        </div>
+    </div>
+    
+    </div>
+    
+    <input type="checkbox" id="accordion5" class="hidecontent"/>
+    <label for="accordion5">Lab 3.5 - Student Generated Code Assignments</label>
+    <div class="content hidecontent">
+     
+    <h1>Exercise 1</h1>
+    <p>Write a program that will read in 3 grades from the keyboard and will print the average (to 2
+        decimal places) of those grades to the screen. It should include good prompts and labeled output. Use the
+        examples from the earlier labs to help you. Notice in the sample run that the answer is stored in fixed
+        point notation with two decimal points of precision.
+<pre>
+Sample run:
+Please input the first grade
+97
+Please input the second grade
+98.3
+Please input the third grade
+95
+The average of the three grades is 96.77</pre></p>
+    <pre><code class="cpp">#include iostream
+#include iomanip
+
+using namespace std;
+
+int main() {
+    double grade1, grade2, grade3; // Declare variables to store grades
+    double average; // Declare variable to store the average
+
+    // Prompt the user to enter the first grade
+    cout << "Please input the first grade: " << endl;
+    cin >> grade1;
+
+    // Prompt the user to enter the second grade
+    cout << "Please input the second grade: " << endl;
+    cin >> grade2;
+
+    // Prompt the user to enter the third grade
+    cout << "Please input the third grade: " << endl;
+    cin >> grade3;
+
+    // Calculate the average of the grades
+    average = (grade1 + grade2 + grade3) / 3;
+
+    // Set the output format to fixed-point notation with two decimal places
+    cout << setprecision(2) << fixed;
+
+    // Display the average of the grades
+    cout << "The average of the three grades is " << average << endl;
+
+    return 0;
+}        
+    </code></pre>
+    <div id="ouraccordion">
+        <input type="checkbox" id="accordionx25" class="hidecontent"/>
+        <label for="accordionx25">Explanation (Gemini)</label>
+        <div class="content hidecontent">
+<pre>The provided code for calculating and displaying the average of three grades 
+follows a structured approach that ensures accurate results and clear output. 
+Here's a breakdown of the code and the rationale behind the choices:
+
+1. Data Types: 
+The code uses appropriate data types for the variables. 
+The grades are stored in double variables, which can handle decimal values, and the average is also a double to maintain precision.
+
+2. Input Prompts: 
+The code prompts the user to enter each grade using clear and concise messages, guiding them to provide the necessary input.
+
+3. Input Operations: 
+The cin object is used to read the input values from the keyboard 
+and store them in the corresponding variables (grade1, grade2, and grade3).
+
+4. Average Calculation: 
+The average is calculated by adding the three grades and dividing by 3, ensuring that the average is calculated correctly.
+
+5. Output Format: 
+The setprecision() and fixed manipulators are used to set the output format to fixed-point notation with two decimal places.
+This ensures that the average is displayed with the desired precision.
+
+6. Output Message: 
+The code displays the calculated average along with a descriptive message, clearly conveying the result to the user.
+
+The code adheres to programming best practices by using appropriate data types, 
+clear prompts, descriptive messages, and accurate calculations. 
+It also demonstrates the use of input and output formatting techniques to enhance the user experience.   
+</pre>
+        </div>
+    
+        <input type="checkbox" id="accordionx26" class="hidecontent"/>
+        <label for="accordionx26">Explanation (Bing)</label>
+        <div class="content hidecontent">
+<pre>
+In this program, grade1, grade2, and grade3 are used to store the three grades. 
+The average is calculated as the sum of the three grades divided by 3. 
+The fixed and setprecision(2) manipulators are used to format the output of the average to two decimal places. 
+The cout and cin objects are used for output and input, respectively. 
+The << and >> operators are used to send data to and receive data from streams. 
+The = operator is used for assignment, and the / operator is used for division. 
+The return 0; statement indicates that the program has finished running successfully.         
+</pre>
+        </div>
+    </div>
+    
+    <h1>Exercise 2</h1>
+    <p>The Woody furniture company sells the following three styles of chairs:
+<pre>Style Price Per Chair
+American Colonial $ 85.00
+Modern $ 57.50
+French Classical $127.75</pre>
+        Write a program that will input the amount of chairs sold for each style. It will print the total dollar sales
+        of each style as well as the total sales of all chairs in fixed point notation with two decimal places.
+<pre>Sample run:
+Please input the number of American Colonial chairs sold
+20
+Please input the number of Modern chairs sold
+15
+Please input the number of French classical chairs sold
+5
+The total sales of American Colonial chairs $1700.00
+The total sales of modern chairs $862.50
+The total sales of French Classical chairs $638.75
+The total sales of all chairs $3201.25</pre></p>
+    <pre><code class="cpp">
+#include iostream
+#include iomanip // for setprecision
+
+using namespace std;
+
+const double AMERICAN_COLONIAL_PRICE = 85.00;
+const double MODERN_PRICE = 57.50;
+const double FRENCH_CLASSICAL_PRICE = 127.75;
+
+int main() {
+    int americanColonialSold, modernSold, frenchClassicalSold;
+    double totalAmericanColonial, totalModern, totalFrenchClassical, totalSales;
+
+    cout << "Please input the number of American Colonial chairs sold: " << endl;
+    cin >> americanColonialSold;
+
+    cout << "Please input the number of Modern chairs sold: " << endl;
+    cin >> modernSold;
+
+    cout << "Please input the number of French classical chairs sold: " << endl;
+    cin >> frenchClassicalSold;
+
+    totalAmericanColonial = americanColonialSold * AMERICAN_COLONIAL_PRICE;
+    totalModern = modernSold * MODERN_PRICE;
+    totalFrenchClassical = frenchClassicalSold * FRENCH_CLASSICAL_PRICE;
+
+    totalSales = totalAmericanColonial + totalModern + totalFrenchClassical;
+
+    cout << fixed << setprecision(2); // set precision to 2 decimal places
+    cout << "The total sales of American Colonial chairs $" << totalAmericanColonial << endl;
+    cout << "The total sales of modern chairs $" << totalModern << endl;
+    cout << "The total sales of French Classical chairs $" << totalFrenchClassical << endl;
+    cout << "The total sales of all chairs $" << totalSales << endl;
+
+    return 0;
+}        
+    </code></pre>
+    <div id="ouraccordion">
+        <input type="checkbox" id="accordionx27" class="hidecontent"/>
+        <label for="accordionx27">Explanation (Gemini)</label>
+        <div class="content hidecontent">
+    <pre>
+<code class="cpp">#include iostream
+#include iomanip
+
+using namespace std;
+
+int main() {
+    // Declare variables for chair styles and their prices
+    double americanColonialPrice = 85.00;
+    double modernPrice = 57.50;
+    double frenchClassicalPrice = 127.75;
+
+    // Declare variables for number of chairs sold
+    int americanColonialSold, modernSold, frenchClassicalSold;
+
+    // Prompt for the number of American Colonial chairs sold
+    cout << "Please input the number of American Colonial chairs sold: " << endl;
+    cin >> americanColonialSold;
+
+    // Prompt for the number of Modern chairs sold
+    cout << "Please input the number of Modern chairs sold: " << endl;
+    cin >> modernSold;
+
+    // Prompt for the number of French Classical chairs sold
+    cout << "Please input the number of French classical chairs sold: " << endl;
+    cin >> frenchClassicalSold;
+
+    // Calculate the total sales for each chair style
+    double americanColonialSales = americanColonialPrice * americanColonialSold;
+    double modernSales = modernPrice * modernSold;
+    double frenchClassicalSales = frenchClassicalPrice * frenchClassicalSold;
+
+    // Calculate the total sales of all chairs
+    double totalSales = americanColonialSales + modernSales + frenchClassicalSales;
+
+    // Set the output format to fixed-point notation with two decimal places
+    cout << fixed << setprecision(2);
+
+    // Display the total sales for each chair style
+    cout << "The total sales of American Colonial chairs: $" << americanColonialSales << endl;
+    cout << "The total sales of Modern chairs: $" << modernSales << endl;
+    cout << "The total sales of French Classical chairs: $" << frenchClassicalSales << endl;
+
+    // Display the total sales of all chairs
+    cout << "The total sales of all chairs: $" << totalSales << endl;
+
+    return 0;
+}</code>// Explanation, general code
+
+1. Data Types: 
+The code uses appropriate data types for the variables. 
+Prices are stored in double variables to handle decimal values, and the number of chairs sold are stored in int variables.
+
+2. Variable Declaration: 
+The code clearly declares variables for the chair styles, their prices, and the number of chairs sold for each style. 
+This makes it easy to understand the purpose of each variable and follow the calculations.
+
+3. Input Prompts: The code uses clear and concise prompts to guide the user in entering the number of chairs sold for each style. 
+This ensures that the user provides the necessary input for the calculations.
+
+4. Input Operations: 
+The cin object is used to read the input values from the keyboard and store them in the corresponding variables. 
+This allows the program to gather the necessary data for the calculations.
+
+5. Sales Calculations: 
+The code calculates the total sales for each chair style by multiplying the price per chair by the number of chairs sold. 
+This formula accurately determines the sales for each style.
+
+6. Total Sales Calculation: 
+The code calculates the total sales of all chairs by adding the total sales for each style. 
+This ensures that all sales are accounted for in the final result.
+
+7. Output Format: 
+The fixed and setprecision() manipulators are used to set the output format to fixed-point notation with two decimal places. 
+This ensures that the sales figures are displayed with the desired precision.
+
+8. Output Messages: 
+The code displays the total sales for each chair style and the total sales of all chairs, along with descriptive messages. 
+This clearly conveys the results to the user.
+
+
+
+
+
+// Explanation, what if I do like Bing?:
+
+Both versions of the code effectively calculate and display the total sales for each chair style and the total sales of all chairs. 
+The primary difference lies in the approach to handling the chair prices.
+
+In the first version, the chair prices are declared as double variables and assigned values directly within the code. 
+This approach is straightforward and works well for simple cases.
+
+The second version introduces named constants using the const keyword to define the chair prices. 
+This approach offers several advantages:
+
+1. Encapsulation: 
+Named constants encapsulate the chair prices into meaningful identifiers, making the code more readable and understandable.
+
+2. Maintainability: 
+If the chair prices need to be changed, it can be done by modifying the named constants, 
+rather than searching for and modifying their values throughout the code.
+
+3. Self-Documentation: 
+Named constants serve as self-documenting code, clearly indicating the purpose and value of the chair prices.
+
+4. Type Safety: 
+The const keyword ensures that the chair prices are treated as read-only values, 
+preventing accidental modifications during program execution.
+
+Overall, using named constants for chair prices is a preferred practice as it promotes 
+code readability, maintainability, self-documentation, and type safety.
+
+
+
+
+
+// Explanation, compare pros & cons:
+
+Both versions of the code are valid and functional, 
+but the version using named constants offers several advantages over the one that directly assigns values to variables.
+
+Advantages of using named constants:
+
+1. Readability: 
+Named constants make the code more readable and understandable by encapsulating the chair prices into meaningful identifiers.
+
+2. Maintainability: 
+If the chair prices need to be changed, it can be done by modifying the named constants, 
+rather than searching for and modifying their values throughout the code.
+
+3. Self-documentation: 
+Named constants serve as self-documenting code, clearly indicating the purpose and value of the chair prices.
+
+4. Type safety: 
+The const keyword ensures that the chair prices are treated as read-only values, 
+preventing accidental modifications during program execution.
+
+Disadvantages of directly assigning values to variables:
+
+1. Less readable: 
+Directly assigning values to variables makes the code less readable, as the purpose and value of the prices are not as clear.
+
+2. Less maintainable: 
+Changing the chair prices directly in the code can be more error-prone and time-consuming, 
+as the values need to be located and modified throughout the code.
+
+3. Less self-documenting: 
+Directly assigning values to variables provides less self-documentation, 
+as the purpose and value of the prices are not as explicitly stated.
+
+4. Less type safe: 
+Assigning values directly to variables can lead to accidental modifications during program execution, if not handled carefully.
+
+Therefore, the version using named constants is generally considered a better practice as it promotes code readability, 
+maintainability, self-documentation, and type safety. 
+While the version directly assigning values to variables may work for simple cases, 
+it can become less manageable and error-prone as the code grows in complexity.  
+    </pre>
+        </div>
+    
+        <input type="checkbox" id="accordionx28" class="hidecontent"/>
+        <label for="accordionx28">Explanation (Bing)</label>
+        <div class="content hidecontent">
+    <pre>// Explanation, general code:
+
+1. Variable Declaration: 
+The program first declares variables for the number of chairs sold for each style 
+(americanColonialSold, modernSold, frenchClassicalSold), 
+the total sales for each style (totalAmericanColonial, totalModern, totalFrenchClassical), 
+and the total sales of all chairs (totalSales). 
+These are all declared as double to allow for decimal values.
+
+2. User Input: 
+The program then prompts the user to input the number of chairs sold for each style. 
+The user’s input is stored in the corresponding variables.
+
+3. Calculations: 
+The program calculates the total sales for each style by multiplying the number of chairs sold by the price per chair. 
+It then calculates the total sales of all chairs by adding up the total sales for each style.
+
+4. Output Formatting: 
+Before printing the results, 
+the program sets the precision of the output to 2 decimal places using cout << fixed << setprecision(2);. 
+This ensures that the sales amounts are printed with exactly 2 decimal places.
+
+5. Printing the Results: 
+Finally, the program prints the total sales for each style and the total sales of all chairs. 
+The cout statement is used to print text to the standard output (usually the screen), 
+and the << operator is used to send data to the stream.
+
+
+
+
+
+// Explanation, what if I do like Gemini?:
+
+Yes, your code is correct and it follows the same logic as the previous one. 
+Here’s a breakdown of your code:
+
+1. Variable Declaration: 
+You declare variables for the prices of each chair style (americanColonialPrice, modernPrice, frenchClassicalPrice) 
+and the number of chairs sold for each style (americanColonialSold, modernSold, frenchClassicalSold). 
+These are all declared as double to allow for decimal values.
+
+2. User Input: 
+You prompt the user to input the number of chairs sold for each style and store the user’s input in the corresponding variables.
+
+3. Calculations: 
+You calculate the total sales for each style by multiplying the number of chairs sold by the price per chair. 
+You then calculate the total sales of all chairs by adding up the total sales for each style.
+
+4. Output Formatting: 
+Before printing the results, you set the precision of the output to 2 decimal places using cout << fixed << setprecision(2);. 
+This ensures that the sales amounts are printed with exactly 2 decimal places.
+
+5. Printing the Results: 
+Finally, you print the total sales for each style and the total sales of all chairs.
+
+The return 0; statement at the end indicates that the program has finished running successfully. 
+The #include 《iostream》 and #include 《iomanip》 directives at the beginning are used 
+to include the necessary libraries for input/output and output formatting, respectively. 
+The using namespace std; directive is used to avoid having to prefix standard library names with std::. 
+The int main() function is the entry point of the program.
+
+So, your code is absolutely fine and it will work as expected. Good job! 👍
+
+
+
+
+
+// Explanation, compare pros & cons:
+
+Both versions of the program are correct and will produce the same output. 
+The main difference is in how the chair prices are handled.
+
+In the version I provided, the prices are defined as const double at the beginning of the program. 
+This is a good practice when you have known constants in your program, as it makes the code easier to maintain. 
+If the price of a chair style changes, you only need to update it in one place.
+
+In your version, the prices are defined as double variables within the main function. 
+This also works, but if you were to use these prices elsewhere in a larger program, 
+you would need to make sure to update them everywhere they’re used if they change.
+
+So, there’s no downside to your version for this specific program. 
+However, for larger programs or when working with a team, 
+using const for known constants can make the code easier to understand and maintain. 
+But overall, great job! Your understanding of C++ programming is impressive. 👍</pre>
+        </div>
+    </div>
+    
+    <h1>Exercise 3</h1>
+    <p>Write a program that will input total sales (sales plus tax) that a business generates for a
+        particular month. The program will also input the state and local sales tax percentage. It will output the
+        total sales plus the state tax and local tax to be paid. The output should be in fixed notation with 2
+        decimal places.
+<pre>Sample run:
+Please input the total sales for the month
+1080
+Please input the state tax percentage in decimal form (.02 for 2%)
+0.06
+Please input the local tax percentage in decimal form (.02 for 2%)
+0.02
+The Total sales for the month is $1080.00
+Total sales without tax is $1000.00
+The State tax for the month is $60.00
+The Local tax for the month is $20.00</pre></p>
+    <pre><code class="cpp">#include iostream
+#include iomanip
+
+using namespace std;
+
+int main() {
+  // Declare variables for total sales, state tax percentage, and local tax percentage
+  double totalSales, stateTaxPercentage, localTaxPercentage;
+
+  // Prompt for the total sales for the month
+  cout << "Please input the total sales for the month: " << endl;
+  cin >> totalSales;
+
+  // Prompt for the state tax percentage in decimal form
+  cout << "Please input the state tax percentage in decimal form (.02 for 2%): " << endl;
+  cin >> stateTaxPercentage;
+
+  // Prompt for the local tax percentage in decimal form
+  cout << "Please input the local tax percentage in decimal form (.02 for 2%): " << endl;
+  cin >> localTaxPercentage;
+
+  // Calculate total sales without tax
+  double totalSalesWithoutTax = totalSales / (1 + stateTaxPercentage + localTaxPercentage);
+
+  // Calculate state tax
+  double stateTax = totalSalesWithoutTax * stateTaxPercentage;
+
+  // Calculate local tax
+  double localTax = totalSalesWithoutTax * localTaxPercentage;
+
+  // Set the output format to fixed-point notation with two decimal places
+  cout << fixed << setprecision(2);
+
+  // Display the total sales for the month
+  cout << "The Total sales for the month is $" << totalSales << endl;
+
+  // Display total sales without tax
+  cout << "Total sales without tax is $" << totalSalesWithoutTax << endl;
+
+  // Display the state tax for the month
+  cout << "The State tax for the month is $" << stateTax << endl;
+
+  // Display the local tax for the month
+  cout << "The Local tax for the month is $" << localTax << endl;
+
+  return 0;
+}        
+    </code></pre>
+    <div id="ouraccordion">
+        <input type="checkbox" id="accordionx29" class="hidecontent"/>
+        <label for="accordionx29">Explanation (Gemini)</label>
+        <div class="content hidecontent">
+    <pre>
+// Explanation, general code:
+
+1. Data Types: 
+The code uses appropriate data types for the variables. 
+Monetary values (total sales, state tax, local tax) are stored in double variables to handle decimal values, 
+and tax percentages are stored in double variables since they represent percentages.
+
+2. Input Prompts: 
+The code prompts the user to enter the necessary input using clear and concise messages. 
+It also specifies the format for entering tax percentages (decimal form).
+
+3. Input Operations: 
+The cin object is used to read the input values from the keyboard and store them in the corresponding variables. 
+This ensures that the program gathers the required data for the calculations.
+
+4. Sales Without Tax Calculation: 
+The total sales without tax is calculated by dividing the total sales by the total tax factor 
+(1 + state tax percentage + local tax percentage). 
+This formula accurately determines the sales amount excluding taxes.
+
+5. Tax Calculations: 
+State tax and local tax are calculated by multiplying the total sales without tax by the respective tax percentages. 
+This ensures that the tax amounts are calculated correctly based on the given percentages.
+
+6. Output Format: 
+The fixed and setprecision() manipulators are used to set the output format to fixed-point notation with two decimal places. 
+This ensures that the financial figures are displayed with the desired precision.
+
+7. Output Messages: 
+The code displays clear and descriptive messages along with the calculated values, 
+conveying the results to the user in a structured manner.
+
+
+
+
+// Explanation, individual vs combined:
+
+
+Yes, both versions of the code are functionally equivalent and will calculate and 
+display the total sales, total sales without tax, state tax, and local tax for a given month. 
+The primary difference lies in the approach to handling tax calculations.
+
+Version 1:
+
+In the first version, the state tax and local tax percentages are stored in separate variables and used directly in the calculations for state tax and local tax. 
+This approach is straightforward and works well for simple cases.
+
+Version 2:
+
+The second version introduces a variable totalTaxPercent to store the sum of state and local tax percentages. 
+This approach offers several advantages:
+
+1. Efficiency: 
+Pre-calculating the total tax percentage avoids redundant calculations when determining state and local taxes.
+
+2. Readability: 
+The totalTaxPercent variable clearly represents the combined tax rate, making the code more readable.
+
+3. Maintainability: 
+If the tax structure changes, modifying the formula for totalTaxPercent will automatically update the state and local tax calculations.
+
+Overall, using totalTaxPercent is a preferred practice as it promotes code efficiency, readability, and maintainability. 
+While the version that directly uses individual tax percentages is functional, the totalTaxPercent approach enhances the code's structure and maintainability.
+
+</pre>
+        </div>
+    
+        <input type="checkbox" id="accordionx30" class="hidecontent"/>
+        <label for="accordionx30">Explanation (Bing)</label>
+        <div class="content hidecontent">
+    <pre>
+The program starts by declaring three variables to hold the total sales, state tax percentage, and local tax percentage. 
+These values are then read from the user using the cin command.
+
+Next, the program calculates the total tax percentage by adding the state and local tax percentages together. 
+It then calculates the sales without tax by dividing the total sales by one plus the total tax percentage. 
+This is based on the formula: totalSalesWithoutTax = totalSales / (1 + totalTaxPercent);
+
+The state and local taxes are then calculated by multiplying the sales without tax by the state and local tax percentages respectively.
+
+Finally, the program outputs the results. The cout command is used to print the results to the console, 
+and the fixed and setprecision(2) commands are used to format the output to two decimal places.    
+    </pre>
+        </div>
+    </div>
+    
+    </div>
+</div>
+
+<!-- these links to previous & next modules -->
+<div class="container2">
+    <button class="button-1"><a href="Lab 2.html" target="_blank">Lab 2</a></button>
+    <button class="button-1"><a href="Lab 4.html" target="_blank">Lab 4</a></button>
+</div>
+
+<script type="text/javascript" src="../js/module.js"></script>
+</body>
+</html>

@@ -1,0 +1,1728 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<link rel="stylesheet" href="../css/base.css">
+<link rel="stylesheet" href="../css/module.css">
+<link href="https://fonts.googleapis.com/css?family=Alata | Ibarra+Real+Nova&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+<!-- and it's easy to individually load additional languages -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/go.min.js"></script>
+
+<script>hljs.highlightAll();</script>
+<title>TCP 1101 - 4</title>
+</head>
+
+<body>
+<!-- Dynamic header -->
+<div id="header-container"></div>
+<div id="header-config"
+    data-course="Programming Fundamentals - Lab 4"
+    data-topic-link="../index.html"
+    data-prev="x"
+    data-next="x">
+</div>
+
+
+<br><br><br>
+<div id="myaccordion">
+
+
+<input type="checkbox" id="accordion1" class="hidecontent"/>
+<label for="accordion1">Lab 4.1 - Relational Operators and the if Statement</label>
+<div class="content hidecontent">
+<pre><code class="cpp">// This program tests whether or not an initialized value
+// is equal to a value input by the user
+
+#include 《iostream》
+using namespace std;
+int main() {
+    int num1,      // num1 is not initialized
+        num2 = 5;  // num2 has been initialized to 5
+    cout << "Please enter an integer" << endl;
+    cin >> num1;
+    cout << "num1 = " << num1 << " and num2 = " << num2 << endl;
+    if (num1 = num2) cout << "Hey, thats a coincidence!" << endl;
+     if (num1 != num2) cout << "The values are not the same" << endl;
+    return 0;
+}   
+</code></pre> 
+<h1>Exercise 1</h1>
+<p>Run the program several times using a different input each time.<br>
+    Does the program do what you expect? Is so, explain what it is doing.<br>
+    If not, locate the error and fix it.</p>
+<pre><code class="cpp">// This program tests whether or not an initialized value
+// is equal to a value input by the user
+
+#include 《iostream》
+using namespace std;
+
+int main()
+{
+   int num1,	// num1 is not initialized
+   num2 = 5;	// num2 has been initialized to 5
+
+   cout << "Please enter an integer" << endl;
+   cin >> num1;
+
+   cout << "num1 = " << num1 << " and num2 = " << num2 << endl;
+
+   if (num1 == num2) // Use '==' to check equality
+      cout << "Hey, that's a coincidence!" << endl;
+
+   if (num1 != num2)
+      cout << "The values are not the same" << endl;
+
+   return 0;
+}</code></pre>
+<div id="ouraccordion">
+    <input type="checkbox" id="accordionx1" class="hidecontent"/>
+    <label for="accordionx1">Explanation (Gemini)</label>
+    <div class="content hidecontent">
+<pre>
+The assignment operator = is used to assign values, not compare them. 
+You should use the comparison operator == to check if they are equal.
+</pre>
+    </div>
+
+    <input type="checkbox" id="accordionx2" class="hidecontent"/>
+    <label for="accordionx2">Explanation (Bing)</label>
+    <div class="content hidecontent">
+<pre>
+In the if statement, you’re using the assignment operator = instead of the equality operator ==. 
+The assignment operator will assign the value of num2 to num1, and the condition will always be true because num2 is non-zero.
+</pre>
+    </div>
+</div>
+
+<h1>Exercise 2</h1>
+<p>Modify the program so that the user inputs both values to be tested for equality.<br>
+    Make sure you have a prompt for each input.<br>
+    Test the program with pairs of values that are the same and that are different.</p>
+<pre><code class="cpp">// This program tests whether or not an initialized value
+// is equal to a value input by the user
+
+#include 《iostream》
+using namespace std;
+
+int main()
+{
+   int num1, num2;	// num1 and num2 are not initialized
+
+   cout << "Please enter the first integer" << endl;
+   cin >> num1;
+
+   cout << "Please enter the second integer" << endl;
+   cin >> num2;
+
+   cout << "num1 = " << num1 << " and num2 = " << num2 << endl;
+
+   if (num1 == num2)
+      cout << "Hey, that's a coincidence!" << endl;
+
+   if (num1 != num2)
+      cout << "The values are not the same" << endl;
+
+   return 0;
+}  
+</code></pre>
+
+<h1>Exercise 3</h1>
+<p>Modify the program so that when the numbers are the same it prints the following lines:<br>
+    The values are the same. Hey that’s a coincidence!</p>
+<pre><code class="cpp">// This program tests whether or not an initialized value
+// is equal to a value input by the user
+
+#include 《iostream》
+using namespace std;
+
+int main()
+{
+   int num1, num2;	// num1 and num2 are not initialized
+
+   cout << "Please enter the first integer" << endl;
+   cin >> num1;
+
+   cout << "Please enter the second integer" << endl;
+   cin >> num2;
+
+   cout << "num1 = " << num1 << " and num2 = " << num2 << endl;
+
+   if (num1 == num2)
+    cout << "The values are the same." << endl;
+    cout << "Hey, that's a coincidence!" << endl; // Added this line to print both messages
+
+   if (num1 != num2)
+      cout << "The values are not the same" << endl;
+
+   return 0;
+} 
+</code></pre>
+
+<h1>Exercise 4</h1>
+<p>Modify the revised Exercise 3 program by replacing the two if statements with a single if/else statement.<br>
+    Run the program again to test the results</p>
+<pre><code class="cpp">// This program tests whether or not an initialized value
+// is equal to a value input by the user
+
+#include 《iostream》
+using namespace std;
+
+int main()
+{
+   int num1, num2;	// num1 and num2 are not initialized
+
+   cout << "Please enter the first integer" << endl;
+   cin >> num1;
+
+   cout << "Please enter the second integer" << endl;
+   cin >> num2;
+
+   cout << "num1 = " << num1 << " and num2 = " << num2 << endl;
+
+   if (num1 == num2)
+      cout << "The values are the same. Hey, that's a coincidence!" << endl;
+   else
+      cout << "The values are not the same" << endl;
+
+   return 0;
+}
+</code></pre>
+<div id="ouraccordion">
+    <input type="checkbox" id="accordionx8" class="hidecontent"/>
+    <label for="accordionx8">Explanation (Bing)</label>
+    <div class="content hidecontent">
+<pre>
+In C++, if there’s only one statement following an if or else, you don’t need to use {} (braces). 
+The braces are used when you have multiple statements in the if or else block. Here’s an example:
+<code class="cpp">if (num1 == num2)
+{
+    cout << "The values are the same.";
+    cout << "Hey, that's a coincidence!" << endl;
+}
+else
+{
+    cout << "The values are not the same" << endl;
+}
+</code>
+In this case, because there are two cout statements when num1 is equal to num2, we need to use braces to group them together. 
+If there’s only one cout statement, the braces are optional. 
+However, using braces can make your code more readable and less error-prone, especially when modifying it in the future. 
+
+</pre>
+    </div>
+</div>
+
+</div>
+
+<input type="checkbox" id="accordion2" class="hidecontent"/>
+<label for="accordion2">Lab 4.2 - if/else if Statements</label>
+<div class="content hidecontent">
+<pre><code class="cpp">// This program prints "You Pass" if a student's average is
+// 60 or higher and prints "You Fail" otherwise
+
+#include 《iostream》
+using namespace std;
+int main() {
+    float average;  // holds the grade average
+    cout << "Input your average:" << endl;
+    cin >> average;
+    if (average > 60) cout << "You Pass" << endl;
+    if (average < 60) cout << "You Fail" << endl;
+    return 0;
+}  
+</code></pre>
+<h1>Exercise 1</h1>
+<p>Run the program three times using 80, 55 and 60 for the average.<br>
+    What happens when you input 60 as the average?<br>
+    Modify the first if statement so that the program will also print “You Pass” if the average equals 60.</p>
+<pre><code class="cpp">// This program prints "You Pass" if a student's average is
+// 60 or higher and prints "You Fail" otherwise
+
+#include 《iostream》
+using namespace std;
+
+int main()
+{
+   float average;   // holds the grade average
+
+   cout << "Input your average:" << endl;
+   cin >> average;
+
+   if (average >= 60) // Use '>=' to include 60
+      cout << "You Pass" << endl;
+
+   if (average < 60)
+      cout << "You Fail" << endl;
+
+   return 0;
+}
+</code></pre>
+<div id="ouraccordion">
+    <input type="checkbox" id="accordionx10" class="hidecontent"/>
+    <label for="accordionx10">Explanation (Bing)</label>
+    <div class="content hidecontent">
+<pre>
+When you input 60 as the average, the program doesn’t print anything because the conditions for both if statements are not met. 
+The first if statement checks if the average is greater than 60, and the second if statement checks if the average is less than 60. 
+When the average is exactly 60, neither condition is true, so nothing is printed.
+
+To fix this, you can modify the first if statement to check if the average is greater than or equal to 60.
+
+Now, when you input 60 as the average, the program will print “You Pass”. 
+</pre>
+    </div>
+</div>
+
+<h1>Exercise 2</h1>
+<p>Modify the program so that it uses an if/else statement rather than two if statements.</p>
+<pre><code class="cpp">
+// This program prints "You Pass" if a student's average is
+// 60 or higher and prints "You Fail" otherwise 
+
+#include 《iostream》
+using namespace std;
+
+int main()
+{
+   float average;   // holds the grade average
+
+   cout << "Input your average:" << endl;
+   cin >> average;
+
+   if (average >= 60)  // Use '>=' to include 60
+      cout << "You Pass" << endl;
+   else
+      cout << "You Fail" << endl;
+
+   return 0;
+}    
+</code></pre>
+<div id="ouraccordion">
+    <input type="checkbox" id="accordionx12" class="hidecontent"/>
+    <label for="accordionx12">Explanation (Bing)</label>
+    <div class="content hidecontent">
+<pre>
+In this version of the program, it uses a single if/else statement to check if the average is greater than or equal to 60. 
+If the average is greater than or equal to 60, it will print “You Pass”. 
+Otherwise, it will print “You Fail”.
+</pre>
+    </div>
+</div>
+
+<h1>Exercise 3</h1>
+<p>Modify the program from Exercise 2 to allow the following categories:<br>
+    Invalid data (data above 100), ‘A’ category (90–100), ‘B’ category (80–89), “You Pass” category (60–79), “You Fail” category (0–59).
+    
+    What will happen to your program if you enter a negative value such as -12?</p>
+<pre><code class="cpp">// This program prints "You Pass" if a student's average is
+// 60 or higher and prints "You Fail" otherwise
+
+#include 《iostream》
+using namespace std;
+
+int main()
+{
+   float average;   // holds the grade average
+
+   cout << "Input your average:" << endl;
+   cin >> average;
+
+   if (average > 100)
+      cout << "Invalid data" << endl;
+   else if (average >= 90)
+      cout << "'A' category" << endl;
+   else if (average >= 80)
+      cout << "'B' category" << endl;
+   else if (average >= 60)
+      cout << "\"You Pass\" category" << endl;
+   else if (average >= 0)
+      cout << "\"You Fail\" category" << endl;
+   else
+      cout << "Invalid data" << endl;
+
+   return 0;
+}    
+</code></pre>
+<div id="ouraccordion">
+    <input type="checkbox" id="accordionx13" class="hidecontent"/>
+    <label for="accordionx13">Explanation (Gemini)</label>
+    <div class="content hidecontent">
+<pre>
+This program now uses a series of nested if/else statements to check the average against each category range:
+
+Invalid data check: 
+First, it checks if the average is above 100. If yes, it displays an error message.
+
+Category checks: 
+Then, it uses descending if statements for each category:
+    A: If average is 90 or above, it displays the "A category" message.
+    B: If average is 80 or above but less than 90, it displays the "B category" message.
+    Pass: If average is 60 or above but less than 80, it displays the "Pass" message.
+    Fail: If average is 0 or above but less than 60, it displays the "Fail" message.
+
+Negative value handling: 
+Finally, it uses a separate else if statement to specifically catch negative values. 
+If the average is less than 0, it displays the same error message as for exceeding 100.
+
+This approach ensures all categories are covered and negative values are handled appropriately.
+
+Entering a negative value like -12 will trigger the last else if statement, displaying the "Invalid data!" message. 
+The program interprets negative values as outside the valid range (0-100) and prompts the user to try again with a valid average.
+</pre>
+    </div>
+
+    <input type="checkbox" id="accordionx14" class="hidecontent"/>
+    <label for="accordionx14">Explanation (Bing)</label>
+    <div class="content hidecontent">
+<pre>
+In this version of the program, it checks the average and categorizes it into different categories as per your request. 
+If you enter a negative value such as -12, the program will print “Invalid data” because the average should be between 0 and 100.
+</pre>
+    </div>
+</div>
+
+</div>
+
+<input type="checkbox" id="accordion3" class="hidecontent"/>
+<label for="accordion3">Lab 4.3 - Logical Operators</label>
+<div class="content hidecontent">
+<pre><code class="cpp">// This program illustrates the use of logical operators
+
+#include 《iostream》
+using namespace std;
+int main() {
+    char year;
+    float gpa;
+    cout << "What year student are you ?" << endl;
+    cout << "Enter 1 (freshman), 2 (sophomore), 3 (junior), or 4 (senior)"
+         << endl
+         << endl;
+    cin >> year;
+    cout << "Now enter your GPA" << endl;
+    cin >> gpa;
+    2 TCP1101 Programming Fundamentals if (gpa >= 2.0 && year == '4') cout
+        << "It is time to graduate soon" << endl;
+    else if (year != '4' || gpa < 2.0) cout << "You need more schooling" << endl;
+    return 0;
+}  
+</code></pre>
+<h1>Exercise 1</h1>
+<p>How could you rewrite gpa >= 2.0 in the first if statement using the NOT operator?</p>
+<pre><code class="cpp">// This program illustrates the use of logical operators
+
+#include 《iostream》
+using namespace std;
+
+int main()
+{
+   char year;
+   float gpa;
+
+   cout << "What year student are you ?" << endl;
+   cout << "Enter 1 (freshman), 2 (sophomore), 3 (junior), or 4 (senior)"
+   << endl << endl;
+   cin >> year;
+
+   cout << "Now enter your GPA" << endl;
+   cin >> gpa;
+
+   if (! (gpa < 2.0) && year == '4')  // Use '!' to check if gpa is not less than 2.0
+      cout << "It is time to graduate soon" << endl;
+
+   else if (year != '4' || gpa < 2.0)
+      cout << "You need more schooling" << endl;
+
+   return 0;
+}
+</code></pre>
+<div id="ouraccordion">
+    <input type="checkbox" id="accordionx18" class="hidecontent"/>
+    <label for="accordionx18">Explanation (Bing)</label>
+    <div class="content hidecontent">
+<pre>
+You can rewrite gpa >= 2.0 using the NOT operator (!) by checking if gpa is not less than 2.0.
+
+In this version of the program, the if statement checks if gpa is not less than 2.0 and if year is '4'. 
+If both conditions are true, it will print “It is time to graduate soon”. 
+Otherwise, it will print “You need more schooling”.
+
+</pre>
+    </div>
+</div>
+
+<h1>Exercise 2</h1>
+<p>Could you replace <pre>year !='4'</pre> in the else if statement with <pre>year < 4</pre> or <pre>year <= 3</pre>? Why or why not?</p>
+<pre><code class="cpp">// This program illustrates the use of logical operators
+
+#include 《iostream》
+using namespace std;
+
+int main()
+{
+   char year;
+   float gpa;
+
+   cout << "What year student are you ?" << endl;
+   cout << "Enter 1 (freshman), 2 (sophomore), 3 (junior), or 4 (senior)"
+   << endl << endl;
+   cin >> year;
+
+   cout << "Now enter your GPA" << endl;
+   cin >> gpa;
+
+   if (! (gpa < 2.0) && year == '4')  // Use '!' to check if gpa is not less than 2.0
+      cout << "It is time to graduate soon" << endl;
+   else if (year < 4 || year <= 3 || gpa <2.0)
+      cout << "You need more schooling" << endl;
+
+   return 0;
+}    
+</code></pre>
+<div id="ouraccordion">
+    <input type="checkbox" id="accordionx19" class="hidecontent"/>
+    <label for="accordionx19">Explanation (Gemini)</label>
+    <div class="content hidecontent">
+<pre>
+Yes, you can definitely replace year != '4' in the else if statement with year < 4 || year <= 3. In fact, both options are functionally equivalent and achieve the same outcome. 
+However, there are some subtle differences to consider:
+
+Replacing with year < 4 || year <= 3:
+   Advantages:
+      More explicit: 
+      This option explicitly states that the student is not a senior (year less than 4) or they haven't reached their senior year yet (year less than or equal to 3). 
+      This can be clearer for readers and potentially easier to debug.
+      Conciseness: 
+      It combines two conditions into a single expression using the OR operator (||), making the code slightly more concise.
+
+   Disadvantages:
+      Redundancy: 
+      Checking both year < 4 and year <= 3 is redundant because year < 4 already implies year <= 3. 
+      This might be seen as unnecessary logic and could be potentially optimized for efficiency.
+
+Keeping `year != '4':
+   Advantages:
+      Efficiency: 
+      Keeping the single comparison (year != '4') avoids redundant checks, potentially improving performance for complex programs.
+      Familiarity: 
+      If the code is intended for beginners, sticking to the original comparison might be easier to understand and follow.
+
+   Disadvantages:
+      Less explicit: 
+      It might not be immediately clear that this condition excludes both seniors and students who haven't reached their senior year yet. 
+      This could require additional comments or context for clarity.
+
+Ultimately, the choice depends on your priorities. 
+If explicitness and ease of understanding are paramount, consider the year < 4 || year <= 3 option. 
+If efficiency and familiar comparison are preferred, stick with year != '4'.
+
+Both options are valid and achieve the same functionality. 
+Feel free to experiment and choose the one that best suits your code's purpose and target audience.
+
+</pre>
+    </div>
+
+    <input type="checkbox" id="accordionx20" class="hidecontent"/>
+    <label for="accordionx20">Explanation (Bing)</label>
+    <div class="content hidecontent">
+<pre>
+No, you cannot replace year != '4' with year < 4 or year <= 3 in the else if statement. 
+The reason is that the variable year is declared as a char (character) type, not an int (integer) type.
+
+In the program, year is expected to be a character like '1', '2', '3', or '4'. 
+When you compare a char with an int, the char is implicitly converted to its ASCII value before the comparison. 
+The ASCII values of '1', '2', '3', and '4' are 49, 50, 51, and 52, respectively. 
+So, year < 4 or year <= 3 would not work as expected because it would be comparing these ASCII values with 4 or 3, not the actual numbers 1, 2, 3, or 4.
+
+Therefore, you should keep the comparison as year != '4' to correctly check if the year is not equal to 4. 
+
+</pre>
+    </div>
+</div>
+
+<h1>Exercise 3</h1>
+<p>If you replace
+<pre>if ( gpa >= 2.0 && year == '4')</pre>
+with
+<pre>if ( gpa >= 2.0 || year == '4')</pre>
+and replace
+<pre>else if ( year != '4'|| gpa < 2.0)</pre>
+with
+<pre>else if ( year != '4' && gpa < 2.0)</pre>
+which students will graduate and which will not graduate according to this new program?
+Does this handle all cases (i.e., all combinations of year and gpa)?</p>
+<pre><code class="cpp">// This program illustrates the use of logical operators
+
+#include 《iostream》
+using namespace std;
+
+int main()
+{
+   char year;
+   float gpa;
+
+   cout << "What year student are you ?" << endl;
+   cout << "Enter 1 (freshman), 2 (sophomore), 3 (junior), or 4 (senior)"
+   << endl << endl;
+   cin >> year;
+
+   cout << "Now enter your GPA" << endl;
+   cin >> gpa;
+
+   if ( gpa >= 2.0 || year == '4')  // Exercise 3
+      cout << "It is time to graduate soon" << endl;
+   else if ( year != '4' && gpa < 2.0) // Exercise 3
+      cout << "You need more schooling" << endl;
+
+   return 0;
+}
+    
+</code></pre>
+<div id="ouraccordion">
+    <input type="checkbox" id="accordionx21" class="hidecontent"/>
+    <label for="accordionx21">Explanation (Gemini)</label>
+    <div class="content hidecontent">
+<pre>
+Okay, let's analyze the changes you propose and their impact on who graduates:
+
+1. First if statement
+    Original: 
+    if ( gpa >= 2.0 && year == '4'): 
+    This requires both a GPA of 2.0 or higher AND being a senior (year '4').
+
+    Proposed: 
+    if ( gpa >= 2.0 || year == '4'): 
+    This requires EITHER a GPA of 2.0 or higher OR being a senior.
+
+This change widens the graduation criteria. 
+Previously, only seniors with a 2.0+ GPA qualified. 
+Now, anyone with a 2.0+ GPA graduates regardless of year, and seniors automatically graduate even with a lower GPA.
+
+2. Else if statement:
+    Original: 
+    else if (year != '4' || gpa < 2.0): 
+    This excludes students who are NOT seniors (year != '4') OR have a GPA below 2.0.
+
+    Proposed: 
+    else if (year != '4' && gpa < 2.0): 
+    This excludes students who are NOT seniors (year != '4') AND have a GPA below 2.0.
+
+This change clarifies the logic. 
+It no longer implies that someone not in their senior year automatically fails if they have a 2.0+ GPA. 
+Now, only students who are not seniors and have a GPA below 2.0 need "more schooling."
+
+Combined effect:
+    Who graduates:
+        Seniors: 
+        All seniors graduate regardless of GPA (due to the "OR" in the first statement).
+        Non-seniors: 
+        Only non-seniors with a GPA of 2.0 or higher graduate (due to the "AND" in the second statement).
+
+    Who doesn't graduate:
+        Non-seniors with a GPA below 2.0.
+
+Handle all cases:
+Yes, this revised program handles all combinations of year and GPA.
+ Every possible scenario falls under one of the defined conditions, determining their graduation eligibility.
+
+Conclusion:
+These changes broaden the graduation criteria, 
+making it easier for non-seniors with good GPAs to graduate but still requiring seniors to meet a minimum GPA. 
+This revised program handles all cases and provides clearer logic about who needs "more schooling."
+
+</pre>
+    </div>
+
+    <input type="checkbox" id="accordionx22" class="hidecontent"/>
+    <label for="accordionx22">Explanation (Bing)</label>
+    <div class="content hidecontent">
+<pre>
+In the modified program:
+    The if statement now checks if the GPA is greater than or equal to 2.0 or if the year is ‘4’. 
+    This means that any student with a GPA of 2.0 or higher, or any student in their senior year (year == '4'), 
+    will see the message “It is time to graduate soon”.
+
+    The else if statement now checks if the year is not ‘4’ and if the GPA is less than 2.0. 
+    This means that only students who are not in their senior year and have a GPA less than 2.0 will see the message “You need more schooling”.
+
+So, according to this new program:
+    Students will see “It is time to graduate soon” if they are in their senior year (year == '4') or 
+    if their GPA is 2.0 or higher (gpa >= 2.0).
+
+    Students will see “You need more schooling” if they are not in their senior year (year != '4') and
+    their GPA is less than 2.0 (gpa < 2.0).
+
+    However, this program does not handle all cases. 
+    Specifically, it does not specify what happens if a student is not in their senior year but has a GPA of 2.0 or higher, 
+    or if a student is in their senior year but has a GPA less than 2.0. 
+
+In these cases, the program will not output anything. 
+To handle all cases, you might need to add an else statement to cover any remaining scenarios.
+
+</pre>
+    </div>
+</div>
+
+<h1>Exercise 4</h1>
+<p>Could you replace 
+<pre>else if ( year != '4'|| gpa < 2.0)</pre> with the
+    single word <pre>else?</pre></p>
+<pre><code class="cpp">// This program illustrates the use of logical operators
+
+#include 《iostream》
+using namespace std;
+
+int main()
+{
+   char year;
+   float gpa;
+
+   cout << "What year student are you ?" << endl;
+   cout << "Enter 1 (freshman), 2 (sophomore), 3 (junior), or 4 (senior)"
+   << endl << endl;
+   cin >> year;
+
+   cout << "Now enter your GPA" << endl;
+   cin >> gpa;
+
+   if ( gpa >= 2.0 || year == '4')  // Exercise 3
+      cout << "It is time to graduate soon" << endl;
+   else // Exercise 4
+      cout << "You need more schooling" << endl;
+
+   return 0;
+}
+    
+</code></pre>
+<div id="ouraccordion">
+    <input type="checkbox" id="accordionx23" class="hidecontent"/>
+    <label for="accordionx23">Explanation (Gemini)</label>
+    <div class="content hidecontent">
+<pre>
+Yes, you can definitely replace the else if (year != '4' || gpa < 2.0) with just else in the revised program. 
+This is because both statements essentially achieve the same outcome: 
+    they identify students who don't qualify for graduation based on the previous if statement.
+
+Both versions work because:
+    The first if statement checks for either a good GPA (2.0+) or being a senior (year '4'). 
+    If either condition is met, the student graduates.
+
+    The else statement then covers all remaining cases: 
+        students who are NOT seniors AND have a GPA below 2.0
+        . 
+This essentially combines the two conditions from the original else if but with simpler syntax.
+
+Using else instead of the explicit else if makes the code more concise and efficient. 
+It avoids redundant checks and relies on the logical flow of the program. 
+As long as the if statement clearly defines the graduation criteria, 
+the else effectively captures everyone who doesn't meet those requirements.
+
+Therefore, replacing else if with else is a valid and potentially preferred option in this specific case. 
+It maintains the program's functionality while improving code readability and reducing unnecessary complexity.
+
+</pre>
+    </div>
+
+    <input type="checkbox" id="accordionx24" class="hidecontent"/>
+    <label for="accordionx24">Explanation (Bing)</label>
+    <div class="content hidecontent">
+<pre>
+Yes, you can replace the else if statement with the single word else. 
+This will make the program output “You need more schooling” for all cases not covered by the if statement.
+
+In this version of the program, 
+if the GPA is 2.0 or higher or the student is in their senior year, the program will print “It is time to graduate soon”. 
+For all other cases, it will print “You need more schooling”. 
+This ensures that all possible cases are handled. 
+
+</pre>
+    </div>
+</div>
+
+</div>
+
+<input type="checkbox" id="accordion4" class="hidecontent"/>
+<label for="accordion4">Lab 4.4 - The switch Statement</label>
+<div class="content hidecontent">
+<pre><code class="cpp">// This program illustrates the use of the switch statement.
+
+#include 《iostream》
+using namespace std;
+int main() {
+    char grade;
+    cout << "What grade did you earn in Programming I ?" << endl;
+    cin >> grade;
+    switch (grade)  // This is where the switch statement begins
+    {
+        case 'A':
+            cout << "an A - excellent work !" << endl;
+            break;
+        case 'B':
+            cout << "you got a B - good job" << endl;
+            break;
+        case 'C':
+            cout << "earning a C is satisfactory" << endl;
+            break;
+        case 'D':
+            cout << "while D is passing, there is a problem" << endl;
+            break;
+        case 'F':
+            cout << "you failed - better luck next time" << endl break;
+        default:
+            cout << "You did not enter an A, B, C, D, or F" << endl;
+    }
+    return 0;
+}
+</code></pre>
+<h1>Exercise 1</h1>
+<p>Remove the break statements from each of the cases.<br>
+    What is the effect on the execution of the program?</p>
+<pre><code class="cpp">// This program illustrates the use of the switch statement.
+
+#include 《iostream》
+using namespace std;
+
+int main()
+{
+   char grade;
+
+   cout << "What grade did you earn in Programming I ?" << endl;
+   cin >> grade;
+
+   switch (grade)   // This is where the switch statement begins
+   {
+      case 'A': cout << "an A - excellent work !" << endl;
+      case 'B': cout << "you got a B - good job" << endl;
+      case 'C': cout << "earning a C is satisfactory" << endl;
+      case 'D': cout << "while D is passing, there is a problem" << endl;
+      case 'F': cout << "you failed - better luck next time" << endl;
+      default: cout << "You did not enter an A, B, C, D, or F" << endl;
+   }
+
+   return 0;
+}
+   
+</code></pre>
+<div id="ouraccordion">
+    <input type="checkbox" id="accordionx25" class="hidecontent"/>
+    <label for="accordionx25">Explanation (Gemini)</label>
+    <div class="content hidecontent">
+<pre>Removing the break statements in the switch cases will significantly impact the program's execution. 
+Here's what happens:
+
+    Without breaks: 
+    When a case is matched (e.g., grade is A), the corresponding statement block (cout statement) executes. 
+    However, due to the lack of break, it doesn't stop there.
+    
+    Fall-through: 
+    Instead, it automatically falls through to the next case, even if it doesn't match the grade value. 
+    This means subsequent statements will also be executed one after the other, until the end of the switch statement or a break is encountered.
+    
+    Unexpected output: 
+    Therefore, the program might output messages for multiple grades instead of just the matching one. 
+    For example, if grade is A, it will print "an A - excellent work!" followed by all subsequent messages: 
+    "you got a B - good job", "earning a C is satisfactory", and so on.
+
+Overall, removing the break statements transforms the switch into a cascade. 
+It becomes more like a series of if-else statements chained together, 
+where each case adds its message to the output if the previous cases are also true. 
+This can lead to confusing and potentially misleading results for the user as they might not receive a clear and concise evaluation of their grade.
+
+Remember, adding a break after each case statement restores the expected behavior where only the matching message is printed.
+
+I hope this clarifies the effect of removing the break statements and helps you understand the importance of their role in switch cases.
+
+</pre>
+    </div>
+
+    <input type="checkbox" id="accordionx26" class="hidecontent"/>
+    <label for="accordionx26">Explanation (Bing)</label>
+    <div class="content hidecontent">
+<pre>If you remove the break statements from each of the cases in your switch statement, the program will exhibit what is known as “fallthrough” behavior. 
+This means that once a matching case is found, the program will execute not only the code for that case, 
+but also the code for all subsequent cases, until it either reaches a break statement or the end of the switch block.
+
+This is likely not the intended behavior. 
+The break statement is used in each case to prevent this fallthrough behavior and ensure that only the code for the matching case is executed.
+
+</pre>
+    </div>
+</div>
+
+<h1>Exercise 2</h1>
+<p>Add an additional switch statement that allows for a Passing option for a grade of D or better.<br>
+    Use the sample run given below to model your output.
+Sample Run:
+<pre>What grade did you earn in Programming I ?
+A
+YOU PASSED!
+an A - excellent work!</pre></p>
+<pre><code class="cpp">// This program illustrates the use of the switch statement.
+
+#include 《iostream》
+using namespace std;
+
+int main()
+{
+   char grade;
+
+   cout << "What grade did you earn in Programming I ?" << endl;
+   cin >> grade;
+
+   switch (grade)   // This is where the switch statement begins
+{
+      case 'A': 
+      case 'B': 
+      case 'C': 
+      case 'D': cout << "YOU PASSED!" << endl; // Fallthrough for grades A, B, C, D
+                break;
+      case 'F': break; // No message for grade F
+      default: cout << "Invalid grade" << endl; // Message for invalid input
+   }
+
+   switch (grade)
+   {
+      case 'A': cout << "an A - excellent work !" << endl;
+                break;
+      case 'B': cout << "you got a B - good job" << endl;
+                break;
+      case 'C': cout << "earning a C is satisfactory" << endl;
+                break;
+      case 'D': cout << "while D is passing, there is a problem" << endl;
+                break;
+      case 'F': cout << "you failed - better luck next time" << endl;
+                break;
+      default: break; // No message for invalid input, refer above
+   }
+
+   return 0;
+}
+
+    
+</code></pre>
+<div id="ouraccordion">
+    <input type="checkbox" id="accordionx27" class="hidecontent"/>
+    <label for="accordionx27">Explanation (Gemini)</label>
+    <div class="content hidecontent">
+<pre>This program now incorporates the following changes:
+   Breaks added back: 
+   Each case in the first switch statement now includes a break statement, 
+   ensuring it only prints the intended message and doesn't fall through to subsequent cases.
+
+   Additional switch: 
+   A separate switch statement is added after the first one. 
+   This one solely focuses on grades above D and prints the appropriate message ("an A - excellent work!" etc.) without repeating the "YOU PASSED!" message.
+   
+   Default case: 
+   Both switch statements have a default case for handling invalid input or grades not requiring additional messages.
+
+With these modifications, the program now behaves as desired:
+   Sample run: 
+   Entering A as the grade will print "YOU PASSED!" followed by "an A - excellent work!", matching the expected output.
+
+   Clear distinction: 
+   The "YOU PASSED!" message is only displayed for D and higher grades in the first switch, 
+   while the second switch provides specific feedback for A, B, and C without repetition.
+
+
+
+
+
+Your code will work as expected, and it’s a valid way to structure the switch statements. 
+Here are some pros and cons compared to the previous version:
+
+Pros:
+   It’s more explicit. 
+   Each case in the switch statement clearly states what will be printed for that case.
+
+Cons:
+   It’s more verbose. 
+   The same line of code (cout << "YOU PASSED!" << endl;) is repeated in multiple cases.
+   It’s less efficient. 
+   The program has to check each case separately, even though the output is the same for ‘A’, ‘B’, ‘C’, and ‘D’.
+
+In the previous version, 
+we used “fallthrough” behavior in the switch statement to print “YOU PASSED!” for any passing grade (‘A’, ‘B’, ‘C’, or ‘D’) with a single line of code. 
+This made the code more concise and slightly more efficient.
+   
+
+</pre>
+    </div>
+
+    <input type="checkbox" id="accordionx28" class="hidecontent"/>
+    <label for="accordionx28">Explanation (Bing)</label>
+    <div class="content hidecontent">
+<pre>In this version of the program, if the grade is ‘A’, ‘B’, ‘C’, or ‘D’, 
+the program will print “YOU PASSED!” before printing the specific message for the grade. 
+If the grade is ‘F’ or an invalid input, it will not print “YOU PASSED!”.
+
+
+
+
+Yes, your revised program is a valid and alternative approach, and it has both pros and cons compared to the code I provided:
+
+Pros:
+   Conciseness: 
+   Combining the "YOU PASSED!" message for A, B, C, and D into a single case simplifies the code. 
+   It eliminates the need for repeated break statements after each passing grade.
+
+   Efficiency: 
+   Checking for passing grades ("A" to "D") first saves some processing time 
+   compared to checking for "F" and then all other grades individually.
+
+Cons:
+   Readability: 
+   Combining the passing message might make it less clear that it applies to all four grades. 
+   Readers have to mentally link the case with the message outside the case.
+
+   Maintainability: 
+   Adding another grade in the future would require modifying both the first and second switch statements 
+   to ensure the "passing" logic and specific feedback remain aligned.
+
+Overall:
+Both versions achieve the same functionality. 
+Your approach prioritizes conciseness and efficiency, while the one I provided emphasizes clarity and potentially easier future modifications.
+
+Choosing the best option depends on your specific preferences and priorities. 
+If you value compactness and efficiency, your code (Bing) is a solid alternative. 
+If readability and potential future changes are more important, the version with separate cases might be preferable.
+
+Ultimately, both options are valid and demonstrate different approaches to achieving the desired outcome. 
+Feel free to experiment and choose the one that best suits your needs and coding style.
+
+
+</pre>
+    </div>
+</div>
+
+<h1>Exercise 3</h1>
+<p>Rewrite the program switch.cpp using if and else if statements rather than a switch statement.<br>
+    Did you use a trailing else in your new version?<br>
+    If so, what did it correspond to in the original program with the switch statement?</p>
+<pre><code class="cpp">// This program illustrates the use of the switch statement.
+
+#include 《iostream》
+using namespace std;
+
+int main()
+{
+   char grade;
+
+   cout << "What grade did you earn in Programming I ?" << endl;
+   cin >> grade;
+
+   if (grade == 'A' || grade == 'B' || grade == 'C' || grade == 'D')
+   {
+      cout << "YOU PASSED!" << endl;
+      if (grade == 'A')
+         cout << "an A - excellent work !" << endl;
+      else if (grade == 'B')
+         cout << "you got a B - good job" << endl;
+      else if (grade == 'C')
+         cout << "earning a C is satisfactory" << endl;
+      else if (grade == 'D')
+         cout << "while D is passing, there is a problem" << endl;
+   }
+   else if (grade == 'F')
+   {
+      cout << "you failed - better luck next time" << endl;
+   }
+   else
+   {
+      cout << "You did not enter an A, B, C, D, or F" << endl;
+   }
+
+   return 0;
+}
+    
+</code></pre>
+<div id="ouraccordion">
+    <input type="checkbox" id="accordionx29" class="hidecontent"/>
+    <label for="accordionx29">Explanation (Gemini)</label>
+    <div class="content hidecontent">
+<pre>Trailing else:
+Yes, I used a trailing else in the second set of if-else statements. 
+This corresponds to the default case in the original switch statement. 
+It handles any scenarios where the grade doesn't match any of the specific cases (A, B, C, D, or F), 
+which could be invalid input or other unexpected characters.
+
+Comparison to the original switch statement:
+   This version achieves the same functionality as the original program with the switch statement.
+   It uses multiple if-else statements to check for specific grades and provide corresponding feedback.
+   The trailing else acts as a catch-all for anything not matching the specified grades, similar to the default case in the switch.
+   This approach might be less efficient due to potential repeated checks for the same grade in both sets of if-else statements.
+
+Choosing between switch and if-else:
+Both versions are valid and have their advantages and disadvantages. 
+   The switch statement can be more concise and efficient for specific checks against multiple values, 
+   while if-else might be easier to read and modify for beginners or situations with complex logic.
+
+Ultimately, the choice depends on your preferences, code readability, and project requirements.
+
+
+
+
+
+Yes, your revised program is also a valid and alternative approach with its own pros and cons compared to the version I provided:
+
+Pros:
+   Nested logic: 
+      It avoids redundant checks for passing grades ("A" to "D") by placing them within the main if statement. 
+      This can improve efficiency, especially for large sets of grades that share the same message.
+   Reduced code duplication: 
+      Combining the "YOU PASSED!" message and the specific feedback for each passing grade into 
+      nested if-else statements reduces code redundancy compared to the original version with two separate if-else blocks.
+
+Cons:
+   Readability: 
+      The nested logic might be less intuitive for beginners compared to separate if statements for each grade. 
+      It requires more careful reading to follow the flow and understand which message applies to which grade.
+   Maintainability: 
+      Adding a new grade in the future might require modifying both the main and nested if statements, potentially impacting multiple levels of logic.
+
+Overall:
+Both versions achieve the same functionality, with your approach emphasizing efficiency and compactness while potentially sacrificing some readability and maintainability.
+
+Choosing the best option depends on your specific priorities:
+   If efficiency and minimizing redundant code are your top concerns, your nested logic version might be preferable.
+   If you prioritize clear and straightforward code that is easier to understand and modify for future changes, the separate if statements might be a better choice.
+
+Ultimately, both approaches are valid and demonstrate different ways to achieve the desired outcome. 
+Feel free to experiment and choose the one that best suits your needs and coding style.
+
+
+</pre>
+    </div>
+
+    <input type="checkbox" id="accordionx30" class="hidecontent"/>
+    <label for="accordionx30">Explanation (Bing)</label>
+    <div class="content hidecontent">
+<pre>
+In this version of the program, the trailing else is used to handle any input that is not ‘A’, ‘B’, ‘C’, ‘D’, or ‘F’. 
+This corresponds to the default case in the original program with the switch statement.
+
+
+
+
+
+Your code will work as expected, and it’s a valid way to structure the if and else if statements. 
+Here are some pros and cons compared to the previous version:
+
+Pros:
+   It separates the logic for checking if the student passed from the logic for printing the grade message. 
+   This can make the code easier to understand and modify.
+
+Cons:
+   It’s slightly less efficient because it needs to check the grade twice: 
+   once to determine if the student passed and once to print the grade message.
+
+In the previous version, the program checks the grade only once and determines both if the student passed and what message to print based on that single check. 
+However, both versions are correct and the choice between them can depend on personal preference and the specific requirements of your program. 
+
+</pre>
+    </div>
+</div>
+
+</div>
+
+<input type="checkbox" id="accordion5" class="hidecontent"/>
+<label for="accordion5">Lab 4.5 - Student Generated Code Assignments</label>
+<div class="content hidecontent">
+ 
+<h1>Exercise 1</h1>
+<p>Write a program that prompts the user for their quarterly water bill for the last four quarters.<br>
+    The program should find and output their average monthly water bill.<br>
+    If the average bill exceeds $75, the output should include a message indicating that too much water is being used.<br>
+    If the average bill is at least $25 but no more than $75, the output should indicate that a typical amount of water is being used.<br>
+    Finally, if the average bill is less than $25, the output should contain a message praising the user for conserving water.<br>
+    Use the sample run below as a model for your output.
+<pre>Sample Run 1:
+Please input your water bill for quarter 1:
+300
+Please input your water bill for quarter 2:
+200
+Please input your water bill for quarter 3:
+225
+Please input your water bill for quarter 4:
+275
+Your average monthly bill is $83.33. You are using excessive amounts of water
+Sample Run 2:
+Please input your water bill for quarter 1:
+100
+Please input your water bill for quarter 2:
+150
+Please input your water bill for quarter 3:
+4
+TCP1101 Programming Fundamentals
+75
+Please input your water bill for quarter 4:
+125
+Your average monthly bill is $37.50. You are using a typical amount of water</pre></p>
+<pre><code class="cpp">#include 《iostream》
+#include 《iomanip》
+
+using namespace std;
+
+int main() {
+  // Initialize variables
+  double waterBills[4]; // Array to store quarterly bills
+  double averageBill = 0.0;
+
+  // Prompt user for each quarter's bill and store them in the array
+  for (int i = 1; i <= 4; ++i) {
+    cout << "Please input your water bill for quarter " << i << ":" << endl;
+    cin >> waterBills[i - 1];
+  }
+
+  // Calculate average monthly bill
+  for (int i = 0; i < 4; ++i) {
+    averageBill += waterBills[i];
+  }
+  averageBill /= 12.0;
+
+  // Display average bill and message based on comparison
+  cout << fixed << setprecision(2);
+  cout << "Your average monthly bill is $" << averageBill << "." << endl;
+  if (averageBill > 75.0) {
+    cout << "You are using excessive amounts of water!" << endl;
+  } else if (averageBill >= 25.0) {
+    cout << "You are using a typical amount of water." << endl;
+  } else {
+    cout << "You are doing a great job conserving water!" << endl;
+  }
+
+  return 0;
+}
+    
+</code></pre>
+<div id="ouraccordion">
+    <input type="checkbox" id="accordionx33" class="hidecontent"/>
+    <label for="accordionx33">Explanation (Gemini)</label>
+    <div class="content hidecontent">
+<pre>Breakdown of the code: 
+
+1. Include statements:
+    #include 《iostream》: 
+        This brings in the standard input/output library for basic operations like displaying text and reading user input.
+    #include 《iomanip》: 
+        This adds formatting options for controlling the output precision (decimal places) in this case.
+
+2. Namespace:
+    using namespace std;: 
+        This tells the compiler to use the names defined in the std namespace directly, 
+        avoiding the need for std:: prefix for each function call.
+
+3. Variable declarations:
+    double waterBills[4];: 
+        This defines an array named waterBills to store four double-precision floating-point numbers (water bills for each quarter).
+    double averageBill = 0.0;: 
+        This declares a variable named averageBill of type double and initializes it to 0.0 (representing the sum of bills before calculation).
+
+4. User input loop:
+    for (int i = 1; i <= 4; ++i) {...}: 
+        This loop iterates four times (i=1 to 4) using an integer counter i.
+    cin >> waterBills[i - 1];: 
+        This reads the user's input and 
+        stores it in the waterBills array at the index corresponding to the current quarter (i-1 because arrays start from 0).
+
+5. Average calculation loop:
+    for (int i = 0; i < 4; ++i) {...}: 
+        Another loop iterates through the waterBills array (four elements, hence i=0 to 3).
+    averageBill += waterBills[i];: 
+        This adds the current element of the array (water bill for a specific quarter) to the averageBill variable, accumulating the total across all quarters.
+
+6. Average calculation and message:
+    averageBill /= 12.0;: 
+        This divides the total water bill (averageBill) by 12 (number of months) to calculate the average monthly bill.
+
+
+Why this approach?:
+    This approach prioritizes clarity and modularity. 
+    It separates tasks into distinct blocks (user input, calculation, messaging) using loops and conditional statements. 
+    This makes the code easier to read, understand, and potentially modify in the future.
+
+Alternative options:
+    Arrays vs. variables: 
+        You could use four separate variables instead of an array for each quarter's bill. 
+        This might be slightly less efficient and less flexible for future modifications or individual quarter analysis.
+    Looping: 
+        Instead of separate loops for user input and calculation, you could combine them into one loop, potentially saving a few lines. 
+        However, it might make the code slightly less readable and maintainable.
+    Magic numbers: 
+        Instead of directly using 75 and 25 in the conditionals, you could define variables for them beforehand. 
+        This improves readability and makes it easier to modify the thresholds in the future.
+
+I chose this approach for its balance of readability, ease of understanding, and maintainability. 
+It allows you to grasp the logic easily and potentially modify it based on your specific needs.
+
+
+
+
+
+Pros:
+    Conciseness: 
+    You use fewer variables and loops, making the code more compact and potentially easier to read for some people.
+    Data type: 
+    Using float for both bill and average might be more accurate for representing water usage compared to double, especially when dealing with decimals.
+    Precision control: 
+    Setting the output precision to 2 decimal places ensures a consistent and visually appealing display of the average bill.
+    Positive phrasing: 
+    Replacing "doing a great job" with "Congratulations" in the conservation message might be more encouraging and impactful.
+
+Cons:
+    Magic numbers: 
+    Embedding the average calculation directly in the cout statement makes the code less modular and harder to modify if the logic needs to change.
+    Limited scope: 
+    Using a single total variable for all quarters might not be ideal if you need to analyze individual quarter data later.
+    Missing initialization: 
+    While the compiler might initialize total to 0, explicitly mentioning it could improve clarity for beginners.
+
+Overall:
+
+Both versions have their pros and cons. It depends on your priorities and preferences:
+    If compactness and readability are your main concerns, your revised program might be a good choice. 
+    However, it sacrifices some modularity and flexibility.
+    If you prioritize explicitness, maintainability, and potential future data analysis, 
+    the original version with separated variables and loops might be preferable.
+
+Ultimately, both options are valid and achieve the desired outcome. You can choose the one that best suits your needs and coding style.
+
+</pre>
+    </div>
+
+    <input type="checkbox" id="accordionx34" class="hidecontent"/>
+    <label for="accordionx34">Explanation (Bing)</label>
+    <div class="content hidecontent">
+<pre>This program prompts the user for their water bill for each of the last four quarters, 
+calculates the total and average monthly bill, and then checks the average against the specified ranges to print the appropriate message. 
+The setprecision function is used to limit the output to two decimal places.
+
+
+
+
+
+Your code is correct and will work as expected. 
+It’s a valid way to structure the if and else if statements. 
+Here are some pros and cons compared to the previous version:
+Pros:
+    Your code uses double instead of float for the water bills and average bill. 
+    This can provide more precision, which might be beneficial if the water bills can have many decimal places.
+    Your code separates the logic for checking if the user passed from the logic for printing the grade message. 
+    This can make the code easier to understand and modify.
+
+Cons:
+    It’s slightly less efficient because it needs to check the grade twice:
+        once to determine if the user passed and once to print the grade message.
+    In the previous version, 
+    the program checks the grade only once and determines both if the user passed and what message to print based on that single check. 
+
+However, both versions are correct and the choice between them can depend on personal preference and the specific requirements of your program.
+
+</pre>
+    </div>
+</div>
+
+<h1>Exercise 2</h1>
+<p>The local t-shirt shop sells shirts that retail for $12. Quantity discounts are given as follow:
+<pre>Number of Shirts     Discount
+5–10                 10%
+11–20                15%
+21–30                20%
+31 or more           25%</pre>
+Write a program that prompts the user for the number of shirts required and then computes the total price.<br>
+Make sure the program accepts only nonnegative input.<br>
+Use the following sample runs to guide you:
+<pre>Sample Run 1:
+How many shirts would you like ?
+4
+The cost per shirt is $12 and the total cost is $48
+Sample Run 2:
+How many shirts would you like ?
+0
+The cost per shirt is $12 and the total cost is $0
+Sample Run 3:
+How many shirts would you like ?
+8
+The cost per shirt is $10.80 and the total cost is $86.40
+Sample Run 4:
+How many shirts would you like ?
+-2
+Invalid Input: Please enter a nonnegative integer</pre></p>
+<pre><code class="cpp">#include 《iostream》
+#include 《iomanip》
+
+using namespace std;
+
+const double BASE_PRICE = 12.0; // Shirt price without discount
+const int MIN_SHIRTS = 0; // Minimum valid number of shirts
+
+int main() {
+  int numShirts;
+
+  // Prompt for and validate user input
+  do {
+    cout << "How many shirts would you like ?" << endl;
+    cin >> numShirts;
+    if (numShirts < MIN_SHIRTS) {
+      cout << "Invalid Input: Please enter a nonnegative integer" << endl;
+    }
+  } while (numShirts < MIN_SHIRTS);
+
+  // Calculate discount based on quantity
+  double discount = 0.0;
+  if (numShirts >= 5 && numShirts < 11) {
+    discount = 0.1;
+  } else if (numShirts >= 11 && numShirts < 21) {
+    discount = 0.15;
+  } else if (numShirts >= 21 && numShirts < 31) {
+    discount = 0.2;
+  } else if (numShirts >= 31) {
+    discount = 0.25;
+  }
+
+  // Calculate price with discount
+  double pricePerShirt = BASE_PRICE * (1.0 - discount);
+  double totalPrice = pricePerShirt * numShirts;
+
+  // Display output with appropriate pricing
+  cout << fixed << setprecision(2);
+  cout << "The cost per shirt is $" << pricePerShirt << " and the total cost is $" << totalPrice << endl;
+
+  return 0;
+}
+    
+</code></pre>
+<div id="ouraccordion">
+    <input type="checkbox" id="accordionx35" class="hidecontent"/>
+    <label for="accordionx35">Explanation (Gemini)</label>
+    <div class="content hidecontent">
+<pre>This program incorporates the features demonstrated in the sample runs:
+    User input validation: 
+        It ensures the user enters a non-negative integer (>= 1) through a loop checking for invalid values.
+    Quantity discounts: 
+        It uses nested if-else statements to calculate the appropriate discount based on the number of shirts.
+    Price calculation: 
+        It applies the discount to the base price and multiplies by the quantity to get the total price.
+    Output formatting: 
+        It displays the price per shirt and total cost with two decimal places for clarity.
+
+
+
+
+
+Both versions achieve the same functionality, but there are pros and cons to each approach:
+
+Your version:
+Pros:
+    Conciseness: 
+        Uses fewer lines of code, making it more compact and potentially easier to read for some developers.
+    Efficiency: 
+        Calculates discounts directly on the costPerShirt variable, potentially avoiding redundant calculations.
+    Early exit: 
+        Handles invalid input quickly and exits the program, avoiding unnecessary processing.
+
+Cons:
+    Magic numbers: 
+        Embeds discount percentages directly in the code, making it less flexible and harder to modify future changes.
+    Less readable logic: 
+        Nested if statements can be less intuitive for beginners compared to separate discount calculations.
+    Potential redundancy: 
+        Depending on how many discounts are added in the future, the logic might become repetitive.
+
+Original version:
+Pros:
+    Clarity: 
+        Uses separate variables and calculations for discounts, 
+        making the logic more explicit and easier to understand.
+    Flexibility: 
+        Allows easier addition or modification of discounts in the future without altering other parts of the code.
+    Maintainability: 
+        Separates concerns (validation, discount calculation, price calculation) into distinct blocks, 
+        making it easier to maintain and debug.
+
+Cons:
+    Slightly more verbose: 
+        Requires a few extra lines for discount calculations and variable declarations.
+    Potential inefficiency: 
+        Might perform redundant calculations if the discount structure involves overlapping ranges.
+
+Overall:
+Both versions are valid and achieve the same goal. 
+Choosing the best option depends on your preferences and priorities:
+
+    If compactness and efficiency are your main concerns, your version might be preferable. 
+    However, it sacrifices some flexibility and readability.
+
+    If you prioritize clarity, maintainability, and potential future modifications, 
+    the original version with separate calculations might be a better choice.
+
+</pre>
+    </div>
+
+    <input type="checkbox" id="accordionx36" class="hidecontent"/>
+    <label for="accordionx36">Explanation (Bing)</label>
+    <div class="content hidecontent">
+<pre>This program prompts the user for the number of shirts they want, 
+checks if the input is valid, applies the appropriate discount based on the number of shirts, 
+and then calculates and prints the cost per shirt and the total cost. 
+The setprecision function is used to limit the output to two decimal places. 
+
+
+
+
+
+Your code is correct and will work as expected. 
+Here are some pros and cons compared to the previous version:
+Pros:
+    Your code uses a do-while loop to validate user input, 
+    which ensures that the program will keep prompting the user until a valid number of shirts is entered. 
+    This can make the program more user-friendly.
+    Your code uses constants for the base price and minimum number of shirts, which can make the code easier to understand and modify.
+
+Cons:
+    It’s slightly less efficient because it needs to check the number of shirts twice: 
+    once to determine if the user passed and once to print the grade message.
+
+In the previous version, 
+the program checks the number of shirts only once and determines 
+both if the user passed and what message to print based on that single check. 
+However, both versions are correct and the choice between them 
+can depend on personal preference and the specific requirements of your program. 
+</pre>
+    </div>
+</div>
+
+<h1>Exercise 3</h1>
+<p>The University of Guiness charges $3000 per semester for in-state tuition and $4500 per semester for out-of-state tuition.<br>
+    In addition, room and board is $2500 per semester for in-state students and $3500 per semester for out-of-state students.<br>
+    Write a program that prompts the user for their residential status (i.e., in-state or out-of-state) and whether they require room and board (Y or N).<br>
+    The program should then compute and output their bill for that semester.<br>
+    Use the sample output below:
+<pre>Sample Run 1:
+Please input "I" if you are in-state or "O" if you are out-of-state:
+I
+Please input "Y" if you require room and board and "N" if you do not:
+N
+Your total bill for this semester is $3000
+Sample Run 2:
+Please input "I" if you are in-state or "O" if you are out-of-state:
+O
+Please input "Y" if you require room and board and "N" if you do not:
+Y
+Your total bill for this semester is $8000</pre>
+    </p>
+<pre><code class="cpp">#include 《iostream》
+#include 《iomanip》
+
+using namespace std;
+
+int main() {
+  char inState, roomBoard;
+  double tuition, totalBill;
+
+  // Prompt and validate residential status
+  do {
+    cout << "Please input \"I\" if you are in-state or \"O\" if you are out-of-state: ";
+    cin >> inState;
+  } while (inState != 'I' && inState != 'O');
+
+  // Set tuition based on residential status
+  if (inState == 'I') {
+    tuition = 3000.0;
+  } else {
+    tuition = 4500.0;
+  }
+
+  // Prompt and validate room & board choice
+  do {
+    cout << "Please input \"Y\" if you require room and board and \"N\" if you do not: ";
+    cin >> roomBoard;
+  } while (roomBoard != 'Y' && roomBoard != 'N');
+
+  // Add room & board cost if applicable
+  if (roomBoard == 'Y') {
+    if (inState == 'I') {
+      totalBill = tuition + 2500.0;
+    } else {
+      totalBill = tuition + 3500.0;
+    }
+  } else {
+    totalBill = tuition;
+  }
+
+  // Display bill amount
+  cout << "Your total bill for this semester is $" << fixed << setprecision(2) << totalBill << endl;
+
+  return 0;
+}
+    
+</code></pre>
+<div id="ouraccordion">
+    <input type="checkbox" id="accordionx37" class="hidecontent"/>
+    <label for="accordionx37">Explanation (Gemini)</label>
+    <div class="content hidecontent">
+<pre>Similarities:
+    Both programs achieve the same goal: 
+        calculating the University of Guiness semester bill based on residential status and room & board choice.
+    Both programs use character input for user selection, validation loops for invalid input, and conditional logic to set tuition and room & board costs.
+    Both programs display the final bill amount with two decimal places for clarity.
+
+Differences:
+    Data types:
+        Draft A uses integer variables for tuition, roomBoardCost, and totalBill. 
+        This might not be ideal for representing precise dollar amounts.
+        Draft B uses double variables for tuition and totalBill, providing more accurate representation of financial values.
+
+    Calculation approach:
+        Draft A utilizes a ternary operator for both tuition and room & board cost calculations. 
+        This can be more compact, but less intuitive for beginners to follow.
+        Draft B uses separate if statements for each calculation. 
+        This makes the logic clearer and easier to understand and modify.
+    
+    Output formatting:
+        Draft A explicitly sets the output precision within the cout statement.
+        Draft B uses fixed and setprecision statements before the output, potentially improving readability and maintainability.
+
+Overall:
+Both programs are valid and functional. 
+Here's a breakdown of their pros and cons:
+    Draft A:
+        Pros:
+            More compact due to ternary operators.
+            Might be slightly faster due to fewer variable declarations.
+
+        Cons:
+            Less readable logic for beginners.
+            Integer variables might not be accurate for financial calculations.
+            Formatting embedded within the cout statement might be less flexible.
+
+    Draft B:
+        Pros:
+            Clear and easy-to-follow logic using separate if statements.
+            Double variables provide better precision for financial values.
+            Formatting settings applied before output for better maintainability.
+
+        Cons:
+            Slightly more verbose due to extra if statements and variable declarations.
+            Might be marginally slower due to additional variable access.
+
+Recommendation:
+    If clarity and maintainability are your priorities, Draft B might be a better choice. 
+    It sacrifices a bit of compactness but offers a more explicit and easier-to-modify codebase.
+    However, if compactness and efficiency are your top concerns, Draft A could be a suitable option. 
+
+Just keep in mind the potential drawbacks in terms of readability and data type precision.
+
+
+
+
+
+Comparing Draft B and your alternative code:
+
+Similarities:
+    Both programs aim to calculate the University of Guiness semester bill based on residential status and room & board choice.
+    Both use character input for user selections and conditional logic to determine tuition and room & board costs.
+    Both display the final bill amount.
+
+Differences:
+    Data types:
+        Draft B: 
+            Uses double for tuition and total cost, offering better precision for financial values.
+        Your code: 
+            Uses int for tuition, roomBoard, and total bill, potentially less accurate for dollar amounts.
+
+    Logic structure:
+        Draft B: 
+            Employs separate if statements for residential status and room & board, making it clear and modular.
+        Your code: 
+            Combines residential status and room & board costs within a single if-else block, potentially less intuitive for complex conditions.
+
+    Error handling:
+        Draft B: 
+            Uses separate if statements for invalid input, handling each type differently.
+        Your code: 
+            Handles both invalid input types (residential & room & board) within the same if-else, potentially less specific.
+
+    Output formatting:
+        Draft B: 
+            Explicitly sets precision for bill amount with fixed and setprecision.
+        Your code: 
+            Outputs bill amount directly without formatting, potentially less visually appealing.
+
+Overall, both programs are functional, but they have distinct trade-offs:
+    Draft B:
+        Pros:
+            Clear and well-structured logic.
+            More accurate data types for financial calculations.
+            Explicit and separate error handling for different invalid inputs.
+            Formatted output for better readability.
+
+        Cons:
+            Slightly more verbose due to multiple if statements.
+            Might require modifications for adding new cost components.
+
+    Your code:
+        Pros:
+            More concise due to combined if-else block.
+            Potentially easier to adapt for adding more cost variations.
+
+        Cons:
+            Logic might be less intuitive for beginners.
+            Data types might not be ideal for precise financial calculations.
+            Less specific error handling for different invalid inputs.
+            Unformatted output could be less visually appealing.
+
+Recommendation:
+    Choosing the "better" option depends on your priorities:
+        For clear logic, accuracy, and explicit error handling, Draft B might be better.
+        If conciseness and adaptability for future cost variations are your top concerns, your code could be suitable.
+
+Ultimately, both options are valid starting points. You can modify them further based on your needs and desired features.
+
+</pre>
+    </div>
+
+    <input type="checkbox" id="accordionx38" class="hidecontent"/>
+    <label for="accordionx38">Explanation (Bing)</label>
+    <div class="content hidecontent">
+<pre>This program prompts the user for their residential status and whether they require room and board, then calculates and outputs their bill for the semester. 
+It also includes error checking to handle invalid inputs. 
+
+
+
+
+
+Your code is correct and will work as expected. 
+Here are some pros and cons compared to the previous version:
+    Pros:
+        Your code uses a do-while loop to validate user input, 
+        which ensures that the program will keep prompting the user until a valid input is entered. This can make the program more user-friendly.
+        Your code calculates the total bill in one place, which can make the code easier to understand and modify.
+
+    Cons:
+        It’s slightly less efficient because it needs to check the residential status and room and board requirement twice: 
+        once to determine the costs and once to print the message.
+        In the previous version, 
+        the program checks the residential status and room and board requirement only once and determines both the costs and what message to print based on that single check.
+
+</pre>
+    </div>
+</div>
+
+</div>
+    
+</div>
+
+<!-- these links to previous & next modules -->
+<div class="container2">
+    <button class="button-1"><a href="Lab 3.html" target="_blank">Lab 3</a></button>
+    <button class="button-1"><a href="Lab 5.html" target="_blank">Lab 5</a></button>
+</div>
+
+<script type="text/javascript" src="../js/module.js"></script>
+</body>
+</html>

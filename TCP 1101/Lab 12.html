@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<link rel="stylesheet" href="../css/base.css">
+<link rel="stylesheet" href="../css/module.css">
+<link href="https://fonts.googleapis.com/css?family=Alata | Ibarra+Real+Nova&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+<!-- and it's easy to individually load additional languages -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/go.min.js"></script>
+
+<script>hljs.highlightAll();</script>
+<title>TCP 1101 - 12</title>
+</head>
+
+<body>
+<!-- Dynamic header -->
+<div id="header-container"></div>
+<div id="header-config"
+    data-course="Programming Fundamentals - Lab 12"
+    data-topic-link="../index.html"
+    data-prev="x"
+    data-next="x">
+</div>
+
+
+<br><br><br>
+<div id="myaccordion">
+<input type="checkbox" id="accordion1" class="hidecontent"/>
+<label for="accordion1">Lab 12.1 - Character Testing and String Validation</label>
+<div class="content hidecontent">
+<p>The American Equities investment company offers a wide range of investment opportunities ranging from mutual funds to bonds.<br>
+Investors can check the value of their portfolio from the American Equities’ web page.<br>
+Information about personal portfolios is protected via encryption and can only be accessed using a password.<br>
+The American Equities company requires that a password consist of 8 characters, 5 of which must be letters and the other 3 digits.<br>
+The letters and digits can be arranged in any order.<br>
+For example,
+<pre>rt56AA7q
+123actyN
+1Lo0Dwa9
+myNUM741</pre>
+are all valid passwords.<br>However, the following are all invalid:
+<pre>the476NEw // It contains more than 8 characters (also more than 5 letters)
+be68moon // It contains less than 3 digits.
+$retrn99 // It contains only 2 digits and has an invalid character (‘$’)</pre>
+American Equities needs a program for their web page that determines whether or not an entered password is valid.</p>
+<pre><code>// This program tests a password for the American Equities
+// web page to see if the format is correct
+// Place Your Name Here
+#include <cctype>
+#include <cstring>
+#include <iostream>
+using namespace std;
+// function prototypes
+bool testPassWord(char[]);
+int countLetters(char *);
+int countDigits(char *);
+int main() {
+    char passWord[20];
+    cout << "Enter a password consisting of exactly 5 "
+         << "letters and 3 digits:" << endl;
+    cin.getline(passWord, 20);
+    if (testPassWord(passWord))
+        cout << "Please wait - your password is being verified" << endl;
+    else {
+        cout << "Invalid password. Please enter a password "
+             << "with exactly 5 letters and 3 digits" << endl;
+        cout << "For example, my37RuN9 is valid" << endl;
+    }
+    // Fill in the code that will call countLetters and
+    // countDigits and will print to the screen both the number of
+    // letters and digits contained in the password.
+    return 0;
+}
+//**************************************************************
+// testPassWord
+//
+// task: determines if the word in the
+// character array passed to it, contains
+// exactly 5 letters and 3 digits.
+// data in: a word contained in a character array
+// data returned: true if the word contains 5 letters & 3
+// digits, false otherwise
+//
+//**************************************************************
+bool testPassWord(char custPass[]) {
+    int numLetters, numDigits, length;
+    length = ...  // Use strlen() to determine length of string
+        numLetters = countLetters(custPass);
+    numDigits = countDigits(custPass);
+    if (numLetters == 5 && numDigits == 3 && length == 8)
+        return true;
+    else
+        return false;
+}
+//*******************************************************************
+// countLetters
+//
+// task: This function counts the number of letters
+// (both capital and lower case) in the string
+// data in: pointer that points to an array of characters
+// data returned: number of letters in the array of characters
+//
+//*******************************************************************
+int countLetters(char *strPtr) {
+    int occurs = 0;
+    while (*strPtr != '\0')  // loop is executed as long as
+    // the pointer strPtr does not point
+    // to the null character which
+    // marks the end of the string
+    {
+        if (...)  // Use isalpha() to determine if the character is a
+            letter occurs++;
+        strPtr++;
+    }
+    return occurs;
+}
+//*******************************************************************
+// countDigits
+//
+// task: This function counts the number of digits
+// in the string
+// data in: pointer that points to an array of characters
+// data returned: number of digits in the array of characters
+//
+//*******************************************************************
+int countDigits(char *strPtr) {
+    int occurs = 0;  // this keeps track how many times a digit occurs
+    while (*strPtr != '\0') {
+        if (...)  // Use isdigit() to determine if the character is a
+            digit occurs++;
+        strPtr++;
+    }
+    return occurs;
+}
+</code></pre>
+<h1>Exercise 1</h1>
+<p>Fill in the code at parts commented in bold and then run the program several times, testing with both valid and invalid passwords.<br>
+Read through the program and make sure you understand the logic of the code.</p>
+<pre><code>
+    
+</code></pre>
+<div id="ouraccordion">
+    <input type="checkbox" id="accordionx1" class="hidecontent"/>
+    <label for="accordionx1">Explanation (Gemini)</label>
+    <div class="content hidecontent">
+<pre>
+
+</pre>
+    </div>
+
+    <input type="checkbox" id="accordionx2" class="hidecontent"/>
+    <label for="accordionx2">Explanation (Bing)</label>
+    <div class="content hidecontent">
+<pre>
+
+</pre>
+    </div>
+</div>
+
+<h1>Exercise 2</h1>
+<p>Alter the program so that a valid password now consists of 10 characters, 6 of which must be digits and the other 4 letters.</p>
+<pre><code>
+    
+</code></pre>
+<div id="ouraccordion">
+    <input type="checkbox" id="accordionx3" class="hidecontent"/>
+    <label for="accordionx3">Explanation (Gemini)</label>
+    <div class="content hidecontent">
+<pre>
+
+</pre>
+    </div>
+
+    <input type="checkbox" id="accordionx4" class="hidecontent"/>
+    <label for="accordionx4">Explanation (Bing)</label>
+    <div class="content hidecontent">
+<pre>
+
+</pre>
+    </div>
+</div>
+
+<h1>Exercise 3</h1>
+<p>Adjust your program from Exercise 2 so that only lower case letters are allowed for valid passwords.</p>
+<pre><code>
+    
+</code></pre>
+<div id="ouraccordion">
+    <input type="checkbox" id="accordionx5" class="hidecontent"/>
+    <label for="accordionx5">Explanation (Gemini)</label>
+    <div class="content hidecontent">
+<pre>
+
+</pre>
+    </div>
+
+    <input type="checkbox" id="accordionx6" class="hidecontent"/>
+    <label for="accordionx6">Explanation (Bing)</label>
+    <div class="content hidecontent">
+<pre>
+
+</pre>
+    </div>
+</div>
+
+</div>
+
+<input type="checkbox" id="accordion2" class="hidecontent"/>
+<label for="accordion2">Lab 12.2 - Case Conversion</label>
+<div class="content hidecontent">
+<pre><code>// This program shows how the toupper and tolower functions can be
+// applied in a C++ program
+
+#include <cctype>
+#include <iomanip>
+#include <iostream>
+using namespace std;
+int main() {
+    int week, total, dollars;
+    float average;
+    char choice;
+    cout << showpoint << fixed << setprecision(2);
+    do {
+        total = 0;
+        for (week = 1; week <= 4; week++) {
+            cout << "How much (to the nearest dollar) did you"
+                 << " spend on food during week " << week << " ?:" << endl;
+            cin >> dollars;
+            total = total + dollars;
+        }
+        average = total / 4.0;
+        cout << "Your weekly food bill over the chosen month is $" << average << endl << endl;
+        do {
+            cout << "Would you like to find the average for "
+                 << "another month?";
+            cout << endl << "Enter Y or N" << endl;
+            cin >> choice;
+        } while (toupper(choice) != 'Y' && toupper(choice) != 'N');
+    } while (toupper(choice) == 'Y');
+    return 0;
+}
+</code></pre>
+<h1>Exercise 1</h1>
+<p>Run the program several times with various inputs.</p>
+<pre><code>
+    
+</code></pre>
+<div id="ouraccordion">
+    <input type="checkbox" id="accordionx7" class="hidecontent"/>
+    <label for="accordionx7">Explanation (Gemini)</label>
+    <div class="content hidecontent">
+<pre>
+
+</pre>
+    </div>
+
+    <input type="checkbox" id="accordionx8" class="hidecontent"/>
+    <label for="accordionx8">Explanation (Bing)</label>
+    <div class="content hidecontent">
+<pre>
+
+</pre>
+    </div>
+</div>
+
+<h1>Exercise 2</h1>
+<p>Notice the following do-while loop which appears near the end of the program:
+<pre><code>do
+{
+cout << "Would you like to find the average for another month?";
+cout << endl << "Enter Y or N" << endl;
+cin >> choice;
+} while(toupper(choice) != 'Y' && toupper(choice) != 'N');</code></pre>
+How would the execution of the program be different if we removed this loop?<br>
+Try removing the loop but leave the following lines in the program:
+<pre><code>cout << "Would you like to find the average for another month?";
+cout << endl << "Enter Y or N" << endl;
+cin >> choice;</code></pre>
+Record what happens when you run the new version of the program.</p>
+<pre><code>
+    
+</code></pre>
+<div id="ouraccordion">
+    <input type="checkbox" id="accordionx9" class="hidecontent"/>
+    <label for="accordionx9">Explanation (Gemini)</label>
+    <div class="content hidecontent">
+<pre>
+
+</pre>
+    </div>
+
+    <input type="checkbox" id="accordionx10" class="hidecontent"/>
+    <label for="accordionx10">Explanation (Bing)</label>
+    <div class="content hidecontent">
+<pre>
+
+</pre>
+    </div>
+</div>
+
+<h1>Exercise 3</h1>
+<p>Alter program case_convert.cpp so that it performs the same task but uses tolower rather than toupper.</p>
+<pre><code>
+    
+</code></pre>
+<div id="ouraccordion">
+    <input type="checkbox" id="accordionx11" class="hidecontent"/>
+    <label for="accordionx11">Explanation (Gemini)</label>
+    <div class="content hidecontent">
+<pre>
+
+</pre>
+    </div>
+
+    <input type="checkbox" id="accordionx12" class="hidecontent"/>
+    <label for="accordionx12">Explanation (Bing)</label>
+    <div class="content hidecontent">
+<pre>
+
+</pre>
+    </div>
+</div>
+
+</div>
+
+<input type="checkbox" id="accordion3" class="hidecontent"/>
+<label for="accordion3">Lab 12.3 - Using getline() & get()</label>
+<div class="content hidecontent">
+
+<h1>Exercise 1</h1>
+<p></p>
+<pre><code>
+    
+</code></pre>
+<div id="ouraccordion">
+    <input type="checkbox" id="accordionx13" class="hidecontent"/>
+    <label for="accordionx13">Explanation (Gemini)</label>
+    <div class="content hidecontent">
+<pre>
+
+</pre>
+    </div>
+
+    <input type="checkbox" id="accordionx14" class="hidecontent"/>
+    <label for="accordionx14">Explanation (Bing)</label>
+    <div class="content hidecontent">
+<pre>
+
+</pre>
+    </div>
+</div>
+
+<h1>Exercise 2</h1>
+<p></p>
+<pre><code>
+    
+</code></pre>
+<div id="ouraccordion">
+    <input type="checkbox" id="accordionx15" class="hidecontent"/>
+    <label for="accordionx15">Explanation (Gemini)</label>
+    <div class="content hidecontent">
+<pre>
+
+</pre>
+    </div>
+
+    <input type="checkbox" id="accordionx16" class="hidecontent"/>
+    <label for="accordionx16">Explanation (Bing)</label>
+    <div class="content hidecontent">
+<pre>
+
+</pre>
+    </div>
+</div>
+
+<h1>Exercise 3</h1>
+<p></p>
+<pre><code>
+    
+</code></pre>
+<div id="ouraccordion">
+    <input type="checkbox" id="accordionx17" class="hidecontent"/>
+    <label for="accordionx17">Explanation (Gemini)</label>
+    <div class="content hidecontent">
+<pre>
+
+</pre>
+    </div>
+
+    <input type="checkbox" id="accordionx18" class="hidecontent"/>
+    <label for="accordionx18">Explanation (Bing)</label>
+    <div class="content hidecontent">
+<pre>
+
+</pre>
+    </div>
+</div>
+
+</div>
+
+<input type="checkbox" id="accordion4" class="hidecontent"/>
+<label for="accordion4">Lab 12.4 - </label>
+<div class="content hidecontent">
+
+<h1>Exercise 1</h1>
+<p></p>
+<pre><code>
+    
+</code></pre>
+<div id="ouraccordion">
+    <input type="checkbox" id="accordionx19" class="hidecontent"/>
+    <label for="accordionx19">Explanation (Gemini)</label>
+    <div class="content hidecontent">
+<pre>
+
+</pre>
+    </div>
+
+    <input type="checkbox" id="accordionx20" class="hidecontent"/>
+    <label for="accordionx20">Explanation (Bing)</label>
+    <div class="content hidecontent">
+<pre>
+
+</pre>
+    </div>
+</div>
+
+<h1>Exercise 2</h1>
+<p></p>
+<pre><code>
+    
+</code></pre>
+<div id="ouraccordion">
+    <input type="checkbox" id="accordionx21" class="hidecontent"/>
+    <label for="accordionx21">Explanation (Gemini)</label>
+    <div class="content hidecontent">
+<pre>
+
+</pre>
+    </div>
+
+    <input type="checkbox" id="accordionx22" class="hidecontent"/>
+    <label for="accordionx22">Explanation (Bing)</label>
+    <div class="content hidecontent">
+<pre>
+
+</pre>
+    </div>
+</div>
+
+<h1>Exercise 3</h1>
+<p></p>
+<pre><code>
+    
+</code></pre>
+<div id="ouraccordion">
+    <input type="checkbox" id="accordionx23" class="hidecontent"/>
+    <label for="accordionx23">Explanation (Gemini)</label>
+    <div class="content hidecontent">
+<pre>
+
+</pre>
+    </div>
+
+    <input type="checkbox" id="accordionx24" class="hidecontent"/>
+    <label for="accordionx24">Explanation (Bing)</label>
+    <div class="content hidecontent">
+<pre>
+
+</pre>
+    </div>
+</div>
+
+</div>
+
+<input type="checkbox" id="accordion5" class="hidecontent"/>
+<label for="accordion5">Lab 12.5 - </label>
+<div class="content hidecontent">
+
+<h1>Exercise 1</h1>
+<p></p>
+<pre><code>
+    
+</code></pre>
+<div id="ouraccordion">
+    <input type="checkbox" id="accordionx25" class="hidecontent"/>
+    <label for="accordionx25">Explanation (Gemini)</label>
+    <div class="content hidecontent">
+<pre>
+
+</pre>
+    </div>
+
+    <input type="checkbox" id="accordionx26" class="hidecontent"/>
+    <label for="accordionx26">Explanation (Bing)</label>
+    <div class="content hidecontent">
+<pre>
+
+</pre>
+    </div>
+</div>
+
+<h1>Exercise 2</h1>
+<p></p>
+<pre><code>
+    
+</code></pre>
+<div id="ouraccordion">
+    <input type="checkbox" id="accordionx27" class="hidecontent"/>
+    <label for="accordionx27">Explanation (Gemini)</label>
+    <div class="content hidecontent">
+<pre>
+
+</pre>
+    </div>
+
+    <input type="checkbox" id="accordionx28" class="hidecontent"/>
+    <label for="accordionx28">Explanation (Bing)</label>
+    <div class="content hidecontent">
+<pre>
+
+</pre>
+    </div>
+</div>
+
+<h1>Exercise 3</h1>
+<p></p>
+<pre><code>
+    
+</code></pre>
+<div id="ouraccordion">
+    <input type="checkbox" id="accordionx29" class="hidecontent"/>
+    <label for="accordionx29">Explanation (Gemini)</label>
+    <div class="content hidecontent">
+<pre>
+
+</pre>
+    </div>
+
+    <input type="checkbox" id="accordionx30" class="hidecontent"/>
+    <label for="accordionx30">Explanation (Bing)</label>
+    <div class="content hidecontent">
+<pre>
+
+</pre>
+    </div>
+</div>
+
+</div>
+
+</div>
+
+<!-- these links to previous & next Labs -->
+<div class="container2">
+    <button class="button-1"><a href="Lab 11.html" target="_blank">Lab 11</a></button>
+    <button class="button-1"><a href="Lab 13.html" target="_blank">Lab 13</a></button>
+</div>
+
+<script type="text/javascript" src="../js/module.js"></script>
+</body>
+</html>

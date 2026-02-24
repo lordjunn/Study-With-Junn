@@ -1,0 +1,3179 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<link rel="stylesheet" href="../css/base.css">
+<link rel="stylesheet" href="../css/module.css">
+<link href="https://fonts.googleapis.com/css?family=Alata | Ibarra+Real+Nova&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+<!-- and it's easy to individually load additional languages -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/go.min.js"></script>
+
+<script>hljs.highlightAll();</script>
+<title>TCP 1101 - 6</title>
+</head>
+
+<body>
+<!-- Dynamic header -->
+<div id="header-container"></div>
+<div id="header-config"
+    data-course="Programming Fundamentals - Lab 6"
+    data-topic-link="../index.html"
+    data-prev="x"
+    data-next="x">
+</div>
+
+
+<br><br><br>
+<div id="myaccordion">
+
+
+<input type="checkbox" id="accordion1" class="hidecontent"/>
+<label for="accordion1">Lab 6.1 - Functions with No Parameters</label>
+<div class="content hidecontent">
+<pre><code class="cpp">// This program prints the proverb
+// "Now is the time for all good men to come to the aid of their party"
+// in a function (procedure) called writeProverb that is called by the main function 
+
+#include 《iostream》
+using namespace std;
+void writeProverb();  // This is the prototype for the writeProverb function
+int main() {
+    // Fill in the code to call the writeProverb function
+    return 0;
+}
+//*********************************************************************
+// writeProverb
+//
+// task: This function prints a proverb
+// data in: none
+// data out: no actual parameter altered
+//
+//********************************************************************
+// Fill in the function heading and the body of the function that will print
+// to the screen the proverb listed in the comments at the beginning of the
+// program
+    
+</code></pre>
+<h1>Exercise 1</h1>
+<p>Fill in the code (places in bold) so that the program will print out the proverb listed in the comments at the beginning of the program.<br>
+    The proverb will be printed by the function which is called by the main function</p>
+<pre><code class="cpp">// This program prints the proverb
+// "Now is the time for all good men to come to the aid of their party"
+// in a function (procedure) called writeProverb that is called by the main function
+
+#include 《iostream》
+using namespace std;
+
+void writeProverb(); // This is the prototype for the writeProverb function
+
+int main() {
+    
+    writeProverb();
+
+    return 0;
+}
+
+//*********************************************************************
+//   writeProverb
+//
+//   task:     This function prints a proverb
+//   data in:  none
+//   data out: no actual parameter altered
+//
+//********************************************************************
+
+// Fill in the function heading and the body of the function that will print
+// to the screen the proverb listed in the comments at the beginning of the
+// program
+
+void writeProverb() {
+    cout << "Now is the time for all good men to come to the aid of their party" << endl;
+}
+    
+</code></pre>
+<div id="ouraccordion">
+    <input type="checkbox" id="accordionx1" class="hidecontent"/>
+    <label for="accordionx1">Explanation (Gemini)</label>
+    <div class="content hidecontent">
+<pre>Explanation:
+    Function Prototype:
+        void writeProverb(); declares the function writeProverb without any parameters.
+        The void keyword indicates that it doesn't return any value.
+
+    Function Call in main:
+        writeProverb(); within main calls the writeProverb function to execute its code.
+
+    Function Definition:
+        void writeProverb() { ... } defines the body of the writeProverb function.
+        cout << "Now is the time ..." prints the proverb to the console.
+
+Key Points:
+    Functions help organize code and make it reusable.
+    The void keyword is used for functions that don't return a value.
+    Function calls transfer control to the function's code.
+    Function prototypes provide information about a function's name, parameters, and return type before its definition.
+
+</pre>
+    </div>
+
+    <input type="checkbox" id="accordionx2" class="hidecontent"/>
+    <label for="accordionx2">Explanation (Bing)</label>
+    <div class="content hidecontent">
+<pre>In this code, writeProverb() is a function that prints the proverb. 
+This function is then called in the main() function. 
+When you run this program, it will print out the proverb as expected. 
+
+</pre>
+    </div>
+</div>
+
+</div>
+
+<input type="checkbox" id="accordion2" class="hidecontent"/>
+<label for="accordion2">Lab 6.2 - Introduction to Pass by Value</label>
+<div class="content hidecontent">
+<pre><code class="cpp">// This program will allow the user to input from the keyboard
+// whether the last word to the following proverb should be party or country:
+// "Now is the time for all good men to come to the aid of their ___"
+// Inputting a 1 will use the word party. Any other number will use the word country. 
+
+#include 《iostream》
+#include 《string》
+using namespace std;
+// Fill in the prototype of the function writeProverb.
+int main() {
+    int wordCode;
+    cout << "Given the phrase:" << endl;
+    cout << "Now is the time for all good men to come to the aid of their ___"
+         << endl;
+    cout << "Input a 1 if you want the sentence to be finished with party"
+         << endl;
+    cout << "Input any other number for the word country" << endl;
+    cout << "Please input your choice now" << endl;
+    cin >> wordCode;
+    cout << endl;
+    writeProverb(wordCode);
+    return 0;
+}
+// ******************************************************************************
+// writeProverb
+//
+// task: This function prints a proverb. The function takes a number
+// from the call. If that number is a 1 it prints "Now is the time
+// for all good men to come to the aid of their party."
+// Otherwise, it prints "Now is the time for all good men
+// to come to the aid of their country."
+// data in: code for ending word of proverb (integer)
+// data out: no actual parameter altered
+//
+// *****************************************************************************
+void writeProverb(int number) {
+    // Fill in the body of the function to accomplish what is described above
+}
+    
+</code></pre>
+<h1>Exercise 1</h1>
+<p>Some people know this proverb as “Now is the time for all good men to come to the aid of their country” while others heard it as “Now is the time for all good men to come to the aid of their party.”<br>
+    This program will allow the user to choose which way they want it printed.<br>
+    Fill in the blanks of the program to accomplish what is described in the program comments.<br>
+    What happens if you inadvertently enter a float such as -3.97?</p>
+<pre><code class="cpp">// This program will allow the user to input from the keyboard
+// whether the last word to the following proverb should be party or country:
+// "Now is the time for all good men to come to the aid of their ___"
+// Inputting a 1 will use the word party. Any other number will use the word country.
+
+#include 《iostream》
+#include 《string》
+using namespace std;
+
+void writeProverb(int number); // This is the prototype for the writeProverb function
+
+int main()
+{
+   int wordCode;
+
+   cout << "Given the phrase:" << endl;
+   cout << "Now is the time for all good men to come to the aid of their ___"
+       << endl;
+
+   cout << "Input a 1 if you want the sentence to be finished with party"
+       << endl;
+   cout << "Input any other number for the word country" << endl;
+
+   cout << "Please input your choice now" << endl;
+   cin >> wordCode; 
+   cout << endl;
+
+   writeProverb(wordCode);
+
+   return 0;
+}
+
+//   ******************************************************************************
+//   writeProverb
+//
+//   task:     This function prints a proverb. The function takes a number
+//             from the call. If that number is a 1 it prints "Now is the time
+//             for all good men to come to the aid of their party."
+//             Otherwise, it prints "Now is the time for all good men
+//             to come to the aid of their country."
+//   data in:  code for ending word of proverb (integer)
+//   data out: no actual parameter altered
+//
+//   *****************************************************************************
+
+void writeProverb(int number)
+{
+   if (number == 1)
+      cout << "Now is the time for all good men to come to the aid of their party." << endl;
+   else
+      cout << "Now is the time for all good men to come to the aid of their country." << endl;
+}
+    
+</code></pre>
+<div id="ouraccordion">
+    <input type="checkbox" id="accordionx11" class="hidecontent"/>
+    <label for="accordionx11">Explanation (Gemini)</label>
+    <div class="content hidecontent">
+<pre>Explanation:
+    The writeProverb function takes an integer number as input.
+    It uses an if statement to check if number is 1. 
+    If so, it prints the proverb with "party", otherwise it prints it with "country".
+
+Float Input:
+    If you enter a float like -3.97, the cin >> wordCode; line will only extract the integral part (-3), discarding the decimal part.
+    This means the function will still work as intended, treating the input as -3.
+
+Key Points:
+    Function prototypes ensure the compiler knows about a function before its definition.
+    Pass by value means a function receives a copy of the argument's value, not the original variable.
+    cin can truncate floating-point input when reading into an integer variable.
+
+
+
+
+
+Both code versions are functionally equivalent and achieve the same goal. However, there are a few stylistic differences:
+
+Your Code:
+    Uses a single-line if statement without curly braces.
+    Employs a more compact formatting style.
+
+My Code:
+    Uses block-style if statements with curly braces, even for single-line bodies.
+    Has a slightly more verbose formatting style with additional line breaks.
+
+Which one is preferable is largely a matter of personal preference and coding style guidelines.
+
+Here are some considerations for choosing a style:
+
+    Readability: Some people find block-style if statements more readable, especially for multi-line blocks.
+    Consistency: It's generally good practice to use consistent formatting throughout a codebase.
+    Error Prevention: Block-style if statements can help prevent accidental errors if you later add more lines to the body.
+    Conciseness: Single-line if statements can make code more concise, especially for simple conditions.
+
+Ultimately, the best approach is to follow a consistent style that you and your team find clear and maintainable.
+
+</pre>
+    </div>
+
+    <input type="checkbox" id="accordionx12" class="hidecontent"/>
+    <label for="accordionx12">Explanation (Bing)</label>
+    <div class="content hidecontent">
+<pre>In this code, writeProverb() is a function that prints the proverb based on the user’s input. 
+This function is then called in the main() function. When you run this program, it will print out the proverb as expected.
+
+If you inadvertently enter a float such as -3.97, the program will only consider the integer part of the input, which is -3 in this case. 
+Since -3 is not equal to 1, the program will print “Now is the time for all good men to come to the aid of their country.” 
+
+</pre>
+    </div>
+</div>
+
+<h1>Exercise 2</h1>
+<p>Change the program so that an input of 1 from the user will print “party” at the end, 
+    a 2 will print “country” and any other number will be invalid so that the user will need to enter a new choice.<br><br>
+Sample Run:
+<pre>Given the phrase:
+Now is the time for all good men to come to the aid of their ___
+Input a 1 if you want the sentence to be finished with party
+Input a 2 if you want the sentence to be finished with country
+Please input your choice now
+4
+I'm sorry but that is an incorrect choice; Please input a 1 or 2
+2
+Now is the time for all good men to come to the aid of their count</pre></p>
+<pre><code class="cpp">// This program will allow the user to input from the keyboard
+// whether the last word to the following proverb should be party or country:
+// "Now is the time for all good men to come to the aid of their ___"
+// Inputting a 1 will use the word party. Any other number will use the word country.
+
+#include 《iostream》
+#include 《string》
+using namespace std;
+
+void writeProverb(int number); // This is the prototype for the writeProverb function
+
+int main()
+{
+   int wordCode;
+
+   cout << "Given the phrase:" << endl;
+   cout << "Now is the time for all good men to come to the aid of their ___"
+       << endl;
+
+   cout << "Input a 1 if you want the sentence to be finished with party"
+       << endl;
+   cout << "Input a 2 if you want the sentence to be finished with country" << endl;
+
+   cout << "Please input your choice now" << endl;
+   cin >> wordCode; 
+   cout << endl;
+
+   while (wordCode != 1 && wordCode != 2) {
+      cout << "I'm sorry but that is an incorrect choice; Please input a 1 or 2" << endl;
+      cin >> wordCode;
+   }
+
+   writeProverb(wordCode);
+
+   return 0;
+}
+
+//   ******************************************************************************
+//   writeProverb
+//
+//   task:     This function prints a proverb. The function takes a number
+//             from the call. If that number is a 1 it prints "Now is the time
+//             for all good men to come to the aid of their party."
+//             Otherwise, it prints "Now is the time for all good men
+//             to come to the aid of their country."
+//   data in:  code for ending word of proverb (integer)
+//   data out: no actual parameter altered
+//
+//   *****************************************************************************
+
+void writeProverb(int number)
+{
+   if (number == 1)
+      cout << "Now is the time for all good men to come to the aid of their party." << endl;
+   else if (number == 2)
+      cout << "Now is the time for all good men to come to the aid of their country." << endl;
+}
+    
+</code></pre>
+<div id="ouraccordion">
+    <input type="checkbox" id="accordionx13" class="hidecontent"/>
+    <label for="accordionx13">Explanation (Gemini)</label>
+    <div class="content hidecontent">
+<pre>Explanation:
+    The writeProverb function now has an else clause to handle invalid input.
+    The main function uses a do-while loop to repeatedly prompt the user until they enter a valid choice (1 or 2).
+
+Key Points:
+    The do-while loop ensures the proverb is printed at least once, even if the initial input is invalid.
+    The loop continues as long as the user's input is not 1 or 2.
+    This approach ensures that the user always enters a valid choice before the program terminates.
+
+
+
+
+  
+Both code versions are functionally equivalent and achieve the same goal of validating user input and printing the appropriate proverb.
+
+Here's a comparison of the key differences:
+
+Your Code:
+    Uses a while loop to repeatedly prompt the user until valid input is entered.
+    Prints an error message within the loop if input is invalid.
+
+My Code:
+    Uses a do-while loop to ensure the proverb is printed at least once, even for initial invalid input.
+    Handles invalid input within the writeProverb function itself.
+
+Here are some considerations for choosing between them:
+    Readability: 
+    Some might find the do-while loop slightly more readable, 
+    as it ensures the proverb is printed at least once and keeps the error handling within the writeProverb function.
+    Error Handling: 
+    The while loop might be considered more explicit for handling invalid input, as it has a dedicated error message within the loop.
+    Logic Flow: 
+    The do-while loop might be seen as more logical in this case, as it prints the proverb first and then validates input, 
+    rather than prompting for input repeatedly until it's valid.
+
+Ultimately, the choice between while and do-while is often a matter of personal preference and coding style. 
+Both approaches are valid and produce the same correct output.    
+
+</pre>
+    </div>
+
+    <input type="checkbox" id="accordionx14" class="hidecontent"/>
+    <label for="accordionx14">Explanation (Bing)</label>
+    <div class="content hidecontent">
+<pre>In this code, a while loop is added in the main() function to keep asking the user for input until they enter either 1 or 2. 
+The writeProverb() function is also modified to print different proverbs based on whether the input is 1 or 2. 
+
+</pre>
+    </div>
+</div>
+
+<h1>Exercise 3</h1>
+<p>Change the previous program so the user may input the word to end the phrase.<br>
+    The string holding the user’s input word will be passed to the proverb function instead of passing a number to it.<br>
+    Notice that this change requires you to change the proverb function heading and the prototype as well as the call to the function.<br><br>
+Sample Run:
+<pre>Given the phrase:
+Now is the time for all good men to come to the aid of their
+Please input the word you would like to have finish the proverb
+family
+Now is the time for all good men to come to the aid of their family</pre></p>
+<pre><code class="cpp">// This program will allow the user to input from the keyboard
+// whether the last word to the following proverb should be party or country:
+// "Now is the time for all good men to come to the aid of their ___"
+// Inputting a 1 will use the word party. Any other number will use the word country.
+
+#include 《iostream》
+#include 《string》
+using namespace std;
+
+void writeProverb(string word); // This is the prototype for the writeProverb function
+
+int main()
+{
+   string endWord;
+
+   cout << "Given the phrase:" << endl;
+   cout << "Now is the time for all good men to come to the aid of their ___"
+       << endl;
+
+   cout << "Please input the word you would like to have finish the proverb" << endl;
+    getline(cin, endWord);  // Use getline to read the entire string
+
+    writeProverb(endWord);
+
+    return 0;
+}
+
+void writeProverb(string word)
+{
+   cout << "Now is the time for all good men to come to the aid of their " << word << "." << endl;
+}
+
+
+//   ******************************************************************************
+//   writeProverb
+//
+//   task:     This function prints a proverb. The function takes a number
+//             from the call. If that number is a 1 it prints "Now is the time
+//             for all good men to come to the aid of their party."
+//             Otherwise, it prints "Now is the time for all good men
+//             to come to the aid of their country."
+//   data in:  code for ending word of proverb (integer)
+//   data out: no actual parameter altered
+//
+//   *****************************************************************************
+
+    
+</code></pre>
+<div id="ouraccordion">
+    <input type="checkbox" id="accordionx15" class="hidecontent"/>
+    <label for="accordionx15">Explanation (Gemini)</label>
+    <div class="content hidecontent">
+<pre>Key Changes:
+    The writeProverb function now takes a string parameter instead of an int.
+    The function body concatenates the word with the rest of the proverb.
+    The main function uses getline to read the entire string input, including spaces.
+    The writeProverb function is called with the user-inputted endingWord.
+
+Explanation:
+    The function now accepts a string as input, allowing for any word to be used.
+    getline is used to read the entire string, including spaces, ensuring the full word is captured.
+    The function concatenates the word with the rest of the proverb using the << operator.
+
+
+
+
+
+Your code is mostly correct, but it has a potential issue:
+
+Using cin >> endWord; to read a string might not capture the entire input if it contains spaces. 
+For example, if the user enters "best friends", only "best" would be stored in endWord.
+
+Here's a comparison of the two approaches:
+
+Your Code:
+
+    Uses cin >> endWord; to read the string.
+    Might not capture the entire input if it contains spaces.
+
+My Code:
+
+    Uses getline(cin, endWord); to read the entire line, including spaces.
+    Ensures that the full user input is captured, regardless of spaces.
+
+It's generally preferable to use getline when reading strings from user input to avoid potential issues with spaces.
+
+</pre>
+    </div>
+
+    <input type="checkbox" id="accordionx16" class="hidecontent"/>
+    <label for="accordionx16">Explanation (Bing)</label>
+    <div class="content hidecontent">
+<pre>In this code, writeProverb() is a function that prints the proverb based on the user’s input word. 
+This function is then called in the main() function. 
+When you run this program, it will print out the proverb as expected. 
+
+</pre>
+    </div>
+</div>
+
+</div>
+
+<input type="checkbox" id="accordion3" class="hidecontent"/>
+<label for="accordion3">Lab 6.3 - Introduction to Pass by Reference</label>
+<div class="content hidecontent">
+<pre><code class="cpp">// This program takes two numbers (payRate & hours)
+// and multiplies them to get grosspay.
+// It then calculates net pay by subtracting 15%
+
+#include 《iomanip》
+#include 《iostream》
+using namespace std;
+// Function prototypes
+void printDescription();
+void computePaycheck(float, int, float&, float&);
+int main() {
+    float payRate;
+    float grossPay;
+    float netPay;
+    int hours;
+    cout << setprecision(2) << fixed;
+    cout << "Welcome to the Pay Roll Program" << endl;
+    printDescription();  // Call to Description function
+    cout << "Please input the pay per hour" << endl;
+    cin >> payRate;
+    cout << endl << "Please input the number of hours worked" << endl;
+    cin >> hours;
+    cout << endl << endl;
+    computePaycheck(payRate, hours, grossPay, netPay);
+    // Fill in the code to output grossPay
+    cout << "The net pay is $" << netPay << endl;
+    cout << "We hope you enjoyed this program" << endl;
+    return 0;
+}
+// ********************************************************************
+// printDescription
+//
+// task: This function prints a program description
+// data in: none
+// data out: no actual parameter altered
+//
+// ********************************************************************
+void printDescription()  // The function heading
+{
+    cout << "************************************************" << endl << endl;
+    cout << "This program takes two numbers (payRate & hours)" << endl;
+    cout << "and multiplies them to get gross pay " << endl;
+    cout << "it then calculates net pay by subtracting 15%" << endl;
+    cout << "************************************************" << endl << endl;
+}
+// *********************************************************************
+// computePaycheck
+//
+// task: This function takes rate and time and multiples them to
+// get gross pay and then finds net pay by subtracting 15%.
+// data in: pay rate and time in hours worked
+// data out: the gross and net pay
+//
+// ********************************************************************
+void computePaycheck(float rate, int time, float& gross, float& net) {
+    // Fill in the code to find gross pay and net pay
+}
+    
+</code></pre>
+<h1>Exercise 1</h1>
+<p>Fill in the code (places in bold) and note that the function computePaycheck determines the net pay by subtracting 15% from the gross pay.<br>
+    Both gross and net are returned to the main() function where those values are printed.</p>
+<pre><code class="cpp">// This program takes two numbers (payRate & hours)
+// and multiplies them to get grosspay.
+// It then calculates net pay by subtracting 15%
+
+#include 《iostream》
+#include 《iomanip》
+using namespace std;
+
+void printDescription();
+void computePaycheck(float, int, float&, float&);
+
+int main()
+{
+   float payRate;
+   float grossPay;
+   float netPay;
+   int hours;
+
+   cout << setprecision(2) << fixed;
+   cout << "Welcome to the Pay Roll Program" << endl;
+
+   printDescription();      // Call to Description function 
+
+   cout << "Please input the pay per hour" << endl;
+   cin >> payRate;
+
+   cout << endl << "Please input the number of hours worked" << endl;
+   cin >> hours;
+
+   cout << endl << endl;
+
+   // Fill in the code to output grossPay
+   computePaycheck(payRate, hours, grossPay, netPay);
+
+   cout << "The gross pay is $" << grossPay << endl;
+   cout << "The net pay is $" << netPay << endl;
+
+   cout << "We hope you enjoyed this program" << endl;
+
+   return 0;
+}
+
+//   ********************************************************************
+//   printDescription
+//
+//   task:     This function prints a program description
+//   data in:  none
+//   data out: no actual parameter altered
+//
+//   ********************************************************************
+
+void printDescription()
+{
+   cout << "************************************************" << endl << endl;
+   cout << "This program takes two numbers (payRate & hours)" << endl;
+   cout << "and multiplies them to get gross pay " << endl;
+   cout << "it then calculates net pay by subtracting 15%" << endl;
+   cout << "************************************************" << endl << endl;
+}
+
+//   *********************************************************************
+//   computePaycheck
+//
+//   task:     This function takes rate and time and multiples them to
+//             get gross pay and then finds net pay by subtracting 15%.
+//   data in:  pay rate and time in hours worked
+//   data out: the gross and net pay
+//
+//   ********************************************************************
+
+// computePaycheck function
+void computePaycheck(float rate, int time, float& gross, float& net)
+{
+    gross = rate * time;  // Calculate gross pay
+    net = gross * 0.85;   // Calculate net pay by subtracting 15%
+}
+    
+</code></pre>
+<div id="ouraccordion">
+    <input type="checkbox" id="accordionx21" class="hidecontent"/>
+    <label for="accordionx21">Explanation (Gemini)</label>
+    <div class="content hidecontent">
+<pre>Explanation:
+
+    Output grossPay in main:
+        Added a line to print the value of grossPay after the computePaycheck function call.
+
+    Calculations in computePaycheck:
+        Calculated gross by multiplying rate and time.
+        Calculated net by multiplying gross by 0.85 (which is the same as subtracting 15%).
+
+Key Points:
+
+    The computePaycheck function modifies the gross and net variables directly using pass-by-reference.
+    The values calculated within the function are reflected in the variables in the main function.
+    The main function can then print the updated values of grossPay and netPay.
+
+
+
+
+
+Your code is functionally equivalent to the code I provided. There are no significant differences in terms of output or functionality.
+
+Here's a comparison of the two approaches:
+
+Your Code:
+    Prints both gross pay and net pay in a single cout statement.
+    Maintains consistent indentation throughout.
+
+My Code:
+    Prints gross pay and net pay on separate lines.
+    Varies indentation slightly for clarity in certain sections.
+
+Ultimately, the choice between these minor stylistic variations is a matter of personal preference and coding style guidelines. 
+Both approaches produce the correct output and demonstrate a clear understanding of pass-by-reference and function calls.
+
+Key Points:
+    Both versions correctly calculate gross pay and net pay using the computePaycheck function.
+    Both versions effectively use pass-by-reference to modify the gross and net variables within the function.
+    The differences in output formatting and indentation are purely stylistic and do not affect the program's functionality.
+
+</pre>
+    </div>
+
+    <input type="checkbox" id="accordionx22" class="hidecontent"/>
+    <label for="accordionx22">Explanation (Bing)</label>
+    <div class="content hidecontent">
+<pre>In this code, computePaycheck() is a function that calculates the gross pay and net pay based on the user’s input of pay rate and hours worked. 
+The gross pay and net pay are then printed in the main() function. 
+When you run this program, it will print out the gross pay and net pay as expected. 
+
+</pre>
+    </div>
+</div>
+
+<h1>Exercise 2</h1>
+<p>Compile and run your program with the following data and make sure you get the output shown.
+<pre>Please input the pay per hour
+9.50
+Please input the number of hours worked
+40
+The gross pay is $380.00
+The net pay is $323.00
+We hoped you enjoyed this program</pre></p>
+
+<div id="ouraccordion">
+    <input type="checkbox" id="accordionx23" class="hidecontent"/>
+    <label for="accordionx23">Explanation (Gemini)</label>
+    <div class="content hidecontent">
+<pre>I'm unable to compile and run code directly, but I can provide guidance based on the expected output:
+Here's a breakdown of the expected output and how it aligns with the code:
+1.	User Input:
+	•	The program prompts for pay per hour and hours worked.
+	•	The user enters 9.50 for pay per hour and 40 for hours worked.
+2.	Calculations:
+	•	The computePaycheck function calculates: 
+		•	Gross pay: 9.50 * 40 = 380.00
+		•	Net pay: 380.00 * 0.85 = 323.00
+3.	Output:
+	•	The program prints: 
+		•	"The gross pay is $380.00"
+		•	"The net pay is $323.00"
+		•	"We hoped you enjoyed this program"
+If you compile and run the code with the given input, you should receive the exact output shown in the exercise instructions.
+
+</pre>
+    </div>
+
+    <input type="checkbox" id="accordionx24" class="hidecontent"/>
+    <label for="accordionx24">Explanation (Bing)</label>
+    <div class="content hidecontent">
+<pre>The output you provided is correct based on the input and the program. Here’s a step-by-step explanation:
+1.	The pay per hour is $9.50.
+2.	The number of hours worked is 40.
+3.	The gross pay is calculated as pay per hour times the number of hours worked, which is $9.50 * 40 = $380.00.
+4.	The net pay is calculated as 85% of the gross pay (since 15% is subtracted), which is $380.00 * 0.85 = $323.00.
+So, if you input 9.50 for the pay per hour and 40 for the number of hours worked into the program, it will correctly output a gross pay of $380.00 and a net pay of $323.00. 
+Great job! 
+
+</pre>
+    </div>
+</div>
+
+<h1>Exercise 3</h1>
+<p>Are the parameters gross and net, in the modified calPaycheck function you created in Exercise 1 above, pass by value or pass by reference?</p>
+
+<div id="ouraccordion">
+    <input type="checkbox" id="accordionx25" class="hidecontent"/>
+    <label for="accordionx25">Explanation (Gemini)</label>
+    <div class="content hidecontent">
+<pre>The parameters gross and net in the computePaycheck function are passed by reference.
+Here's how you can tell:
+1.	Function Signature: The function signature includes ampersands (&) before the parameter names:
+void computePaycheck(float rate, int time, float& gross, float& net)
+•  The ampersands indicate pass-by-reference.
+•  Modification Within the Function: The function directly modifies the values of gross and net within its body:
+gross = rate * time;  // Assigning a new value to gross
+net = gross * 0.85;   // Assigning a new value to net
+ 
+2.	If they were passed by value, these changes would only affect local copies within the function, not the original variables in main.
+Key Points:
+•	Pass-by-reference allows functions to directly modify variables in the calling function.
+•	It's often used when a function needs to return multiple values or when working with large data structures to avoid copying overhead
+
+</pre>
+    </div>
+
+    <input type="checkbox" id="accordionx26" class="hidecontent"/>
+    <label for="accordionx26">Explanation (Bing)</label>
+    <div class="content hidecontent">
+<pre>The parameters gross and net in the computePaycheck function are passed by reference.
+This is indicated by the ampersand (&) before the variable names in the function definition.
+When a variable is passed by reference, the function works with the original variable’s memory location, allowing the function to modify the variable’s value directly.
+In contrast, when a variable is passed by value, the function works with a copy of the variable’s value, and changes made within the function do not affect the original variable.
+
+</pre>
+    </div>
+</div>
+
+<h1>Exercise 4</h1>
+<p>Alter the program so that gross and net are printed in the function compute computePaycheck instead of in main() . The main() function executes the statement
+<pre><code class="cpp">cout << "We hoped you enjoyed this program" << endl;</code></pre>
+    after the return from the function calPaycheck</p>
+<pre><code class="cpp">// This program takes two numbers (payRate & hours)
+// and multiplies them to get grosspay.
+// It then calculates net pay by subtracting 15%
+
+#include 《iostream》
+#include 《iomanip》
+using namespace std;
+
+void printDescription();
+void computePaycheck(float, int, float&, float&);
+
+int main()
+{
+   float payRate;
+   float grossPay;
+   float netPay;
+   int hours;
+
+   cout << setprecision(2) << fixed;
+   cout << "Welcome to the Pay Roll Program" << endl;
+
+   printDescription();
+
+   cout << "Please input the pay per hour" << endl;
+   cin >> payRate;
+
+   cout << endl << "Please input the number of hours worked" << endl;
+   cin >> hours;
+
+   cout << endl << endl;
+
+   computePaycheck(payRate, hours, grossPay, netPay);
+
+   cout << "We hope you enjoyed this program" << endl;
+
+   return 0;
+}
+
+
+
+//   ********************************************************************
+//   printDescription
+//
+//   task:     This function prints a program description
+//   data in:  none
+//   data out: no actual parameter altered
+//
+//   ********************************************************************
+
+void printDescription()
+{
+   cout << "************************************************" << endl << endl;
+   cout << "This program takes two numbers (payRate & hours)" << endl;
+   cout << "and multiplies them to get gross pay " << endl;
+   cout << "it then calculates net pay by subtracting 15%" << endl;
+   cout << "************************************************" << endl << endl;
+}
+
+
+//   *********************************************************************
+//   computePaycheck
+//
+//   task:     This function takes rate and time and multiples them to
+//             get gross pay and then finds net pay by subtracting 15%.
+//   data in:  pay rate and time in hours worked
+//   data out: the gross and net pay
+//
+//   ********************************************************************
+
+void computePaycheck(float rate, int time, float& gross, float& net)
+{
+   gross = rate * time;
+   net = gross * 0.85;
+
+   cout << "The gross pay is $" << gross << endl;
+   cout << "The net pay is $" << net << endl;
+}
+    
+</code></pre>
+<div id="ouraccordion">
+    <input type="checkbox" id="accordionx27" class="hidecontent"/>
+    <label for="accordionx27">Explanation (Gemini)</label>
+    <div class="content hidecontent">
+<pre>Key Changes:
+
+    Removed the cout statements for printing grossPay and netPay from the main function.
+    Added the cout statements to print gross and net within the computePaycheck function, after they are calculated.
+
+Explanation:
+
+    The computePaycheck function now handles both the calculation and printing of gross and net pay.
+    The main function only calls the computePaycheck function and then prints the closing message.
+    This demonstrates how functions can encapsulate specific tasks, including both calculations and output.
+
+Your code is functionally equivalent to the code I provided. 
+Both versions correctly implement the exercise requirements and produce the same output.
+
+
+
+
+
+
+Here's a comparison of the two approaches:
+
+    Your Code:
+        Combines the printing of gross and net pay within the computePaycheck function.
+        Keeps the structure of the main function relatively simple.
+
+    My Code:
+        Maintains a clear separation between calculation and output, even within functions.
+        Could potentially be more adaptable if the output format or placement needs to change in the future.
+
+Ultimately, the choice between these two approaches is often a matter of coding style and preferences. 
+Both are valid and produce correct results.
+
+Key Considerations:
+
+    Encapsulation: 
+        Consider how closely related the calculation and output are. If they are tightly coupled, combining them in the same function might make sense.
+    Reusability: 
+        If you envision reusing the calculation logic in different contexts with varying output requirements, keeping them separate might be more flexible.
+    Readability: 
+        Some developers prefer to keep functions focused on a single task, while others find it more readable to have related actions grouped together.
+
+In this specific case, both approaches are equally valid and produce the same output. 
+The decision of which one to use depends on your personal coding style and preferences, as well as any potential future needs for code reusability or modification.
+
+</pre>
+    </div>
+
+    <input type="checkbox" id="accordionx28" class="hidecontent"/>
+    <label for="accordionx28">Explanation (Bing)</label>
+    <div class="content hidecontent">
+<pre>In this code, the lines that print the gross pay and net pay are moved from the main() function to the computePaycheck() function. 
+The main() function now only prints the statement “We hope you enjoyed this program” after the call to computePaycheck().
+
+</pre>
+    </div>
+</div>
+
+<h1>Exercise 5</h1>
+<p>Run the program again using the data from Exercise 2.<br>
+    You should get the same results.<br>
+    All parameters should now be passed by value.</p>
+
+</div>
+
+<input type="checkbox" id="accordion4" class="hidecontent"/>
+<label for="accordion4">Lab 6.4 - Student Generated Code Assignments</label>
+<div class="content hidecontent">
+ 
+<h1>Exercise 1</h1>
+<p>Write a program that will read two floating point numbers (the first read into a variable called first and the second read into a variable called second ) and then calls the function swap with the actual parameters first and second.<br>
+    The swap function having formal parameters number1 and number2 should swap the value of the two variables.<br><br>
+Sample Run:
+<pre>Enter the first number
+Then hit enter
+80
+Enter the second number
+Then hit enter
+70
+You input the numbers as 80 and 70
+After swapping, the first number has the value of 70 which was the value of the second number.
+The second number has the value of 80 which was the value of the first number.</pre></p>
+<pre><code class="cpp">#include 《iostream》
+
+using namespace std;
+
+void swap(float &number1, float &number2) {
+    float temp = number1;
+    number1 = number2;
+    number2 = temp;
+}
+
+int main() {
+    float first, second;
+
+    cout << "Enter the first number\nThen hit enter\n";
+    cin >> first;
+
+    cout << "Enter the second number\nThen hit enter\n";
+    cin >> second;
+
+    cout << "You input the numbers as " << first << " and " << second << endl;
+
+    swap(first, second);  // Call the swap function
+
+    cout << "After swapping, the first number has the value of " << first
+         << " which was the value of the second number." << endl;
+    cout << "The second number has the value of " << second
+         << " which was the value of the first number." << endl;
+
+    return 0;
+}
+
+    
+</code></pre>
+<div id="ouraccordion">
+    <input type="checkbox" id="accordionx31" class="hidecontent"/>
+    <label for="accordionx31">Explanation (Gemini)</label>
+    <div class="content hidecontent">
+<pre>The code you provided is functionally identical to the code I presented. 
+Both versions correctly implement the swapping functionality and produce the same output.
+
+Here's a comparison of the minor differences:
+
+    Prompt Formatting: 
+        Your code uses endl to end lines in prompts, while my code uses \n. 
+        This is a stylistic choice; both approaches are valid.
+    Variable Naming: 
+        Your code uses slightly more descriptive variable names (e.g., first and second instead of number1 and number2). 
+        This can enhance readability, especially in larger programs.
+
+Ultimately, both versions are correct and produce the same results. 
+The choice between them is largely a matter of personal preference and coding style.
+
+Key Considerations for Preference:
+
+    Readability: 
+        Consider which formatting and naming conventions you find more readable and easier to maintain.
+    Coding Standards: 
+        If you're working within a team or project with specific coding guidelines, adhere to those standards for consistency.
+    Personal Preferences: 
+        Use the style that feels most comfortable and intuitive to you.
+
+In this specific case, there are no significant advantages or disadvantages to either approach. 
+Both produce correct and efficient code. 
+The decision of which one to use depends on your individual preferences and any established coding standards.
+
+</pre>
+    </div>
+
+    <input type="checkbox" id="accordionx32" class="hidecontent"/>
+    <label for="accordionx32">Explanation (Bing)</label>
+    <div class="content hidecontent">
+<pre>In this code, swap() is a function that swaps the values of its two parameters. 
+The parameters are passed by reference, which allows the function to modify the original variables. 
+The main() function reads two floating point numbers from the user, prints them, calls swap() to swap their values, and then prints the swapped values.
+
+
+
+
+
+
+The code you provided is essentially the same as the one I provided earlier. 
+The only difference is in the formatting of the output statements. 
+In your version, you’ve chosen to break the output statements into two lines, which can make the code easier to read if the lines are very long.
+
+In terms of functionality, both versions of the code will produce the same result. 
+The choice between the two mostly comes down to personal preference and readability. 
+Some developers prefer to keep lines shorter to improve readability, while others might prefer to keep related output on the same line.
+
+In general, it’s a good practice to keep lines of code reasonably short to enhance readability, especially when working on projects with multiple developers. 
+However, the most important thing is to keep your code consistent. 
+If you choose to break up long lines, try to do it consistently throughout your code.
+</pre>
+    </div>
+</div>
+
+<h1>Exercise 2</h1>
+<p>Write a program that will input miles traveled and hours spent in travel.<br>
+    The program will determine miles per hour.<br>
+    This calculation must be done in a function other than main; however, main will print the calculation.<br>
+    The function will thus have 3 parameters: miles, hours, and milesPerHour<br>
+    Which parameter(s) are pass by value and which are passed by reference? Output is fixed with 2 decimal point precision.<br><br>
+Sample Run:
+<pre>Please input the Miles traveled
+475
+Please input the hours traveled
+8
+Your speed is 59.38 miles per hour</pre></p>
+<pre><code class="cpp">#include 《iostream》
+#include 《iomanip》
+using namespace std;
+
+void calculateSpeed(float miles, float hours, float& milesPerHour) {
+    milesPerHour = miles / hours;
+}
+
+int main() {
+    float miles, hours, milesPerHour;
+
+    cout << "Please input the Miles traveled\n";
+    cin >> miles;
+
+    cout << "Please input the hours traveled\n";
+    cin >> hours;
+
+    calculateSpeed(miles, hours, milesPerHour);
+
+    cout << fixed << setprecision(2);
+    cout << "Your speed is " << milesPerHour << " miles per hour\n";
+
+    return 0;
+}
+    
+</code></pre>
+<div id="ouraccordion">
+    <input type="checkbox" id="accordionx33" class="hidecontent"/>
+    <label for="accordionx33">Explanation (Gemini)</label>
+    <div class="content hidecontent">
+<pre>Explanation:
+
+    Pass by Value:
+        miles and hours are passed by value because the function only needs to read their values, not modify them.
+
+    Pass by Reference:
+        milesPerHour is passed by reference because the function needs to calculate and store the result back in the original variable in main.
+
+    Function Calculation:
+        The calculateMPH function performs the division and stores the result in milesPerHour.
+
+    Output Formatting:
+        fixed and setprecision(2) are used in main to format the output with two decimal places.
+
+Key Points:
+
+    Pass-by-value is efficient for passing simple values that don't need modification.
+    Pass-by-reference is necessary for modifying variables within a function and reflecting those changes in the calling function.
+    Understanding parameter passing is essential for writing effective and well-structured C++ programs.
+
+
+
+
+
+The code you provided is functionally identical to the code I presented. 
+Both versions correctly calculate and output the miles per hour, demonstrating a clear understanding of pass-by-value and pass-by-reference.
+
+Here's a comparison of the minor differences:
+
+    Function Name: 
+        Your code uses calculateSpeed as the function name, while mine uses calculateMPH. 
+        This is a personal preference and has no effect on functionality.
+    Variable Naming: 
+        You use the same variable names throughout, while I opted for slightly different names in the function to distinguish them from the variables in main. 
+        This is a stylistic choice and can sometimes enhance readability in larger programs.
+
+Ultimately, both versions are correct and produce the same results. 
+The choice between them is largely a matter of personal preference and coding style.
+
+Key Considerations for Preference:
+
+    Readability: 
+        Consider which function and variable names you find more descriptive and easier to understand.
+    Coding Standards: 
+        If you're working within a team or project with specific coding guidelines, adhere to those standards for consistency.
+    Personal Preferences: 
+        Use the style that feels most comfortable and intuitive to you.
+
+In this specific case, there are no significant advantages or disadvantages to either approach. 
+Both produce correct and efficient code. 
+The decision of which one to use depends on your individual preferences and any established coding standards.
+
+</pre>
+    </div>
+
+    <input type="checkbox" id="accordionx34" class="hidecontent"/>
+    <label for="accordionx34">Explanation (Bing)</label>
+    <div class="content hidecontent">
+<pre>In this code, calculateSpeed() is a function that calculates the speed in miles per hour based on the user’s input of miles traveled and hours spent in travel. 
+The miles and hours are passed by value, and the milesPerHour is passed by reference, allowing the function to modify the original variable in the main() function. 
+The main() function then prints the calculated speed.
+
+The parameters miles and hours are passed by value because we don’t need to modify their original values in the main() function. 
+The parameter milesPerHour is passed by reference because we want to modify its original value in the main() function with the calculated speed.
+
+
+
+
+
+The code you provided is essentially the same as the one I provided earlier. 
+The only difference is in the naming of the function: calculateMPH() in your version versus calculateSpeed() in mine. 
+Both versions of the code will produce the same result.
+
+In terms of functionality, there’s no difference between the two. 
+The choice between the two mostly comes down to personal preference and readability. 
+Some developers might prefer the name calculateSpeed() because it’s more general and could be used in contexts where the speed isn’t necessarily measured in miles per hour. 
+Others might prefer calculateMPH() because it’s more specific and clearly indicates that the function calculates speed in miles per hour.
+
+In general, it’s a good practice to choose function names that accurately describe what the function does. 
+This makes the code easier to understand and maintain. However, the most important thing is to keep your code consistent. 
+If you choose to use specific function names like calculateMPH(), try to do it consistently throughout your code. 
+
+</pre>
+    </div>
+</div>
+
+<h1>Exercise 3</h1>
+<p>Write a program that will read in grades, the number of which is also input by the user.<br>
+    The program will find the sum of those grades and pass it, along with the number of grades, to a function which has a “pass by reference” parameter that will contain the numeric average of those grades as processed by the function.<br>
+    The main function will then determine the letter grade of that average based on a 100-point scale.<br>
+<pre>90–100     A
+80–89      B
+70–79      C
+60–69      D
+0–59       F</pre>
+Sample Run:
+<pre>Enter the number of grades
+3
+Input a numeric grade between 0-100
+90
+Input a numeric grade between 0-100
+80
+Input a numeric grade between 0-100
+50
+The grade is C</pre></p>
+<pre><code class="cpp">#include 《iostream》
+
+using namespace std;
+
+void calculateAverage(int sum, int numGrades, float &average) {
+    average = static_cast《float》(sum) / numGrades;
+}
+
+char determineLetterGrade(float average) {
+    if (average >= 90) {
+        return 'A';
+    } else if (average >= 80) {
+        return 'B';
+    } else if (average >= 70) {
+        return 'C';
+    } else if (average >= 60) {
+        return 'D';
+    } else {
+        return 'F';
+    }
+}
+
+int main() {
+    int numGrades, grade, sum = 0;
+    float average;
+
+    cout << "Enter the number of grades\n";
+    cin >> numGrades;
+
+    for (int i = 0; i < numGrades; i++) {
+        cout << "Input a numeric grade between 0-100\n";
+        cin >> grade;
+
+        while (grade < 0 || grade > 100) {
+            cout << "Invalid grade. Please enter a grade between 0-100\n";
+            cin >> grade;
+        }
+
+        sum += grade;
+    }
+
+    calculateAverage(sum, numGrades, average);
+
+    char letterGrade = determineLetterGrade(average);
+
+    cout << "The grade is " << letterGrade << endl;
+
+    return 0;
+}
+    
+</code></pre>
+<div id="ouraccordion">
+    <input type="checkbox" id="accordionx35" class="hidecontent"/>
+    <label for="accordionx35">Explanation (Gemini)</label>
+    <div class="content hidecontent">
+<pre>Explanation:
+
+    Input:
+        The program prompts for the number of grades and then reads each grade individually, ensuring validity (0-100).
+
+    Calculate Sum:
+        The sum variable accumulates the total grade points.
+
+    Calculate Average:
+        The calculateAverage function takes sum, numGrades, and average (passed by reference) to compute the average.
+
+    Determine Letter Grade:
+        The determineLetterGrade function assigns the appropriate letter grade based on the average.
+
+    Output:
+        The final letter grade is printed.
+
+Key Points:
+
+    Pass-by-reference is used for the average parameter to modify its value within the function and reflect the change in main.
+    Input validation ensures that only valid grades (0-100) are accepted.
+    The code is well-structured with clear function separation for readability and maintainability.
+
+
+
+
+
+Here's a comparison of the two approaches, highlighting their pros and cons:
+
+Your Code:
+
+Pros:
+
+    Flexibility: 
+        Using a vector allows for dynamic storage of grades, making it adaptable to varying numbers of grades without pre-allocating space.
+    Readability: 
+        The calculateAverage function directly accesses and iterates over the grades within the vector, potentially making the code's intent more explicit.
+
+Cons:
+
+    Potential Overhead: 
+        Passing a vector by value can incur a slight performance overhead, especially for large numbers of grades, as a copy of the vector is created for the function call.
+
+My Code:
+
+Pros:
+
+    Efficiency: 
+        Passing individual values (sum and number of grades) can be more efficient, especially for smaller datasets.
+    Clarity: 
+        Separating the calculation of the sum from the calculateAverage function can enhance readability and modularity, as each function has a clear, focused purpose.
+
+Cons:
+
+    Pre-allocation: 
+        Requires knowing the number of grades beforehand to allocate an array, potentially limiting flexibility.
+
+Preference:
+
+    Performance vs. Flexibility: 
+        If performance is a top priority and the number of grades is usually small, my code might be slightly more efficient.
+    Readability and Flexibility: 
+        If working with dynamic numbers of grades and prioritizing code clarity, your code could be a better choice.
+
+Ultimately, the best approach depends on your specific project requirements and coding style. 
+Consider the trade-offs in terms of efficiency, flexibility, and readability to make an informed decision.
+    
+</pre>
+    </div>
+
+    <input type="checkbox" id="accordionx36" class="hidecontent"/>
+    <label for="accordionx36">Explanation (Bing)</label>
+    <div class="content hidecontent">
+<pre>In this code, calculateAverage() is a function that calculates the average of the grades. 
+The grades and the number of grades are passed by value, and the average is passed by reference, allowing the function to modify the original variable in the main() function. 
+The determineLetterGrade() function determines the letter grade based on the average. The main() function then prints the letter grade.
+
+The parameters grades and numGrades are passed by value because we don’t need to modify their original values in the main() function. 
+The parameter average is passed by reference because we want to modify its original value in the main() function with the calculated average.
+
+
+
+
+
+The code you provided is a valid alternative to the one I provided earlier. 
+The main difference is that you’re calculating the sum of the grades directly in the main() function and then passing it to the calculateAverage() function, whereas in my version, the sum was calculated inside the calculateAverage() function.
+
+In terms of functionality, both versions of the code will produce the same result. 
+The choice between the two mostly comes down to personal preference and the specific requirements of your program.
+
+Here are some considerations:
+
+    Readability: 
+        Some developers might find it more intuitive to calculate the sum directly where the grades are being inputted (as in your version), while others might prefer to keep all calculations within the calculateAverage() function (as in my version).
+    
+    Modularity: 
+        Keeping all calculations within the calculateAverage() function can make your code more modular, which can be beneficial if you plan to reuse or modify this function in the future.
+    
+    Performance: 
+        In this case, the performance difference between the two versions would be negligible. 
+        For larger programs or more complex calculations, you might want to consider where calculations are performed in order to optimize performance.
+
+In general, it’s a good practice to write code that is clear, concise, and easy to understand. 
+This can make it easier for others (or yourself in the future) to maintain and modify your code.
+
+
+</pre>
+    </div>
+</div>
+
+</div>
+
+<input type="checkbox" id="accordion5" class="hidecontent"/>
+<label for="accordion5">Lab 6.5 - Scope of Variables</label>
+<div class="content hidecontent">
+<pre><code class="cpp">#include 《iomanip》
+#include 《iostream》
+using namespace std;
+// This program will demonstrate the scope rules.
+
+const double PI = 3.14;
+const double RATE = 0.25;
+void findArea(float, float&);
+void findCircumference(float, float&);
+int main() {
+    cout << fixed << showpoint << setprecision(2);
+    float radius = 12;
+    cout << " Main function outer block" << endl;
+    cout << " LIST THE IDENTIFIERS THAT are active here" << endl << endl;
+    {
+        float area;
+        cout << "Main function first inner block" << endl;
+        cout << "LIST THE IDENTIFIERS THAT are active here" << endl << endl;
+        // Fill in the code to call findArea here
+        cout << "The radius = " << radius << endl;
+        cout << "The area = " << area << endl << endl;
+    }
+    {
+        float radius = 10;
+        float circumference;
+        cout << "Main function second inner block" << endl;
+        cout << "LIST THE IDENTIFIERS THAT are active here" << endl << endl;
+        // Fill in the code to call findCircumference here
+        cout << "The radius = " << radius << endl;
+        cout << "The circumference = " << circumference << endl << endl;
+    }
+    cout << "Main function after all the calls" << endl;
+    cout << "LIST THE IDENTIFIERS THAT are active here" << endl << endl;
+    return 0;
+}
+// *********************************************************************
+// findArea
+//
+// task: This function finds the area of a circle given its radius
+// data in: radius of a circle
+// data out: answer (which alters the corresponding actual parameter)
+//
+// ********************************************************************
+void findArea(float rad, float& answer) {
+    cout << "AREA FUNCTION" << endl << endl;
+    cout << "LIST THE IDENTIFIERS THAT are active here" << endl << endl;
+    // FILL in the code, given that parameter rad contains the radius, that
+    // will find the area to be stored in answer
+}
+// ******************************************************************************
+// findCircumference
+//
+// task: This function finds the circumference of a circle given its radius
+// data in: radius of a circle
+// data out: distance (which alters the corresponding actual parameter)
+//
+// *****************************************************************************
+void findCircumference(float length, float& distance) {
+    cout << "CIRCUMFERENCE FUNCTION" << endl << endl;
+    cout << "LIST THE IDENTIFIERS THAT are active here" << endl << endl;
+    // FILL in the code, given that parameter length contains the radius,
+    // that will find the circumference to be stored in distance
+}
+    
+</code></pre>
+<h1>Exercise 1</h1>
+<p>Fill in the following chart by listing the identifiers (function names, variables, constants)</p>
+
+<div id="ouraccordion">
+    <input type="checkbox" id="accordionx41" class="hidecontent"/>
+    <label for="accordionx41">Explanation (Gemini)</label>
+    <div class="content hidecontent">
+<pre>Here's the chart listing the active identifiers in each scope:
+Scope			Active Identifiers
+GLOBAL			PI, RATE, findArea, findCircumference
+Main (outer)		PI, RATE, findArea, findCircumference, radius
+Main (inner 1)		PI, RATE, findArea, findCircumference, radius, area
+Main (inner 2)		PI, RATE, findArea, findCircumference, radius (local), circumference
+findArea		PI, rad, answer
+findCircumference	PI, length, distance
+Key Points:
+•	Global Scope: Constants and function declarations have global scope.
+•	Block Scope: Variables declared within a block (including function bodies) have scope limited to that block.
+•	Overlapping Scopes: Inner blocks can access variables from outer blocks, but not vice versa.
+•	Local Variables: Variables with the same name in different blocks (like radius in main) are distinct and independent.
+•	Function Parameters: Function parameters are local to the function's scope.
+
+</pre>
+    </div>
+
+    <input type="checkbox" id="accordionx42" class="hidecontent"/>
+    <label for="accordionx42">Explanation (Bing)</label>
+    <div class="content hidecontent">
+<pre>Sure, I can help with that. Here’s the list of identifiers that are active in each scope:
+GLOBAL
+•	PI
+•	RATE
+•	findArea (function)
+•	findCircumference (function)
+Main
+•	PI
+•	RATE
+•	findArea (function)
+•	findCircumference (function)
+•	radius
+Main (inner 1)
+•	PI
+•	RATE
+•	findArea (function)
+•	findCircumference (function)
+•	radius (from outer scope)
+•	area
+Main (inner 2)
+•	PI
+•	RATE
+•	findArea (function)
+•	findCircumference (function)
+•	radius (new variable, shadows outer scope)
+•	circumference
+findArea
+•	PI
+•	RATE
+•	rad
+•	answer
+findCircumference
+•	PI
+•	RATE
+•	length
+•	distance
+Please note that in the “Main (inner 2)” block, a new variable radius is declared which shadows the radius variable from the outer scope.
+This means that within this block, any reference to radius will refer to this new variable, not the one declared in the outer scope.
+
+</pre>
+    </div>
+</div>
+
+<h1>Exercise 2</h1>
+<p>For each cout instruction that reads:
+<pre><code class="cpp">cout << " LIST THE IDENTIFIERS THAT are active here" << endl;</code></pre>
+Replace the words in all caps by a list of all identifiers active at that location. Change it to have the following form:
+<pre><code class="cpp">cout << "area, radius and PI are active here" << endl;</code></pre><br></p>
+<pre><code class="cpp">#include 《iostream》
+#include 《iomanip》
+using namespace std;
+
+// This program will demonstrate the scope rules.
+
+const double PI = 3.14;
+const double RATE = 0.25;
+
+void findArea(float, float&);
+void findCircumference(float, float&);
+
+int main()
+{
+   cout << fixed << showpoint << setprecision(2);
+   float radius = 12;
+
+   cout << " Main function outer block" << endl;
+   cout << "radius, PI, and RATE are active here" << endl << endl;
+
+   {
+      float area;
+
+      cout << "Main function first inner block" << endl;
+      cout << "area, radius, PI, and RATE are active here" << endl << endl;
+
+      // Fill in the code to call findArea here
+
+      cout << "The radius = " << radius << endl;
+      cout << "The area = " << area << endl << endl;
+   }
+
+   {
+      float radius = 10;
+      float circumference;
+
+      cout << "Main function second inner block" << endl;
+      cout << "circumference, radius, PI, and RATE are active here" << endl << endl;
+
+      // Fill in the code to call findCircumference here
+
+      cout << "The radius = " << radius << endl;
+      cout << "The circumference = " << circumference << endl << endl;
+   }
+
+   cout << "Main function after all the calls" << endl;
+   cout << "radius, PI, and RATE are active here" << endl << endl;
+
+   return 0;
+}
+
+//   *********************************************************************
+//   findArea
+//
+//   task:     This function finds the area of a circle given its radius
+//   data in:  radius of a circle
+//   data out: answer (which alters the corresponding actual parameter)
+//
+//   ********************************************************************
+
+void findArea(float rad, float& answer)
+{
+   cout << "AREA FUNCTION" << endl << endl;
+   cout << "rad, answer, PI, and RATE are active here" << endl << endl;
+
+   // FILL in the code, given that parameter rad contains the radius, that
+   // will find the area to be stored in answer
+}
+
+//   ******************************************************************************
+//   findCircumference
+//
+//   task:     This function finds the circumference of a circle given its radius
+//   data in:  radius of a circle
+//   data out: distance (which alters the corresponding actual parameter)
+//
+//   *****************************************************************************
+
+void findCircumference(float length, float& distance)
+{
+   cout << "CIRCUMFERENCE FUNCTION" << endl << endl;
+   cout << "length, distance, PI, and RATE are active here" << endl << endl;
+
+   // FILL in the code, given that parameter length contains the radius,
+   // that will find the circumference to be stored in distance
+}
+    
+</code></pre>
+<div id="ouraccordion">
+    <input type="checkbox" id="accordionx43" class="hidecontent"/>
+    <label for="accordionx43">Explanation (Gemini)</label>
+    <div class="content hidecontent">
+<pre>Key Changes:
+I've carefully listed the active identifiers at each location, considering their scope and visibility within the code.
+
+</pre>
+    </div>
+
+    <input type="checkbox" id="accordionx44" class="hidecontent"/>
+    <label for="accordionx44">Explanation (Bing)</label>
+    <div class="content hidecontent">
+<pre>In this code, I’ve replaced the “LIST THE IDENTIFIERS THAT are active here” statements with the actual list of identifiers that are active in each scope. 
+This can be helpful for understanding how variable scope works in C++. 
+
+</pre>
+    </div>
+</div>
+
+<h1>Exercise 3</h1>
+<p>Fill in the proper code to do what the comments in the program say.</p>
+<pre><code class="cpp">#include 《iostream》
+#include 《iomanip》
+using namespace std;
+
+// This program will demonstrate the scope rules.
+
+// Low Junn Kit
+
+const double PI = 3.14;
+const double RATE = 0.25;
+
+void findArea(float, float&);
+void findCircumference(float, float&);
+
+int main() {
+    cout << fixed << showpoint << setprecision(2);
+    float radius = 12;
+
+    cout << "Main function outer block" << endl;
+    cout << "radius, PI, and RATE are active here" << endl << endl;
+    {
+        float area;
+
+        cout << "Main function first inner block" << endl;
+        cout << "area, radius, PI, and RATE are active here" << endl << endl;
+
+        // Fill in the code to call findArea here
+        findArea(radius, area);
+
+        cout << "The radius = " << radius << endl;
+        cout << "The area = " << area << endl << endl;
+    }
+
+    {
+        float radius = 10;
+        float circumference;
+
+        cout << "Main function second inner block" << endl;
+        cout << "circumference, radius, PI, and RATE are active here" << endl << endl;
+
+        // Fill in the code to call findCircumference here
+        findCircumference(radius, circumference);
+        
+        cout << "The radius = " << radius << endl;
+        cout << "The circumference = " << circumference << endl << endl;
+    }
+
+    cout << "Main function after all the calls" << endl;
+    cout << "radius, PI, and RATE are active here" << endl << endl;
+
+    return 0;
+}
+
+// *********************************************************************
+// findArea
+//
+// task: This function finds the area of a circle given its radius
+// data in: radius of a circle
+// data out: answer (which alters the corresponding actual parameter)
+//
+// ********************************************************************
+
+void findArea(float rad, float& answer) 
+{
+    cout << "AREA FUNCTION" << endl << endl;
+    cout << "rad, answer, PI, and RATE are active here" << endl << endl;
+
+    // FILL in the code, given that parameter rad contains the radius, that
+    // will find the area to be stored in answer
+    answer = PI * rad * rad;
+}
+
+// ******************************************************************************
+// findCircumference
+//
+// task: This function finds the circumference of a circle given its radius
+// data in: radius of a circle
+// data out: distance (which alters the corresponding actual parameter)
+//
+// *****************************************************************************
+
+void findCircumference(float length, float& distance) 
+{
+    cout << "CIRCUMFERENCE FUNCTION" << endl << endl;
+    cout << "length, distance, PI, and RATE are active here" << endl << endl;
+
+    // FILL in the code, given that parameter length contains the radius,
+    // that will find the circumference to be stored in distance
+    distance = 2 * PI * length;
+}
+    
+</code></pre>
+<div id="ouraccordion">
+    <input type="checkbox" id="accordionx45" class="hidecontent"/>
+    <label for="accordionx45">Explanation (Gemini)</label>
+    <div class="content hidecontent">
+<pre>Key Changes:
+
+    findArea function: 
+        Added answer = PI * rad * rad; to calculate the area.
+    findCircumference function: 
+        Added distance = 2 * PI * length; to calculate the circumference.
+    main function, first inner block: 
+        Added findArea(radius, area); to call the findArea function.
+    main function, second inner block: 
+        Added findCircumference(radius, circumference); to call the findCircumference function.
+
+
+
+
+
+Here's a comparison of the two code versions, highlighting their pros and cons:
+
+Your Code:
+
+Pros:
+    Conciseness: 
+        Removes unnecessary prompts for listing active identifiers, making the code more focused on the essential logic.
+    Readability: 
+        Some might find it slightly more readable without the extra prompts.
+
+Cons:
+    Less Educational: 
+        For the purpose of explicitly demonstrating scope rules, the prompts for listing active identifiers can be helpful for understanding and learning.
+
+My Code:
+
+Pros:
+    Educational Value: 
+        Includes prompts for listing active identifiers, which can reinforce understanding of scope concepts.
+    Comprehensiveness: 
+        Provides a more thorough demonstration of scope principles.
+
+Cons:
+    Verbosity: 
+        The extra prompts add a minor amount of verbosity to the code.
+
+Preference:
+
+    Learning Context: 
+        If the primary goal is to learn and practice scope rules, my code might be more suitable.
+    Production Code: 
+        If the focus is on conciseness and readability for a practical application, your code could be preferable.
+
+Ultimately, the best choice depends on your specific needs and preferences. 
+Both versions are functionally correct and demonstrate scope concepts effectively. 
+Consider the trade-offs in terms of educational clarity versus conciseness to decide which approach aligns better with your goals.
+
+</pre>
+    </div>
+
+    <input type="checkbox" id="accordionx46" class="hidecontent"/>
+    <label for="accordionx46">Explanation (Bing)</label>
+    <div class="content hidecontent">
+<pre>In this code, findArea() is a function that calculates the area of a circle given its radius, and findCircumference() is a function that calculates the circumference of a circle given its radius. The radius is passed by value, and the area and circumference are passed by reference, allowing the functions to modify the original variables in the main() function. 
+The main() function then prints the radius, area, and circumference.
+
+
+
+
+
+The code you provided is essentially the same as the one I provided earlier. 
+The main difference is in the formatting of the output statements and the addition of comments. 
+In your version, you’ve chosen to add more detailed comments, which can make the code easier to understand.
+
+In terms of functionality, both versions of the code will produce the same result. The choice between the two mostly comes down to personal preference and readability. 
+Some developers might prefer to keep lines shorter to improve readability, while others might prefer to keep related output on the same line.
+
+In general, it’s a good practice to keep lines of code reasonably short to enhance readability, especially when working on projects with multiple developers. 
+However, the most important thing is to keep your code consistent. 
+If you choose to break up long lines, try to do it consistently throughout your code.
+
+As for the comments, they are a great addition! 
+Comments can greatly improve the readability of your code, making it easier for others (and future you) to understand what the code is doing. 
+Just be sure to keep your comments up-to-date if you make changes to your code.
+
+</pre>
+    </div>
+</div>
+
+<h1>Exercise 4</h1>
+<p>Before compiling and running the program, write out what you expect the output to be. What value for radius will be passed by main (first inner block) to the findArea function?<br>
+What value for radius will be passed by main function (second inner block) to the findCircumference function?</p>
+
+<div id="ouraccordion">
+    <input type="checkbox" id="accordionx47" class="hidecontent"/>
+    <label for="accordionx47">Explanation (Gemini)</label>
+    <div class="content hidecontent">
+<pre>Here's the expected output of the program, along with explanations for the radius values passed to the functions:
+Output:
+Main function outer block
+PI, RATE, findArea, findCircumference, and radius are active here
+Main function first inner block
+PI, RATE, findArea, findCircumference, radius, and area are active here
+AREA FUNCTION
+PI and rad are active here
+Main function first inner block
+The radius = 12.00
+The area = 452.16
+
+Main function second inner block
+PI, RATE, findArea, findCircumference, radius (local), and circumference are active here
+CIRCUMFERENCE FUNCTION
+PI and length are active here
+Main function second inner block
+The radius = 10.00
+The circumference = 62.83
+
+Main function after all the calls
+PI, RATE, findArea, findCircumference, and radius are active here
+Radius Values:
+•	findArea: The value for radius passed from the first inner block of main to the findArea function will be 12. 
+This is because the findArea function uses the radius variable from the outer main block, as there's no local radius variable within the first inner block.
+
+•	findCircumference: The value for radius passed from the second inner block of main to the findCircumference function will be 10. 
+This is due to the local radius variable declared within the second inner block, which shadows the radius variable from the outer main block. 
+The local radius has a value of 10, so that's the value passed to the function.
+
+</pre>
+    </div>
+
+    <input type="checkbox" id="accordionx48" class="hidecontent"/>
+    <label for="accordionx48">Explanation (Bing)</label>
+    <div class="content hidecontent">
+<pre>Before compiling and running the program, we can predict the output based on the code.
+In the first inner block of the main() function, the findArea() function is called with the radius variable as an argument. 
+The radius variable is declared in the main() function and is assigned a value of 12. 
+So, the value for radius that will be passed to the findArea() function is 12.
+
+In the second inner block of the main() function, the findCircumference() function is called with a new radius variable as an argument. 
+This radius variable is declared in the second inner block and is assigned a value of 10. 
+It shadows the radius variable from the outer scope. 
+So, the value for radius that will be passed to the findCircumference() function is 10.
+
+Please note that the actual output of the program will also depend on the implementation of the findArea() and findCircumference() functions, which are not provided in the exercise.
+
+</pre>
+    </div>
+</div>
+
+<h1>Exercise 5</h1>
+<p>Compile and run your program</p>
+
+</div>
+
+<input type="checkbox" id="accordion6" class="hidecontent"/>
+<label for="accordion6">Lab 6.6 - Parameters and Local Variables</label>
+<div class="content hidecontent">
+<pre><code class="cpp">#include 《iomanip》
+#include 《iostream》
+using namespace std;
+
+void normalizeMoney(float& dollars, int cents = 150);
+// This function takes cents as an integer and converts it to dollars
+// and cents. The default value for cents is 150 which is converted
+// to 1.50 and stored in dollars
+int main() {
+    int cents;
+    float dollars;
+    cout << setprecision(2) << fixed << showpoint;
+    cents = 95;
+    cout << "\n We will now add 95 cents to our dollar total\n";
+    // Fill in the code to call normalizeMoney to add 95 cents
+    cout << "Converting cents to dollars resulted in " << dollars
+         << " dollars\n";
+    cout << "\n We will now add 193 cents to our dollar total\n";
+    // Fill in the code to call normalizeMoney to add 193 cents
+    cout << "Converting cents to dollars resulted in " << dollars
+         << " dollars\n";
+    cout << "\n We will now add the default value to our dollar total\n";
+    // Fill in the code to call normalizeMoney to add the default value of cents
+    cout << "Converting cents to dollars resulted in " << dollars
+         << " dollars\n";
+    return 0;
+}
+//*******************************************************************************
+// normalizeMoney
+//
+// task: This function is given a value in cents. It will convert cents
+// to dollars and cents which is stored in a local variable called
+// total which is sent back to the calling function through the
+// parameter dollars. It will keep a running total of all the money
+// processed in a local static variable called sum.
+//
+// data in: cents which is an integer
+// data out: dollars (which alters the corresponding actual parameter)
+//
+//*********************************************************************************
+void normalizeMoney(float& dollars, int cents) {
+    float total = 0;
+    // Fill in the definition of sum as a static local variable
+    sum = 0.0;
+    // Fill in the code to convert cents to dollars
+    total = total + dollars;
+    sum = sum + dollars;
+    cout << "We have added another $" << dollars << " to our total" << endl;
+    cout << "Our total so far is $" << sum << endl;
+    cout << "The value of our local variable total is $" << total << endl;
+}
+    
+</code></pre>
+<h1>Exercise 1</h1>
+<p>You will notice that the function has to be completed.<br>
+    This function will take cents and convert it to dollars.<br>
+    It also keeps a running total of all the money it has processed.<br>
+    Assuming that the function is complete, write out what you expect the program will print.</p>
+
+<div id="ouraccordion">
+    <input type="checkbox" id="accordionx51" class="hidecontent"/>
+    <label for="accordionx51">Explanation (Gemini)</label>
+    <div class="content hidecontent">
+<pre>Here's the expected output of the program, assuming the normalizeMoney function is complete:
+We will now add 95 cents to our dollar total
+We have added another $0.95 to our total
+Our total so far is $0.95
+The value of our local variable total is $0.95
+Converting cents to dollars resulted in 0.95 dollars
+
+We will now add 193 cents to our dollar total
+We have added another $1.93 to our total
+Our total so far is $2.88
+The value of our local variable total is $1.93
+Converting cents to dollars resulted in 1.93 dollars
+
+We will now add the default value to our dollar total
+We have added another $1.50 to our total
+Our total so far is $4.38
+The value of our local variable total is $1.50
+Converting cents to dollars resulted in 1.50 dollars
+
+Key Points:
+•	Running Total: The sum variable, being static, maintains its value across function calls, keeping a running total of all money processed.
+•	Local Total: The total variable is local to each function call, holding the converted value for that specific call.
+•	Default Value: The normalizeMoney function uses a default value of 150 cents when no argument is provided.
+•	Output Clarity: The output clearly distinguishes between the individual dollar amounts added, the running total, and the value of the local total variable.
+
+</pre>
+    </div>
+
+    <input type="checkbox" id="accordionx52" class="hidecontent"/>
+    <label for="accordionx52">Explanation (Bing)</label>
+    <div class="content hidecontent">
+<pre>Assuming that the normalizeMoney() function is correctly implemented to convert cents to dollars and keep a running total of all the money processed, here’s what you can expect the program to print:
+We will now add 95 cents to our dollar total
+Converting cents to dollars resulted in 0.95 dollars
+
+We will now add 193 cents to our dollar total
+Converting cents to dollars resulted in 1.93 dollars
+
+We will now add the default value to our dollar total
+Converting cents to dollars resulted in 1.50 dollars
+
+Please note that the actual output will depend on the implementation of the normalizeMoney() function, which is not provided in the exercise. 
+The function should convert the cents to dollars (by dividing by 100), add the result to the total, and update the sum with the new total. 
+The function should also print out the added dollars, the total so far, and the value of the local variable total each time it is called. 
+
+</pre>
+    </div>
+</div>
+
+<h1>Exercise 2</h1>
+<p>Complete the function. Fill in the blank space to define sum and then write the code to convert cents to dollars.<br>
+    Example: 789 cents would convert to 7.89.<br>
+    Compile and run the program to get the expected results.<br>
+    Think about how sum should be defined.</p>
+<pre><code class="cpp">#include 《iostream》
+#include 《iomanip》
+using namespace std;
+
+void normalizeMoney(float& dollars, int cents = 150);
+// This function takes cents as an integer and converts it to dollars
+// and cents. The default value for cents is 150 which is converted
+// to 1.50 and stored in dollars
+
+int main()
+{
+   int cents;
+   float dollars;
+
+   cout << setprecision(2) << fixed << showpoint;
+
+   cents = 95;
+   cout << "\n We will now add 95 cents to our dollar total\n";
+
+   //   Fill in the code to call normalizeMoney to add 95 cents
+   normalizeMoney(dollars, cents); 
+
+   cout << "Converting cents to dollars resulted in " << dollars << " dollars\n";
+
+   cout << "\n We will now add 193 cents to our dollar total\n";
+
+   // Fill in the code to call normalizeMoney to add 193 cents
+   cents = 193;
+   normalizeMoney(dollars, cents); 
+
+   cout << "Converting cents to dollars resulted in " << dollars << " dollars\n";
+
+   cout << "\n We will now add the default value to our dollar total\n";
+
+   // Fill in the code to call normalizeMoney to add the default value of cents
+   normalizeMoney(dollars);
+   
+   cout << "Converting cents to dollars resulted in " << dollars << " dollars\n";
+
+   return 0;
+}
+
+//*******************************************************************************
+//   normalizeMoney
+//
+//   task:     This function is given a value in cents. It will convert cents
+//             to dollars and cents which is stored in a local variable called
+//             total which is sent back to the calling function through the
+//             parameter dollars. It will keep a running total of all the money
+//             processed in a local static variable called sum.
+//
+//   data in:  cents which is an integer
+//   data out: dollars (which alters the corresponding actual parameter)
+//
+//*********************************************************************************
+
+void normalizeMoney(float& dollars, int cents)
+{
+   float total = 0;
+
+   // Fill in the definition of sum as a static local variable
+   static float sum = 0.0;
+
+   // Fill in the code to convert cents to dollars
+   dollars = static_cast《float》(cents) / 100;
+
+   total = total + dollars;
+   sum = sum + dollars;
+
+   cout << "We have added another $" << dollars << "   to our total" << endl;
+   cout << "Our total so far is   $" << sum << endl;
+
+   cout << "The value of our local variable total is $" << total << endl;
+}
+    
+</code></pre>
+<div id="ouraccordion">
+    <input type="checkbox" id="accordionx53" class="hidecontent"/>
+    <label for="accordionx53">Explanation (Gemini)</label>
+    <div class="content hidecontent">
+<pre>Key Changes:
+
+    Defining sum as Static: 
+        The line static float sum = 0.0; defines sum as a static local variable, ensuring it retains its value across function calls.
+    Converting Cents to Dollars: 
+        The line dollars = static_cast《float》(cents) / 100; performs the conversion from cents to dollars and stores the result in the dollars variable.
+
+
+
+
+
+Here's a comparison of the two code versions, highlighting their pros and cons:
+
+Your Code:
+
+Pros:
+
+    Educational Value: 
+        Includes prompts for listing active identifiers, which can reinforce understanding of scope concepts.
+    Conciseness: 
+        Removes the unnecessary total variable, making the code more focused on the essential logic.
+
+Cons:
+
+    Readability: 
+        The extra prompts add a minor amount of verbosity to the code.
+
+My Code:
+
+Pros:
+
+    Clarity: 
+        The total variable clarifies the calculation of the converted dollars within each function call, potentially aiding understanding.
+    Conciseness: 
+        Maintains a relatively concise structure.
+
+Cons:
+
+    Redundancy: 
+        The total variable might be considered slightly redundant since its value is primarily used for output purposes.
+
+Preference:
+
+    Learning Context: 
+        If the primary goal is to learn and practice scope rules, your code might be more suitable.
+    Production Code: 
+        If the focus is on conciseness and readability for a practical application, my code could be preferable.
+
+Ultimately, both versions are functionally correct and achieve the same results. 
+The choice depends on your personal preferences and the specific context of use.
+
+
+</pre>
+    </div>
+
+    <input type="checkbox" id="accordionx54" class="hidecontent"/>
+    <label for="accordionx54">Explanation (Bing)</label>
+    <div class="content hidecontent">
+<pre>In this code, normalizeMoney() is a function that converts cents to dollars and keeps a running total of all the money processed. 
+The main() function calls normalizeMoney() with different amounts of cents and prints the resulting dollar amounts. 
+
+
+
+
+
+The code you provided is a valid alternative to the one I provided earlier. 
+The main difference is in the implementation of the normalizeMoney() function. 
+In your version, you’ve chosen to calculate the total and sum directly in the normalizeMoney() function, whereas in my version, these calculations were done in the main() function.
+
+In terms of functionality, both versions of the code will produce the same result. 
+The choice between the two mostly comes down to personal preference and the specific requirements of your program.
+
+Here are some considerations:
+
+    Readability: 
+        Some developers might find it more intuitive to calculate the total and sum directly where the dollars are being normalized (as in your version), 
+        while others might prefer to keep these calculations within the main() function (as in my version).
+    Modularity: 
+        Keeping all calculations within the normalizeMoney() function can make your code more modular, which can be beneficial if you plan to reuse or modify this function in the future.
+    Performance: 
+        In this case, the performance difference between the two versions would be negligible. 
+        For larger programs or more complex calculations, you might want to consider where calculations are performed in order to optimize performance.
+
+
+In general, it’s a good practice to write code that is clear, concise, and easy to understand. 
+This can make it easier for others (or yourself in the future) to maintain and modify your code. 
+
+</pre>
+    </div>
+</div>
+
+</div>
+
+<input type="checkbox" id="accordion7" class="hidecontent"/>
+<label for="accordion7">Lab 6.7 - Value Returning and Overloading Functions</label>
+<div class="content hidecontent">
+<pre><code class="cpp">#include 《iomanip》
+#include 《iostream》
+using namespace std;
+// This program will input American money and convert it to foreign currency
+
+// Prototypes of the functions
+void convertMulti(float dollars, float& euros, float& pesos);
+void convertMulti(float dollars, float& euros, float& pesos, float& yen);
+float convertToYen(float dollars);
+float convertToEuros(float dollars);
+float convertToPesos(float dollars);
+int main() {
+    float dollars;
+    float euros;
+    float pesos;
+    float yen;
+    cout << fixed << showpoint << setprecision(2);
+    cout << "Please input the amount of American Dollars you want converted " << endl;
+    cout << "to euros and pesos" << endl;
+    cin >> dollars;
+    // Fill in the code to call convertMulti with parameters dollars, euros, and pesos
+    // Fill in the code to output the value of those dollars converted to both euros
+    // and pesos
+    cout << "Please input the amount of American Dollars you want converted\n";
+    cout << "to euros, pesos and yen" << endl;
+    cin >> dollars;
+    // Fill in the code to call convertMulti with parameters dollars, euros, pesos and yen
+    // Fill in the code to output the value of those dollars converted to euros,
+    // pesos and yen
+    cout << "Please input the amount of American Dollars you want converted\n";
+    cout << "to yen" << endl;
+    cin >> dollars;
+    // Fill in the code to call convertToYen
+    // Fill in the code to output the value of those dollars converted to yen
+    cout << "Please input the amount of American Dollars you want converted\n";
+    cout << " to euros" << endl;
+    cin >> dollars;
+    // Fill in the code to call convert ToEuros
+    // Fill in the code to output the value of those dollars converted to euros
+    cout << "Please input the amount of American Dollars you want converted\n";
+    cout << " to pesos " << endl;
+    cin >> dollars;
+    // Fill in the code to call convertToPesos
+    // Fill in the code to output the value of those dollars converted to pesos
+    return 0;
+}
+// All of the functions are stubs that just serve to test the functions
+// Replace with code that will cause the functions to execute properly
+// **************************************************************************
+// convertMulti
+//
+// task: This function takes a dollar value and converts it to euros
+// and pesos
+// data in: dollars
+// data out: euros and pesos
+//
+// *************************************************************************
+void convertMulti(float dollars, float& euros, float& pesos) { 
+    cout << "The function convertMulti with dollars, euros and pesos " << endl << " was called with " << dollars << " dollars" << endl << endl; 
+}
+// ************************************************************************
+// convertMulti
+//
+// task: This function takes a dollar value and converts it to euros
+// pesos and yen
+// data in: dollars
+// data out: euros pesos yen
+//
+// ***********************************************************************
+void convertMulti(float dollars, float& euros, float& pesos, float& yen) { 
+    cout << "The function convertMulti with dollars, euros, pesos and yen" << endl << " was called with " << dollars << " dollars" << endl << endl; 
+}
+// ****************************************************************************
+// convertToYen
+//
+// task: This function takes a dollar value and converts it to yen
+// data in: dollars
+// data returned: yen
+//
+// ***************************************************************************
+float convertToYen(float dollars) {
+    cout << "The function convertToYen was called with " << dollars << " dollars" << endl << endl;
+    return 0;
+}
+// ****************************************************************************
+// convertToEuros
+//
+// task: This function takes a dollar value and converts it to euros
+// data in: dollars
+// data returned: euros
+//
+// ****************************************************************************
+float convertToEuros(float dollars) {
+    cout << "The function convertToEuros was called with " << dollars << " dollars" << endl << endl;
+    return 0;
+}
+// *****************************************************************************
+// convertToPesos
+//
+// task: This function takes a dollar value and converts it to pesos
+// data in: dollars
+// data returned: pesos
+//
+// ****************************************************************************
+float convertToPesos(float dollars) {
+    cout << "The function convertToPesos was called with " << dollars << " dollars" << endl;
+    return 0;
+}
+    
+</code></pre>
+<h1>Exercise 1</h1>
+<p>Run this program and observe the results.<br>
+    You can input anything that you like for the dollars to be converted.<br>
+    Notice that it has stubs as well as overloaded functions.<br>
+    Study the stubs carefully.<br>
+    Notice that in this case the value returning functions always return 0.</p>
+<pre><code class="cpp">
+    
+</code></pre>
+<div id="ouraccordion">
+    <input type="checkbox" id="accordionx61" class="hidecontent"/>
+    <label for="accordionx61">Explanation (Gemini)</label>
+    <div class="content hidecontent">
+<pre>I'd be glad to explain stubs and overloaded functions in C++:
+
+Stubs
+
+    Purpose: Stubs act as placeholders for functions that are still under development or haven't been fully implemented yet. They allow the rest of the code to compile and potentially run basic functionality.
+    Functionality: Stubs typically perform minimal or no actions. They might print a message indicating they were called, or they might return a default value.
+    Benefits:
+        Allow testing of the main program flow and how functions interact with each other.
+        Help programmers focus on other parts of the code without getting sidetracked by incomplete functions.
+
+Example:
+
+In the provided code, the convertMulti, convertToYen, convertToEuros, and convertToPesos functions are initially stubs. They each just print a message stating they were called and a default value (0) in the case of value-returning functions.
+
+Overloaded Functions
+
+    Concept: Function overloading allows you to have multiple functions with the same name but different parameter lists. The compiler determines which function to call based on the number and types of arguments provided at the call site.
+    Purpose: Overloading enables functions to handle different data types or variations of the same operation.
+    Example:
+
+The provided code defines two versions of the convertMulti function:
+
+<code class="cpp">void convertMulti(float dollars, float& euros, float& pesos);
+void convertMulti(float dollars, float& euros, float& pesos, float& yen);</code>
+
+    The first version takes three arguments: dollars, euros (reference to a float), and pesos (reference to a float).
+    The second version takes four arguments: dollars, euros (reference to a float), pesos (reference to a float), and yen (reference to a float).
+
+When you call convertMulti in the main function, the compiler selects the appropriate version based on the number of arguments you pass:
+
+<code class="cpp">convertMulti(dollars, euros, pesos);  // Calls the first version
+convertMulti(dollars, euros, pesos, yen);  // Calls the second version</code>
+
+Key Points:
+
+    Stubs are temporary and should be replaced with actual functionality as development progresses.
+    Overloaded functions provide flexibility and code reusability.
+    Both stubs and overloading are important tools for managing code complexity during the development process.
+
+
+</pre>
+    </div>
+
+    <input type="checkbox" id="accordionx62" class="hidecontent"/>
+    <label for="accordionx62">Explanation (Bing)</label>
+    <div class="content hidecontent">
+<pre>
+
+</pre>
+    </div>
+</div>
+
+<h1>Exercise 2</h1>
+<p>Complete the program by turning all the stubs into workable functions.<br>
+    Be sure to call true functions differently than procedures.<br>
+    Make sure that functions return the converted dollars into the proper currency.<br>
+    Although the exchange rates vary from day to day, use the following conversion chart for the program.<br>
+    These values should be defined as constants in the global section so that any change in the exchange rate can be made there and nowhere else in the program.
+<pre>One Dollar =1.06 euros
+9.73 pesos
+124.35 yen
+</pre><br>Sample Run:
+<pre>Please input the amount of American Dollars you want converted
+to euros and pesos
+9.35
+$9.35 is converted to 9.91 euros and 90.98 pesos.
+Please input the amount of American Dollars you want converted
+to euros, pesos and yen
+10.67
+$10.67 is converted to 11.31 euros and 103.82 pesos and 1326.81 yen
+Please input the amount of American Dollars you want converted
+to yen
+12.78
+$12.78 is converted to 1589.19 yen
+Please input the amount of American Dollars you want converted
+to euros
+2.45
+$2.45 is converted to 2.60 euros
+Please input the amount of American Dollars you want converted
+to pesos
+8.75
+$8.75 is converted to 85.14 pesos</pre></p>
+<pre><code class="cpp">#include 《iostream》
+#include 《iomanip》
+using namespace std;
+
+// This program will input American money and convert it to foreign currency
+
+// Conversion rates
+const float EURO_RATE = 1.06;
+const float PESO_RATE = 9.73;
+const float YEN_RATE = 124.35;
+
+// Prototypes of the functions
+void convertMulti(float dollars, float& euros, float& pesos);
+void convertMulti(float dollars, float& euros, float& pesos, float& yen);
+float convertToYen(float dollars);
+float convertToEuros(float dollars);
+float convertToPesos(float dollars);
+
+int main()
+{
+   float dollars;
+   float euros;
+   float pesos;
+   float yen;
+
+   cout << fixed << showpoint << setprecision(2);
+
+   cout << "Please input the amount of American Dollars you want converted "
+       << endl;
+   cout << "to euros and pesos" << endl;
+   cin >> dollars;
+
+   // Fill in the code to call convertMulti with parameters dollars, euros, and pesos
+   convertMulti(dollars, euros, pesos);
+
+   // Fill in the code to output the value of those dollars converted to both euros
+   // and pesos
+   cout << "$" << dollars << " is converted to " << euros << " euros and " << pesos << " pesos." << endl;
+
+   cout << "Please input the amount of American Dollars you want converted\n";
+   cout << "to euros, pesos and yen" << endl;
+   cin >> dollars;
+
+   // Fill in the code to call convertMulti with parameters dollars, euros, pesos and yen
+   convertMulti(dollars, euros, pesos, yen);
+
+   // Fill in the code to output the value of those dollars converted to euros,
+   // pesos and yen
+   cout << "$" << dollars << " is converted to " << euros << " euros, " << pesos << " pesos and " << yen << " yen." << endl;
+
+   cout << "Please input the amount of American Dollars you want converted\n";
+   cout << "to yen" << endl;
+   cin >> dollars;
+
+   // Fill in the code to call convertToYen
+   yen = convertToYen(dollars);
+
+   // Fill in the code to output the value of those dollars converted to yen
+   cout << "$" << dollars << " is converted to " << yen << " yen." << endl;
+
+   cout << "Please input the amount of American Dollars you want converted\n";
+   cout << " to euros" << endl;
+   cin >> dollars;
+
+   // Fill in the code to call convert ToEuros
+   euros = convertToEuros(dollars);
+
+   // Fill in the code to output the value of those dollars converted to euros
+   cout << "$" << dollars << " is converted to " << euros << " euros." << endl;
+
+   cout << "Please input the amount of American Dollars you want converted\n";
+   cout << " to pesos " << endl;
+   cin >> dollars;
+
+   // Fill in the code to call convertToPesos
+   pesos = convertToPesos(dollars);
+
+   // Fill in the code to output the value of those dollars converted to pesos
+   cout << "$" << dollars << " is converted to " << pesos << " pesos." << endl;
+
+   return 0;
+}
+
+// All of the functions are stubs that just serve to test the functions
+// Replace with code that will cause the functions to execute properly
+
+//   **************************************************************************
+//   convertMulti
+//
+//   task:     This function takes a dollar value and converts it to euros
+//             and pesos
+//   data in:  dollars
+//   data out: euros and pesos
+//
+//   *************************************************************************
+
+void convertMulti(float dollars, float& euros, float& pesos)
+{
+
+   euros = dollars * EURO_RATE;
+   pesos = dollars * PESO_RATE;
+
+   cout << "The function convertMulti with dollars, euros and pesos "
+       << endl << " was called with " << dollars << " dollars" << endl << endl;
+}
+
+//   ************************************************************************
+//   convertMulti
+//
+//   task:     This function takes a dollar value and converts it to euros
+//             pesos and yen
+//   data in:  dollars
+//   data out: euros pesos yen
+//
+//   ***********************************************************************
+
+void convertMulti(float dollars, float& euros, float& pesos, float& yen)
+{
+
+   euros = dollars * EURO_RATE;
+   pesos = dollars * PESO_RATE;
+   yen = dollars * YEN_RATE;
+    
+   cout << "The function convertMulti with dollars, euros, pesos and yen"
+       << endl << " was called with " << dollars << " dollars" << endl << endl;
+}
+
+//   ****************************************************************************
+//   convertToYen
+//
+//   task:          This function takes a dollar value and converts it to yen
+//   data in:      dollars
+//   data returned: yen
+//
+//   ***************************************************************************
+
+float convertToYen(float dollars)
+{
+
+   return dollars * YEN_RATE;
+   
+   cout << "The function convertToYen was called with " << dollars << " dollars"
+       << endl << endl;
+
+   return 0;
+}
+
+//   ****************************************************************************
+//   convertToEuros
+//
+//   task:          This function takes a dollar value and converts it to euros
+//   data in:      dollars
+//   data returned: euros
+//
+//   ****************************************************************************
+
+float convertToEuros(float dollars)
+{
+
+   return dollars * EURO_RATE;
+
+   cout << "The function convertToEuros was called with " << dollars
+       << " dollars" << endl << endl;
+
+   return 0;
+}
+
+//   *****************************************************************************
+//   convertToPesos
+//
+//   task:          This function takes a dollar value and converts it to pesos
+//   data in:      dollars
+//   data returned: pesos
+//
+//   ****************************************************************************
+
+float convertToPesos(float dollars)
+{
+   
+   return dollars * PESO_RATE;
+   
+   cout << "The function convertToPesos was called with " << dollars
+       << " dollars" << endl;
+
+   return 0;
+}
+    
+</code></pre>
+<div id="ouraccordion">
+    <input type="checkbox" id="accordionx63" class="hidecontent"/>
+    <label for="accordionx63">Explanation (Gemini)</label>
+    <div class="content hidecontent">
+<pre>Key Changes:
+
+    Global Constants: 
+        The exchange rates are defined as global constants (EURO_RATE, PESO_RATE, YEN_RATE) for easy modification.
+    Function Implementations: 
+        The convertMulti functions now perform the conversions and store the results in the reference parameters. 
+        The convertToYen, convertToEuros, and convertToPesos functions return the converted values.
+    Function Calls: 
+        The function calls in main are adjusted to use the returned values or pass reference variables for output.
+
+This code adheres to best practices by:
+
+    Using constants for exchange rates.
+    Overloading the convertMulti function for flexibility.
+    Distinguishing between value-returning and reference-modifying functions.
+
+
+
+
+    
+Both code versions are functionally equivalent and adhere to best practices. Here's a comparison of their subtle differences:
+
+    Function Ordering: 
+        My version places main at the beginning for a top-down structure, while yours has it at the end, emphasizing a bottom-up approach. 
+        This is a matter of preference and doesn't affect functionality.
+    Prompts and Output Formatting: 
+        Your version includes slightly more detailed prompts and output formatting, making it potentially more user-friendly.
+
+Overall, both codes are well-structured and meet the requirements. 
+The choice between them depends on your preferred coding style and emphasis on user experience.
+
+Key takeaways:
+
+    Both versions effectively demonstrate value-returning functions, reference parameters, and function overloading.
+    Adhering to best practices like using constants for exchange rates and organizing code for clarity is more important than minor structural differences.
+    Choose the version that aligns best with your coding style and project requirements.
+</pre>
+    </div>
+
+    <input type="checkbox" id="accordionx64" class="hidecontent"/>
+    <label for="accordionx64">Explanation (Bing)</label>
+    <div class="content hidecontent">
+<pre>This code should work as expected according to your instructions. 
+It takes the amount of American Dollars as input and converts it to euros, pesos, and yen using the provided conversion rates. 
+The convertMulti functions convert the dollars to multiple currencies at once, while the convertTo... functions convert the dollars to a single currency and return the result. 
+The results are then printed to the console. 
+
+
+
+
+
+The code you provided is essentially the same as the one I provided earlier, with the only difference being the placement of the function definitions. 
+In your version, the function definitions are placed after the main() function, whereas in my version, they were placed before the main() function.
+
+Here are some points to consider:
+
+    Pros of your approach:
+
+        Readability: 
+            For someone reading the code from top to bottom, they’ll encounter the main() function first, which is the entry point of the program. 
+            This can make the program’s flow easier to understand.
+        Cons of your approach:
+            Function Prototypes Required: Since the functions are defined after main(), you need to provide function prototypes before main(). 
+            This can be a bit redundant and increase the chance of errors, as you need to ensure the prototypes match the definitions.
+        
+        Pros of my approach:
+            No Need for Prototypes: By defining the functions before main(), you eliminate the need for separate function prototypes, reducing redundancy.
+
+    Cons of my approach:
+
+        Flow Interruption: 
+            Some might argue that having function definitions before main() interrupts the top-to-bottom reading flow of the program.
+
+In terms of performance, there’s no difference between the two approaches. 
+The choice between them is largely a matter of personal preference and coding style. 
+Some prefer to have main() at the top to outline the program flow, while others prefer to have function definitions at the top to avoid the need for prototypes. 
+It’s up to you to choose the style that you find most readable and maintainable. 
+
+
+</pre>
+    </div>
+</div>
+
+</div>
+
+<input type="checkbox" id="accordion8" class="hidecontent"/>
+<label for="accordion8">Lab 6.8 - Student Generated Code Assignments</label>
+<div class="content hidecontent">
+ 
+<h1>Exercise 1</h1>
+<p>Option 1: Write a program that will convert miles to kilometers and kilometers to miles.<br>
+    The user will indicate both a number (representing a distance) and a choice of whether that number is in miles to be converted to kilometers or kilometers to be converted to miles.<br>
+    Each conversion is done with a value returning function. You may use the following conversions.
+<pre>1 kilometer = .621 miles
+1 mile = 1.61 kilometers</pre><br>
+Sample Run:
+<pre>Please input
+1 Convert miles to kilometers
+2 Convert kilometers to miles
+3 Quit
+1
+Please input the miles to be converted
+120
+120 miles = 193.2 kilometers.
+Please input
+1 Convert miles to kilometers
+2 Convert kilometers to miles
+3 Quit
+2
+Please input the kilometers to be converted
+235
+235 kilometers = 145.935 miles.
+Please input
+1 Convert miles to kilometers
+2 Convert kilometers to miles
+3 Quit
+3</pre></p>
+<pre><code class="cpp">#include 《iostream》
+using namespace std;
+
+// Conversion rates
+const double MILES_TO_KM = 1.61;
+const double KM_TO_MILES = 0.621;
+
+// Function prototypes
+double convertMilesToKm(double miles);
+double convertKmToMiles(double km);
+
+int main() {
+    int choice;
+    double distance;
+
+    do {
+        cout << "Please input\n";
+        cout << "1 Convert miles to kilometers\n";
+        cout << "2 Convert kilometers to miles\n";
+        cout << "3 Quit\n";
+        cin >> choice;
+
+        switch(choice) {
+            case 1:
+                cout << "Please input the miles to be converted\n";
+                cin >> distance;
+                cout << distance << " miles = " << convertMilesToKm(distance) << " kilometers.\n";
+                break;
+            case 2:
+                cout << "Please input the kilometers to be converted\n";
+                cin >> distance;
+                cout << distance << " kilometers = " << convertKmToMiles(distance) << " miles.\n";
+                break;
+            case 3:
+                cout << "Exiting the program...\n";
+                break;
+            default:
+                cout << "Invalid choice. Please choose 1, 2, or 3.\n";
+                break;
+        }
+    } while(choice != 3);
+
+    return 0;
+}
+
+double convertMilesToKm(double miles) {
+    return miles * MILES_TO_KM;
+}
+
+double convertKmToMiles(double km) {
+    return km * KM_TO_MILES;
+}
+</code></pre>
+<div id="ouraccordion">
+    <input type="checkbox" id="accordionx71" class="hidecontent"/>
+    <label for="accordionx71">Explanation (Gemini)</label>
+    <div class="content hidecontent">
+<pre>Key Points:
+
+    Constants: 
+        Uses constants for conversion factors to enhance readability and maintainability.
+    Value-Returning Functions: 
+        Employs convertMilesToKilometers and convertKilometersToMiles functions to perform conversions and return the results.
+    User-Friendly Input: 
+        Guides the user with clear prompts and input options.
+    Do-While Loop: 
+        Manages menu choices and repeated conversions until the user chooses to quit.
+    Clear Output: 
+        Displays the converted distances in a readable format.
+
+
+
+
+
+Both code versions are functionally equivalent and demonstrate good coding practices. Here's a comparison of their subtle differences:
+
+    Menu Structure: 
+        My version uses if-else if for menu choices, while yours employs a switch statement. 
+        This is a stylistic choice—both approaches are valid.
+    Output for Quit: 
+        My version simply exits the loop when the user selects "Quit," while yours adds an extra output message.
+    Error Handling: 
+        Your version includes a default case in the switch statement to handle invalid choices, while my version relies on the do-while loop condition for implicit error handling.
+
+Overall, both codes are well-structured and meet the requirements. 
+The choice between them depends on your preferred coding style and emphasis on user experience:
+
+    Prefer switch statements for menu-driven programs? Choose your version.
+    Prefer a more concise output for quitting? Choose my version.
+    Want explicit error handling for invalid choices? Choose your version.
+
+Key takeaways:
+
+    Both versions effectively demonstrate value-returning functions, user input, menu-based control flow, and conversions.
+    Adhering to best practices like using constants, clear function names, and proper formatting is more important than minor structural differences.
+    Choose the version that aligns best with your coding style and project requirements.
+
+</pre>
+    </div>
+
+    <input type="checkbox" id="accordionx72" class="hidecontent"/>
+    <label for="accordionx72">Explanation (Bing)</label>
+    <div class="content hidecontent">
+<pre>This program continuously prompts the user to choose an option until they choose to quit. 
+If they choose to convert miles to kilometers, it asks for the distance in miles, converts it to kilometers using the convertMilesToKm function, and prints the result. 
+If they choose to convert kilometers to miles, it does the same using the convertKmToMiles function. 
+If they choose an invalid option, it informs them of the error.  
+
+
+
+
+
+The code you provided is very similar to the one I provided earlier. 
+The main difference is in the way you handle the user’s choice in the main() function. 
+In your version, you use an if-else statement, whereas in my version, I used a switch statement.
+
+Here are some points to consider:
+    Pros of your approach:
+        Simplicity: 
+            if-else statements are straightforward and easy to understand, making your code more readable to beginners.
+
+    Cons of your approach:
+        Scalability: 
+            If you need to add more choices in the future, if-else statements can become unwieldy. 
+            You would have to add more else if clauses for each new choice.
+
+    Pros of my approach:
+        Clarity:   
+            switch statements make it clear that you’re branching based on the value of a single variable (choice), which can make the code easier to understand.
+        Scalability: 
+            switch statements are easier to extend with more cases. If you need to add more choices, you can simply add more case labels.
+
+    Cons of my approach:
+        Complexity:
+            switch statements are a bit more complex than if-else statements, which might make them harder for beginners to understand.
+
+In terms of performance, there’s no difference between the two approaches. 
+The choice between them is largely a matter of personal preference and the specific requirements of your program. 
+If you expect to add more choices in the future, a switch statement might be more suitable. 
+If you want to keep things simple and easy to understand, an if-else statement might be better.
+
+</pre>
+    </div>
+</div>
+
+<h1>Exercise 2</h1>
+<p>Write a program that will input the number of wins and losses that a baseball team acquired during a complete season.<br>
+    The wins should be input in a parameter-less value returning function that returns the wins to the main function.<br>
+    A similar function should do the same thing for the losses.<br>
+    A third value returning function calculates the percentage of wins.<br>
+    It receives the wins and losses as parameters and returns the percentage (float) to the main program which then prints the result.<br>
+    The percentage should be printed as a percent to two decimal places.<br><br>
+
+Sample Run:
+<pre>Please input the number of wins
+80
+Please input the number of losses
+40
+The percentage of wins is 66.67 %</pre></p>
+<pre><code class="cpp">#include 《iostream》
+#include 《iomanip》
+
+using namespace std;
+
+int getWins() {
+    int wins;
+    cout << "Please input the number of wins: ";
+    cin >> wins;
+    return wins;
+}
+
+int getLosses() {
+    int losses;
+    cout << "Please input the number of losses: ";
+    cin >> losses;
+    return losses;
+}
+
+float calculateWinPercentage(int wins, int losses) {
+    float totalGames = wins + losses;
+    return (wins / totalGames) * 100;
+}
+
+int main() {
+    int wins = getWins();
+    int losses = getLosses();
+    float winPercentage = calculateWinPercentage(wins, losses);
+
+    cout << fixed << setprecision(2);  // Set output formatting for two decimal places
+    cout << "The percentage of wins is " << winPercentage << "%" << endl;
+
+    return 0;
+}
+    
+</code></pre>
+<div id="ouraccordion">
+    <input type="checkbox" id="accordionx73" class="hidecontent"/>
+    <label for="accordionx73">Explanation (Gemini)</label>
+    <div class="content hidecontent">
+<pre>Explanation:
+
+    Function getWins:
+        Prompts the user to enter the number of wins.
+        Reads the input and returns the value.
+
+    Function getLosses:
+        Prompts the user to enter the number of losses.
+        Reads the input and returns the value.
+
+    Function calculateWinPercentage:
+        Takes the number of wins and losses as parameters.
+        Calculates the win percentage using the formula: (wins / totalGames) * 100.
+        Returns the win percentage as a float.
+
+    Function main:
+        Calls getWins to get the number of wins.
+        Calls getLosses to get the number of losses.
+        Calls calculateWinPercentage to calculate the win percentage.
+        Sets output formatting for two decimal places using fixed and setprecision.
+        Prints the win percentage to the console.
+
+
+
+
+
+Both code versions are functionally equivalent and well-structured. Here's a comparison of their minor differences:
+
+    Prompt Formatting: 
+        My version includes colons after the prompts for better readability, while yours omits them. This is a stylistic choice.
+
+    Win Percentage Calculation: 
+        Your version uses static_cast《float》(wins) for explicit casting, while mine calculates the total games as a float beforehand. 
+        Both approaches achieve correct results.
+
+Overall, both codes effectively demonstrate function calls, user input, and output formatting. 
+The choice between them is largely a matter of personal preference and coding style:
+
+    Prefer explicit type casting? Choose your version.
+    Prefer calculating total games upfront? Choose my version.
+    Value concise prompts? Choose your version.
+    Prioritize visual clarity in prompts? Choose my version.
+
+Key takeaways:
+    Both versions adhere to best practices like using functions for modularity and formatting for clear output.
+    Focus on understanding the core concepts of function calls, user input, and calculations rather than minor stylistic differences.
+    Choose the version that aligns best with your coding style and preferences.        
+</pre>
+    </div>
+
+    <input type="checkbox" id="accordionx74" class="hidecontent"/>
+    <label for="accordionx74">Explanation (Bing)</label>
+    <div class="content hidecontent">
+<pre>This program first calls the getWins and getLosses functions to get the number of wins and losses from the user. 
+It then calculates the win percentage using the calculateWinPercentage function and prints the result. 
+The win percentage is calculated as the number of wins divided by the total number of games (wins + losses), multiplied by 100 to get a percentage. 
+The static_cast《float》 is used to ensure that the division is done in floating-point arithmetic, not integer arithmetic.
+
+
+
+
+
+The code you provided is very similar to the one I provided earlier. 
+The main difference is in the calculateWinPercentage function. 
+In your version, you’re performing the division operation wins / totalGames where both wins and totalGames are integers. 
+This could lead to incorrect results due to integer division.
+
+Here are some points to consider:
+
+Pros of your approach:
+    Simplicity: 
+        Your code is straightforward and easy to understand.
+
+Cons of your approach:
+    Accuracy: 
+        Because you’re using integer division in the calculateWinPercentage function, the result might be inaccurate. For example, if wins is 2 and totalGames is 3, the result of wins / totalGames would be 0 in integer division, even though the actual result should be approximately 0.67.
+
+Pros of my approach:
+    Accuracy: 
+        By using static_cast《float》 in the calculateWinPercentage function, I ensure that the division is done in floating-point arithmetic, which gives a more accurate result.
+
+Cons of my approach:
+    Complexity: 
+        The use of static_cast《float》 might make the code slightly more complex for beginners to understand.
+
+In terms of performance, there’s no difference between the two approaches. 
+However, in terms of accuracy, my approach would give more accurate results. 
+Therefore, I would recommend using my approach for this particular problem.
+
+
+</pre>
+    </div>
+</div>
+
+<h1>Exercise 3</h1>
+<p>Write a program that outputs a dentist bill.<br>
+    For members of a dental plan, the bill consists of the service charge (for the particular procedure performed) and test fees, input to the program by the user.<br>
+    To non-members the charges consist of the above services plus medicine (also input by the user).<br>
+    The program first asks if the patient is a member of the dental plan.<br>
+    The program uses two overloaded functions to calculate the total bill.<br>
+    Both are value returning functions that return the total charge.
+<pre>Please input a one if you are a member of the dental plan
+Input any other number if you are not
+1
+13
+TCP1101 Programming Fundamentals
+Please input the service charge
+7.89
+Please input the test charges
+89.56
+The total bill is $97.45
+Sample Run 2:
+Please input a one if you are a member of the dental plan
+Input any other number if you are not
+2
+Please input the service charge
+75.84
+Please input the test charges
+49.78
+Please input the medicine charges
+40.22
+The total bill is $165.84   
+</pre></p>
+<pre><code class="cpp">#include 《iostream》
+#include 《iomanip》
+
+using namespace std;
+
+double calculateBill(double serviceCharge, double testCharges) {
+    return serviceCharge + testCharges;
+}
+
+double calculateBill(double serviceCharge, double testCharges, double medicineCharges) {
+    return serviceCharge + testCharges + medicineCharges;
+}
+
+int main() {
+    int isMember;
+    double serviceCharge, testCharges, medicineCharges, totalBill;
+
+    cout << "Please input a one (1) if you are a member of the dental plan\n";
+    cout << "Input any other number if you are not: \n";
+    cin >> isMember;
+
+    cout << "Please input the service charge: \n";
+    cin >> serviceCharge;
+
+    cout << "Please input the test charges: \n";
+    cin >> testCharges;
+
+    if (isMember == 1) {
+        totalBill = calculateBill(serviceCharge, testCharges);
+    } else {
+        cout << "Please input the medicine charges: \n";
+        cin >> medicineCharges;
+        totalBill = calculateBill(serviceCharge, testCharges, medicineCharges);
+    }
+
+    cout << fixed << setprecision(2);  // Set output formatting for two decimal places
+    cout << "The total bill is $" << totalBill << endl;
+
+    return 0;
+}
+    
+</code></pre>
+<div id="ouraccordion">
+    <input type="checkbox" id="accordionx75" class="hidecontent"/>
+    <label for="accordionx75">Explanation (Gemini)</label>
+    <div class="content hidecontent">
+<pre>Explanation:
+
+    Function Overloading:
+        Two versions of calculateBill are defined for different scenarios:
+            One takes service charge and test charges for members.
+            The other also takes medicine charges for non-members.
+
+    User Input:
+        The program asks for membership status, service charge, and test charges.
+        If the patient is not a member, medicine charges are also requested.
+
+    Bill Calculation:
+        The appropriate calculateBill function is called based on membership status.
+        The calculated total bill is stored in the totalBill variable.
+
+    Output:
+        The total bill is displayed with two decimal places using fixed and setprecision.
+
+
+
+
+        
+Both code versions are functionally equivalent and demonstrate effective use of function overloading and user input. Here's a comparison of their minor differences:
+
+    Variable Naming:   
+        My version uses isMember for clarity, while yours uses membership. This is a stylistic choice.
+    Output Formatting: 
+        Your version includes formatting within the output statement, while mine separates it for visual clarity.
+    Intermediate Variable: 
+        My version stores the calculated bill in totalBill before output, while yours directly outputs the function's return value.
+
+Overall, both codes are well-structured and adhere to best practices. The choice between them is primarily based on personal preferences:
+
+    Prefer concise code? Choose your version.
+    Value explicit variable names? Choose my version.
+    Prioritize visual separation of output formatting? Choose my version.
+    Favor direct function calls within output? Choose your version.
+
+Key takeaways:
+
+    Both versions effectively demonstrate function overloading, user input, conditional logic, and output formatting.
+    Focus on understanding these core concepts rather than minor stylistic variations.
+    Choose the version that aligns best with your coding style and enhances readability for you.
+
+</pre>
+    </div>
+
+    <input type="checkbox" id="accordionx76" class="hidecontent"/>
+    <label for="accordionx76">Explanation (Bing)</label>
+    <div class="content hidecontent">
+<pre>This program first asks the user if they are a member of the dental plan. 
+It then asks for the service charge and test charges. 
+If the user is a member, it calculates the total bill using the calculateTotalBill function that takes two arguments. 
+If the user is not a member, it also asks for the medicine charges and calculates the total bill using the calculateTotalBill function that takes three arguments. 
+The total bill is then printed to the console.
+
+
+
+
+
+The code you provided is essentially the same as the one I provided earlier, with the only difference being the placement of the totalBill variable. 
+In your version, you declare totalBill at the beginning of the main() function and assign it a value later, whereas in my version, totalBill is declared and assigned a value at the same time.
+
+Here are some points to consider:
+
+Pros of your approach:
+    Clarity: 
+        Declaring all variables at the beginning of a function can make it easier to see what variables are used in the function.
+
+Cons of your approach:<code></code>
+    Unused Memory: 
+        If for some reason the program exits before reaching the point where totalBill is assigned a value, the memory allocated for totalBill would be wasted.
+
+Pros of my approach:
+    Efficiency: 
+        By declaring and assigning a value to totalBill at the same time, I ensure that memory is only allocated when it’s needed.
+
+Cons of my approach:
+    Readability: 
+        Some might argue that declaring all variables at the beginning of a function improves readability, as it provides an overview of what variables are used in the function.
+
+In terms of performance, there’s no significant difference between the two approaches. 
+The choice between them is largely a matter of personal preference and coding style. 
+Some prefer to declare all variables at the beginning of a function for clarity, while others prefer to declare variables as late as possible to save memory. 
+It’s up to you to choose the style that you find most readable and maintainable.
+
+
+</pre>
+    </div>
+</div>
+
+</div>
+
+</div>
+
+
+<!-- these links to previous & next modules -->
+<div class="container2">
+    <button class="button-1"><a href="Lab 5.html" target="_blank">Lab 5</a></button>
+    <button class="button-1"><a href="Lab 7.html" target="_blank">Lab 7</a></button>
+</div>
+
+<script type="text/javascript" src="../js/module.js"></script>
+</body>
+</html>

@@ -109,7 +109,7 @@ function updateCountdown(countDownDate, countStartDate, { demo, progressBar, pro
             demo.innerHTML = `The countdown has ended ${positiveRealHours > 0 ? `${positiveRealHours} hour${positiveRealHours === 1 ? '' : 's'}` : `${minutes} minutes and ${seconds} seconds`} ago.`;
             demo2.innerHTML = `If you prefer in milliseconds: ${Math.abs(distance)} ms.`;
         }
-    }, 1); // Update every 100ms (for smoother progress bar transitions)
+    }, 1000); // Update every second
 }
 
 // Function to initialize countdowns

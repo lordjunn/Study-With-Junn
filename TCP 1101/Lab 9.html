@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<link rel="stylesheet" href="../css/base.css">
+<link rel="stylesheet" href="../css/module.css">
+<link href="https://fonts.googleapis.com/css?family=Alata | Ibarra+Real+Nova&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+<!-- and it's easy to individually load additional languages -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/go.min.js"></script>
+
+<script>hljs.highlightAll();</script>
+<title>TCP 1101 - 9</title>
+</head>
+
+<body>
+<!-- Dynamic header -->
+<div id="header-container"></div>
+<div id="header-config"
+    data-course="Programming Fundamentals - Lab 9"
+    data-topic-link="../index.html"
+    data-prev="x"
+    data-next="x">
+</div>
+
+
+<br><br><br>
+<div id="myaccordion">
+
+<input type="checkbox" id="accordion1" class="hidecontent"/>
+<label for="accordion1">Lab 9.1 - Working with Linear Search</label>
+<div class="content hidecontent">
+<pre><code class="cpp">// This program performs a linear search on a character array
+
+#include <iostream>
+using namespace std;
+int searchList(char[], int, char);  // function prototype
+const int SIZE = 8;
+int main() {
+    char word[SIZE] = "Harpoon";
+    int found;
+    char ch;
+    cout << "Enter a letter to search for:" << endl;
+    cin >> ch;
+    found = searchList(word, SIZE, ch);
+    if (found == -1)
+        cout << "The letter " << ch << " was not found in the list" << endl;
+    else
+        cout << "The letter " << ch << " is in the " << found + 1
+             << " position
+            of the list " << endl;
+            return 0;
+}
+//*******************************************************************
+// searchList
+//
+// task: This searches an array for a particular value
+// data in: List of values in an array, the number of
+// elements in the array, and the value searched for
+// in the array
+// data returned: Position in the array of the value or -1 if value
+// not found
+//
+//*******************************************************************
+int searchList(char List[], int numElems, char value) {
+    for (int count = 0; count <= numElems; count++) {
+        if (List[count] == value)
+            // each array entry is checked to see if it contains
+            // the desired value.
+            return count;
+        // if the desired value is found, the array subscript
+        // count is returned to indicate the location in the array
+    }
+    return -1;  // if the value is not found, -1 is returned
+}
+</code></pre>   
+<h1>Exercise 1</h1>
+<p>Re-write this program so that it searches an array of integers rather than characters. Search the integer array nums[8] =<br>
+<pre>[3 | 6 | -19 | 5 | 5 | 0 | -2 | 99 ]</pre>
+for several different integers.<br>
+Make sure you try integers that are in the array and others that are not.<br>
+What happens if you search for 5?
+</p>
+<pre><code class="cpp">
+    
+</code></pre>
+<div id="ouraccordion">
+    <input type="checkbox" id="accordionx1" class="hidecontent"/>
+    <label for="accordionx1">Explanation (Gemini)</label>
+    <div class="content hidecontent">
+<pre>
+
+</pre>
+    </div>
+
+    <input type="checkbox" id="accordionx2" class="hidecontent"/>
+    <label for="accordionx2">Explanation (Bing)</label>
+    <div class="content hidecontent">
+<pre>
+
+</pre>
+    </div>
+</div>
+
+<h1>Exercise 2</h1>
+<p>Re-write the program so that the user can continue to input values that will be searched for, until asentinel value is entered to end the program.<br>
+    Should a pre- or post-test loop be used?</p>
+<pre><code class="cpp">
+    
+</code></pre>
+<div id="ouraccordion">
+    <input type="checkbox" id="accordionx3" class="hidecontent"/>
+    <label for="accordionx3">Explanation (Gemini)</label>
+    <div class="content hidecontent">
+<pre>
+
+</pre>
+    </div>
+
+    <input type="checkbox" id="accordionx4" class="hidecontent"/>
+    <label for="accordionx4">Explanation (Bing)</label>
+    <div class="content hidecontent">
+<pre>
+
+</pre>
+    </div>
+</div>
+
+</div>
+
+<input type="checkbox" id="accordion2" class="hidecontent"/>
+<label for="accordion2">Lab 9.2 - Working with the Binary Search</label>
+<div class="content hidecontent">
+
+<h1>Exercise 1</h1>
+<p>Search the array in the program above for 19 and then 12. Record what the output is in each case.<br>
+    _________________________________________________________________________________<br>
+    Note that both 19 and 12 are repeated in the array. Which occurrence of 19 did the search find?<br>
+    _________________________________________________________________________________<br>
+    Which occurrence of 12 did the search find?<br>
+    _________________________________________________________________________________<br>
+    Explain the difference.<br>
+    _________________________________________________________________________________</p>
+<pre><code class="cpp">
+    
+</code></pre>
+<div id="ouraccordion">
+    <input type="checkbox" id="accordionx9" class="hidecontent"/>
+    <label for="accordionx9">Explanation (Gemini)</label>
+    <div class="content hidecontent">
+<pre>
+
+</pre>
+    </div>
+
+    <input type="checkbox" id="accordionx10" class="hidecontent"/>
+    <label for="accordionx10">Explanation (Bing)</label>
+    <div class="content hidecontent">
+<pre>
+
+</pre>
+    </div>
+</div>
+
+<h1>Exercise 2</h1>
+<p>Modify the program to search an array that is in ascending order.<br>
+Make sure to alter the array initialization.</p>
+<pre><code class="cpp">
+    
+</code></pre>
+<div id="ouraccordion">
+    <input type="checkbox" id="accordionx11" class="hidecontent"/>
+    <label for="accordionx11">Explanation (Gemini)</label>
+    <div class="content hidecontent">
+<pre>
+
+</pre>
+    </div>
+
+    <input type="checkbox" id="accordionx12" class="hidecontent"/>
+    <label for="accordionx12">Explanation (Bing)</label>
+    <div class="content hidecontent">
+<pre>
+
+</pre>
+    </div>
+</div>
+
+</div>
+
+<input type="checkbox" id="accordion3" class="hidecontent"/>
+<label for="accordion3">Lab 9.3 - Working with Sorts</label>
+<div class="content hidecontent">
+
+<h1>Exercise 1</h1>
+<p>Re-write the sort program you chose so that it orders integers from largest to smallest rather than smallest to largest.</p>
+<pre><code class="cpp">
+    
+</code></pre>
+<div id="ouraccordion">
+    <input type="checkbox" id="accordionx17" class="hidecontent"/>
+    <label for="accordionx17">Explanation (Gemini)</label>
+    <div class="content hidecontent">
+<pre>
+
+</pre>
+    </div>
+
+    <input type="checkbox" id="accordionx18" class="hidecontent"/>
+    <label for="accordionx18">Explanation (Bing)</label>
+    <div class="content hidecontent">
+<pre>
+
+</pre>
+    </div>
+</div>
+
+<h1>Exercise 2</h1>
+<p>Modify your program from Exercise 1 so that it prints the array at each step of the algorithm.<br>Try sorting the array
+<pre>[ 23 | 0 | 45 | -3 | -78 | 1 | -1 | 9 ]</pre>
+By hand using whichever algorithm you chose.<br>
+Then have your program do the sorting.<br>
+Does the output match (the steps) that you did by hand?</p>
+<pre><code class="cpp">
+    
+</code></pre>
+<div id="ouraccordion">
+    <input type="checkbox" id="accordionx19" class="hidecontent"/>
+    <label for="accordionx19">Explanation (Gemini)</label>
+    <div class="content hidecontent">
+<pre>
+
+</pre>
+    </div>
+
+    <input type="checkbox" id="accordionx20" class="hidecontent"/>
+    <label for="accordionx20">Explanation (Bing)</label>
+    <div class="content hidecontent">
+<pre>
+
+</pre>
+    </div>
+</div>
+
+</div>
+
+<input type="checkbox" id="accordion4" class="hidecontent"/>
+<label for="accordion4">Lab 9.4 - Searching Through Text</label>
+<div class="content hidecontent">
+<pre><code class="cpp">#include <fstream>
+#include <iostream>
+#include <string>
+using namespace std;
+// 4a. ADD THE APPROPRIATE PROTOTYPE for a modified searchList function from Lab 9.1
+// that searches for a string value within a string array
+int main() {
+    // Character arrays can take in an entire string of characters.
+    ifstream inputfile;
+    string story[27000];  // This should be enough...
+    int count = 0;
+    // open file
+    inputfile.open("alice_in_wonderland.txt");
+    // 1. FILL IN CODE to read all words (without spaces and line breaks)
+    // into the string array story
+    cout << "There are " << count << " number of words in this story." << endl << endl;
+    // close file
+    inputfile.close();
+    cout << "Printing an excerpt...." << endl;
+    // 2. Show an excerpt of the story by PRINTING THE FIRST
+    // 100 WORDS OF THE STORY. Use a loop here to achieve that.
+    cout << endl << endl;
+    string searchWord = "cats";
+    int wordloc;
+    // 3. MAKE A FUNCTION CALL ON THE searchList FUNCTION
+    // to search the story for the given searchWord. RETURN THE
+    // FOUND LOCATION to variable wordloc
+    cout << "The first occurrence of '" << searchWord << "' at word #" << wordloc << endl;
+    // prints part of the phrase containing the searchWord, for some context
+    cout << "...";
+    for (int i = wordloc; i < wordloc + 10; i++) cout << story[i] << " ";
+    cout << "..." << endl;
+}
+// 4b. WRITE THE DEFINITION for the modified searchList function used earlier in Lab 9.1
+// to accommodate a string array instead of a character array
+//
+//
+</code></pre
+<h1>Exercise 1</h1>
+<p>Follow through the steps indicated by the numbers in comments (1, 2, 3, 4a, 4b) to complete the program so that it produces the expected output below:<br><br>
+
+Sample Run:
+<pre>There are 26448 number of words in this story.
+
+Printing an excerpt....
+Alice was beginning to get very tired of sitting by her sister on the
+bank, and of having nothing to do: once or twice she had peeped into the
+book her sister was reading, but it had no pictures or conversations in
+it, `and what is the use of a book,' thought Alice `without pictures or
+conversation?' So she was considering in her own mind (as well as she
+could, for the hot day made her feel very sleepy and stupid), whether the
+pleasure of making a daisy-chain would be worth the trouble of getting up
+and picking the daisies,
+
+The first occurrence of 'cats' at word #833
+... cats eat bats, I wonder?' And here Alice began to ...</pre></p>
+<pre><code class="cpp">
+    
+</code></pre>
+<div id="ouraccordion">
+    <input type="checkbox" id="accordionx25" class="hidecontent"/>
+    <label for="accordionx25">Explanation (Gemini)</label>
+    <div class="content hidecontent">
+<pre>
+
+</pre>
+    </div>
+
+    <input type="checkbox" id="accordionx26" class="hidecontent"/>
+    <label for="accordionx26">Explanation (Bing)</label>
+    <div class="content hidecontent">
+<pre>
+
+</pre>
+    </div>
+</div>
+
+<h1>Exercise 2</h1>
+<p>If the word cannot be found (for example try, the symbol “#” or “refrigerator”), display a different message:<br>
+<pre>The word ‘refrigerator’ does not exist in the story.</pre></p>
+<pre><code class="cpp">
+    
+</code></pre>
+<div id="ouraccordion">
+    <input type="checkbox" id="accordionx27" class="hidecontent"/>
+    <label for="accordionx27">Explanation (Gemini)</label>
+    <div class="content hidecontent">
+<pre>
+
+</pre>
+    </div>
+
+    <input type="checkbox" id="accordionx28" class="hidecontent"/>
+    <label for="accordionx28">Explanation (Bing)</label>
+    <div class="content hidecontent">
+<pre>
+
+</pre>
+    </div>
+</div>
+
+<h1>Exercise 3</h1>
+<p>Where are the first occurrences for the following words?<br>
+ simple : ________<br>
+ green : ________<br>
+ ready : ________<br>
+To test for so many sample words, make your program friendlier by allowing the user to continue
+entering search words until a sentinel string/symbol (e.g. # is a good candidate) is entered to terminate
+the program.</p>
+<pre><code class="cpp">
+    
+</code></pre>
+<div id="ouraccordion">
+    <input type="checkbox" id="accordionx29" class="hidecontent"/>
+    <label for="accordionx29">Explanation (Gemini)</label>
+    <div class="content hidecontent">
+<pre>
+
+</pre>
+    </div>
+
+    <input type="checkbox" id="accordionx30" class="hidecontent"/>
+    <label for="accordionx30">Explanation (Bing)</label>
+    <div class="content hidecontent">
+<pre>
+
+</pre>
+    </div>
+</div>
+
+</div>
+
+<input type="checkbox" id="accordion5" class="hidecontent"/>
+<label for="accordion5">Lab 9.5 - Sorting with std::sort() from C++ STL</label>
+<div class="content hidecontent">
+<pre><code class="cpp">#include <fstream>
+#include <iostream>
+#include <string>
+#include <vector>
+using namespace std;
+void printVec(const vector<string>);
+int main() {
+    ifstream inputfile;
+    string wisewords;
+    int dashloc;
+    vector<string> authors;
+    // open file
+    inputfile.open("quotes.dat");
+    // loop through each row of quotes, and proceed to get each line as a string
+    while (getline(inputfile, wisewords)) {
+        // 1. CALL string.find() function to search for a specific string from
+        // each line of quote, and store the location in variable dashloc. Look up
+        // the C++ reference for strings to see in detail how to use this function.
+        // Notice that the author of the quote always appears after a double dash.
+        // Extract the substring containing the author name using the found location
+        // of the double dash.
+        string author;
+        author = wisewords.substr(dashloc + 2, string::npos);
+        // 2. ADD the author name to the vector authors
+    }
+    // close file
+    inputfile.close();
+    cout << "Author List: " << endl;
+    printVec(authors);
+    // 4. CALL sort function (you need to include <algorithm>) to sort the
+    // vector of authors. Look up the C++ reference on how to use this function
+    cout << "Sorted List:" << endl;
+    printVec(authors);
+}
+// 3. COMPLETE the function printVec that takes in a vector of strings as input
+// and prints out all its contents, one line each. Use a range for-loop to
+// achieve this.
+void printVec(const vector<string> line) {
+    
+}
+    
+</code></pre>
+<h1>Exercise 1</h1>
+<p>Follow through the steps indicated by the numbers in comments (1, 2, 3, 4) to complete the program so that it produces the expected output below.<br>
+The program processes a data file (quotes.dat) containing some quotes from famous people.<br>
+The program performs:
+<pre>Searching (look in the entire line of quote for double dashes), and
+Sorting (order the vector of author names)</pre>
+The double dashes indicate the location where you can extract the author name, which is a sub-string of
+the original quote.<br><br>
+
+Sample Run:
+<pre>Author List:
+Pythagoras
+Nelson Mandela
+John Lennon
+Benjamin Franklin
+Mother Teresa
+Confucius
+Thomas A. Edison
+Steve Jobs
+Alexander Graham Bell
+Bjarne Stroustrup
+
+Sorted List:
+Alexander Graham Bell
+Benjamin Franklin
+Bjarne Stroustrup
+Confucius
+John Lennon
+Mother Teresa
+Nelson Mandela
+Pythagoras
+Steve Jobs
+Thomas A. Edison</pre></p>
+<pre><code class="cpp">
+    
+</code></pre>
+<div id="ouraccordion">
+    <input type="checkbox" id="accordionx33" class="hidecontent"/>
+    <label for="accordionx33">Explanation (Gemini)</label>
+    <div class="content hidecontent">
+<pre>
+
+</pre>
+    </div>
+
+    <input type="checkbox" id="accordionx34" class="hidecontent"/>
+    <label for="accordionx34">Explanation (Bing)</label>
+    <div class="content hidecontent">
+<pre>
+
+</pre>
+    </div>
+</div>
+
+<h1>Exercise 2</h1>
+<p>Find out (from C++ STL reference) how to use the sort() function to sort the vector of author names in descending order.</p>
+<pre><code class="cpp">
+    
+</code></pre>
+<div id="ouraccordion">
+    <input type="checkbox" id="accordionx35" class="hidecontent"/>
+    <label for="accordionx35">Explanation (Gemini)</label>
+    <div class="content hidecontent">
+<pre>
+
+</pre>
+    </div>
+
+    <input type="checkbox" id="accordionx36" class="hidecontent"/>
+    <label for="accordionx36">Explanation (Bing)</label>
+    <div class="content hidecontent">
+<pre>
+
+</pre>
+    </div>
+</div>
+
+</div>
+
+<input type="checkbox" id="accordion6" class="hidecontent"/>
+<label for="accordion6">Lab 9.6 - Student Generated Code Assignments</label>
+<div class="content hidecontent">
+<h1>Exercise</h1>
+<p>Write a program that prompts the user to enter the number of elements and the numbers themselves to be placed in an integer array that holds a maximum of 50 elements.<br>
+The program should then prompt the user for an integer which will be searched for in the array using a binary search.<br>
+Make sure to include the following steps along the way:</p>
+<h1>Exercise (i)</h1>
+<p>A sort routine must be called before the binary search.<br>
+You may use either the selection sort or the bubble sort.<br>
+However, the sort must be implemented in its own function and not in main.</p>
+<pre><code class="cpp">
+    
+</code></pre>
+<div id="ouraccordion">
+    <input type="checkbox" id="accordionx41" class="hidecontent"/>
+    <label for="accordionx41">Explanation (Gemini)</label>
+    <div class="content hidecontent">
+<pre>
+
+</pre>
+    </div>
+
+    <input type="checkbox" id="accordionx42" class="hidecontent"/>
+    <label for="accordionx42">Explanation (Bing)</label>
+    <div class="content hidecontent">
+<pre>
+
+</pre>
+    </div>
+</div>
+
+<h1>Exercise (ii)</h1>
+<p>Next include a function called by main to implement the binary search.<br>
+The ordered array produced by the sort should be passed to the search routine which returns the location in the sorted array of the sought value, 
+or -1 if the value is not in the array.</p>
+<pre><code class="cpp">
+    
+</code></pre>
+<div id="ouraccordion">
+    <input type="checkbox" id="accordionx43" class="hidecontent"/>
+    <label for="accordionx43">Explanation (Gemini)</label>
+    <div class="content hidecontent">
+<pre>
+
+</pre>
+    </div>
+
+    <input type="checkbox" id="accordionx44" class="hidecontent"/>
+    <label for="accordionx44">Explanation (Bing)</label>
+    <div class="content hidecontent">
+<pre>
+
+</pre>
+    </div>
+</div>
+
+<h1>Exercise (iii)</h1>
+<p>Add a value returning function that computes the mean of your data set.<br>
+Recall that the mean is the sum of the data values divided by the number of pieces of data.<br>
+Your program should output the size of the array entered, the array as entered by the user, the sorted array, 
+the integer being searched for, the location of that integer in the sorted array 
+(or an appropriate message if it is not in the array), and the mean of the data set.</p>
+<pre><code class="cpp">
+    
+</code></pre>
+<div id="ouraccordion">
+    <input type="checkbox" id="accordionx45" class="hidecontent"/>
+    <label for="accordionx45">Explanation (Gemini)</label>
+    <div class="content hidecontent">
+<pre>
+
+</pre>
+    </div>
+
+    <input type="checkbox" id="accordionx46" class="hidecontent"/>
+    <label for="accordionx46">Explanation (Bing)</label>
+    <div class="content hidecontent">
+<pre>
+
+</pre>
+    </div>
+</div>
+
+<h1>Exercise (iv)</h1>
+<p>Modify your program so that the data is entered from a file rather than from the keyboard.<br>
+The first line of the file should be the size of the integer array.<br>
+The second line should contain the integer searched for in the data set.<br>
+Finally, the array elements are to start on the third line.<br>
+Make sure you separate each array element with a space.<br>
+The output, as described in (iii), should be sent to a file.</p>
+<pre><code class="cpp">
+    
+</code></pre>
+<div id="ouraccordion">
+    <input type="checkbox" id="accordionx47" class="hidecontent"/>
+    <label for="accordionx47">Explanation (Gemini)</label>
+    <div class="content hidecontent">
+<pre>
+
+</pre>
+    </div>
+
+    <input type="checkbox" id="accordionx48" class="hidecontent"/>
+    <label for="accordionx48">Explanation (Bing)</label>
+    <div class="content hidecontent">
+<pre>
+
+</pre>
+    </div>
+</div>
+
+</div>
+
+</div>
+
+<!-- these links to previous & next Labs -->
+<div class="container2">
+    <button class="button-1"><a href="Lab 8.html" target="_blank">Lab 8</a></button>
+    <button class="button-1"><a href="Lab 10.html" target="_blank">Lab 10</a></button>
+</div>
+
+<script type="text/javascript" src="../js/module.js"></script>
+</body>
+</html>

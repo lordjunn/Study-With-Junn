@@ -2,23 +2,22 @@
 
 <html>
 <head>
-<link href="../Main.css" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css?family=Alata | Ibarra+Real+Novaâdiaplay swap" rel="stylesheet"/>
+<link rel="stylesheet" href="../css/base.css">
+<link rel="stylesheet" href="../css/module.css">
+<link href="https://fonts.googleapis.com/css?family=Alata | Ibarra+Real+Nova&display=swap" rel="stylesheet"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>TMA 1101 - 8</title>
 </head>
 <body>
-<header id="top">
-<nav>
-<div class="logo-holder"><a href="../index.html">Study with Junn</a></div>
-<h4><a href="Tutorial 8.pdf" target="_blank">TMA 1101 - Chapter 8</a></h4>
-<ul>
-<li><a href="../index.html#Courses">Courses</a></li>
-<li><a href="#">About</a></li> <li><a href="../index.html#top">Home</a></li>
-</ul>
-</nav>
-</header>
-<!-- #end of header -->
+<!-- Dynamic header -->
+<div id="header-container"></div>
+<div id="header-config"
+    data-course="TMA 1101 - Chapter 8"
+    data-topic-link="../TMA 1101.html"
+    data-prev="x"
+    data-next="x">
+</div>
+
 <br/><br/><br/>
 <div id="myaccordion">
 <input class="hidecontent" id="accordion3" type="checkbox"/>
@@ -71,5 +70,6 @@
 <button class="button-1"><a href="Module 7.html" target="_blank">Module 7</a></button>
 <button class="button-1"><a href="Module 9.html" target="_blank">Module 9</a></button>
 </div>
+<script type="text/javascript" src="../js/module.js"></script>
 </body>
 </html>

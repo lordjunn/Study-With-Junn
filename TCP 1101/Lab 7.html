@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<link rel="stylesheet" href="../css/base.css">
+<link rel="stylesheet" href="../css/module.css">
+<link href="https://fonts.googleapis.com/css?family=Alata | Ibarra+Real+Nova&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+<!-- and it's easy to individually load additional languages -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/go.min.js"></script>
+
+<script>hljs.highlightAll();</script>
+<title>TCP 1101 - 7</title>
+</head>
+
+<body>
+<!-- Dynamic header -->
+<div id="header-container"></div>
+<div id="header-config"
+    data-course="Programming Fundamentals - Lab 7"
+    data-topic-link="../index.html"
+    data-prev="x"
+    data-next="x">
+</div>
+
+
+<br><br><br>
+<div id="myaccordion">
+
+
+<input type="checkbox" id="accordion1" class="hidecontent"/>
+<label for="accordion1">Lab 7.1 - Working with One-Dimensional Arrays</label>
+<div class="content hidecontent">
+<pre><code class="cpp">// This program will read in a group of test scores (positive integers from 1 to 100)
+// from the keyboard and then calculate and output the average score
+// as well as the highest and lowest score. There will be a maximum of 100 scores.
+
+#include <iostream>
+using namespace std;
+typedef int GradeType[100];  // declares a new data type:
+// an integer array of 100 elements
+float findAverage(const GradeType, int);  // finds average of all grades
+int findHighest(const GradeType, int);    // finds highest of all grades
+int findLowest(const GradeType, int);     // finds lowest of all grades
+int main() {
+    GradeType grades;    // the array holding the grades.
+    int numberOfGrades;  // the number of grades read.
+    int pos;             // index to the array.
+    float avgOfGrades;   // contains the average of the grades.
+    int highestGrade;    // contains the highest grade.
+    int lowestGrade;     // contains the lowest grade.
+    // Read in the values into the array
+    pos = 0;
+    cout << "Please input a grade from 1 to 100, (or -99 to stop)" << endl;
+    cin >> grades[pos];
+    while (grades[pos] != -99) {
+        // Fill in the code to read the grades
+    }
+    numberOfGrades = ______________;  // Fill blank with appropriate identifier
+    // call to the function to find average
+    avgOfGrades = findAverage(grades, numberOfGrades);
+    cout << endl << "The average of all the grades is " << avgOfGrades << endl;
+    // Fill in the call to the function that calculates highest grade
+    cout << endl << "The highest grade is " << highestGrade << endl;
+    // Fill in the call to the function that calculates lowest grade
+    // Fill in code to write the lowest to the screen
+    return 0;
+}
+//********************************************************************************
+// findAverage
+//
+// task: This function receives an array of integers and its size.
+// It finds and returns the average of the numbers in the array
+    // data in: array of floating point numbers
+    // data returned: average of the numbers in the array
+    //
+    //********************************************************************************
+    float
+    findAverage(const GradeType array, int size) {
+    float sum = 0;  // holds the sum of all the numbers
+    for (int pos = 0; pos < size; pos++) sum = sum + array[pos];
+    return (sum / size);  // returns the average
+}
+//****************************************************************************
+// findHighest
+//
+// task: This function receives an array of integers and its size.
+// It finds and returns the highest value of the numbers in
+// the array
+// data in: array of floating point numbers
+// data returned: highest value of the numbers in the array
+//
+//****************************************************************************
+int findHighest(const GradeType array, int size) {
+    // Fill in the code for this function
+}
+//****************************************************************************
+// findLowest
+//
+// task: This function receives an array of integers and its size.
+// It finds and returns the lowest value of the numbers in
+// the array
+// data in: array of floating point numbers
+// data returned: lowest value of the numbers in the array
+//
+//****************************************************************************
+int findLowest(const GradeType array, int size) {
+    // Fill in the code for this function
+}
+    
+</code></pre>
+<h1>Exercise 1</h1>
+<p>Complete this program as directed.</p>
+<pre><code class="cpp">// This program will read in a group of test scores (positive integers from 1 to 100)
+// from the keyboard and then calculate and output the average score
+// as well as the highest and lowest score. There will be a maximum of 100 scores.
+
+#include <iostream>
+#include <climits>
+using namespace std;
+
+typedef int GradeType[100];   // declares a new data type:
+                              // an integer array of 100 elements
+
+float findAverage(const GradeType, int);   // finds average of all grades 
+int  findHighest(const GradeType, int);    // finds highest of all grades 
+int  findLowest(const GradeType, int);     // finds lowest of all grades
+
+int main()
+{
+   GradeType grades;    // the array holding the grades. 
+   int numberOfGrades;  // the number of grades read.
+   int pos;             // index to the array.
+   float avgOfGrades;   // contains the average of the grades. 
+   int highestGrade;    // contains the highest grade.
+   int lowestGrade;     // contains the lowest grade.
+
+   // Read in the values into the array 
+   pos = 0;
+   cout << "Please input a grade from 1 to 100, (or -99 to stop)" << endl;
+   cin >> grades[pos];
+
+   while (grades[pos] != -99)
+   {
+      // Fill in the code to read the grades
+      pos++;
+      cout << "Please input a grade from 1 to 100, (or -99 to stop)" << endl;
+      cin >> grades[pos];
+   }
+
+   numberOfGrades = pos;   // Fill blank with appropriate identifier
+
+   // call to the function to find average
+   avgOfGrades = findAverage(grades, numberOfGrades);
+
+   cout << endl << "The average of all the grades is " << avgOfGrades << endl;
+
+   // Fill in the call to the function that calculates highest grade
+   highestGrade = findHighest(grades, numberOfGrades);
+
+   cout << endl << "The highest grade is " << highestGrade << endl;
+
+   // Fill in the call to the function that calculates lowest grade
+   lowestGrade = findLowest(grades, numberOfGrades);
+
+   // Fill in code to write the lowest to the screen
+   cout << "The lowest grade is " << lowestGrade << endl;
+
+   return 0;
+}
+
+//********************************************************************************
+// findAverage
+//
+// task:         This function receives an array of integers and its size.
+//                 It finds and returns the average of the numbers in the array
+// data in:         array of floating point numbers
+// data returned: average of the numbers in the array
+//
+//********************************************************************************
+
+float findAverage(const GradeType array, int size)
+{
+   float sum = 0;         // holds the sum of all the numbers
+
+   for (int pos = 0; pos < size; pos++)
+      sum = sum + array[pos];
+
+   return (sum / size);   // returns the average
+}
+
+//****************************************************************************
+// findHighest
+//
+// task:         This function receives an array of integers and its size.
+//                 It finds and returns the highest value of the numbers in 
+//                the array
+// data in:         array of floating point numbers
+// data returned: highest value of the numbers in the array
+//
+//****************************************************************************
+
+int findHighest(const GradeType array, int size)
+{
+    // Fill in the code for this function
+   int highest = array[0];
+   for (int pos = 1; pos < size; pos++)
+   {
+      if (array[pos] > highest)
+         highest = array[pos];
+   }
+   return highest;
+}
+
+//****************************************************************************
+// findLowest
+//
+// task:         This function receives an array of integers and its size.
+//                 It finds and returns the lowest value of the numbers in 
+//                the array
+// data in:         array of floating point numbers
+// data returned: lowest value of the numbers in the array
+//
+//****************************************************************************
+
+int findLowest(const GradeType array, int size)
+{
+    // Fill in the code for this function
+   int lowest = array[0];
+   for (int pos = 1; pos < size; pos++)
+   {
+      if (array[pos] < lowest)
+         lowest = array[pos];
+   }
+   return lowest;
+}
+    
+</code></pre>
+<div id="ouraccordion">
+    <input type="checkbox" id="accordionx1" class="hidecontent"/>
+    <label for="accordionx1">Explanation (Gemini)</label>
+    <div class="content hidecontent">
+<pre>Explanation of changes:
+
+    Reading grades: 
+        The while loop now checks for both the sentinel value (-99) and array bounds to prevent potential errors.
+    Calculating numberOfGrades: 
+        The numberOfGrades variable is directly incremented within the while loop to accurately track the number of grades entered.
+    Calling findHighest and findLowest: 
+        The functions are called with the appropriate arguments (grades array and numberOfGrades) to find and display the highest and lowest grades.
+    Function implementations: 
+        The findHighest and findLowest functions now have their logic implemented to correctly find the highest and lowest values within the array.
+
+</pre>
+    </div>
+
+    <input type="checkbox" id="accordionx2" class="hidecontent"/>
+    <label for="accordionx2">Explanation (Bing)</label>
+    <div class="content hidecontent">
+<pre>This code should work as expected according to your instructions. It takes the grades as input and calculates the average, highest, and lowest grades. 
+The findAverage, findHighest, and findLowest functions are implemented to calculate the average, highest, and lowest grades, respectively. 
+
+
+
+
+
+The code you provided is essentially the same as the one I provided earlier, with the only difference being the way you handle the input of grades. 
+In your version, you use a while loop with a condition that checks if the array index is less than 100 and if the last entered grade is not -99. 
+This ensures that the program doesn’t exceed the array bounds and stops input when -99 is entered.
+
+Here are some points to consider:
+
+Pros of your approach:
+    Safety: 
+        Your approach ensures that the program doesn’t exceed the array bounds, which could lead to undefined behavior.
+
+Cons of your approach:
+    Off-by-One Error: 
+        Your approach might lead to an off-by-one error. 
+        If the user enters -99 as the first grade, the program will still increment pos and numberOfGrades, even though no valid grade was entered.
+
+Pros of my approach:
+    Simplicity: 
+        My approach is straightforward and easy to understand.
+
+Cons of my approach:
+    Potential Overflow: 
+        If the user enters more than 100 grades, my approach could lead to an array overflow, which could cause undefined behavior.
+
+In terms of performance, there’s no significant difference between the two approaches. 
+However, in terms of safety, your approach is better because it prevents array overflow. 
+To fix the off-by-one error, you could add a condition to the while loop to check if pos is 0. 
+This would ensure that pos and numberOfGrades are only incremented if a valid grade is entered. 
+
+</pre>
+    </div>
+</div>
+
+<h1>Exercise 2</h1>
+<p>Run the program with the following data:
+    <pre>90 45 73 62 -99</pre> and record the output here</p>
+<pre>
+The average of all the grades is 67.5
+
+The highest grade is 90
+The lowest grade is 45
+</pre>
+<div id="ouraccordion">
+    <input type="checkbox" id="accordionx3" class="hidecontent"/>
+    <label for="accordionx3">Explanation (Gemini)</label>
+    <div class="content hidecontent">
+<pre>
+
+</pre>
+    </div>
+
+    <input type="checkbox" id="accordionx4" class="hidecontent"/>
+    <label for="accordionx4">Explanation (Bing)</label>
+    <div class="content hidecontent">
+<pre>
+
+</pre>
+    </div>
+</div>
+
+<h1>Exercise 3</h1>
+<p>Modify your program from Exercise 1 so that it reads the information from the gradfile.txt file, reading until the end of file is encountered.<br>
+    You will need to first retrieve this file from the Lab 7 folder and place it in the same folder as your C++ source code.<br>
+    Run the program.</p>
+<pre><code class="cpp">// This program will read in a group of test scores (positive integers from 1 to 100)
+// from the keyboard and then calculate and output the average score
+// as well as the highest and lowest score. There will be a maximum of 100 scores.
+
+#include <iostream>
+#include <fstream>
+#include <string>
+using namespace std;
+
+typedef int GradeType[100];   // declares a new data type:
+                              // an integer array of 100 elements
+float findAverage(const GradeType, int);   // finds average of all grades 
+int  findHighest(const GradeType, int);    // finds highest of all grades 
+int  findLowest(const GradeType, int);     // finds lowest of all grades
+void readFile(GradeType, int&);
+
+int main()
+{
+   GradeType grades;    // the array holding the grades. 
+   int numberOfGrades;  // the number of grades read.
+   int pos;             // index to the array.
+   float avgOfGrades;   // contains the average of the grades. 
+   int highestGrade;    // contains the highest grade.
+   int lowestGrade;     // contains the lowest grade.
+   // Read in the values into the array 
+   pos = 0;
+   readFile(grades, pos);
+
+   numberOfGrades = pos;   // Assign the correct value to numberOfGrades
+
+   // call to the function to find average
+   avgOfGrades = findAverage(grades, numberOfGrades);
+
+   cout << endl << "The average of all the grades is " << avgOfGrades << endl;
+
+   // call to the function that calculates highest grade
+   highestGrade = findHighest(grades, numberOfGrades);
+   cout << endl << "The highest grade is " << highestGrade << endl;
+   // call to the function that calculates lowest grade
+   lowestGrade = findLowest(grades, numberOfGrades);
+   cout << "The lowest grade is " << lowestGrade << endl;
+
+   return 0;
+}
+
+float findAverage(const GradeType   array, int size)
+{
+   float sum = 0;         // holds the sum of all the numbers
+
+   for (int pos = 0; pos < size; pos++)
+      sum = sum + array[pos];
+
+   return (sum / size);   // returns the average
+}
+
+int   findHighest(const GradeType array, int size)
+{
+   int highest = array[0];
+
+   for (int pos = 1; pos < size; pos++)
+   {
+      if (array[pos] > highest)
+         highest = array[pos];
+   }
+
+   return highest;
+}
+
+int   findLowest(const GradeType array, int size)
+{
+   int lowest = array[0];
+
+   for (int pos = 1; pos < size; pos++)
+   {
+      if (array[pos] < lowest)
+         lowest = array[pos];
+   }
+
+   return lowest;
+}
+
+void readFile(GradeType array, int &size)
+{
+   ifstream file("gradfile.txt");
+   if (file.is_open())
+    {
+        string line;
+        while (getline(file,line))
+        {
+            size++;
+            array[size - 1] = stoi(line); // S(tring) TO I(nteger)
+            cout << array[size -1] << endl;
+        }
+        file.close();
+    }
+    else
+    {
+        cout << "Error, pls try again" << endl;
+    }
+} 
+    
+</code></pre>
+<div id="ouraccordion">
+    <input type="checkbox" id="accordionx5" class="hidecontent"/>
+    <label for="accordionx5">Explanation (Gemini)</label>
+    <div class="content hidecontent">
+<pre>
+
+</pre>
+    </div>
+
+    <input type="checkbox" id="accordionx6" class="hidecontent"/>
+    <label for="accordionx6">Explanation (Bing)</label>
+    <div class="content hidecontent">
+<pre>
+
+</pre>
+    </div>
+</div>
+
+</div>
+
+<input type="checkbox" id="accordion2" class="hidecontent"/>
+<label for="accordion2">Lab 7.2 - Strings as Arrays of Characters</label>
+<div class="content hidecontent">
+
+<h1>Exercise 1</h1>
+<p></p>
+<pre><code class="cpp">// This program will input an undetermined number of student names
+// and a number of grades for each student. The number of grades is
+// given by the user. The grades are stored in an array.
+// Two functions are called for each student.
+// One function will give the numeric average of their grades.
+// The other function will give a letter grade to that average.
+// Grades are assigned on a 10 point spread.
+// 90-100 A   80-89 B   70-79 C   60-69 D   Below 60 F
+
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+const int MAXGRADE = 25;   // maximum number of grades per student 
+const int MAXCHAR = 30;    // maximum characters used in a name
+
+typedef char StringType30[MAXCHAR + 1];   // character array data type for names
+                                          // having 30 characters or less.
+
+typedef float GradeType[MAXGRADE];      // one dimensional integer array data type
+
+float findGradeAvg(GradeType, int);       // finds grade average by taking array of
+                                          // grades and number of grades as parameters
+
+char findLetterGrade(float);              // finds letter grade from average given
+                                          // to it as a parameter 
+
+int main()
+{
+   StringType30 firstname, lastname;      // two arrays of characters defined
+   int numOfGrades;                       // holds the number of grades
+   GradeType grades;                      // grades defined as a one dimensional array
+   float average;                         // holds the average of a student's grade
+   char moreInput;                        // determines if there is more input
+   
+   cout << setprecision(2) << fixed << showpoint;
+
+   // Input the number of grades for each student
+   cout << "Please input the number of grades each student will receive." << endl
+       << "This must be a number between 1 and " << MAXGRADE << " inclusive"
+       << endl;
+   cin >> numOfGrades;
+
+   while (numOfGrades > MAXGRADE || numOfGrades < 1)
+   {
+      cout << "Please input the number of grades for each student." << endl
+      << "This must be a number between 1 and " << MAXGRADE
+      << " inclusive\n";
+      cin >> numOfGrades;
+   }
+
+   // Input names and grades for each student
+   cout << "Please input a y if you want to input more students"
+        << " any other character will stop the input" << endl;
+   cin >> moreInput;
+
+   while (moreInput == 'y' || moreInput == 'Y')
+   {
+      cout << "Please input the first name of the student" << endl;
+      cin >> firstname;
+
+      cout << endl << "Please input the last name of the student" << endl;
+      cin >> lastname;
+
+      for (int count = 0; count < numOfGrades; count++)
+      {
+         cout << endl << "Please input a grade" << endl;
+         cin >> grades[count];
+      }
+
+      cout << firstname << " " << lastname << " has an average of ";
+      average = findGradeAvg(grades, numOfGrades);
+      cout << average << endl;
+
+      cout << "The letter grade is ";
+      cout << findLetterGrade(average) << endl;
+
+      cout << endl << endl << endl;
+
+      cout << "Please input a y if you want to input more students"
+           << " any other character will stop the input" << endl;
+      cin >> moreInput;
+   }
+
+   return 0;
+}
+
+float findGradeAvg(GradeType array, int numGrades)
+{
+   float sum = 0;
+   for (int i = 0; i < numGrades; i++) {
+       sum += array[i];
+   }
+   return sum / numGrades;
+}
+
+char findLetterGrade(float average)
+{
+   if (average >= 90) {
+       return 'A';
+   } else if (average >= 80) {
+       return 'B';
+   } else if (average >= 70) {
+       return 'C';
+   } else if (average >= 60) {
+       return 'D';
+   } else {
+       return 'F';
+   }
+}
+    
+</code></pre>
+<div id="ouraccordion">
+    <input type="checkbox" id="accordionx13" class="hidecontent"/>
+    <label for="accordionx13">Explanation (Gemini)</label>
+    <div class="content hidecontent">
+<pre>
+
+</pre>
+    </div>
+
+    <input type="checkbox" id="accordionx14" class="hidecontent"/>
+    <label for="accordionx14">Explanation (Bing)</label>
+    <div class="content hidecontent">
+<pre>
+
+</pre>
+    </div>
+</div>
+
+</div>
+
+<input type="checkbox" id="accordion3" class="hidecontent"/>
+<label for="accordion3">Lab 7.3 - Working with Two-Dimensional Arrays</label>
+<div class="content hidecontent">
+<p>Look at the following table containing prices of certain items:
+<pre>12.78 7.83 13.67
+23.78 45.67 4.89
+5.99 34.84 16.71
+12.67 56.84 50.89</pre>
+These numbers can be read into a two-dimensional array.</p>
+<h1>Exercise 1</h1>
+<p>Fill in the code to complete both functions getPrices and printPrices, then run the program with the following data:
+<pre>Please input the number of rows from 1 to 10
+2
+Please input the number of columns from 1 to 10
+3
+Please input the price of an item with 2 decimal places
+1.45
+Please input the price of an item with 2 decimal places
+2.56
+Please input the price of an item with 2 decimal places
+12.98
+Please input the price of an item with 2 decimal places
+37.86
+Please input the price of an item with 2 decimal places
+102.34
+Please input the price of an item with 2 decimal places
+67.89
+1.45 2.56 12.98
+37.86 102.34 67.89</pre></p>
+<pre><code class="cpp">
+    
+</code></pre>
+<div id="ouraccordion">
+    <input type="checkbox" id="accordionx25" class="hidecontent"/>
+    <label for="accordionx25">Explanation (Gemini)</label>
+    <div class="content hidecontent">
+<pre>
+
+</pre>
+    </div>
+
+    <input type="checkbox" id="accordionx26" class="hidecontent"/>
+    <label for="accordionx26">Explanation (Bing)</label>
+    <div class="content hidecontent">
+<pre>
+
+</pre>
+    </div>
+</div>
+
+<h1>Exercise 2</h1>
+<p>Why does getPrices have the parameters numOfRows and numOfCols passed by reference whereas printPrices has those parameters passed by value?</p>
+<pre><code class="cpp">
+    
+</code></pre>
+<div id="ouraccordion">
+    <input type="checkbox" id="accordionx27" class="hidecontent"/>
+    <label for="accordionx27">Explanation (Gemini)</label>
+    <div class="content hidecontent">
+<pre>
+
+</pre>
+    </div>
+
+    <input type="checkbox" id="accordionx28" class="hidecontent"/>
+    <label for="accordionx28">Explanation (Bing)</label>
+    <div class="content hidecontent">
+<pre>
+
+</pre>
+    </div>
+</div>
+
+<h1>Exercise 3</h1>
+<p>The following code is a function that returns the highest price in the array.<br>
+    After studying it very carefully, place the function in the above program and have the program print out the highest value.
+<pre><code class="cpp">float findHighestPrice(PriceType table, int numOfRows, int numOfCols)
+// This function returns the highest price in the array{
+float highestPrice;
+highestPrice = table[0][0]; // make first element the highest price
+for (int row = 0; row < numOfRows; row++) for (int col = 0; col < numOfCols; col++)
+if ( highestPrice < table[row][col] ) highestPrice = table[row][col];
+return highestPrice;
+}</code></pre>
+NOTE: This is a value returning function. Be sure to include its prototype in the global section</p>
+<pre><code class="cpp">
+    
+</code></pre>
+<div id="ouraccordion">
+    <input type="checkbox" id="accordionx29" class="hidecontent"/>
+    <label for="accordionx29">Explanation (Gemini)</label>
+    <div class="content hidecontent">
+<pre>
+
+</pre>
+    </div>
+
+    <input type="checkbox" id="accordionx30" class="hidecontent"/>
+    <label for="accordionx30">Explanation (Bing)</label>
+    <div class="content hidecontent">
+<pre>
+
+</pre>
+    </div>
+</div>
+
+<h1>Exercise 4</h1>
+<p>Create another value returning function that finds the lowest price in the array and have the program print that value.</p>
+<pre><code class="cpp">
+    
+</code></pre>
+<div id="ouraccordion">
+    <input type="checkbox" id="accordionx31" class="hidecontent"/>
+    <label for="accordionx31">Explanation (Gemini)</label>
+    <div class="content hidecontent">
+<pre>
+
+</pre>
+    </div>
+
+    <input type="checkbox" id="accordionx32" class="hidecontent"/>
+    <label for="accordionx32">Explanation (Bing)</label>
+    <div class="content hidecontent">
+<pre>
+
+</pre>
+    </div>
+</div>
+
+<h1>Exercise 5</h1>
+<p>After completing all the exercises above, run the program again with the values from Exercise 1 and record your results.</p>
+<pre><code class="cpp">
+    
+</code></pre>
+<div id="ouraccordion">
+    <input type="checkbox" id="accordionx33" class="hidecontent"/>
+    <label for="accordionx33">Explanation (Gemini)</label>
+    <div class="content hidecontent">
+<pre>
+
+</pre>
+    </div>
+
+    <input type="checkbox" id="accordionx34" class="hidecontent"/>
+    <label for="accordionx34">Explanation (Bing)</label>
+    <div class="content hidecontent">
+<pre>
+
+</pre>
+    </div>
+</div>
+
+<h1>Exercise 6</h1>
+<p>Look at the following table that contains quarterly sales transactions for three years of a small company.<br>
+    Each of the quarterly transactions are integers (number of sales) and the year is also an integer.
+<pre>YEARQuarter 1Quarter 2Quarter 3Quarter 4
+200072 80 60 100
+2001 82 90 4398
+200264785884</pre>
+We could use a two-dimensional array consisting of 3 rows and 5 columns.<br>
+Even though there are only four quarters we need 5 columns (the first column holds the year).</p>
+<pre><code class="cpp">// This program will read in the quarterly sales transactions for a given number
+// of years. It will print the year and transactions in a table format.
+// It will calculate year and quarter total transactions.
+
+#include <iomanip>
+#include <iostream>
+    using namespace std;
+const int MAXYEAR = 10;
+const int MAXCOL = 5;
+typedef int SalesType[MAXYEAR][MAXCOL];  // creates a new 2D integer data type
+void getSales(SalesType, int&);          // places sales figures into the array
+void printSales(SalesType, int);         // prints data as a table
+void printTableHeading();                // prints table heading
+int main() {
+    int yearsUsed;                 // holds the number of years used
+    SalesType sales;               // 2D array holding the sales transactions
+    getSales(sales, yearsUsed);    // calls getSales to put data in array
+    printTableHeading();           // calls procedure to print the heading
+    printSales(sales, yearsUsed);  // calls printSales to display table
+    return 0;
+}
+//*****************************************************************************
+// printTableHeading
+//
+// task: This procedure prints the table heading
+// data in: none
+// data out: none
+//
+//*****************************************************************************
+void printTableHeading() {
+    cout << setw(30) << "YEARLY QUARTERLY SALES" << endl << endl << endl;
+    cout << setw(10) << "YEAR" << setw(10) << "Quarter 1" << setw(10) << "Quarter 2" << setw(10) << "Quarter 3" << setw(10) << "Quarter 4" << endl;
+}
+//*****************************************************************************
+// getSales
+//
+// task: This procedure asks the user to input the number of years.
+// For each of those years it asks the user to input the year
+// (e.g. 2004), followed by the sales figures for each of the
+// 4 quarters of that year. That data is placed in a 2D array
+// data in: a 2D array of integers
+// data out: the total number of years
+//
+//*****************************************************************************
+void getSales(SalesType table, int& numOfYears) {
+    cout << "Please input the number of years (1-" << MAXYEAR << ")" << endl;
+    cin >> numOfYears;
+    // Fill in the code to read and store the next value
+}
+//*****************************************************************************
+// printSales
+//
+// task: This procedure prints out the information in the array
+// data in: an array containing sales information
+// data out: none
+    //
+    //*****************************************************************************
+    void
+    printSales(SalesType table, int numOfYears) {
+    // Fill in the code to print the table
+}
+</code></pre><br>
+<pre><code class="cpp">
+    
+</code></pre>
+<div id="ouraccordion">
+    <input type="checkbox" id="accordionx35" class="hidecontent"/>
+    <label for="accordionx35">Explanation (Gemini)</label>
+    <div class="content hidecontent">
+<pre>
+
+</pre>
+    </div>
+
+    <input type="checkbox" id="accordionx36" class="hidecontent"/>
+    <label for="accordionx36">Explanation (Bing)</label>
+    <div class="content hidecontent">
+<pre>
+
+</pre>
+    </div>
+</div>
+
+</div>
+
+<input type="checkbox" id="accordion4" class="hidecontent"/>
+<label for="accordion4">Lab 7.4 - Student Generated Code Assignments</label>
+<div class="content hidecontent">
+
+<h1>Exercise 1</h1>
+<p>Option 1: Write a program that will input temperatures for consecutive days.<br>
+    The program will store these values into an array and call a function that will return the average of the temperatures.<br>
+    It will also call a function that will return the highest temperature and a function that will return the lowest temperature.<br>
+    The user will input the number of temperatures to be read. There will be no more than 50 temperatures.<br>
+    Use typedef to declare the array type.<br>
+    The average should be displayed to two decimal places.
+<pre>Sample Run:
+Please input the number of temperatures to be read
+5
+Input temperature 1:
+68
+Input temperature 2:
+75
+Input temperature 3:
+36
+Input temperature 4:
+91
+Input temperature 5:
+84
+The average temperature is 70.80
+The highest temperature is 91.00
+The lowest temperature is 36.00</pre></p>
+<pre><code class="cpp">
+    
+</code></pre>
+<div id="ouraccordion">
+    <input type="checkbox" id="accordionx37" class="hidecontent"/>
+    <label for="accordionx37">Explanation (Gemini)</label>
+    <div class="content hidecontent">
+<pre>
+
+</pre>
+    </div>
+
+    <input type="checkbox" id="accordionx38" class="hidecontent"/>
+    <label for="accordionx38">Explanation (Bing)</label>
+    <div class="content hidecontent">
+<pre>
+
+</pre>
+    </div>
+</div>
+
+<h1>Exercise 2</h1>
+<p>Write a program that will input letter grades (A, B, C, D, F), the number of which is input by the user (a maximum of 50 grades).<br>
+    The grades will be read into an array.<br>
+    A function will be called five times (once for each letter grade) and will return the total number of grades in that category.<br>
+    The input to the function will include the array, number of elements in the array and the letter category (A, B, C, D or F).<br>
+    The program will print the number of grades that are A, B, etc.
+<pre>Sample Run:
+Please input the number of grades to be read in. No more than 50
+6
+All grades must be upper case A B C D or F
+Input a grade
+A
+Input a grade
+C
+Input a grade
+A
+Input a grade
+B
+Input a grade
+B
+Input a grade
+D
+Number of A = 2
+Number of B = 2
+Number of C = 1
+Number of D = 1
+Number of F = 0
+</pre></p>
+<pre><code class="cpp">
+    
+</code></pre>
+<div id="ouraccordion">
+    <input type="checkbox" id="accordionx39" class="hidecontent"/>
+    <label for="accordionx39">Explanation (Gemini)</label>
+    <div class="content hidecontent">
+<pre>
+
+</pre>
+    </div>
+
+    <input type="checkbox" id="accordionx40" class="hidecontent"/>
+    <label for="accordionx40">Explanation (Bing)</label>
+    <div class="content hidecontent">
+<pre>
+
+</pre>
+    </div>
+</div>
+
+</div>
+
+</div>
+
+<!-- these links to previous & next Labs -->
+<div class="container2">
+    <button class="button-1"><a href="Lab 6.html" target="_blank">Lab 6</a></button>
+    <button class="button-1"><a href="Lab 8.html" target="_blank">Lab 8</a></button>
+</div>
+
+<script type="text/javascript" src="../js/module.js"></script>
+</body>
+</html>

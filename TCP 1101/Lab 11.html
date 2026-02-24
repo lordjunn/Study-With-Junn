@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<link rel="stylesheet" href="../css/base.css">
+<link rel="stylesheet" href="../css/module.css">
+<link href="https://fonts.googleapis.com/css?family=Alata | Ibarra+Real+Nova&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+<!-- and it's easy to individually load additional languages -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/go.min.js"></script>
+
+<script>hljs.highlightAll();</script>
+<title>TCP 1101 - 11</title>
+</head>
+
+<body>
+<!-- Dynamic header -->
+<div id="header-container"></div>
+<div id="header-config"
+    data-course="Programming Fundamentals - Lab 11"
+    data-topic-link="../index.html"
+    data-prev="x"
+    data-next="x">
+</div>
+
+
+<br><br><br>
+<div id="myaccordion">
+<input type="checkbox" id="accordion1" class="hidecontent"/>
+<label for="accordion1">Lab 11.1 - Passing Pointers to Functions</label>
+<div class="content hidecontent">
+<pre><code class="cpp">// This program provides an exercise on how to pass
+// pointer variables as input parameters to functions.
+// This program calculates the square and square root
+// of an integer and returns them both to the caller.
+#include <cmath>
+#include <iostream>
+using namespace std;
+// MODIFY the prototype to allow it to pass pointer variables
+// as input parameter instead of passing variables by reference.
+// Decide which variables should be changed.
+void bothways(int, int &, double &);
+int main() {
+    int n = 100;
+    // MODIFY these two variables such that they are created dynamically by
+    // pointer variables.
+    int sq;
+    double sq_root;
+    // The subsequent lines should be MODIFIED accordingly so that
+    // the program works correctly.
+    bothways(n, sq, sq_root);
+    cout << n << " " << sq << " " << sq_root;
+    return 0;
+}
+// MODIFY the function definition to allow it to pass pointer variables
+// as input parameter instead of passing variables by reference.
+// Decide which variables should be changed.
+void bothways(int n, int &square, double &sq_root) {
+    square = n * n;
+    sq_root = sqrt(n);
+}
+</code></pre>
+<h1>Exercise 1</h1>
+<p>The given program should produce the following output:
+<pre>100        10000       10</pre>
+Modify the program such that sq and sq_root are pointer variables (instead of variables) that are used to dynamically allocate an integer and double respectively.<br>
+Proceed to make changes to the rest of the program so that it produces the same output as before.</p>
+<pre><code class="cpp">
+    
+</code></pre>
+<div id="ouraccordion">
+    <input type="checkbox" id="accordionx1" class="hidecontent"/>
+    <label for="accordionx1">Explanation (Gemini)</label>
+    <div class="content hidecontent">
+<pre>
+
+</pre>
+    </div>
+
+    <input type="checkbox" id="accordionx2" class="hidecontent"/>
+    <label for="accordionx2">Explanation (Bing)</label>
+    <div class="content hidecontent">
+<pre>
+
+</pre>
+    </div>
+</div>
+
+</div>
+
+<input type="checkbox" id="accordion2" class="hidecontent"/>
+<label for="accordion2">Lab 11.2 - What is the Output?</label>
+<div class="content hidecontent">
+<p>Without typing out and compiling these lines of code, figure out the output by hand.</p>
+<h1>Exercise A</h1>
+<pre><code class="cpp">#include <iostream>
+using namespace std;
+int main() {
+    int p = 5, q = 3;
+    int *a, *b, *c;
+    a = &q;
+    c = &p;
+    b = a;
+    *a = *a + 3;
+    a = c;
+    c = b;
+    cout << *a << " " << *b << " " << *c << endl;
+    return 0;
+}
+</code></pre>
+<div id="ouraccordion">
+    <input type="checkbox" id="accordionx7" class="hidecontent"/>
+    <label for="accordionx7">Explanation (Gemini)</label>
+    <div class="content hidecontent">
+<pre>
+
+</pre>
+    </div>
+
+    <input type="checkbox" id="accordionx8" class="hidecontent"/>
+    <label for="accordionx8">Explanation (Bing)</label>
+    <div class="content hidecontent">
+<pre>
+
+</pre>
+    </div>
+</div>
+
+<h1>Exercise B</h1>
+<pre><code class="cpp">#include <iostream>
+    using namespace std;
+int main() {
+    float m = 0.5, n = 1.5;
+    float* r = &n;
+    float* s = &m;
+    while (m < *r * 4) {
+        cout << *s << " ";
+        m = m + *s;
+    }
+    return 0;
+}
+</code></pre>
+<div id="ouraccordion">
+    <input type="checkbox" id="accordionx9" class="hidecontent"/>
+    <label for="accordionx9">Explanation (Gemini)</label>
+    <div class="content hidecontent">
+<pre>
+
+</pre>
+    </div>
+
+    <input type="checkbox" id="accordionx10" class="hidecontent"/>
+    <label for="accordionx10">Explanation (Bing)</label>
+    <div class="content hidecontent">
+<pre>
+
+</pre>
+    </div>
+</div>
+
+<h1>Exercise C</h1>
+<pre><code class="cpp">#include <iostream>
+    using namespace std;
+const int SZ = 3;
+int main() {
+    int *a, d = 65;
+    int x[SZ] = {2, 0, 19};
+    char* b = new char;
+    char* c = b;
+    a = &d;
+    for (int i = 0; i < SZ; i++) {
+        *c = *a + x[i];
+        cout << *b;
+    }
+    return 0;
+}
+    
+</code></pre>
+<div id="ouraccordion">
+    <input type="checkbox" id="accordionx11" class="hidecontent"/>
+    <label for="accordionx11">Explanation (Gemini)</label>
+    <div class="content hidecontent">
+<pre>
+
+</pre>
+    </div>
+
+    <input type="checkbox" id="accordionx12" class="hidecontent"/>
+    <label for="accordionx12">Explanation (Bing)</label>
+    <div class="content hidecontent">
+<pre>
+
+</pre>
+    </div>
+</div>
+
+</div>
+
+<input type="checkbox" id="accordion3" class="hidecontent"/>
+<label for="accordion3">Lab 11.3 - [Long Question] Operations for Dynamic Array</label>
+<div class="content hidecontent">
+<pre><code class="cpp">#include <iostream>
+using namespace std;
+// prototypes and their brief descriptions
+// this function dynamically creates an array in memory
+int* createArray(int);
+// This function reverses the contents of the array. To do so,
+// create another array (of the same size), and transfer the contents to it
+// in inverted order.
+// 1st parameter: pointer to the dynamic array, 2nd parameter: size of array
+void reverseArray(int*&, int);
+// This function prints the contents of the array.
+// 1st parameter: pointer to the dynamic array, 2nd parameter: size of array
+void printArray(int*, int);
+// This function checks if a value exists in the array. If it exists,
+// return the location in array
+// 1st parameter: pointer to the dynamic array, 2nd parameter: size of array
+// 3rd parameter: the value to be searched
+int findInArray(int*, int, int);
+// This function checks if a value exists in the array, and proceeds to
+// replace it with a new value
+// 1st parameter: pointer to the dynamic array, 2nd parameter: size of array
+// 3rd parameter: the value to be searched, 4th parameter: the replacement value
+bool replaceInArray(int*, int, int, int);
+// This function expands the array size two times its original size.
+// Create a new array that is double the original size, then copy over
+// the contents of the original array. Ensure the new array is passed back.
+// 1st parameter: pointer to the dynamic array, 2nd parameter: size of array
+void expandArray(int*&, int&);
+// MAIN FUNCTION does not need any modifications
+int main() {
+    int* ptr;
+    int size = 10;
+    ptr = createArray(size);
+    for (int i = 0; i < size; i++) ptr[i] = i;
+    printArray(ptr, size);
+    reverseArray(ptr, size);
+    printArray(ptr, size);
+    int value = 7;
+    int loc = findInArray(ptr, size, value);
+    if (loc == -1)
+        cout << "The value " << value << " does not exist in the array." << endl;
+    else
+        cout << "The value " << value << " is found at location " << loc << " of the array." << endl << endl;
+    if (replaceInArray(ptr, size, value, 99)) {
+        printArray(ptr, size);
+        cout << "The value " << value << " has been replaced." << endl;
+    }
+    expandArray(ptr, size);
+    cout << "\nAfter expanding, the array now has size " << size << endl;
+    printArray(ptr, size);
+    delete[] ptr;  // Prevent memory leak
+    ptr = nullptr;
+}
+/////////////////////////////////////////////////////////////////////////////
+// function definitions
+int* createArray(int n) { return new int[n]; }
+void printArray(int* ptr, int size) {
+    cout << "Array: ";
+    // fill up
+    cout << endl;
+}
+void reverseArray(int*& ptr, int size) {
+    // fill up
+}
+int findInArray(int* ptr, int size, int value) {
+    // fill up
+    return -1;
+}
+bool replaceInArray(int* ptr, int size, int value, int replacement) {
+    // fill up
+    return false;
+}
+void expandArray(int*& ptr, int& size) {
+    // fill up
+}
+    
+</code></pre>
+<h1>Exercise 1</h1>
+<p>This “long question” provides you with more practice with a program that creates multiple functions to implement several operations for dynamic array.<br>
+Among them, the ability to print array contents, reverse array, find a value in the array, replace a value in the array, and expand the size of the array.<br>
+Study the code carefully in order to complete the program.<br>
+The function prototypes have been provided, with description of what the input parameters represent.<br>
+You are to complete the function definitions (bottom part of the source file) so that they the program produces the expected output.<br>
+You do not need to modify any part of the main() function.<br>
+The expected output is given below.<br><br>
+
+Sample Run:
+<pre>Array: 0 1 2 3 4 5 6 7 8 9
+Array: 9 8 7 6 5 4 3 2 1 0
+The value 7 is found at location 2 of the array.
+Array: 9 8 99 6 5 4 3 2 1 0
+The value 7 has been replaced.
+After expanding, the array now has size 20
+Array: 9 8 99 6 5 4 3 2 1 0 0 0 0 0 0 0 0 0 0 0</pre></p>
+<pre><code class="cpp">
+    
+</code></pre>
+<div id="ouraccordion">
+    <input type="checkbox" id="accordionx13" class="hidecontent"/>
+    <label for="accordionx13">Explanation (Gemini)</label>
+    <div class="content hidecontent">
+<pre>
+
+</pre>
+    </div>
+
+    <input type="checkbox" id="accordionx14" class="hidecontent"/>
+    <label for="accordionx14">Explanation (Bing)</label>
+    <div class="content hidecontent">
+<pre>
+
+</pre>
+    </div>
+</div>
+
+<h1>Exercise 2</h1>
+<p>If you have successfully completed Exercise 1.<br>
+Try re-writing the code into an ADT class called Array.<br>
+Note: The main() function must be modified to use the Array object<br><br>
+Why is this a good step to take?<br>
+Structurally, it makes sense to try “package” all these functions and the data (variables) involved into a new user-defined type using a class.<br>
+Notice how long and cumbersome the function parameters are?<br>
+Every function requires us to pass in the pointer, the size and more.<br>
+By making these functions as members of a class, we are constructing behaviours that belong to the array entity.<br>
+At the same time, we can also determine that the client program (main function in this case) is not allowed to access the data directly.</p>
+<pre><code class="cpp">
+    
+</code></pre>
+<div id="ouraccordion">
+    <input type="checkbox" id="accordionx15" class="hidecontent"/>
+    <label for="accordionx15">Explanation (Gemini)</label>
+    <div class="content hidecontent">
+<pre>
+
+</pre>
+    </div>
+
+    <input type="checkbox" id="accordionx16" class="hidecontent"/>
+    <label for="accordionx16">Explanation (Bing)</label>
+    <div class="content hidecontent">
+<pre>
+
+</pre>
+    </div>
+</div>
+
+<h1>Exercise 3</h1>
+<p>There are other array operations that you can implement. Try them!<br>
+ Remove an element from the front or back of the array (i.e. the first or last element)<br><br>
+ Remove a specific element from anywhere in the array (must know the value, and that value must exist in the array for removal to take place)<br><br>
+ Insert from the front or back of the array<br><br>
+ Apply a specific transformation to all contents of the array. You can use a char or string to indicate type of transformation to apply.<br>
+For e.g. ‘sqrt’ applies square root to all elements, ‘sq’ squares all elements, ‘hexa’ converts all elements to hexadecimal (reference: http://www.cplusplus.com/reference/ios/hex/), etc.<br><br>
+ Clear the entire array</p>
+<pre><code class="cpp">
+    
+</code></pre>
+<div id="ouraccordion">
+    <input type="checkbox" id="accordionx17" class="hidecontent"/>
+    <label for="accordionx17">Explanation (Gemini)</label>
+    <div class="content hidecontent">
+<pre>
+
+</pre>
+    </div>
+
+    <input type="checkbox" id="accordionx18" class="hidecontent"/>
+    <label for="accordionx18">Explanation (Bing)</label>
+    <div class="content hidecontent">
+<pre>
+
+</pre>
+    </div>
+</div>
+
+</div>
+
+</div>
+
+<!-- these links to previous & next Labs -->
+<div class="container2">
+    <button class="button-1"><a href="Lab 10.html" target="_blank">Lab 10</a></button>
+    <button class="button-1"><a href="Lab 12.html" target="_blank">Lab 12</a></button>
+</div>
+
+<script type="text/javascript" src="../js/module.js"></script>
+</body>
+</html>

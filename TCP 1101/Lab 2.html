@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<link rel="stylesheet" href="../css/base.css">
+<link rel="stylesheet" href="../css/module.css">
+<link href="https://fonts.googleapis.com/css?family=Alata | Ibarra+Real+Nova&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TCP 1101 - 2</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+<!-- and it's easy to individually load additional languages -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/go.min.js"></script>
+
+<script>hljs.highlightAll();</script>
+</head>
+
+<body>
+<!-- Dynamic header -->
+<div id="header-container"></div>
+<div id="header-config"
+    data-course="First C++ Program"
+    data-topic-link="../index.html"
+    data-prev="x"
+    data-next="x">
+</div>
+
+
+<br><br><br>
+ 
+<div id="myaccordion">
+
+    <input type="checkbox" id="accordion1" class="hidecontent"/>
+    <label for="accordion1">Lab 2.1 - Working with the cout Statement</label>
+    <div class="content hidecontent">
+    <pre><code class="cpp">// This program will write the name, address and telephone number of the programmer.
+
+#include iostream
+using namespace std;
+int main() {
+    // Fill in this pace to write your first and last name
+    // Fill in this pace to write your address (on new line)
+    // Fill in this pace to write your city, state and zip (on new line)
+    // Fill in this pace to write your telephone number (on new line)
+    return 0;
+}
+    </code></pre>
+
+
+    <h1>Exercise 1</h1>
+    <p>
+        Fill in the code so that the program will do the following:<br>
+        Write your first and last name on one line.<br>
+        Write your address on the next line (recall the function of the endl statement).<br>
+        Write your city, state and zip on the next line.<br>
+        Write your telephone number on the next line.<br><br>
+
+        Remember that to output a literal, such as “Hello”, you must use quotes.<br>
+        Compile and run the program.
+    </p>
+
+<pre><code class="cpp">    #include iostream
+    using namespace std;
+    
+    int main()
+    {
+        // Fill in this space to write your first and last name
+        cout << "Programmer:\tDeano Beano" << endl;
+        // Fill in this space to write your address (on new line)
+        cout << "\t\t123 Markadella Lane" << endl;
+        // Fill in this space to write you city, state and zip (on new line)
+        cout << "\t\tFruitland, Md. 55503" << endl;
+        // Fill in this space to write your telephone number (on new line)
+        cout << "Telephone:\t489-555-5555" << endl;
+    
+    return 0;
+    }</code></pre>
+
+    <h1>Exercise 2</h1>
+    <p>Change the program so that three blank lines separate the telephone number from the address. Compile
+        and run the program.</p>
+
+<pre><code class="cpp">    #include iostream
+    using namespace std;
+    
+    int main()
+    {
+        // Fill in this space to write your first and last name
+        cout << "Programmer:\tDeano Beano" << endl;
+        // Fill in this space to write your address (on new line)
+        cout << "\t\t123 Markadella Lane" << endl;
+        // Fill in this space to write you city, state and zip (on new line)
+        cout << "\t\tFruitland, Md. 55503" << endl << endl << endl;
+        // Fill in this space to write your telephone number (on new line)
+        cout << "Telephone:\t489-555-5555" << endl;
+    
+    return 0;
+    }</code></pre>        
+
+    <h1>Exercise 3</h1>
+    <p>Change the program so that the following (but with your name and address) is printed. Try to get the
+        spacing just like the example. Compile and run the program.</p>
+
+<pre><code class="cpp">    #include iostream
+    using namespace std;
+    
+    int main()
+    {
+        // Fill in this space to write your first and last name
+        cout << "*************" << endl;
+        cout << "Programmer:\tDeano Beano" << endl;
+        // Fill in this space to write your address (on new line)
+        cout << "\t\t123 Markadella Lane" << endl;
+        // Fill in this space to write you city, state and zip (on new line)
+        cout << "\t\tFruitland, Md. 55503" << endl;
+        // Fill in this space to write your telephone number (on new line)
+        cout << "Telephone:\t489-555-5555" << endl;
+        cout << "*************" << endl;
+    
+    return 0;
+    }</code></pre>
+
+    </div>
+    
+    <input type="checkbox" id="accordion2" class="hidecontent"/>
+    <label for="accordion2">Lab 2.2 - Working with Constants, Variables and Arithmetic Operators</label>
+    <div class="content hidecontent">
+
+<pre><code class="cpp">// This program will output the circumference and area of the circle with a given radius.
+
+    #include iostream
+    using namespace std;
+
+    const double PI = 3.14;
+    const double RADIUS = 5.4;
+
+    int main() {
+        __________ area                   // definition of area of circle
+            float circumference;          // definition of circumference
+        circumference = 2 * PI * RADIUS;  // computes circumference
+        area = _____________;             // computes area
+        // Fill in the code for the cout statement that will output (with
+        // description) the circumference Fill in the code for the cout statement
+        // that will output (with description) the area of the circle
+        return 0;
+    }</code></pre>
+
+    <h1>Exercise 1</h1>
+        <img src="">
+    <h1>Exercise 2</h1>
+        <img src="">
+    <h1>Exercise 3</h1>
+        <img src="">
+    <h1>Exercise 4</h1>
+        <img src="">
+    <h1>Exercise 5</h1>
+        <img src="">
+    </div>
+    
+    <input type="checkbox" id="accordion3" class="hidecontent"/>
+    <label for="accordion3">Lab 2.3 - Rectangle Area and Perimeter</label>
+    <div class="content hidecontent">
+    <h1>Exercise 1</h1>
+        <img src="">
+    <h1>Exercise 2</h1>
+        <img src="">
+    <h1>Exercise 3</h1>
+        <img src="">
+    <h1>Exercise 4</h1>
+        <img src="">
+    <h1>Exercise 5</h1>
+        <img src="">
+    </div>
+    
+    <input type="checkbox" id="accordion4" class="hidecontent"/>
+    <label for="accordion4">Lab 2.4 - Working with Characters and Strings</label>
+    <div class="content hidecontent">
+<pre>
+This program illustrates the use of characters and strings. 
+The char data type allows only one character to be stored in its memory location. 
+The string data type <small>(actually a class and not a true data type built into the language)</small>
+allows a sequence of characters to be stored in one memory location. 
+
+</pre>
+    <h1>Exercise 1</h1>
+<pre><code class="cpp">// This program demonstrates the use of characters and strings
+
+#include iostream
+#include string
+using namespace std;
+// Definition of constants
+const string FAVORITESODA = "Dr. Dolittle";  // use double quotes for strings
+const char BESTRATING = 'A';                 // use single quotes for characters
+int main() {
+    char rating;           // 2nd highest product rating
+    string favoriteSnack;  // most preferred snack
+    int numberOfPeople;    // the number of people in the survey
+    int topChoiceTotal;    // the number of people who prefer the top choice
+    // Fill in the code to do the following:
+    // Assign the value of "crackers" to favoriteSnack
+    // Assign a grade of 'B' to rating
+    // Assign the number 250 to the numberOfPeople
+    // Assign the number 148 to the topChoiceTotal
+    // Fill in the blanks of the following:
+    cout << "The preferred soda is " << ______________ << endl;
+    cout << "The preferred snack is " << _______________ << endl;
+    cout << "Out of " << _______________ << " people " << _______________
+            << " chose these items!" << endl;
+    cout << "Each of these products were given a rating of " << ;
+    cout << " from our expert tasters" << endl;
+    cout << "The other products were rated no higher than a " << rating << endl;
+    return 0;
+}</code></pre>
+
+
+
+    <h1>Exercise 2</h1>
+    <pre>
+    Fill in the indicated code, then compile and run the program. 
+    Continue to work on the program until you have no syntax, run-time, or logic errors.
+
+    The output should look similar to the following:
+        The preferred soda is Dr. Dolittle
+        The preferred snack is crackers
+        Out of 250 people 148 chose these items!
+        Each of these products were given a rating of A from our expert tasters
+        The other products were rated no higher than a B
+    </pre>
+        <img src="">
+    <h1>Exercise 3</h1>
+    <pre>
+    Is it possible to change the choice of FAVORITESODA by adding code within the main module of the
+    program? Why or why not?
+    </pre>
+
+<pre><code class="cpp">// This program demonstrates the use of characters and strings
+
+#include iostream
+#include string
+using namespace std;
+
+// Definition of constants
+const string FAVORITESODA = "Dr. Dolittle";	// use double quotes for strings 
+const char BESTRATING = 'A';				// use single quotes for characters
+
+int main()
+{
+    char rating;			// 2nd highest product rating
+    string favoriteSnack;	// most preferred snack
+    int numberOfPeople;		// the number of people in the survey
+    int topChoiceTotal;		// the number of people who prefer the top choice
+
+    // Fill in the code to do the following:
+    // Assign the value of "crackers" to favoriteSnack
+    favoriteSnack = "crackers";
+    // Assign a grade of 'B' to rating
+    rating = 'B';
+    // Assign the number 250 to the numberOfPeople
+    numberOfPeople = 250;
+    // Assign the number 148 to the topChoiceTotal
+    topChoiceTotal = 148;
+
+    // Fill in the blanks of the following:
+    cout << "What is your favorite snack?" << endl;
+    cout << "My favorite snack is: ";
+    cin >> favoriteSnack;
+    cout << "The preferred snack is " << favoriteSnack << endl; 
+    cout << "Out of " << numberOfPeople << " people "<< topChoiceTotal << " chose these items!" << endl;
+    cout << "Each of these products were given a rating of " << BESTRATING << " from our expert tasters" << endl;
+    cout << "The other products were rated no higher than a " << rating << endl;
+
+    return 0;
+}</code></pre>
+
+    <h1>Exercise 4</h1>
+    <pre>
+    Is it possible to change the choice of favoriteSnack by adding code within the program? Why or why
+    not?        
+    </pre>
+
+<pre><code class="cpp">// This program demonstrates the use of characters and strings
+
+#include iostream
+#include string
+using namespace std;
+
+// Definition of constants
+const string FAVORITESODA = "Dr. Dolittle";	// use double quotes for strings 
+const char BESTRATING = 'A';				// use single quotes for characters
+
+int main()
+{
+    char rating;			// 2nd highest product rating
+    string favoriteSnack;	// most preferred snack
+    int numberOfPeople;		// the number of people in the survey
+    int topChoiceTotal;		// the number of people who prefer the top choice
+
+    // Fill in the code to do the following:
+    // Assign the value of "crackers" to favoriteSnack
+    favoriteSnack = "crackers";
+    // Assign a grade of 'B' to rating
+    rating = 'B';
+    // Assign the number 250 to the numberOfPeople
+    numberOfPeople = 250;
+    // Assign the number 148 to the topChoiceTotal
+    topChoiceTotal = 148;
+
+    // Fill in the blanks of the following:
+    cout << "What is your favorite snack?" << endl;
+    cout << "My favorite snack is: ";
+    cin >> favoriteSnack;
+    cout << "The preferred snack is " << favoriteSnack << endl; 
+    cout << "Out of " << numberOfPeople << " people "<< topChoiceTotal << " chose these items!" << endl;
+    cout << "Each of these products were given a rating of " << BESTRATING << " from our expert tasters" << endl;
+    cout << "The other products were rated no higher than a " << rating << endl;
+
+    return 0;
+}</code></pre>
+
+    </div>
+    
+</div>
+
+
+<!-- 
+<h1>Questions  - </h1> 
+    <img src=""> 
+<h1>Questions  - </h1> 
+    <img src="">  
+<h1>Question </h1> 
+    <img src="">   
+-->
+
+<!-- these links to previous & next modules -->
+<div class="container2">
+    <button class="button-1"><a href="Lab 1.html" target="_blank">Lab 1</a></button>
+    <button class="button-1"><a href="Lab 3.html" target="_blank">Lab 3</a></button>
+</div>
+
+<script type="text/javascript" src="../js/module.js"></script>
+</body>
+</html>

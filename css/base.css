@@ -1,0 +1,382 @@
+/* ===========================================
+   base.css - Shared styles for all page types
+   =========================================== */
+
+/* Reset */
+html {
+  scroll-behavior: smooth;
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+body {
+    
+  box-sizing: border-box;
+  font: 17px 'Alata', sans-serif;
+  background: #f5f5f5;
+  color: #555;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1, h2, h3 {
+  font: 35px 'Ibarra Real Nova', serif;
+}
+
+h4 {
+  font: 20px;
+}
+
+/* Images */
+img {
+  max-width: 100%;
+  height: auto;
+  width: auto;
+}
+
+/* ===========================================
+   Navigation
+   =========================================== */
+nav {
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  padding: 0 15px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10000;
+  border-bottom: 2px solid #8c00ff;
+}
+
+nav ul {
+  display: flex;
+}
+
+nav ul li {
+  padding: 15px;
+  border-right: 1px solid #cec4c1;
+}
+
+nav ul li:last-child {
+  border-right: none;
+}
+
+nav ul li a, nav .logo-holder a {
+  color: #34495e;
+  text-align: center;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+nav ul li a:hover {
+  color: #1abc9c;
+}
+
+/* Menu toggle (mobile hamburger) */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  position: relative;
+}
+
+.menu-text {
+  display: inline;
+}
+
+/* Mobile nav */
+@media (max-width: 768px) {
+  nav ul {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: #fff;
+    border: 1px solid #cec4c1;
+    width: 100%;
+  }
+
+  nav ul.show {
+    display: flex;
+  }
+
+  nav ul li {
+    padding: 15px;
+    text-align: center;
+    border-right: none;
+  }
+
+  nav ul li a {
+    font-size: 18px;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .menu-toggle .menu-text {
+    display: inline;
+    margin-left: 10px;
+  }
+}
+
+/* ===========================================
+   Accordion - Level 1 (#myaccordion)
+   =========================================== */
+.hidecontent {
+  display: none;
+}
+
+#myaccordion label {
+  box-shadow: 0 0 20px #f1f1f1;
+  display: block;
+  padding: 16px 44px;
+  margin: 20px 0 1px 0;
+  cursor: pointer;
+  background: #4500c6;
+  color: #FFF;
+  transition: ease .5s;
+}
+
+#myaccordion label:hover {
+  background: #7300ff;
+}
+
+.content {
+  box-shadow: 0 0 20px #d4d4d4;
+  background: #fefcfffa;
+  padding: 10px 25px;
+  border: 1px solid #eaeaea;
+  margin: -1px 0 0 0;
+}
+
+#myaccordion input:checked + label + .content {
+  display: block;
+  -webkit-animation: fadeIn 0.5s ease-out;
+  -moz-animation: fadeIn 0.5s ease-out;
+  -o-animation: fadeIn 0.5s ease-out;
+  animation: fadeIn 0.5s ease-out;
+}
+
+#myaccordion pre {
+  overflow: auto;
+}
+
+/* ===========================================
+   Accordion - Level 2 (#ouraccordion)
+   =========================================== */
+#ouraccordion label {
+  box-shadow: 0 0 20px #f1f1f1;
+  display: block;
+  padding: 16px 44px;
+  margin: 20px 0 1px 0;
+  cursor: pointer;
+  background: #8100c6;
+  color: #FFF;
+  transition: ease .5s;
+}
+
+#ouraccordion label:hover {
+  background: #65009c;
+}
+
+#ouraccordion input:checked + label + .content {
+  display: block;
+  -webkit-animation: fadeIn 0.5s ease-out;
+  -moz-animation: fadeIn 0.5s ease-out;
+  -o-animation: fadeIn 0.5s ease-out;
+  animation: fadeIn 0.5s ease-out;
+}
+
+@-webkit-keyframes fadeIn {
+  0% { display: none; opacity: 0; }
+  1% { display: block; opacity: 0; }
+  100% { display: block; opacity: 1; }
+}
+
+/* ===========================================
+   Prev/Next Navigation Buttons
+   =========================================== */
+.container2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+}
+
+.button-1 {
+  width: 200px;
+  height: 50px;
+  display: inline-block;
+  margin: 10px;
+  list-style: none;
+  border: none;
+  color: white;
+  background-color: rgb(85, 0, 255);
+  border-radius: 5px;
+  box-shadow: inset 0 0 0 0 #06c0f9;
+  transition: ease-out 0.3s;
+  outline: none;
+}
+
+.button-1 a {
+  text-decoration: none;
+  color: white;
+  font-size: 30px;
+}
+
+.button-1:hover {
+  box-shadow: inset 300px 0 0 0 #06c0f9;
+  cursor: pointer;
+}
+
+.button-1:hover a {
+  color: black;
+}
+
+/* ===========================================
+   Center title in header (module/notes pages)
+   =========================================== */
+h4.title {
+  font-size: 20px;
+  color: #4500c6;
+  text-align: center;
+  font-weight: bold;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
+}
+
+/* Logo responsive (module/notes pages) */
+.logo-text {
+  display: inline;
+}
+.logo-image {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .logo-text {
+    display: none;
+  }
+  .logo-image {
+    display: inline;
+  }
+}
+
+/* ===========================================
+   Legacy styles (used by older module pages)
+   =========================================== */
+
+/* Dropdown menu (legacy) */
+.dropdown2 {
+  list-style-type: none;
+  display: flex;
+}
+
+.dropdown-item {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-item:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  flex-direction: column;
+}
+
+.dropdown-content ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.dropdown-content li {
+  padding: 5px 25px;
+}
+
+.dropdown-content a {
+  text-decoration: none;
+  color: #18a0b6;
+}
+
+.dropdown-content a:hover {
+  text-decoration: underline;
+}
+
+/* Custom heading elements (legacy) */
+h69 {
+  font: 40px 'Ibarra Real Nova', serif;
+  color: #43007a;
+}
+
+h60 {
+  font: 35px 'Ibarra Real Nova', serif;
+  color: #ff0073;
+}
+
+/* Legacy footer */
+.footer-top {
+  background: #cefbc5;
+  padding: 24px;
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+}
+
+.footer-row {
+  width: 25%;
+}
+
+.footer-row p {
+  line-height: 27px;
+}
+
+.footer-bottom {
+  height: 50px;
+  text-align: center;
+}
+
+.footer-bottom p a {
+  color: #555;
+  line-height: 50px;
+}
+
+.footer-bottom p a:hover {
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 600px) {
+  .footer-top {
+    flex-wrap: wrap;
+  }
+  .footer-row {
+    width: 80%;
+    margin-top: 25px;
+  }
+}

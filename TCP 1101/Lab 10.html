@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<link rel="stylesheet" href="../css/base.css">
+<link rel="stylesheet" href="../css/module.css">
+<link href="https://fonts.googleapis.com/css?family=Alata | Ibarra+Real+Nova&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+<!-- and it's easy to individually load additional languages -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/go.min.js"></script>
+
+<script>hljs.highlightAll();</script>
+<title>TCP 1101 - 10</title>
+</head>
+
+<body>
+<!-- Dynamic header -->
+<div id="header-container"></div>
+<div id="header-config"
+    data-course="Programming Fundamentals - Lab 10"
+    data-topic-link="../index.html"
+    data-prev="x"
+    data-next="x">
+</div>
+
+
+<br><br><br>
+<div id="myaccordion">
+<input type="checkbox" id="accordion1" class="hidecontent"/>
+<label for="accordion1">Lab 10.1 - Introduction to Pointer Variables</label>
+<div class="content hidecontent">
+<pre><code class="cpp">// This program demonstrates the use of pointer variables
+// It finds the area of a rectangle given length and width
+// It prints the length and width in ascending order
+
+#include <iostream>
+using namespace std;
+int main() {
+    int length;                      // holds length
+    int width;                       // holds width
+    int area;                        // holds area
+    int *lengthPtr = nullptr;        // int pointer which will be set to point to
+    length int *widthPtr = nullptr;  // int pointer which will be set to point to
+    width cout << "Please input the length of the rectangle" << endl;
+    cin >> length;
+    cout << "Please input the width of the rectangle" << endl;
+    cin >> width;
+    // Fill in code to make lengthPtr point to length (hold its address)
+    // Fill in code to make widthPtr point to width (hold its address)
+    area =  // Fill in code to find the area by using only the pointer variables
+        cout << "The area is " << area << endl;
+if (// Fill in the condition length > width by using only the pointer variables)
+cout << "The length is greater than the width" << endl;
+else if (// Fill in the other condition by using only the pointer variables)
+cout << "The width is greater than the length" << endl;
+else
+cout << "The width and length are the same" << endl;
+return 0;
+}
+    
+</code></pre>
+<h1>Exercise 1</h1>
+<p>Complete this program by filling in the code (places in bold).<br>
+<small>Note: use only pointer variables when instructed to by the comments in bold.<br>
+This program is to test your knowledge of pointer variables and the & and * symbols.</small></p>
+<pre><code class="cpp">
+    
+</code></pre>
+<div id="ouraccordion">
+    <input type="checkbox" id="accordionx1" class="hidecontent"/>
+    <label for="accordionx1">Explanation (Gemini)</label>
+    <div class="content hidecontent">
+<pre>
+
+</pre>
+    </div>
+
+    <input type="checkbox" id="accordionx2" class="hidecontent"/>
+    <label for="accordionx2">Explanation (Bing)</label>
+    <div class="content hidecontent">
+<pre>
+
+</pre>
+    </div>
+</div>
+
+<h1>Exercise 2</h1>
+<p>Run the program with the following data: 10 15.<br>
+Record the output here</p>
+<pre><code class="cpp">
+    
+</code></pre>
+<div id="ouraccordion">
+    <input type="checkbox" id="accordionx3" class="hidecontent"/>
+    <label for="accordionx3">Explanation (Gemini)</label>
+    <div class="content hidecontent">
+<pre>
+
+</pre>
+    </div>
+
+    <input type="checkbox" id="accordionx4" class="hidecontent"/>
+    <label for="accordionx4">Explanation (Bing)</label>
+    <div class="content hidecontent">
+<pre>
+
+</pre>
+    </div>
+</div>
+
+</div>
+
+<input type="checkbox" id="accordion2" class="hidecontent"/>
+<label for="accordion2">Lab 10.2 - Dynamic Memory</label>
+<div class="content hidecontent">
+<pre><code class="cpp">// This program demonstrates the use of dynamic variables
+
+#include <iostream>
+using namespace std;
+const int MAXNAME = 10;
+int main() {
+    int pos;
+    char *name = nullptr;
+    int *one = nullptr;
+    int *two = nullptr;
+    int *three = nullptr;
+    int result;
+    // Fill in code to allocate the integer variable one here
+    // Fill in code to allocate the integer variable two here
+    // Fill in code to allocate the integer variable three here
+    // Fill in code to allocate the character array pointed to by name
+    cout << "Enter your last name with exactly 10 characters." << endl;
+    cout << "If your name has < 10 characters, repeat last letter. " << endl << "Blanks at the end do not count." << endl;
+    for (pos = 0; pos < MAXNAME; pos++)
+        cin >>  // Fill in code to read a character into the name array
+            // WITHOUT USING a bracketed subscript
+            cout << "Hi ";
+    for (pos = 0; pos < MAXNAME; pos++)
+        cout <<  // Fill in code to a print a character from the name array
+            // WITHOUT USING a bracketed subscript
+            cout << endl
+             << "Enter three integer numbers separated by blanks" << endl;
+    // Fill in code to input three numbers and store them in the
+    // dynamic variables pointed to by pointers one, two, and three.
+    // You are working only with pointer variables
+    // echo print
+    cout << "The three numbers are " << endl;
+    // Fill in code to output those numbers
+    result =  // Fill in code to calculate the sum of the three numbers
+        cout << "The sum of the three values is " << result << endl;
+    // Fill in code to deallocate one, two, three and name
+    return 0;
+}
+</code></pre>
+<h1>Exercise 1</h1>
+<p>Complete the program by filling in the code (areas in bold).<br>
+Study the code carefully in order to complete the program.<br>
+The expected output (with example input underlined) is given below.<br><br>
+Sample Run:
+<pre>Enter your last name with exactly 10 characters.
+If your name < 10 characters, repeat last letter. Blanks do not count.
+<u>Kevinnnnnn</u>
+Hi Kevinnnnnn
+Enter three integer numbers separated by blanks
+<u>5 6 7</u>
+The three numbers are 5 6 7
+The sum of the three numbers is 18</pre></p>
+<pre><code class="cpp">
+    
+</code></pre>
+<div id="ouraccordion">
+    <input type="checkbox" id="accordionx7" class="hidecontent"/>
+    <label for="accordionx7">Explanation (Gemini)</label>
+    <div class="content hidecontent">
+<pre>
+
+</pre>
+    </div>
+
+    <input type="checkbox" id="accordionx8" class="hidecontent"/>
+    <label for="accordionx8">Explanation (Bing)</label>
+    <div class="content hidecontent">
+<pre>
+
+</pre>
+    </div>
+</div>
+
+<h1>Exercise 2</h1>
+<p>In inputting and outputting the name, you were asked NOT to use a bracketed subscript.<br>
+Why is a bracketed subscript unnecessary?<br><br>
+
+Would using name[pos] work for inputting the name? Why or why not?<br>
+Would using name[pos] work for outputting the name? Why or why not?<br><br>
+
+Try them both and see.</p>
+<pre><code class="cpp">
+    
+</code></pre>
+<div id="ouraccordion">
+    <input type="checkbox" id="accordionx9" class="hidecontent"/>
+    <label for="accordionx9">Explanation (Gemini)</label>
+    <div class="content hidecontent">
+<pre>
+
+</pre>
+    </div>
+
+    <input type="checkbox" id="accordionx10" class="hidecontent"/>
+    <label for="accordionx10">Explanation (Bing)</label>
+    <div class="content hidecontent">
+<pre>
+
+</pre>
+    </div>
+</div>
+
+</div>
+
+<input type="checkbox" id="accordion3" class="hidecontent"/>
+<label for="accordion3">Lab 10.3 - Dynamic Arrays</label>
+<div class="content hidecontent">
+<pre><code class="cpp">// This program demonstrates the use of dynamic arrays
+
+#include <iomanip>
+#include <iostream>
+using namespace std;
+int main() {
+    float *monthSales = nullptr;  // a pointer used to point to an array
+    // holding monthly sales
+    float total = 0;  // total of all sales
+    float average;    // average of monthly sales
+    int numOfSales;   // number of sales to be processed
+    int count;        // loop counter
+    cout << fixed << showpoint << setprecision(2);
+    cout << "How many monthly sales will be processed? ";
+    cin >> numOfSales;
+    // Fill in the code to allocate memory for the array pointed to by
+    // monthSales.
+if ( // Fill in the condition to determine if memory has been
+// allocated (or eliminate this if construct if your instructor
+// tells you it is not needed for your compiler) )
+{
+        cout << "Error allocating memory!\n";
+        return 1;
+}
+cout << "Enter the sales below\n";
+for (count = 0; count < numOfSales; count++)
+{
+        cout << "Sales for Month number " <<  // Fill in code to show the number of the month
+             << ":";
+        // Fill in code to bring sales into an element of the array
+}
+for (count = 0; count < numOfSales; count++)
+{
+        total = total + monthSales[count];
+}
+average = // Fill in code to find the average
+cout << "Average Monthly sale is $" << average << endl;
+// Fill in the code to deallocate memory assigned to the array.
+return 0;
+}
+</code></pre>
+<h1>Exercise 1</h1>
+<p>Fill in the code as indicated by the comments in bold.<br>Example user inputs are underlined.<br><br>
+
+Sample Run:
+<pre>How many monthly sales will be processed: <u>3</u>
+Enter the sales below
+Sales for Month number 1: <u>401.25</u>
+Sales for Month number 2: <u>352.89</u>
+Sales for Month number 3: <u>375.05</u>
+Average monthly sale is $376.40</pre></p>
+<pre><code class="cpp">
+    
+</code></pre>
+<div id="ouraccordion">
+    <input type="checkbox" id="accordionx13" class="hidecontent"/>
+    <label for="accordionx13">Explanation (Gemini)</label>
+    <div class="content hidecontent">
+<pre>
+
+</pre>
+    </div>
+
+    <input type="checkbox" id="accordionx14" class="hidecontent"/>
+    <label for="accordionx14">Explanation (Bing)</label>
+    <div class="content hidecontent">
+<pre>
+
+</pre>
+    </div>
+</div>
+
+</div>
+
+<input type="checkbox" id="accordion4" class="hidecontent"/>
+<label for="accordion4">Lab 10.4 - Student Generated Code Assignments</label>
+<div class="content hidecontent">
+<p>In these assignments you are asked to develop functions that have dynamic arrays as parameters.<br>
+Remember that dynamic arrays are accessed by a pointer variable and thus the parameters that serve as dynamic arrays are, in fact pointer variables.</p>
+<pre><code class="cpp">void sort(float* score, int num_scores);  // a prototype whose function has a
+// dynamic array as its first
+// parameter. It is a pointer variable
+.
+int main() {
+    float* score = nullptr;           // a pointer variable
+    .
+    .
+    score = new float[num_scores];  // allocation of the array
+    sort(score, scoreSize);           // call to the function
+}   
+</code></pre>
+<h1>Exercise 1</h1>
+<p>Write a program that will read scores into an array.<br>
+The size of the array should be input by the user (dynamic array).<br>
+The program will find and print out the average of the scores.<br>
+It will also call a function that will sort (using a bubble sort) the scores in ascending order.<br>
+The values are then printed in this sorted order.<br><br>
+<pre>Sample Run (user inputs are underlined):
+Please input the number of scores
+<u>5</u>
+Please enter a score
+<u>100</u>
+Please enter a score
+<u>90</u>
+Please enter a score
+<u>95</u>
+Please enter a score
+<u>100</u>
+Please enter a score
+<u>90</u>
+The average of the scores is 95
+Here are the scores in ascending order
+90
+90
+95
+100
+100</pre></p>
+<pre><code class="cpp">
+    
+</code></pre>
+<div id="ouraccordion">
+    <input type="checkbox" id="accordionx19" class="hidecontent"/>
+    <label for="accordionx19">Explanation (Gemini)</label>
+    <div class="content hidecontent">
+<pre>
+
+</pre>
+    </div>
+
+    <input type="checkbox" id="accordionx20" class="hidecontent"/>
+    <label for="accordionx20">Explanation (Bing)</label>
+    <div class="content hidecontent">
+<pre>
+
+</pre>
+    </div>
+</div>
+
+<h1>Exercise 2</h1>
+<p>This program will read in id numbers and place them in an array.<br>
+The array is dynamically allocated large enough to hold the number of id numbers given by the user.<br>
+The program will then input an id and call a function to search for that id in the array.<br>
+It will print whether the id is in the array or not.<br><br>
+Sample Run (user inputs are underlined):
+<pre>Please input the number of id numbers to be read
+<u>4</u>
+Please enter a score
+<u>96</u>
+Please enter a score
+<u>97</u>
+Please enter a score
+<u>98</u>
+Please enter a score
+<u>99</u>
+Please input an id number to be searched
+<u>67</u>
+67 is not in the array</pre></p>
+<pre><code class="cpp">
+    
+</code></pre>
+<div id="ouraccordion">
+    <input type="checkbox" id="accordionx21" class="hidecontent"/>
+    <label for="accordionx21">Explanation (Gemini)</label>
+    <div class="content hidecontent">
+<pre>
+
+</pre>
+    </div>
+
+    <input type="checkbox" id="accordionx22" class="hidecontent"/>
+    <label for="accordionx22">Explanation (Bing)</label>
+    <div class="content hidecontent">
+<pre>
+
+</pre>
+    </div>
+</div>
+
+<h1>Exercise 3</h1>
+<p>Write a program that will read monthly sales into a dynamically allocated array.<br>
+The program will input the size of the array from the user.<br>
+It will call a function that will find the yearly sum (the sum of all the sales).<br>
+It will also call another function that will find the average.<br><br>
+Sample Run (user inputs are underlined):
+<pre>Please input the number of monthly sales to be input
+<u>4</u>
+Please input the sales for month 1
+<u>1290.89</u>
+Please input the sales for month 1
+<u>905.95</u>
+Please input the sales for month 1
+<u>1567.98</u>
+Please input the sales for month 1
+<u>994.83</u>
+The total sales for the year is $4759.65
+The average monthly sale is $1189.91</pre></p>
+<pre><code class="cpp">
+    
+</code></pre>
+<div id="ouraccordion">
+    <input type="checkbox" id="accordionx23" class="hidecontent"/>
+    <label for="accordionx23">Explanation (Gemini)</label>
+    <div class="content hidecontent">
+<pre>
+
+</pre>
+    </div>
+
+    <input type="checkbox" id="accordionx24" class="hidecontent"/>
+    <label for="accordionx24">Explanation (Bing)</label>
+    <div class="content hidecontent">
+<pre>
+
+</pre>
+    </div>
+</div>
+
+</div>
+
+</div>
+
+<!-- these links to previous & next Labs -->
+<div class="container2">
+    <button class="button-1"><a href="Lab 9.html" target="_blank">Lab 9</a></button>
+    <button class="button-1"><a href="Lab 11.html" target="_blank">Lab 11</a></button>
+</div>
+
+<script type="text/javascript" src="../js/module.js"></script>
+</body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<link rel="stylesheet" href="../css/base.css">
+<link rel="stylesheet" href="../css/module.css">
+<link href="https://fonts.googleapis.com/css?family=Alata | Ibarra+Real+Nova&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+<!-- and it's easy to individually load additional languages -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/go.min.js"></script>
+
+<script>hljs.highlightAll();</script>
+<title>TCP 1101 - 1</title>
+</head>
+
+<body>
+<!-- Dynamic header -->
+<div id="header-container"></div>
+<div id="header-config"
+    data-course="C++ Hello World"
+    data-topic-link="../index.html"
+    data-prev="x"
+    data-next="x">
+</div>
+
+
+<br><br><br>
+
+<div id="myaccordion">
+    <input type="checkbox" id="accordion1" class="hidecontent"/>
+    <label for="accordion1">Lab 1.1 - TRY IT: Compiling and Running Your First Program</label>
+    <div class="content hidecontent">
+
+    <h1>Exercise 1</h1>
+    <p>Add the greeting.cpp program from your Lab1 folder to the project. Your instructor will show you how to do this. Here is a copy of the source code.</p><br>
+<pre><code class="cpp">// greeting.cpp
+
+// This program prints a message to greet the user.
+#include iostream  // Needed to do C++ I/O
+#include string    // Needed by some compilers to use strings
+using namespace std;
+int main() {
+    string name;  // This declares a variable to
+    // hold the user's name
+    // Get the user's name
+    cout << "Please enter your first name: ";
+    cin >> name;
+    // Print the greeting
+    cout << "Hello, " << name << "." << endl;
+    return 0;
+}</code></pre><br>
+
+    <h1>Exercise 2</h1>
+    <p>Read the source code. What do you think the program will display when it is run if the user enters the name Adam on line 12?</p>
+        <img src="">
+    <h1>Exercise 3</h1>
+    <p>Follow the instructions your instructor gives you to compile the program. 
+        You should see a message telling you the program has compiled correctly. 
+        This message will be different for each compiler, but may look something like this:</p>
+        <img src="">
+    <h1>Exercise 4</h1>
+        <img src="">
+    <h1>Exercise 5</h1>
+        <img src="">
+    </div>
+    
+    <input type="checkbox" id="accordion2" class="hidecontent"/>
+    <label for="accordion2">Lab 1.2 - Syntax Errors</label>
+    <div class="content hidecontent">
+    <h1>Exercise 1</h1>
+        <img src="">
+    <h1>Exercise 2</h1>
+        <img src="">
+    <h1>Exercise 3</h1>
+        <img src="">
+    <h1>Exercise 4</h1>
+        <img src="">
+    <h1>Exercise 5</h1>
+        <img src="">
+    </div>
+    
+    <input type="checkbox" id="accordion3" class="hidecontent"/>
+    <label for="accordion3">Lab 1.3 - Run-time Errors</label>
+    <div class="content hidecontent">
+
+    <pre><code class="cpp">// average.cpp
+
+// This program finds the average of two numbers.
+// It contains two errors that must be fixed.
+#include iostream
+using namespace std;
+int main() {
+    int size = 0;  // The number of values to be averaged
+    double num1, num2,
+        average;  // Average of num1 and num2
+    // Get the two numbers
+    cout << "Enter two numbers separated by one or more spaces: ";
+    cin >> num1 >> num2;
+    // Calculate the average
+    average = num1 + num2 / size;
+    // Display the average
+    cout << "The average of the two numbers is: " << average << endl;
+    return 0;
+}</code></pre><br>
+    
+    <h1>Exercise 1</h1>
+        <img src="">
+    <h1>Exercise 2</h1>
+        <img src="">
+    <h1>Exercise 3</h1>
+        <img src="">
+    <h1>Exercise 4</h1>
+        <img src="">
+    <h1>Exercise 5</h1>
+        <img src="">
+    </div>
+    
+    <input type="checkbox" id="accordion4" class="hidecontent"/>
+    <label for="accordion4">Lab 1.4 – Logic Errors</label>
+    <div class="content hidecontent">
+    <h1>Exercise 1</h1>
+        <img src="">
+    <h1>Exercise 2</h1>
+        <img src="">
+    <h1>Exercise 3</h1>
+        <img src="">
+    <h1>Exercise 4</h1>
+        <img src="">
+    <h1>Exercise 5</h1>
+        <img src="">
+    </div>
+    
+    <input type="checkbox" id="accordion5" class="hidecontent"/>
+    <label for="accordion5">Lab 1.5 – Fix the Errors</label>
+    <div class="content hidecontent">
+    <h1>Exercise 1</h1>
+        <img src="">
+    <h1>Exercise 2</h1>
+        <img src="">
+    <h1>Exercise 3</h1>
+        <img src="">
+    <h1>Exercise 4</h1>
+        <img src="">
+    <h1>Exercise 5</h1>
+        <img src="">
+    </div>
+
+<!-- these links to previous & next modules -->
+<div class="container2">
+    <button class="button-1"><a href="Lab 2.html" target="_blank">Lab 2</a></button>
+</div>
+
+<script type="text/javascript" src="../js/module.js"></script>
+</body>
+</html>

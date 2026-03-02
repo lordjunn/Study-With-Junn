@@ -16,9 +16,26 @@
 	--h2-font: 3rem;
 	--p-font: 1.1rem;
 }
+[data-theme="dark"]{
+	--bg-color: #1a1a2e;
+	--text-color: #e0e0e0;
+	--second-color: #94a3b8;
+	--main-color: #a78bfa;
+}
+
+/* Dark mode: countdown container */
+[data-theme="dark"] .countdown-container {
+	background-color: #16213e;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+}
+
+[data-theme="dark"] .progress-bar {
+	background-color: #2a2a4a;
+}
 body{
 	background: var(--bg-color);
 	color: var(--text-color);
+	transition: background 0.3s ease, color 0.3s ease;
 }
 
 header{
@@ -85,7 +102,7 @@ section{
 }
 .home-text h1{
 	opacity: 0.8;
-	font-size: var(--big-font);
+	font-size: clamp(2rem, 8vw, var(--big-font));
 	line-height: 1.2;
 	color: var(--bg-color);
 	font-family: 'Paytone One', sans-serif;
@@ -234,7 +251,7 @@ header.sticky{
 
 .subject-content{
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(340px, auto));
+	grid-template-columns: repeat(auto-fit, minmax(min(340px, 100%), auto));
 	grid-gap: 2rem;
 	align-items: center;
 	margin-top: 5rem;
@@ -258,6 +275,7 @@ header.sticky{
 	color: var(--bg-color);
 	left: 15px;
 	bottom: 60px;
+	text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
 }
 .col-content p{
 	position: absolute;
@@ -266,6 +284,13 @@ header.sticky{
 	left: 15px;
 	bottom: 30px;
 	letter-spacing: 2px;
+	text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+}
+
+[data-theme="dark"] .col-content h5,
+[data-theme="dark"] .col-content p {
+	color: #fff;
+	text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
 }
 
 .col-content .blu {
@@ -296,16 +321,22 @@ header.sticky{
 }
 
 .countdown-container {
-    background-color: #ffffff;
+    background-color: var(--bg-color);
+    color: var(--text-color);
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.countdown-container h1 {
+    color: var(--text-color);
 }
 
 .countdown-display {
     text-align: center;
     font-size: 30px;
     margin-top: 10px;
+    color: var(--second-color);
 }
 
 .progress-bar {
@@ -491,6 +522,12 @@ header.sticky{
 	.home{
 		height: 85vh;
 		transition: .2s;
+	}
+	.home-text h1{
+		letter-spacing: 1px;
+	}
+	.col-content img{
+		height: 300px;
 	}
 }
 

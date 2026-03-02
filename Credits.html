@@ -11,7 +11,7 @@
     <style>
         /* Insert the CSS you've shared here */
         h2 {
-            font-size: var(--big-font);
+            font-size: clamp(1.5rem, 5vw, var(--big-font));
         }
 
         /* Override the default background for the home section */
@@ -58,6 +58,14 @@
         .container-box:hover {
             background-color: #f0f0f0;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        [data-theme="dark"] .container-box {
+            border-color: #334155;
+        }
+
+        [data-theme="dark"] .container-box:hover {
+            background-color: #334155;
         }
 
         .container-box .content {
@@ -143,26 +151,36 @@
             <h4>Website Design and Development</h4>
             <div class="toggle-button">+</div>
             <div class="content">
-                <p>Developed and designed by me. This website is built with modern web technologies like HTML, CSS, and JavaScript.</p>
+                <p>Developed and designed by me. This website is built with vanilla <span class="blu">HTML</span>, <span class="blu">CSS</span>, and <span class="blu">JavaScript</span> — no frameworks used. Hosted on <span class="blu">GitHub Pages</span>.</p>
             </div>
         </div>
 
         <div class="container-box">
-            <h4>Logo Design</h4>
+            <h4>Images &amp; Anime Characters</h4>
             <div class="toggle-button">+</div>
             <div class="content">
-                <p>Huh what logo.</p>
-            </div>
-        </div>
-
-        <div class="container-box">
-            <h4>Images</h4>
-            <div class="toggle-button">+</div>
-            <div class="content">
-                <p>Images on this site are provided by me.<br>
-                Every. Single. One. of the exam related ones that is.<br><br>
-            
-                Anime images are from their respective animes. Will probably create a doc for them later.</p>
+                <p>All exam/study-related images are created by me.<br><br>
+                Anime character images used across the site are from their respective series:</p>
+                <ul>
+                    <li><span class="blu">Nao</span> — Charlotte (PMT 0101 / Math 1)</li>
+                    <li><span class="blu">Sayaka</span> — Puella Magi Madoka Magica (PMT 0201 / Math 2)</li>
+                    <li><span class="blu">Akumura</span> — Blue Exorcist (PMT 0301 / Math 3)</li>
+                    <li><span class="blu">Hecate</span> — Shakugan no Shana (PPP / PDS)</li>
+                    <li><span class="blu">Noel</span> — Sora no Method (TMA 1101)</li>
+                    <li><span class="blu">Hina</span> — Blue Archive (TMA 1201)</li>
+                    <li><span class="blu">Sydonay</span> — Shakugan no Shana (TMA 1301)</li>
+                    <li><span class="blu">Victorique</span> — Gosick (TSN 1101)</li>
+                    <li><span class="blu">Gendo</span> — Neon Genesis Evangelion (TSE 2101)</li>
+                    <li><span class="blu">Kotori</span> — Date A Live (TSN 2101)</li>
+                    <li><span class="blu">Shiori</span> — The World God Only Knows (TSN 2201)</li>
+                    <li><span class="blu">Sumire</span> — Unknown/Original (TCP 2101)</li>
+                    <li><span class="blu">Shiro</span> — No Game No Life (TDS 2201)</li>
+                    <li><span class="blu">Yuki</span> — Gakkougurashi! / School-Live! (TCS 3351)</li>
+                    <li><span class="blu">Silver Wolf</span> — Honkai: Star Rail (TDS 3301)</li>
+                    <li><span class="blu">Priestess</span> — Arknights (TDS 3851)</li>
+                    <li><span class="blu">Avemuji</span> — BanG Dream! (TDS 3651)</li>
+                </ul>
+                <p>Background image on Credits page is from <span class="blu">Gakkougurashi! / School-Live!</span></p>
             </div>
         </div>
 
@@ -170,8 +188,13 @@
             <h4>Fonts</h4>
             <div class="toggle-button">+</div>
             <div class="content">
-                <p>Fonts used on this site are from Google Fonts, including <span class="blu">Poppins</span> and <span class="blu">Paytone One</span>.<br>
-                Actual response: I forgor</p>
+                <p>All fonts are sourced from <span class="blu">Google Fonts</span>:</p>
+                <ul>
+                    <li><span class="blu">Poppins</span> — Main body font (index &amp; credits pages)</li>
+                    <li><span class="blu">Paytone One</span> — Heading/display font (index &amp; credits pages)</li>
+                    <li><span class="blu">Alata</span> — Used on subject, module &amp; notes pages</li>
+                    <li><span class="blu">Ibarra Real Nova</span> — Used on subject, module &amp; notes pages</li>
+                </ul>
             </div>
         </div>
 
@@ -189,12 +212,17 @@
 
         
         <div class="container-box">
-            <h4>Credits for Libraries</h4>
+            <h4>Credits for Libraries &amp; Services</h4>
             <div class="toggle-button">+</div>
             <div class="content">
-                <p>I'd like to credit the following libraries and frameworks used in this project:</p>
+                <p>Third-party libraries and services used in this project:</p>
                 <ul>
-                    <li><span class="blu">What's a Framework</span></li>
+                    <li><span class="blu">Boxicons</span> — Icon library for navigation &amp; social icons (via <a href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">unpkg CDN</a>)</li>
+                    <li><span class="blu">highlight.js</span> v11.9.0 — Syntax highlighting for code blocks in TCP 1101 lab pages (via <a href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js">cdnjs</a>)</li>
+                    <li><span class="blu">Tenor GIF Embed</span> — Animated GIFs on subject pages (via <a href="https://tenor.com/embed.js">tenor.com</a>)</li>
+                    <li><span class="blu">Google Fonts</span> — Web fonts for Poppins, Paytone One, Alata &amp; Ibarra Real Nova</li>
+                    <li><span class="blu">GitHub Pages</span> — Static site hosting</li>
+                    <li><span class="blu">Discord CDN</span> — Some solution images hosted via Discord attachments</li>
                 </ul>
             </div>
         </div>
@@ -269,7 +297,7 @@
 		</div>
 
 		<div class="end-text">
-			<p>Copyright © 2023 - 2025 All rights reserved </p>
+			<p>Copyright © 2023 - 2026 All rights reserved </p>
 		</div>
 	</section>
 

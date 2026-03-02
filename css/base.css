@@ -2,6 +2,49 @@
    base.css - Shared styles for all page types
    =========================================== */
 
+/* CSS Variables for theming */
+:root {
+  --base-bg: #f5f5f5;
+  --base-text: #555;
+  --base-nav-bg: #fff;
+  --base-nav-border: #8c00ff;
+  --base-nav-link: #34495e;
+  --base-nav-hover: #1abc9c;
+  --base-nav-divider: #cec4c1;
+  --base-card-bg: #fff;
+  --base-card-shadow: #c2c3c3;
+  --base-content-bg: #fefcfffa;
+  --base-content-border: #eaeaea;
+  --base-content-shadow: #d4d4d4;
+  --base-accordion-bg: #4500c6;
+  --base-accordion-hover: #7300ff;
+  --base-accent: #10a0b6;
+  --base-heading-color: #4500c6;
+  --base-dropdown-bg: #f1f1f1;
+  --base-footer-bg: #cefbc5;
+}
+
+[data-theme="dark"] {
+  --base-bg: #1a1a2e;
+  --base-text: #e0e0e0;
+  --base-nav-bg: #16213e;
+  --base-nav-border: #a855f7;
+  --base-nav-link: #cbd5e1;
+  --base-nav-hover: #34d399;
+  --base-nav-divider: #334155;
+  --base-card-bg: #1e293b;
+  --base-card-shadow: #0f172a;
+  --base-content-bg: #1e293bfa;
+  --base-content-border: #334155;
+  --base-content-shadow: #0f172a;
+  --base-accordion-bg: #5b21b6;
+  --base-accordion-hover: #7c3aed;
+  --base-accent: #2dd4bf;
+  --base-heading-color: #a78bfa;
+  --base-dropdown-bg: #1e293b;
+  --base-footer-bg: #1e293b;
+}
+
 /* Reset */
 html {
   scroll-behavior: smooth;
@@ -17,8 +60,9 @@ body {
     
   box-sizing: border-box;
   font: 17px 'Alata', sans-serif;
-  background: #f5f5f5;
-  color: #555;
+  background: var(--base-bg);
+  color: var(--base-text);
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
 ul {
@@ -48,7 +92,7 @@ img {
    Navigation
    =========================================== */
 nav {
-  background: #fff;
+  background: var(--base-nav-bg);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -58,7 +102,8 @@ nav {
   top: 0;
   width: 100%;
   z-index: 10000;
-  border-bottom: 2px solid #8c00ff;
+  border-bottom: 2px solid var(--base-nav-border);
+  transition: background 0.3s ease;
 }
 
 nav ul {
@@ -67,7 +112,7 @@ nav ul {
 
 nav ul li {
   padding: 15px;
-  border-right: 1px solid #cec4c1;
+  border-right: 1px solid var(--base-nav-divider);
 }
 
 nav ul li:last-child {
@@ -75,14 +120,14 @@ nav ul li:last-child {
 }
 
 nav ul li a, nav .logo-holder a {
-  color: #34495e;
+  color: var(--base-nav-link);
   text-align: center;
   font-size: 20px;
   text-decoration: none;
 }
 
 nav ul li a:hover {
-  color: #1abc9c;
+  color: var(--base-nav-hover);
 }
 
 /* Menu toggle (mobile hamburger) */
@@ -107,8 +152,8 @@ nav ul li a:hover {
     position: absolute;
     top: 60px;
     right: 0;
-    background: #fff;
-    border: 1px solid #cec4c1;
+    background: var(--base-nav-bg);
+    border: 1px solid var(--base-nav-divider);
     width: 100%;
   }
 
@@ -144,25 +189,25 @@ nav ul li a:hover {
 }
 
 #myaccordion label {
-  box-shadow: 0 0 20px #f1f1f1;
+  box-shadow: 0 0 20px var(--base-content-shadow);
   display: block;
   padding: 16px 44px;
   margin: 20px 0 1px 0;
   cursor: pointer;
-  background: #4500c6;
+  background: var(--base-accordion-bg);
   color: #FFF;
   transition: ease .5s;
 }
 
 #myaccordion label:hover {
-  background: #7300ff;
+  background: var(--base-accordion-hover);
 }
 
 .content {
-  box-shadow: 0 0 20px #d4d4d4;
-  background: #fefcfffa;
+  box-shadow: 0 0 20px var(--base-content-shadow);
+  background: var(--base-content-bg);
   padding: 10px 25px;
-  border: 1px solid #eaeaea;
+  border: 1px solid var(--base-content-border);
   margin: -1px 0 0 0;
 }
 
@@ -182,7 +227,7 @@ nav ul li a:hover {
    Accordion - Level 2 (#ouraccordion)
    =========================================== */
 #ouraccordion label {
-  box-shadow: 0 0 20px #f1f1f1;
+  box-shadow: 0 0 20px var(--base-content-shadow);
   display: block;
   padding: 16px 44px;
   margin: 20px 0 1px 0;
@@ -219,6 +264,8 @@ nav ul li a:hover {
   justify-content: space-evenly;
   align-items: center;
   text-align: center;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 .button-1 {
@@ -240,6 +287,9 @@ nav ul li a:hover {
   text-decoration: none;
   color: white;
   font-size: 30px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .button-1:hover {
@@ -256,13 +306,17 @@ nav ul li a:hover {
    =========================================== */
 h4.title {
   font-size: 20px;
-  color: #4500c6;
+  color: var(--base-heading-color);
   text-align: center;
   font-weight: bold;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
   margin: 0;
+  max-width: calc(100% - 140px);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 /* Logo responsive (module/notes pages) */
@@ -279,6 +333,20 @@ h4.title {
   }
   .logo-image {
     display: inline;
+  }
+  #myaccordion label,
+  #ouraccordion label {
+    padding: 14px 16px;
+  }
+  .button-1 {
+    width: 160px;
+    height: 45px;
+  }
+  .button-1 a {
+    font-size: 20px;
+  }
+  h4.title {
+    font-size: 16px;
   }
 }
 
@@ -304,7 +372,7 @@ h4.title {
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #f1f1f1;
+  background-color: var(--base-dropdown-bg);
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
@@ -342,7 +410,7 @@ h60 {
 
 /* Legacy footer */
 .footer-top {
-  background: #cefbc5;
+  background: var(--base-footer-bg);
   padding: 24px;
   display: flex;
   justify-content: space-around;
@@ -363,7 +431,7 @@ h60 {
 }
 
 .footer-bottom p a {
-  color: #555;
+  color: var(--base-text);
   line-height: 50px;
 }
 
@@ -378,5 +446,11 @@ h60 {
   .footer-row {
     width: 80%;
     margin-top: 25px;
+  }
+}
+
+@media (max-width: 480px) {
+  .button-1 {
+    width: 100%;
   }
 }

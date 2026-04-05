@@ -32,6 +32,37 @@
 [data-theme="dark"] .progress-bar {
 	background-color: #2a2a4a;
 }
+
+.theme-toggle {
+	position: fixed;
+	right: 20px;
+	bottom: 20px;
+	width: 45px;
+	height: 45px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 50%;
+	border: 2px solid #8c00ff;
+	background: #fff;
+	color: #111;
+	font-size: 20px;
+	cursor: pointer;
+	z-index: 99999;
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+	transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.theme-toggle.is-dark {
+	background: #1e293b;
+	color: #fff;
+}
+
+.theme-toggle:focus-visible {
+	outline: 3px solid #10a0b6;
+	outline-offset: 2px;
+}
+
 body{
 	background: var(--bg-color);
 	color: var(--text-color);

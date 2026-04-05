@@ -148,20 +148,34 @@ function closeDisclaimer() {
     disclaimer.style.display = 'none';
 }
 
-// Example usage
 const countStartDates = [
-    new Date("3 Nov, 2025 08:00:00").getTime(), 
-    new Date("9 Mar, 2026 00:00:00").getTime(),
+    new Date("30 Mar, 2026 00:00:00").getTime(), 
+    new Date("30 Mar, 2026 00:00:00").getTime(),
+    new Date("30 Mar, 2026 00:00:00").getTime(),
+    new Date("30 Mar, 2026 00:00:00").getTime(),
+    new Date("30 Mar, 2026 00:00:00").getTime(),
+    new Date("30 Mar, 2026 00:00:00").getTime(),
+    new Date("30 Mar, 2026 00:00:00").getTime(),
 ];
 
 const countDownDates = [
-    new Date("9 Mar, 2026 08:00:00").getTime(),
-    new Date("30 Mar, 2026 08:00:00").getTime(),
+    new Date("1 May, 2026 00:00:00").getTime(), // DV
+    new Date("22 May, 2026 23:59:59").getTime(), // VIP
+    new Date("3 Jun, 2026 18:00:00").getTime(),
+    new Date("5 Jun, 2026 18:00:00").getTime(),
+    new Date("26 Jun, 2026 23:59:59").getTime(), // DV
+    new Date("3 Jul, 2026 23:59:59").getTime(), // VIP
+    new Date("27 Jul, 2026 00:00:00").getTime(), // END
 ];
 
 const containerIds = [
     "countdown-container-1",
     "countdown-container-2",
+    "countdown-container-3",
+    "countdown-container-4",
+    "countdown-container-5",
+    "countdown-container-6",
+    "countdown-container-7",
 ];
 
 initializeCountdowns(countDownDates, countStartDates, containerIds);

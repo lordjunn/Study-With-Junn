@@ -64,6 +64,16 @@ img {
   background-color: #0056b3;
 }
 
+.latest {
+  right: 20px;
+  bottom: 70px; /* move it above the Home button */
+  background-color: #28a745;
+}
+
+.latest:hover {
+  background-color: #1e7e34;
+}
+
 </style>
 </head>
 <body>
@@ -267,12 +277,24 @@ img {
         </ul>    
       </td>
     </tr>
-    
+    <tr>
+      <td>23 Apr 2026</td>
+      <td> 
+        Further work on TDS 3651:
+        <ul>
+          <li>Added images for L3: 10 - 13</li>
+          <li>Added images for L4: 1 - 12</li>
+        </ul>    
+        Added a Latest Updates button to the bottom right of the page, which links to the latest update (bottom of page). 
+      </td>
+    </tr>    
   </tbody>
 </table>
 
 
 <h1>Who cares if it's basic as long as it gets the job done?</h1>
+<div id="bottom"></div>
+<a href="#bottom" class="button latest">Latest Updates</a>
 <a href="index.html" class="button">Back to Home</a>
 <!--  
 

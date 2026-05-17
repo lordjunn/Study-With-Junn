@@ -34,22 +34,95 @@ window.onscroll = () => {
 };
 
 // Create a reusable function to generate countdown elements
-function createCountdownElements(containerId) {
+function formatExactCountdownTime(countDownDate) {
+    return new Intl.DateTimeFormat(undefined, {
+        weekday: 'short',
+        year: 'numeric',
+        month: 'short',
+        day: 'numeric',
+        hour: 'numeric',
+        minute: '2-digit',
+        second: '2-digit',
+        timeZoneName: 'short',
+    }).format(countDownDate);
+}
+
+function createCountdownElements(containerId, countDownDate) {
     const container = document.getElementById(containerId);
     const demo = document.createElement('p');
     const progressBar = document.createElement('div');
     const progressBarFill = document.createElement('div');
     const demo2 = document.createElement('p');
+    const exactTime = document.createElement('p');
 
     demo.classList.add('countdown-display');
     progressBar.classList.add('progress-bar');
     progressBarFill.classList.add('progress-bar-fill');
     demo2.classList.add('countdown-display');
+    exactTime.classList.add('countdown-exact-time');
 
-    container.append(demo, progressBar, demo2);
+    container.tabIndex = 0;
+    container.setAttribute('role', 'button');
+    container.setAttribute('aria-expanded', 'false');
+    container.setAttribute('aria-label', 'Countdown card. Hover, click, or tap to show the exact deadline time.');
+    container.style.cursor = 'pointer';
+
+    exactTime.hidden = true;
+    exactTime.textContent = `Exact time: ${formatExactCountdownTime(countDownDate)}`;
+    exactTime.style.textAlign = 'center';
+    exactTime.style.fontSize = '15px';
+    exactTime.style.marginTop = '6px';
+    exactTime.style.color = 'var(--second-color)';
+
+    const showExactTime = () => {
+        exactTime.hidden = false;
+        container.setAttribute('aria-expanded', 'true');
+    };
+
+    const hideExactTime = () => {
+        exactTime.hidden = true;
+        container.setAttribute('aria-expanded', 'false');
+    };
+
+    let isPinnedOpen = false;
+
+    container.addEventListener('pointerenter', (event) => {
+        if (event.pointerType !== 'touch') {
+            showExactTime();
+        }
+    });
+
+    container.addEventListener('pointerleave', (event) => {
+        if (event.pointerType !== 'touch' && !isPinnedOpen) {
+            hideExactTime();
+        }
+    });
+
+    container.addEventListener('click', () => {
+        isPinnedOpen = !isPinnedOpen;
+        if (isPinnedOpen) {
+            showExactTime();
+        } else {
+            hideExactTime();
+        }
+    });
+
+    container.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault();
+            isPinnedOpen = !isPinnedOpen;
+            if (isPinnedOpen) {
+                showExactTime();
+            } else {
+                hideExactTime();
+            }
+        }
+    });
+
+    container.append(demo, progressBar, demo2, exactTime);
     progressBar.appendChild(progressBarFill);
 
-    return { demo, progressBar, progressBarFill, demo2 };
+    return { demo, progressBar, progressBarFill, demo2, exactTime };
 }
 
 // Countdown logic and UI updates
@@ -131,7 +204,7 @@ function updateCountdown(countDownDate, countStartDate, { demo, progressBar, pro
 // Function to initialize countdowns
 function initializeCountdowns(countDownDates, countStartDates, containerIds) {
     countDownDates.forEach((countDownDate, index) => {
-        const { demo, progressBar, progressBarFill, demo2 } = createCountdownElements(containerIds[index]);
+        const { demo, progressBar, progressBarFill, demo2 } = createCountdownElements(containerIds[index], countDownDate);
         updateCountdown(countDownDate, countStartDates[index], { demo, progressBar, progressBarFill, demo2 });
     });
 }
@@ -156,13 +229,15 @@ const countStartDates = [
     new Date("30 Mar, 2026 00:00:00").getTime(),
     new Date("30 Mar, 2026 00:00:00").getTime(),
     new Date("30 Mar, 2026 00:00:00").getTime(),
+    new Date("30 Mar, 2026 00:00:00").getTime(),
 ];
 
 const countDownDates = [
+    new Date("24 May, 2026 23:59:00").getTime(), // DV 
     new Date("24 May, 2026 23:59:00").getTime(), // VIP
-    new Date("24 May, 2026 23:59:00").getTime(), // DV
     new Date("3 Jun, 2026 18:00:00").getTime(),
-    new Date("5 Jun, 2026 18:00:00").getTime(),
+    new Date("5 Jun, 2026 18:00:00").getTime(), 
+    new Date("25 Jun, 2026 10:00:00").getTime(), // VIP Q2
     new Date("26 Jun, 2026 23:59:59").getTime(), // DV
     new Date("3 Jul, 2026 23:59:59").getTime(), // VIP
     new Date("27 Jul, 2026 00:00:00").getTime(), // END
@@ -176,6 +251,7 @@ const containerIds = [
     "countdown-container-5",
     "countdown-container-6",
     "countdown-container-7",
+    "countdown-container-8",
 ];
 
 initializeCountdowns(countDownDates, countStartDates, containerIds);

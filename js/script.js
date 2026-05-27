@@ -222,8 +222,8 @@ function closeDisclaimer() {
 }
 
 const countStartDates = [
-    new Date("30 Mar, 2026 00:00:00").getTime(), 
-    new Date("30 Mar, 2026 00:00:00").getTime(),
+    //new Date("30 Mar, 2026 00:00:00").getTime(), 
+    //new Date("30 Mar, 2026 00:00:00").getTime(),
     new Date("30 Mar, 2026 00:00:00").getTime(),
     new Date("30 Mar, 2026 00:00:00").getTime(),
     new Date("30 Mar, 2026 00:00:00").getTime(),
@@ -233,8 +233,8 @@ const countStartDates = [
 ];
 
 const countDownDates = [
-    new Date("24 May, 2026 23:59:00").getTime(), // DV 
-    new Date("24 May, 2026 23:59:00").getTime(), // VIP
+   // new Date("24 May, 2026 23:59:00").getTime(), // DV 
+    //new Date("24 May, 2026 23:59:00").getTime(), // VIP
     new Date("3 Jun, 2026 18:00:00").getTime(),
     new Date("5 Jun, 2026 18:00:00").getTime(), 
     new Date("25 Jun, 2026 10:00:00").getTime(), // VIP Q2
@@ -244,8 +244,8 @@ const countDownDates = [
 ];
 
 const containerIds = [
-    "countdown-container-1",
-    "countdown-container-2",
+    //"countdown-container-1",
+    //"countdown-container-2",
     "countdown-container-3",
     "countdown-container-4",
     "countdown-container-5",

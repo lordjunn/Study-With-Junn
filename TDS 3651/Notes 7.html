@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CDS6334 - Lecture 7 Notes</title>
+
+<link rel="stylesheet" href="notes.css">
+</head>
+
+<body>
+
+<div class="container">
+
+<header>
+    <a href="../TDS 3651.html"><h1>CDS 6334 - Visual Image Processing</h1></a>
+    <h3>Lecture 7: Textures</h3>
+</header>
+
+<div id="header-config"
+    data-prev="6"
+    data-next="8"
+    data-name="Notes ">
+</div>
+
+<div class="card">
+    <h2 class="section-title">1. What is Texture?</h2>
+
+    <div class="definition">
+        Texture refers to repeated local patterns in an image that describe surface appearance and material properties.
+    </div>
+
+    <div class="keypoint">
+        Textures can be regular (structured) or irregular (random).
+    </div>
+
+    <div class="memory">
+        🧠 Think:
+        <br><br>
+        Shape tells us <b>what</b> an object is.
+        <br>
+        Texture tells us <b>what it is made of</b>.
+    </div>
+</div>
+
+<div class="card">
+    <h2 class="section-title">2. Why Analyze Texture?</h2>
+
+    <ul>
+        <li>Recognize materials</li>
+        <li>Distinguish similar-shaped objects</li>
+        <li>Scene classification</li>
+        <li>Texture segmentation</li>
+        <li>Texture synthesis</li>
+    </ul>
+
+    <div class="exam">
+        Exam Keyword:
+        <br>
+        Texture Representation
+    </div>
+</div>
+
+<div class="card">
+    <h2 class="section-title">3. Texture-Related Tasks</h2>
+
+    <table>
+        <tr>
+            <th>Task</th>
+            <th>Description</th>
+        </tr>
+
+        <tr>
+            <td>Shape from Texture</td>
+            <td>Estimate surface orientation or shape</td>
+        </tr>
+
+        <tr>
+            <td>Texture Segmentation</td>
+            <td>Group similar texture regions</td>
+        </tr>
+
+        <tr>
+            <td>Texture Classification</td>
+            <td>Recognize material types</td>
+        </tr>
+
+        <tr>
+            <td>Texture Synthesis</td>
+            <td>Generate new texture images</td>
+        </tr>
+    </table>
+</div>
+
+<div class="card">
+    <h2 class="section-title">4. Are Edges Enough?</h2>
+
+    <div class="definition">
+        Edge detectors capture boundaries but often fail to fully represent texture information.
+    </div>
+
+    <div class="keypoint">
+        Texture requires more information than simple edge locations.
+    </div>
+</div>
+
+<div class="card">
+    <h2 class="section-title">5. Texture Representation</h2>
+
+    <div class="definition">
+        Texture can be represented using local statistics computed from image windows.
+    </div>
+
+    <div class="example">
+        Common statistics:
+        <ul>
+            <li>Mean</li>
+            <li>Standard Deviation</li>
+            <li>Filter Responses</li>
+        </ul>
+    </div>
+
+    <div class="memory">
+        🧠 Texture = Pattern + Statistics
+    </div>
+</div>
+
+<div class="card">
+    <h2 class="section-title">6. Window-Based Texture Analysis</h2>
+
+    <div class="definition">
+        Small neighbourhood windows are analyzed to summarize local texture patterns.
+    </div>
+
+    <div class="keypoint">
+        Each window becomes a feature vector describing its texture.
+    </div>
+</div>
+
+<div class="card">
+    <h2 class="section-title">7. Texture Grouping</h2>
+
+    <div class="definition">
+        Similar texture windows can be grouped together into texture categories.
+    </div>
+
+    <div class="example">
+        Example Texture Types:
+        <ul>
+            <li>Horizontal edges</li>
+            <li>Vertical edges</li>
+            <li>Low-gradient regions</li>
+            <li>Mixed patterns</li>
+        </ul>
+    </div>
+</div>
+
+<div class="card">
+    <h2 class="section-title">8. Texture Distance</h2>
+
+    <div class="definition">
+        Texture similarity is measured using distances between feature vectors.
+    </div>
+
+    <div class="exam">
+        Important Formula:
+        <br>
+        Euclidean Distance
+    </div>
+
+    <div class="memory">
+        🧠 Smaller distance = More similar textures
+    </div>
+</div>
+
+<div class="card">
+    <h2 class="section-title">9. Challenges in Texture Analysis</h2>
+
+    <ul>
+        <li>Too few features may miss texture details</li>
+        <li>Texture groups may not be known beforehand</li>
+        <li>Choosing the correct window size</li>
+    </ul>
+</div>
+
+<div class="card">
+    <h2 class="section-title">10. Filter Banks</h2>
+
+    <div class="definition">
+        A filter bank is a collection of filters used to capture different texture patterns.
+    </div>
+
+    <div class="keypoint">
+        Filters may detect edges, bars, spots, and structures at different orientations and scales.
+    </div>
+
+    <div class="memory">
+        🧠 One filter = Limited information
+        <br>
+        Filter Bank = Rich texture description
+    </div>
+</div>
+
+<div class="card">
+    <h2 class="section-title">11. Leung-Malik (LM) Filter Bank</h2>
+
+    <div class="definition">
+        A popular texture filter bank consisting of 48 filters.
+    </div>
+
+    <div class="example">
+        Includes:
+        <ul>
+            <li>1st Derivative of Gaussian</li>
+            <li>2nd Derivative of Gaussian</li>
+            <li>Laplacian of Gaussian (LoG)</li>
+            <li>Gaussian Filters</li>
+        </ul>
+    </div>
+
+    <div class="exam">
+        Exam Point:
+        <br>
+        48-dimensional feature vector
+    </div>
+</div>
+
+<div class="card">
+    <h2 class="section-title">12. Filter Responses</h2>
+
+    <div class="definition">
+        Applying a filter bank produces multiple responses for each image location.
+    </div>
+
+    <div class="keypoint">
+        The collection of responses becomes a feature vector describing texture.
+    </div>
+</div>
+
+<div class="card">
+    <h2 class="section-title">13. High-Dimensional Features</h2>
+
+    <div class="definition">
+        If a filter bank contains d filters, each texture feature vector has d dimensions.
+    </div>
+
+    <div class="example">
+        Example:
+        <br>
+        48 filters → 48-dimensional feature vector
+    </div>
+</div>
+
+<div class="card">
+    <h2 class="section-title">14. Clustering</h2>
+
+    <div class="definition">
+        Clustering groups similar feature vectors together.
+    </div>
+
+    <div class="keypoint">
+        Helps discover texture categories automatically.
+    </div>
+</div>
+
+<div class="card">
+    <h2 class="section-title">15. K-Means Clustering</h2>
+
+    <div class="definition">
+        K-Means partitions data into K clusters by minimizing within-cluster variance.
+    </div>
+
+    <div class="exam">
+        Exam Keyword:
+        <br>
+        Sum of Squared Distances (SSD)
+    </div>
+</div>
+
+<div class="card">
+    <h2 class="section-title">16. K-Means Algorithm</h2>
+
+    <ol>
+        <li>Choose K</li>
+        <li>Initialize cluster centres</li>
+        <li>Assign points to nearest centre</li>
+        <li>Compute cluster means</li>
+        <li>Repeat until convergence</li>
+    </ol>
+
+    <div class="memory">
+        🧠 Assign → Update → Repeat
+    </div>
+</div>
+
+<div class="card">
+    <h2 class="section-title">17. K-Means Properties</h2>
+
+    <table>
+        <tr>
+            <th>Advantages</th>
+            <th>Disadvantages</th>
+        </tr>
+
+        <tr>
+            <td>Simple and fast</td>
+            <td>Need to choose K</td>
+        </tr>
+
+        <tr>
+            <td>Guaranteed convergence</td>
+            <td>Sensitive to initialization</td>
+        </tr>
+
+        <tr>
+            <td>Easy implementation</td>
+            <td>Sensitive to outliers</td>
+        </tr>
+    </table>
+</div>
+
+<div class="card">
+    <h2 class="section-title">18. Histograms of Texture Features</h2>
+
+    <div class="definition">
+        After clustering, texture occurrences can be summarized using histograms.
+    </div>
+
+    <div class="keypoint">
+        Histogram bins represent texture categories.
+    </div>
+</div>
+
+<div class="card">
+    <h2 class="section-title">19. Textons</h2>
+
+    <div class="definition">
+        Textons are representative texture patterns discovered through clustering.
+    </div>
+
+    <div class="example">
+        Process:
+        <ol>
+            <li>Apply filter bank</li>
+            <li>Cluster responses</li>
+            <li>Create textons</li>
+            <li>Build texton histograms</li>
+        </ol>
+    </div>
+
+    <div class="exam">
+        Important Term:
+        <br>
+        Universal Textons
+    </div>
+</div>
+
+<div class="card">
+    <h2 class="section-title">20. Texture-Based Grouping</h2>
+
+    <div class="definition">
+        Pixels or regions with similar filter-bank responses are grouped together.
+    </div>
+
+    <div class="keypoint">
+        Useful for segmentation and classification.
+    </div>
+</div>
+
+<div class="card">
+    <h2 class="section-title">21. Applications of Texture Analysis</h2>
+
+    <ul>
+        <li>Scene Classification</li>
+        <li>Material Recognition</li>
+        <li>Image Retrieval</li>
+        <li>Texture Matching</li>
+    </ul>
+</div>
+
+<div class="card">
+    <h2 class="section-title">22. Scene Classification</h2>
+
+    <div class="definition">
+        Images can be classified using texton histograms and similarity measures.
+    </div>
+
+    <div class="keypoint">
+        Similar scenes often have similar texture distributions.
+    </div>
+</div>
+
+<div class="card">
+    <h2 class="section-title">23. Texture-Based Image Retrieval</h2>
+
+    <div class="definition">
+        Images are matched based on texture similarity rather than colour alone.
+    </div>
+
+    <div class="memory">
+        🧠 Colour may look similar,
+        <br>
+        Texture reveals the difference.
+    </div>
+</div>
+
+<div class="card">
+    <h2 class="section-title">24. Chi-Square Distance</h2>
+
+    <div class="definition">
+        A common measure for comparing texture histograms.
+    </div>
+
+    <div class="keypoint">
+        Often performs better than Euclidean distance for histogram matching.
+    </div>
+</div>
+
+<div class="card">
+    <h2 class="section-title">25. Final Exam Summary</h2>
+
+    <div class="summary">
+
+        <h3>Most Important Points</h3>
+
+        <ul>
+
+            <li><span class="highlight">Texture:</span> Repeated local image patterns.</li>
+
+            <li><span class="highlight">Texture Analysis:</span> Segmentation, classification, synthesis.</li>
+
+            <li><span class="highlight">Texture Representation:</span> Statistics from local windows.</li>
+
+            <li><span class="highlight">Filter Bank:</span> Multiple filters capture texture information.</li>
+
+            <li><span class="highlight">LM Filter Bank:</span> 48 filters.</li>
+
+            <li><span class="highlight">Feature Vector:</span> Collection of filter responses.</li>
+
+            <li><span class="highlight">Texture Distance:</span> Euclidean distance.</li>
+
+            <li><span class="highlight">Clustering:</span> Groups similar textures.</li>
+
+            <li><span class="highlight">K-Means:</span> Assign → Update → Repeat.</li>
+
+            <li><span class="highlight">Textons:</span> Representative texture patterns.</li>
+
+            <li><span class="highlight">Histogram:</span> Describes texture occurrence frequency.</li>
+
+            <li><span class="highlight">Applications:</span> Scene classification, texture matching, image retrieval.</li>
+
+        </ul>
+
+    </div>
+</div>
+
+<div class="lecture-nav" id="lecture-nav"></div>
+
+<script type="text/javascript" src="notes.js"></script>
+
+</div>
+</body>
+</html>

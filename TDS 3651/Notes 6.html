@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CDS6334 - Lecture 5 Notes</title>
+
+<link rel="stylesheet" href="notes.css">
+</head>
+
+<body>
+
+<div class="container">
+    
+<header>
+    <a href="../TDS 3651.html"><h1>CDS 6334 - Visual Image Processing</h1></a>
+    <h3>Lecture 6: Colour</h3>
+</header>
+
+<div id="header-config"
+    data-prev="5"
+    data-next="7"
+    data-name="Notes ">
+</div>
+
+<div class="card">
+    <h2 class="section-title">1. What is Colour?</h2>
+
+
+<div class="definition">
+    Colour is the result of the interaction between physical light and the human visual system.
+</div>
+
+<div class="keypoint">
+    Colour is a psychological perception, not a physical property of an object.
+</div>
+
+<div class="memory">
+    🧠 Remember:
+    <br><br>
+    Colour exists in the brain, not the object.
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">2. Newton's Discovery</h2>
+
+
+<div class="definition">
+    In 1666, Isaac Newton showed that white sunlight can be separated into a spectrum of colours using a prism.
+</div>
+
+<div class="keypoint">
+    White light contains many wavelengths of visible light.
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">3. Colour and Wavelength</h2>
+
+
+<div class="definition">
+    Visible light occupies approximately 400 nm to 700 nm of the electromagnetic spectrum.
+</div>
+
+<table>
+    <tr>
+        <th>Colour</th>
+        <th>Approximate Wavelength</th>
+    </tr>
+
+    <tr>
+        <td>Violet</td>
+        <td>~400 nm</td>
+    </tr>
+
+    <tr>
+        <td>Green</td>
+        <td>500–570 nm</td>
+    </tr>
+
+    <tr>
+        <td>Red</td>
+        <td>~700 nm</td>
+    </tr>
+</table>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">4. Human Colour Perception</h2>
+
+
+<div class="definition">
+    The retina contains light-sensitive photoreceptors called rods and cones.
+</div>
+
+<table>
+    <tr>
+        <th>Photoreceptor</th>
+        <th>Function</th>
+    </tr>
+
+    <tr>
+        <td>Rods</td>
+        <td>Brightness and night vision</td>
+    </tr>
+
+    <tr>
+        <td>Cones</td>
+        <td>Colour vision</td>
+    </tr>
+</table>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">5. Types of Cones</h2>
+
+
+<table>
+    <tr>
+        <th>Cone Type</th>
+        <th>Most Sensitive To</th>
+    </tr>
+
+    <tr>
+        <td>S Cone</td>
+        <td>Blue</td>
+    </tr>
+
+    <tr>
+        <td>M Cone</td>
+        <td>Green</td>
+    </tr>
+
+    <tr>
+        <td>L Cone</td>
+        <td>Red</td>
+    </tr>
+</table>
+
+<div class="keypoint">
+    The brain combines signals from these three cone types to perceive colour.
+</div>
+
+<div class="exam">
+    Exam Fact:
+    <br>
+    Human colour vision is trichromatic.
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">6. Additive Colour Mixing</h2>
+
+
+<div class="definition">
+    Colours are created by adding coloured light together.
+</div>
+
+<div class="example">
+    Red + Green = Yellow
+    <br>
+    Red + Blue = Magenta
+    <br>
+    Green + Blue = Cyan
+</div>
+
+<div class="keypoint">
+    All three primary lights combined produce white.
+</div>
+
+<div class="memory">
+    🧠 Additive:
+    <br>
+    Black → White
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">7. Subtractive Colour Mixing</h2>
+
+
+<div class="definition">
+    Colours are produced by removing wavelengths from white light.
+</div>
+
+<div class="example">
+    Cyan + Magenta + Yellow → Black
+</div>
+
+<div class="keypoint">
+    Used in printing and pigments.
+</div>
+
+<div class="memory">
+    🧠 Subtractive:
+    <br>
+    White → Black
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">8. Problems with Colour Images</h2>
+
+
+<ul>
+    <li>Each pixel contains three values.</li>
+    <li>Colours change under different lighting conditions.</li>
+    <li>Different cameras record colours differently.</li>
+</ul>
+
+<div class="exam">
+    Important:
+    <br>
+    Lighting greatly affects recorded RGB values.
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">9. Colour Spaces</h2>
+
+
+<div class="definition">
+    A colour space is a coordinate system used to represent colours numerically.
+</div>
+
+<div class="keypoint">
+    Each colour corresponds to a point within the colour space.
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">10. Common Colour Spaces</h2>
+
+
+<table>
+    <tr>
+        <th>Colour Space</th>
+        <th>Main Use</th>
+    </tr>
+
+    <tr>
+        <td>RGB</td>
+        <td>Displays</td>
+    </tr>
+
+    <tr>
+        <td>CMY / CMYK</td>
+        <td>Printing</td>
+    </tr>
+
+    <tr>
+        <td>HSV</td>
+        <td>Human-friendly colour representation</td>
+    </tr>
+
+    <tr>
+        <td>YCbCr</td>
+        <td>Digital video</td>
+    </tr>
+
+    <tr>
+        <td>CIE LAB</td>
+        <td>Perceptual colour measurement</td>
+    </tr>
+</table>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">11. RGB Colour Space</h2>
+
+
+<div class="definition">
+    RGB represents colour using Red, Green and Blue components.
+</div>
+
+<div class="keypoint">
+    It is an additive colour model commonly used in displays.
+</div>
+
+<div class="memory">
+    🧠 RGB = Screens
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">12. RGB Colour Cube</h2>
+
+
+<div class="definition">
+    RGB colours form a cube in 3D coordinate space.
+</div>
+
+<ul>
+    <li>Black = (0,0,0)</li>
+    <li>White = (1,1,1)</li>
+    <li>Each corner represents a pure colour.</li>
+</ul>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">13. CMY and CMYK</h2>
+
+
+<div class="definition">
+    CMY uses Cyan, Magenta and Yellow as primary colours.
+</div>
+
+<div class="exam">
+    Conversion:
+    <br>
+    C = 1 − R
+    <br>
+    M = 1 − G
+    <br>
+    Y = 1 − B
+</div>
+
+<div class="keypoint">
+    CMYK adds black ink (K) for true black printing.
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">14. Colour Gamut</h2>
+
+
+<div class="definition">
+    Gamut refers to the range of colours represented by a colour model.
+</div>
+
+<div class="keypoint">
+    RGB generally has a larger gamut than CMY.
+</div>
+
+<div class="memory">
+    🧠 Not all screen colours can be printed.
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">15. HSV Colour Space</h2>
+
+
+<div class="definition">
+    HSV represents colours using Hue, Saturation and Value.
+</div>
+
+<table>
+    <tr>
+        <th>Component</th>
+        <th>Meaning</th>
+    </tr>
+
+    <tr>
+        <td>Hue</td>
+        <td>Dominant colour</td>
+    </tr>
+
+    <tr>
+        <td>Saturation</td>
+        <td>Colour purity</td>
+    </tr>
+
+    <tr>
+        <td>Value</td>
+        <td>Brightness</td>
+    </tr>
+</table>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">16. Why HSV is Popular</h2>
+
+
+<div class="definition">
+    HSV is more intuitive and closer to human colour perception than RGB.
+</div>
+
+<div class="keypoint">
+    Useful for colour segmentation and object detection.
+</div>
+
+<div class="memory">
+    🧠 HSV = Human-Friendly RGB
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">17. YCbCr Colour Space</h2>
+
+
+<div class="definition">
+    YCbCr separates brightness information from colour information.
+</div>
+
+<table>
+    <tr>
+        <th>Component</th>
+        <th>Description</th>
+    </tr>
+
+    <tr>
+        <td>Y</td>
+        <td>Luminance</td>
+    </tr>
+
+    <tr>
+        <td>Cb</td>
+        <td>Blue difference</td>
+    </tr>
+
+    <tr>
+        <td>Cr</td>
+        <td>Red difference</td>
+    </tr>
+</table>
+
+<div class="exam">
+    Commonly used in digital video systems.
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">18. Colour Difference</h2>
+
+
+<div class="definition">
+    Colour difference measures how different two colours are.
+</div>
+
+<div class="keypoint">
+    Euclidean distance is the simplest colour distance measure.
+</div>
+
+<div class="exam">
+    Colour Difference:
+    <br>
+    Distance between colour coordinates.
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">19. Perceptually Uniform Colour Spaces</h2>
+
+
+<div class="definition">
+    Equal distances should correspond to equal perceived colour differences.
+</div>
+
+<div class="keypoint">
+    RGB, HSV and YCbCr are not perceptually uniform.
+</div>
+
+<div class="exam">
+    Better Choices:
+    <br>
+    CIE LAB and CIE LUV
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">20. CIE LAB and CIE LUV</h2>
+
+
+<div class="definition">
+    Designed so colour distances better match human perception.
+</div>
+
+<table>
+    <tr>
+        <th>Component</th>
+        <th>Meaning</th>
+    </tr>
+
+    <tr>
+        <td>L*</td>
+        <td>Lightness</td>
+    </tr>
+
+    <tr>
+        <td>a*</td>
+        <td>Green ↔ Red axis</td>
+    </tr>
+
+    <tr>
+        <td>b*</td>
+        <td>Blue ↔ Yellow axis</td>
+    </tr>
+</table>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">21. Colour-Based Image Retrieval (CBIR)</h2>
+
+
+<div class="definition">
+    Images can be retrieved based on colour similarity.
+</div>
+
+<div class="keypoint">
+    Colour histograms are commonly used as image descriptors.
+</div>
+
+<div class="memory">
+    🧠 Similar Histogram = Similar Colour Distribution
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">22. Colour Histograms</h2>
+
+
+<div class="definition">
+    A colour histogram describes the distribution of colours within an image.
+</div>
+
+<div class="keypoint">
+    Independent of image position, rotation and scale.
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">23. Colour-Based Skin Detection</h2>
+
+
+<div class="definition">
+    Human skin tones occupy specific regions in colour spaces such as RGB, HSV and YCbCr.
+</div>
+
+<div class="keypoint">
+    Frequently used in face detection systems.
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">24. Colour Harmonization</h2>
+
+
+<div class="definition">
+    Adjust colours within an image to create visually pleasing combinations.
+</div>
+
+<div class="keypoint">
+    Used in photography, graphic design and image editing.
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">25. Colourization</h2>
+
+
+<div class="definition">
+    Automatically adds colour to grayscale images.
+</div>
+
+<div class="keypoint">
+    Modern colourization systems commonly use deep learning.
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">26. Final Exam Summary</h2>
+
+
+<div class="summary">
+
+    <h3>Most Important Points</h3>
+
+    <ul>
+
+        <li><span class="highlight">Colour:</span> Interaction between light and visual perception.</li>
+
+        <li><span class="highlight">Visible Spectrum:</span> Approximately 400–700 nm.</li>
+
+        <li><span class="highlight">Rods:</span> Brightness vision.</li>
+
+        <li><span class="highlight">Cones:</span> Colour vision.</li>
+
+        <li><span class="highlight">Three Cone Types:</span> S, M and L.</li>
+
+        <li><span class="highlight">RGB:</span> Additive colour model.</li>
+
+        <li><span class="highlight">CMY/CMYK:</span> Subtractive colour model.</li>
+
+        <li><span class="highlight">HSV:</span> Hue, Saturation, Value.</li>
+
+        <li><span class="highlight">YCbCr:</span> Luminance + Colour Difference.</li>
+
+        <li><span class="highlight">Colour Gamut:</span> Range of representable colours.</li>
+
+        <li><span class="highlight">RGB is not perceptually uniform.</span></li>
+
+        <li><span class="highlight">CIE LAB and CIE LUV:</span> Perceptually meaningful colour spaces.</li>
+
+        <li><span class="highlight">CBIR:</span> Uses colour histograms for image retrieval.</li>
+
+        <li><span class="highlight">Applications:</span> Skin detection, harmonization and colourization.</li>
+
+    </ul>
+
+</div>
+
+
+</div>
+
+<div class="lecture-nav" id="lecture-nav"></div>
+
+<script type="text/javascript" src="notes.js"></script>
+
+
+</div>
+</body>
+</html>

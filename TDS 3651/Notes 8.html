@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CDS6334 - Lecture 8 Notes</title>
+
+<link rel="stylesheet" href="notes.css">
+</head>
+
+<body>
+
+<div class="container">
+
+<header>
+    <a href="../TDS 3651.html"><h1>CDS 6334 - Visual Image Processing</h1></a>
+    <h3>Lecture 8: Region Segmentation</h3>
+</header>
+
+<div id="header-config"
+    data-prev="7"
+    data-next="9"
+    data-name="Notes ">
+</div>
+
+<div class="card">
+    <h2 class="section-title">1. Why Segmentation?</h2>
+
+    <div class="definition">
+        Segmentation divides an image into meaningful regions or objects.
+    </div>
+
+    <div class="keypoint">
+        Pixels belonging to the same object should be grouped together.
+    </div>
+
+    <div class="memory">
+        🧠 Segmentation = Partitioning an image into meaningful parts.
+    </div>
+</div>
+
+<div class="card">
+    <h2 class="section-title">2. Objectives of Segmentation</h2>
+
+    <ul>
+        <li>Group related image features</li>
+        <li>Identify objects or regions</li>
+        <li>Reduce image complexity</li>
+        <li>Prepare for higher-level analysis</li>
+    </ul>
+
+    <div class="exam">
+        Exam Keyword:
+        <br>
+        Region Grouping
+    </div>
+</div>
+
+<div class="card">
+    <h2 class="section-title">3. Examples of Segmentation Tasks</h2>
+
+    <table>
+        <tr>
+            <th>Task</th>
+            <th>Description</th>
+        </tr>
+
+        <tr>
+            <td>Shot Detection</td>
+            <td>Group video frames into scenes</td>
+        </tr>
+
+        <tr>
+            <td>Region Segmentation</td>
+            <td>Separate image regions</td>
+        </tr>
+
+        <tr>
+            <td>Object Segmentation</td>
+            <td>Extract object boundaries</td>
+        </tr>
+
+        <tr>
+            <td>Figure-Ground Separation</td>
+            <td>Separate foreground and background</td>
+        </tr>
+    </table>
+</div>
+
+<div class="card">
+    <h2 class="section-title">4. Top-Down vs Bottom-Up Segmentation</h2>
+
+    <table>
+        <tr>
+            <th>Approach</th>
+            <th>Idea</th>
+        </tr>
+
+        <tr>
+            <td>Top-Down</td>
+            <td>Pixels belong together because they form the same object</td>
+        </tr>
+
+        <tr>
+            <td>Bottom-Up</td>
+            <td>Pixels belong together because they look similar</td>
+        </tr>
+    </table>
+</div>
+
+<div class="card">
+    <h2 class="section-title">5. Gestalt Theory</h2>
+
+    <div class="definition">
+        Gestalt Theory explains how humans naturally group visual elements.
+    </div>
+
+    <div class="example">
+        Common Gestalt Laws:
+        <ul>
+            <li>Similarity</li>
+            <li>Symmetry</li>
+            <li>Closure</li>
+            <li>Continuity</li>
+            <li>Common Fate</li>
+        </ul>
+    </div>
+
+    <div class="memory">
+        🧠 Humans group things that look alike or move together.
+    </div>
+</div>
+
+<div class="card">
+    <h2 class="section-title">6. Segmentation Goal</h2>
+
+    <div class="definition">
+        The primary goal is to separate an image into coherent objects or regions.
+    </div>
+
+    <div class="keypoint">
+        Similar pixels should belong to the same segment.
+    </div>
+</div>
+
+<div class="card">
+    <h2 class="section-title">7. Thresholding Revisited</h2>
+
+    <div class="definition">
+        Thresholding separates pixels into groups using intensity values.
+    </div>
+
+    <div class="keypoint">
+        Pixels above and below a threshold become different segments.
+    </div>
+
+    <div class="exam">
+        Important Method:
+        <br>
+        Otsu's Thresholding
+    </div>
+</div>
+
+<div class="card">
+    <h2 class="section-title">8. Motivation for Clustering</h2>
+
+    <div class="definition">
+        Clustering automatically discovers groups within image data.
+    </div>
+
+    <div class="memory">
+        🧠 Clustering finds representative groups without manually selecting thresholds.
+    </div>
+</div>
+
+<div class="card">
+    <h2 class="section-title">9. Clustering Review</h2>
+
+    <div class="definition">
+        Pixels are assigned to the nearest cluster centre.
+    </div>
+
+    <div class="keypoint">
+        Goal: Minimize Sum of Squared Distances (SSD).
+    </div>
+</div>
+
+<div class="card">
+    <h2 class="section-title">10. K-Means Clustering</h2>
+
+    <div class="definition">
+        K-Means partitions data into K clusters by minimizing within-cluster variance.
+    </div>
+
+    <div class="exam">
+        Exam Keyword:
+        <br>
+        SSD (Sum of Squared Distances)
+    </div>
+</div>
+
+<div class="card">
+    <h2 class="section-title">11. K-Means Algorithm</h2>
+
+    <ol>
+        <li>Select K</li>
+        <li>Initialize cluster centres</li>
+        <li>Assign points to nearest centre</li>
+        <li>Update cluster means</li>
+        <li>Repeat until convergence</li>
+    </ol>
+
+    <div class="memory">
+        🧠 Assign → Update → Repeat
+    </div>
+</div>
+
+<div class="card">
+    <h2 class="section-title">12. Segmentation as Clustering</h2>
+
+    <div class="definition">
+        Segmentation can be performed by clustering pixels in feature space.
+    </div>
+
+    <div class="keypoint">
+        Different feature choices produce different segmentations.
+    </div>
+</div>
+
+<div class="card">
+    <h2 class="section-title">13. Intensity-Based Segmentation</h2>
+
+    <div class="definition">
+        Pixels are grouped according to grayscale intensity values.
+    </div>
+
+    <div class="example">
+        Feature Space:
+        <br>
+        1-D Intensity
+    </div>
+</div>
+
+<div class="card">
+    <h2 class="section-title">14. Colour-Based Segmentation</h2>
+
+    <div class="definition">
+        Pixels are grouped using colour similarity.
+    </div>
+
+    <div class="example">
+        Feature Space:
+        <br>
+        RGB (3-D)
+    </div>
+</div>
+
+<div class="card">
+    <h2 class="section-title">15. Intensity + Position Features</h2>
+
+    <div class="definition">
+        Spatial coordinates can be combined with intensity information.
+    </div>
+
+    <div class="keypoint">
+        Separates regions that share similar colours but occur in different locations.
+    </div>
+</div>
+
+<div class="card">
+    <h2 class="section-title">16. Texture-Based Segmentation</h2>
+
+    <div class="definition">
+        Pixels are grouped according to texture descriptors.
+    </div>
+
+    <div class="example">
+        Feature Space:
+        <br>
+        Filter Bank Responses
+    </div>
+</div>
+
+<div class="card">
+    <h2 class="section-title">17. Superpixels</h2>
+
+    <div class="definition">
+        Superpixels merge similar neighbouring pixels into larger units.
+    </div>
+
+    <div class="keypoint">
+        Significantly reduces the number of elements for processing.
+    </div>
+
+    <div class="memory">
+        🧠 Many pixels → Fewer superpixels
+    </div>
+</div>
+
+<div class="card">
+    <h2 class="section-title">18. Images as Graphs</h2>
+
+    <div class="definition">
+        Images can be represented as graphs where pixels are nodes and similarities are edges.
+    </div>
+
+    <div class="example">
+        Node = Pixel
+        <br>
+        Edge = Similarity
+    </div>
+</div>
+
+<div class="card">
+    <h2 class="section-title">19. Graph Cuts</h2>
+
+    <div class="definition">
+        Segmentation is achieved by removing weak connections between regions.
+    </div>
+
+    <div class="keypoint">
+        Low similarity edges are good candidates for cuts.
+    </div>
+</div>
+
+<div class="card">
+    <h2 class="section-title">20. Normalized Cuts</h2>
+
+    <div class="definition">
+        A graph-based segmentation algorithm that partitions images using pixel affinities.
+    </div>
+
+    <div class="exam">
+        Exam Keyword:
+        <br>
+        Spectral Clustering
+    </div>
+</div>
+
+<div class="card">
+    <h2 class="section-title">21. Felzenszwalb Segmentation</h2>
+
+    <div class="definition">
+        Efficient graph-based segmentation method that merges similar regions.
+    </div>
+
+    <div class="example">
+        Steps:
+        <ol>
+            <li>Compute edge weights</li>
+            <li>Sort weights</li>
+            <li>Merge similar regions</li>
+            <li>Repeat until complete</li>
+        </ol>
+    </div>
+
+    <div class="memory">
+        🧠 Small weight = High similarity
+    </div>
+</div>
+
+<div class="card">
+    <h2 class="section-title">22. SLIC Superpixels</h2>
+
+    <div class="definition">
+        Simple Linear Iterative Clustering (SLIC) generates compact superpixels.
+    </div>
+
+    <div class="keypoint">
+        Requires only one major parameter:
+        Number of Superpixels.
+    </div>
+</div>
+
+<div class="card">
+    <h2 class="section-title">23. Why Are Superpixels Useful?</h2>
+
+    <ul>
+        <li>Reduce computational cost</li>
+        <li>Preserve object boundaries</li>
+        <li>Enable region-based classification</li>
+        <li>Simplify feature extraction</li>
+    </ul>
+</div>
+
+<div class="card">
+    <h2 class="section-title">24. Deep Learning Segmentation Methods</h2>
+
+    <table>
+        <tr>
+            <th>Method</th>
+            <th>Main Purpose</th>
+        </tr>
+
+        <tr>
+            <td>FCN</td>
+            <td>Semantic Segmentation</td>
+        </tr>
+
+        <tr>
+            <td>Mask R-CNN</td>
+            <td>Instance Segmentation</td>
+        </tr>
+
+        <tr>
+            <td>Vision Transformer (ViT)</td>
+            <td>Transformer-Based Segmentation</td>
+        </tr>
+
+        <tr>
+            <td>SAM</td>
+            <td>Prompt-Based Segmentation</td>
+        </tr>
+    </table>
+</div>
+
+<div class="card">
+    <h2 class="section-title">25. Segment Anything Model (SAM)</h2>
+
+    <div class="definition">
+        SAM is a foundation model capable of segmenting objects from prompts.
+    </div>
+
+    <div class="example">
+        Evolution:
+        <ul>
+            <li>SAM 1 → Promptable segmentation</li>
+            <li>SAM 2 → Video segmentation & tracking</li>
+            <li>SAM 3 → Concept segmentation using text/image prompts</li>
+        </ul>
+    </div>
+
+    <div class="exam">
+        Important Concept:
+        <br>
+        Zero-Shot Segmentation
+    </div>
+</div>
+
+<div class="card">
+    <h2 class="section-title">26. Final Exam Summary</h2>
+
+    <div class="summary">
+
+        <h3>Most Important Points</h3>
+
+        <ul>
+
+            <li><span class="highlight">Segmentation:</span> Divide images into meaningful regions.</li>
+
+            <li><span class="highlight">Gestalt Theory:</span> Human-inspired grouping principles.</li>
+
+            <li><span class="highlight">Thresholding:</span> Basic segmentation using intensity.</li>
+
+            <li><span class="highlight">Clustering:</span> Group pixels based on similarity.</li>
+
+            <li><span class="highlight">K-Means:</span> Assign → Update → Repeat.</li>
+
+            <li><span class="highlight">Feature Spaces:</span> Intensity, colour, position, texture.</li>
+
+            <li><span class="highlight">Superpixels:</span> Merge pixels into larger meaningful units.</li>
+
+            <li><span class="highlight">Graph Cuts:</span> Remove weak connections between regions.</li>
+
+            <li><span class="highlight">Normalized Cuts:</span> Spectral graph segmentation.</li>
+
+            <li><span class="highlight">Felzenszwalb:</span> Efficient graph-based segmentation.</li>
+
+            <li><span class="highlight">SLIC:</span> Popular superpixel algorithm.</li>
+
+            <li><span class="highlight">FCN:</span> Semantic segmentation network.</li>
+
+            <li><span class="highlight">Mask R-CNN:</span> Instance segmentation.</li>
+
+            <li><span class="highlight">ViT Segmenter:</span> Transformer-based segmentation.</li>
+
+            <li><span class="highlight">SAM:</span> Promptable foundation segmentation model.</li>
+
+        </ul>
+
+    </div>
+</div>
+
+<div class="lecture-nav" id="lecture-nav"></div>
+
+<script type="text/javascript" src="notes.js"></script>
+
+</div>
+</body>
+</html>
+

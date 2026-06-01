@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CDS6334 - Lecture 4 Notes</title>
+
+<link rel="stylesheet" href="notes.css">
+</head>
+
+<body>
+
+<div class="container">
+
+<header>
+    <a href="../TDS 3651.html"><h1>CDS 6334 - Visual Image Processing</h1></a>
+    <h3>Lecture 4: Edge Detection</h3>
+</header>
+
+<div id="header-config"
+    data-prev="3"
+    data-next="5"
+    data-name="Notes ">
+</div>
+
+<div class="card">
+    <h2 class="section-title">1. What Makes an Edge?</h2>
+
+
+<div class="definition">
+    An edge is a location where there is a sudden change (discontinuity) in image intensity.
+</div>
+
+<div class="keypoint">
+    Most shape and object information in an image is contained within its edges.
+</div>
+
+<div class="memory">
+    🧠 Memory Trick:
+    <br><br>
+    Edge = Rapid Intensity Change
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">2. Goal of Edge Detection</h2>
+
+
+<div class="definition">
+    Convert an image from a 2D pixel array into a collection of meaningful curves, contours, or line segments.
+</div>
+
+<div class="keypoint">
+    Main Idea: Detect strong gradients and post-process them into edges.
+</div>
+
+<div class="exam">
+    Exam Keyword:
+    <br>
+    Intensity Discontinuity
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">3. Derivatives and Edges</h2>
+
+
+<div class="definition">
+    Edges occur where image intensity changes rapidly. Derivatives measure the rate of change.
+</div>
+
+<div class="keypoint">
+    Large derivative values indicate possible edge locations.
+</div>
+
+<div class="memory">
+    🧠 Remember:
+    <br>
+    High Derivative = Strong Edge
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">4. Partial Derivatives</h2>
+
+
+<div class="definition">
+    Images have derivatives in both horizontal (x) and vertical (y) directions.
+</div>
+
+<div class="keypoint">
+    Finite differences are used to approximate derivatives in digital images.
+</div>
+
+<div class="exam">
+    Important:
+    <br>
+    Derivatives can be implemented using convolution filters.
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">5. Image Gradient</h2>
+
+
+<div class="definition">
+    The gradient combines horizontal and vertical derivatives.
+</div>
+
+<ul>
+    <li>Gradient Magnitude → Edge Strength</li>
+    <li>Gradient Direction → Direction of maximum intensity increase</li>
+</ul>
+
+<div class="keypoint">
+    Strong edges produce large gradient magnitudes.
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">6. Effects of Noise</h2>
+
+
+<div class="definition">
+    Noise creates false intensity changes that can be mistaken for edges.
+</div>
+
+<div class="keypoint">
+    Gradient operators respond strongly to noise.
+</div>
+
+<div class="exam">
+    Solution:
+    <br>
+    Smooth the image before detecting edges.
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">7. Derivative of Gaussian</h2>
+
+
+<div class="definition">
+    Combine smoothing and differentiation into a single operation.
+</div>
+
+<div class="keypoint">
+    Because convolution is associative, smoothing and derivative operations can be merged.
+</div>
+
+<div class="memory">
+    🧠 Benefit:
+    <br>
+    Less computation, less noise sensitivity.
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">8. First-Order Gradient Filters</h2>
+
+
+<div class="definition">
+    First derivatives produce large responses along edge regions.
+</div>
+
+<div class="keypoint">
+    Edge responses often appear as thick ridges rather than thin lines.
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">9. Laplacian of Gaussian (LoG)</h2>
+
+
+<div class="definition">
+    Uses the second derivative of the Gaussian function.
+</div>
+
+<div class="keypoint">
+    Edges are detected at zero-crossings of the filter response.
+</div>
+
+<div class="exam">
+    Also Known As:
+    <br>
+    Marr-Hildreth Edge Detector
+</div>
+
+<div class="memory">
+    🧠 Remember:
+    <br>
+    LoG → Zero Crossing Detection
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">10. Difference of Gaussians (DoG)</h2>
+
+
+<div class="definition">
+    Approximation of LoG using two Gaussian blurred images.
+</div>
+
+<div class="example">
+    DoG = Gaussian(σ₁) − Gaussian(σ₂)
+</div>
+
+<div class="keypoint">
+    Faster than computing the full LoG filter.
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">11. Effect of Sigma (σ)</h2>
+
+
+<table>
+    <tr>
+        <th>σ Value</th>
+        <th>Result</th>
+    </tr>
+
+    <tr>
+        <td>Small σ</td>
+        <td>Detects fine details and noise</td>
+    </tr>
+
+    <tr>
+        <td>Large σ</td>
+        <td>Detects only major edges</td>
+    </tr>
+</table>
+
+<div class="memory">
+    🧠 Sigma Rule:
+    <br>
+    Larger σ → More smoothing → Fewer edges
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">12. Finite Difference Filters</h2>
+
+
+<div class="definition">
+    Approximate image gradients using small convolution masks.
+</div>
+
+<div class="keypoint">
+    Common edge operators are based on finite differences.
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">13. Mask Properties</h2>
+
+
+<table>
+    <tr>
+        <th>Smoothing Masks</th>
+        <th>Derivative Masks</th>
+    </tr>
+
+    <tr>
+        <td>Positive values</td>
+        <td>Positive and negative values</td>
+    </tr>
+
+    <tr>
+        <td>Weights sum to 1</td>
+        <td>Weights sum to 0</td>
+    </tr>
+
+    <tr>
+        <td>Preserve constant regions</td>
+        <td>No response in constant regions</td>
+    </tr>
+</table>
+
+<div class="exam">
+    Exam Answer:
+    <br>
+    Derivative Mask Sum = 0
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">14. Designing an Edge Detector</h2>
+
+
+<div class="definition">
+    An optimal edge detector should:
+</div>
+
+<ul>
+    <li>Good Detection</li>
+    <li>Good Localization</li>
+    <li>Single Response per Edge</li>
+</ul>
+
+<div class="memory">
+    🧠 Remember:
+    <br>
+    Detect, Locate, Respond Once
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">15. Thresholding</h2>
+
+
+<div class="definition">
+    Separate edge pixels from non-edge pixels using a threshold value.
+</div>
+
+<div class="example">
+    Pixel ≥ t → 1
+    <br>
+    Pixel &lt; t → 0
+</div>
+
+<div class="keypoint">
+    Threshold selection strongly affects edge quality.
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">16. Choosing a Threshold</h2>
+
+
+<div class="definition">
+    Different threshold values produce different edge maps.
+</div>
+
+<table>
+    <tr>
+        <th>Threshold</th>
+        <th>Effect</th>
+    </tr>
+
+    <tr>
+        <td>Low</td>
+        <td>More edges, more noise</td>
+    </tr>
+
+    <tr>
+        <td>High</td>
+        <td>Less noise, possible missing edges</td>
+    </tr>
+</table>
+
+<div class="exam">
+    Exam Answer:
+    <br>
+    High threshold may miss real edges.
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">17. Canny Edge Detector</h2>
+
+
+<div class="definition">
+    The most widely used edge detector because it is stable and consistent.
+</div>
+
+<div class="exam">
+    Three Main Steps:
+    <ol>
+        <li>Gaussian Smoothing + Gradient Computation</li>
+        <li>Non-Maximum Suppression</li>
+        <li>Hysteresis Thresholding & Edge Linking</li>
+    </ol>
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">18. Step 1: Gaussian Filtering</h2>
+
+
+<div class="definition">
+    Smooth image and compute gradient magnitude and orientation.
+</div>
+
+<div class="keypoint">
+    Derivative of Gaussian filters can perform both operations together.
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">19. Step 2: Non-Maximum Suppression</h2>
+
+
+<div class="definition">
+    Removes thick edge responses by keeping only local maxima.
+</div>
+
+<div class="keypoint">
+    Produces thin, one-pixel-wide edges.
+</div>
+
+<div class="memory">
+    🧠 Goal:
+    <br>
+    Thick Ridge → Thin Edge
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">20. Step 3: Hysteresis Thresholding</h2>
+
+
+<div class="definition">
+    Uses two thresholds instead of one.
+</div>
+
+<table>
+    <tr>
+        <th>Threshold</th>
+        <th>Meaning</th>
+    </tr>
+
+    <tr>
+        <td>High Threshold</td>
+        <td>Strong edges</td>
+    </tr>
+
+    <tr>
+        <td>Low Threshold</td>
+        <td>Weak edges</td>
+    </tr>
+</table>
+
+<div class="keypoint">
+    Weak edges connected to strong edges are preserved.
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">21. Edge Linking</h2>
+
+
+<div class="definition">
+    Connect weak edges to strong edges using 8-neighbourhood searching.
+</div>
+
+<div class="keypoint">
+    Noise responses are usually isolated and therefore removed.
+</div>
+
+<div class="memory">
+    🧠 Remember:
+    <br>
+    Strong Edges Guide Weak Edges
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">22. Effect of Sigma in Canny</h2>
+
+
+<table>
+    <tr>
+        <th>σ</th>
+        <th>Result</th>
+    </tr>
+
+    <tr>
+        <td>Small</td>
+        <td>Many fine edges</td>
+    </tr>
+
+    <tr>
+        <td>Large</td>
+        <td>Only major edges</td>
+    </tr>
+</table>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">23. Knowing True Edges</h2>
+
+
+<div class="definition">
+    Not all detected edges correspond to meaningful object boundaries.
+</div>
+
+<div class="keypoint">
+    Human perception is often used as ground truth for evaluating edge detectors.
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">24. Human Segmentation vs Edge Detection</h2>
+
+
+<div class="definition">
+    Human-labelled boundaries are compared against detector outputs.
+</div>
+
+<div class="exam">
+    Evaluation Metrics:
+    <br>
+    Precision = Correct detected edges / Total detected edges
+    <br>
+    Recall = Correct detected edges / Total true edges
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">25. Modern Edge Detection</h2>
+
+
+<div class="definition">
+    Machine learning and deep learning can learn edge patterns directly from data.
+</div>
+
+<ul>
+    <li>Structured Forest Edge Detection</li>
+    <li>Holistically-Nested Edge Detection (HED)</li>
+    <li>DeepContour</li>
+</ul>
+
+<div class="keypoint">
+    Modern methods outperform traditional hand-crafted edge filters.
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">26. Final Exam Summary</h2>
+
+
+<div class="summary">
+
+    <h3>Most Important Points</h3>
+
+    <ul>
+
+        <li><span class="highlight">Edge:</span> Sudden intensity change.</li>
+
+        <li><span class="highlight">Gradient:</span> Measures intensity change.</li>
+
+        <li><span class="highlight">Gradient Magnitude:</span> Edge strength.</li>
+
+        <li><span class="highlight">Noise:</span> Causes false edge responses.</li>
+
+        <li><span class="highlight">Derivative of Gaussian:</span> Smooth + Differentiate.</li>
+
+        <li><span class="highlight">LoG:</span> Detect edges using zero crossings.</li>
+
+        <li><span class="highlight">DoG:</span> Fast approximation of LoG.</li>
+
+        <li><span class="highlight">Sigma:</span> Controls smoothing scale.</li>
+
+        <li><span class="highlight">Thresholding:</span> Separate edges from background.</li>
+
+        <li><span class="highlight">Canny:</span> Gaussian → Non-Max Suppression → Hysteresis.</li>
+
+        <li><span class="highlight">Non-Maximum Suppression:</span> Produces thin edges.</li>
+
+        <li><span class="highlight">Hysteresis:</span> Uses low and high thresholds.</li>
+
+        <li><span class="highlight">Edge Linking:</span> Strong edges guide weak edges.</li>
+
+        <li><span class="highlight">Precision & Recall:</span> Evaluate edge quality.</li>
+
+    </ul>
+
+</div>
+
+
+</div>
+
+<div class="lecture-nav" id="lecture-nav"></div>
+
+<script type="text/javascript" src="notes.js"></script>
+
+</div>
+</body>
+</html>

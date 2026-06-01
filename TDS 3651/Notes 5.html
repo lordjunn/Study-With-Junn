@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CDS6334 - Lecture 5 Notes</title>
+
+<link rel="stylesheet" href="notes.css">
+</head>
+
+<body>
+
+<div class="container">
+
+<header>
+    <a href="../TDS 3651.html"><h1>CDS 6334 - Visual Image Processing</h1></a>
+    <h3>Lecture 5: Binary Image Processing</h3>
+</header>
+
+<div id="header-config"
+    data-prev="4"
+    data-next="6"
+    data-name="Notes ">
+</div>
+
+<div class="card">
+    <h2 class="section-title">1. What are Binary Images?</h2>
+
+
+<div class="definition">
+    A binary image contains only two pixel values: foreground and background.
+</div>
+
+<div class="keypoint">
+    Binary images highlight regions of interest (ROI) while ignoring unnecessary details.
+</div>
+
+<div class="memory">
+    🧠 Remember:
+    <br><br>
+    Binary = Only 0 and 1
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">2. Binary Image Processing Tasks</h2>
+
+
+<ol>
+    <li>Thresholding</li>
+    <li>Morphological Operations</li>
+    <li>Connected Components</li>
+    <li>Region Description</li>
+</ol>
+
+<div class="exam">
+    Processing Pipeline:
+    <br>
+    Threshold → Clean → Label → Describe
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">3. Thresholding</h2>
+
+
+<div class="definition">
+    Thresholding converts a grayscale image into a binary image.
+</div>
+
+<div class="keypoint">
+    Pixels above a threshold become foreground while the rest become background.
+</div>
+
+<div class="memory">
+    🧠 Think:
+    <br>
+    Grayscale → Binary
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">4. Uses of Thresholding</h2>
+
+
+<table>
+    <tr>
+        <th>Application</th>
+        <th>Foreground Pixels</th>
+    </tr>
+
+    <tr>
+        <td>Edge Detection</td>
+        <td>Strong gradients</td>
+    </tr>
+
+    <tr>
+        <td>Background Subtraction</td>
+        <td>Moving objects</td>
+    </tr>
+
+    <tr>
+        <td>Intensity Detection</td>
+        <td>Specific brightness levels</td>
+    </tr>
+
+    <tr>
+        <td>Colour Detection</td>
+        <td>Specific colour ranges</td>
+    </tr>
+</table>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">5. Histograms and Thresholding</h2>
+
+
+<div class="definition">
+    Histograms help determine suitable threshold values.
+</div>
+
+<div class="keypoint">
+    Thresholding works best when object and background form distinct histogram peaks.
+</div>
+
+<div class="memory">
+    🧠 Easy Case:
+    <br>
+    Two separate peaks = Easy threshold selection
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">6. Thresholding Challenges</h2>
+
+
+<div class="definition">
+    Overlapping intensity distributions make threshold selection difficult.
+</div>
+
+<div class="keypoint">
+    Noise often creates incorrect foreground pixels.
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">7. Morphological Operations</h2>
+
+
+<div class="definition">
+    Morphological operations modify the shape of foreground regions using a structuring element.
+</div>
+
+<div class="keypoint">
+    Commonly used to clean noisy binary images.
+</div>
+
+<div class="exam">
+    Main Operators:
+    <br>
+    Dilation and Erosion
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">8. Structuring Elements</h2>
+
+
+<div class="definition">
+    A structuring element is a small mask used to scan the binary image.
+</div>
+
+<div class="keypoint">
+    Shape and size of the structuring element affect the result.
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">9. Dilation</h2>
+
+
+<div class="definition">
+    Dilation expands foreground regions.
+</div>
+
+<ul>
+    <li>Grows objects</li>
+    <li>Connects nearby regions</li>
+    <li>Fills small holes</li>
+</ul>
+
+<div class="memory">
+    🧠 Dilation = Grow
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">10. Properties of Dilation</h2>
+
+
+<div class="keypoint">
+    If a foreground pixel exists, neighbouring pixels may become foreground.
+</div>
+
+<div class="exam">
+    Result:
+    <br>
+    More 1's and thicker white regions.
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">11. Erosion</h2>
+
+
+<div class="definition">
+    Erosion shrinks foreground regions.
+</div>
+
+<ul>
+    <li>Removes noise</li>
+    <li>Breaks thin bridges</li>
+    <li>Trims object boundaries</li>
+</ul>
+
+<div class="memory">
+    🧠 Erosion = Shrink
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">12. Properties of Erosion</h2>
+
+
+<div class="keypoint">
+    A pixel remains foreground only if all required neighbours are foreground.
+</div>
+
+<div class="exam">
+    Result:
+    <br>
+    More 0's and thinner white regions.
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">13. Opening</h2>
+
+
+<div class="definition">
+    Opening performs erosion followed by dilation.
+</div>
+
+<div class="keypoint">
+    Removes small objects while preserving overall object shape.
+</div>
+
+<div class="memory">
+    🧠 Opening:
+    <br>
+    Erode → Dilate
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">14. Closing</h2>
+
+
+<div class="definition">
+    Closing performs dilation followed by erosion.
+</div>
+
+<div class="keypoint">
+    Fills holes and gaps while preserving overall object shape.
+</div>
+
+<div class="memory">
+    🧠 Closing:
+    <br>
+    Dilate → Erode
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">15. Morphology on Grayscale Images</h2>
+
+
+<table>
+    <tr>
+        <th>Operation</th>
+        <th>Rule</th>
+    </tr>
+
+    <tr>
+        <td>Dilation</td>
+        <td>Neighbourhood Maximum</td>
+    </tr>
+
+    <tr>
+        <td>Erosion</td>
+        <td>Neighbourhood Minimum</td>
+    </tr>
+</table>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">16. Connected Components</h2>
+
+
+<div class="definition">
+    Connected component analysis identifies separate connected foreground regions.
+</div>
+
+<div class="keypoint">
+    Each region receives a unique label.
+</div>
+
+<div class="exam">
+    Purpose:
+    <br>
+    Count and isolate objects.
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">17. Connectedness</h2>
+
+
+<table>
+    <tr>
+        <th>Type</th>
+        <th>Neighbours</th>
+    </tr>
+
+    <tr>
+        <td>4-Connected</td>
+        <td>Up, Down, Left, Right</td>
+    </tr>
+
+    <tr>
+        <td>8-Connected</td>
+        <td>Includes Diagonals</td>
+    </tr>
+</table>
+
+<div class="memory">
+    🧠 8-connected = More connections
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">18. Connected Component Labelling</h2>
+
+
+<ol>
+    <li>Find an unlabelled foreground pixel.</li>
+    <li>Assign a new label.</li>
+    <li>Find connected neighbours.</li>
+    <li>Repeat recursively.</li>
+    <li>Continue until all pixels are labelled.</li>
+</ol>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">19. Region Properties</h2>
+
+
+<div class="definition">
+    Features extracted from labelled blobs.
+</div>
+
+<ul>
+    <li>Area</li>
+    <li>Centroid</li>
+    <li>Bounding Box</li>
+    <li>Circularity</li>
+</ul>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">20. Circularity</h2>
+
+
+<div class="definition">
+    Measures how close a region is to a perfect circle.
+</div>
+
+<div class="exam">
+    Formula:
+    <br>
+    C = (4π × Area) / Perimeter²
+</div>
+
+<div class="keypoint">
+    Circularity ranges from 0 to 1.
+</div>
+
+<div class="memory">
+    🧠 Closer to 1 = More Circular
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">21. Applications</h2>
+
+
+<ul>
+    <li>Medical Image Segmentation</li>
+    <li>Background Subtraction</li>
+    <li>Object Counting</li>
+    <li>Blob Tracking</li>
+    <li>Industrial Inspection</li>
+</ul>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">22. Advantages and Limitations</h2>
+
+
+<table>
+    <tr>
+        <th>Advantages</th>
+        <th>Limitations</th>
+    </tr>
+
+    <tr>
+        <td>Fast processing</td>
+        <td>Noise sensitive</td>
+    </tr>
+
+    <tr>
+        <td>Easy storage</td>
+        <td>Difficult clean segmentation</td>
+    </tr>
+
+    <tr>
+        <td>Simple algorithms</td>
+        <td>Loss of information</td>
+    </tr>
+</table>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">23. Final Exam Summary</h2>
+
+
+<div class="summary">
+
+    <h3>Most Important Points</h3>
+
+    <ul>
+
+        <li><span class="highlight">Binary Image:</span> Contains only foreground and background.</li>
+
+        <li><span class="highlight">Thresholding:</span> Converts grayscale to binary.</li>
+
+        <li><span class="highlight">Histogram:</span> Helps choose thresholds.</li>
+
+        <li><span class="highlight">Dilation:</span> Expands objects.</li>
+
+        <li><span class="highlight">Erosion:</span> Shrinks objects.</li>
+
+        <li><span class="highlight">Opening:</span> Erosion then dilation.</li>
+
+        <li><span class="highlight">Closing:</span> Dilation then erosion.</li>
+
+        <li><span class="highlight">Structuring Element:</span> Mask used in morphology.</li>
+
+        <li><span class="highlight">Connected Components:</span> Labels separate blobs.</li>
+
+        <li><span class="highlight">4-connected:</span> No diagonals.</li>
+
+        <li><span class="highlight">8-connected:</span> Includes diagonals.</li>
+
+        <li><span class="highlight">Area:</span> Number of pixels.</li>
+
+        <li><span class="highlight">Centroid:</span> Average position.</li>
+
+        <li><span class="highlight">Bounding Box:</span> Object boundary.</li>
+
+        <li><span class="highlight">Circularity:</span> Measures roundness.</li>
+
+        <li><span class="highlight">Circularity Formula:</span> (4π × Area) / Perimeter².</li>
+
+    </ul>
+
+</div>
+
+
+</div>
+
+<div class="lecture-nav" id="lecture-nav"></div>
+
+<script type="text/javascript" src="notes.js"></script>
+
+
+</div>
+</body>
+</html>

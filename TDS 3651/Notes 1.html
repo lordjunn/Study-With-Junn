@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CDS6334 - Lecture 1 Notes</title>
+
+<link rel="stylesheet" href="notes.css">
+</head>
+
+<body>
+
+<div class="container">
+
+<header>
+    <a href="../TDS 3651.html"><h1>CDS 6334 - Visual Image Processing</h1></a>
+    <h3>Lecture 1: Introduction to Images</h3>
+</header>
+
+<div id="header-config"
+    data-prev="x"
+    data-next="2"
+    data-name="Notes ">
+</div>
+
+<div class="card">
+    <h2 class="section-title">1. What is Computer Vision?</h2>
+
+
+<div class="definition">
+    Computer Vision is a branch of Artificial Intelligence that enables
+    computers to detect, process, analyze and understand visual information
+    from images and videos.
+</div>
+
+<div class="memory">
+    🧠 Remember:
+    <br><br>
+    Human → Understands visual scenes naturally
+    <br>
+    Computer Vision → Tries to teach machines to do the same
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">2. Goal of Computer Vision</h2>
+
+
+<div class="keypoint">
+    Convert image/video data into meaningful information for decision making.
+</div>
+
+<ul>
+    <li>Recognize objects</li>
+    <li>Recognize people</li>
+    <li>Understand scenes</li>
+    <li>Interpret activities</li>
+</ul>
+
+<div class="exam">
+    Exam Keyword:
+    <br>
+    Image/Video → Information
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">3. Human Vision vs Computer Vision</h2>
+
+
+<table>
+    <tr>
+        <th>Human Vision</th>
+        <th>Computer Vision</th>
+    </tr>
+    <tr>
+        <td>Naturally interprets scenes</td>
+        <td>Requires algorithms and data</td>
+    </tr>
+    <tr>
+        <td>Handles ambiguity well</td>
+        <td>Can be fooled easily</td>
+    </tr>
+    <tr>
+        <td>Fast understanding</td>
+        <td>Needs computation</td>
+    </tr>
+</table>
+
+<div class="memory">
+    🧠 Human vision remains more robust than machines in many situations.
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">4. Fields Related to Images and Videos</h2>
+
+
+<table>
+    <tr>
+        <th>Field</th>
+        <th>Main Purpose</th>
+    </tr>
+
+    <tr>
+        <td>Computer Graphics</td>
+        <td>Create images</td>
+    </tr>
+
+    <tr>
+        <td>Image Processing</td>
+        <td>Manipulate images</td>
+    </tr>
+
+    <tr>
+        <td>Computer Vision</td>
+        <td>Understand images</td>
+    </tr>
+</table>
+
+<div class="memory">
+    🧠 Shortcut:
+    <br><br>
+    Graphics → Create
+    <br>
+    Processing → Improve
+    <br>
+    Vision → Understand
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">5. Three Main Areas of Computer Vision</h2>
+
+
+<ol>
+    <li>Measurement</li>
+    <li>Perception and Interpretation</li>
+    <li>Search and Organization</li>
+</ol>
+
+<div class="definition">
+    Measurement:
+    Recover information about the real 3D world from images.
+</div>
+
+<div class="definition">
+    Perception & Interpretation:
+    Recognize objects, people, activities and scenes.
+</div>
+
+<div class="definition">
+    Search & Organization:
+    Find and organize visual data efficiently.
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">6. Measurement</h2>
+
+
+<div class="example">
+    Reconstructing 3D models from multiple images.
+</div>
+
+<div class="keypoint">
+    Computer vision estimates properties of the real world from visual data.
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">7. Perception and Interpretation</h2>
+
+
+<div class="example">
+    Detecting faces, recognizing objects and understanding scenes.
+</div>
+
+<div class="memory">
+    🧠 Think:
+    <br>
+    "What is in the image?"
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">8. Search and Organization</h2>
+
+
+<div class="example">
+    Google Image Search and image retrieval systems.
+</div>
+
+<div class="keypoint">
+    Visual data can be indexed, searched and categorized automatically.
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">9. Applications of Computer Vision</h2>
+
+
+<ul>
+    <li>Autonomous vehicles</li>
+    <li>Face recognition</li>
+    <li>Biometrics</li>
+    <li>Optical Character Recognition (OCR)</li>
+    <li>Medical imaging</li>
+    <li>Industrial inspection</li>
+    <li>Retail automation</li>
+    <li>Satellite image analysis</li>
+    <li>Space exploration</li>
+    <li>Gaming and interaction systems</li>
+</ul>
+
+<div class="exam">
+    Exam Tip:
+    <br>
+    Be able to explain at least 3 real-world applications.
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">10. Biometrics and Recognition</h2>
+
+
+<table>
+    <tr>
+        <th>Technology</th>
+        <th>Purpose</th>
+    </tr>
+    <tr>
+        <td>Face Recognition</td>
+        <td>Identity verification</td>
+    </tr>
+    <tr>
+        <td>Fingerprint Recognition</td>
+        <td>User authentication</td>
+    </tr>
+    <tr>
+        <td>Iris Recognition</td>
+        <td>High-security identification</td>
+    </tr>
+</table>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">11. Optical Character Recognition (OCR)</h2>
+
+
+<div class="definition">
+    OCR converts images containing text into machine-readable text.
+</div>
+
+<div class="example">
+    License plate recognition,
+    digit recognition,
+    scanned document conversion.
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">12. Why Computer Vision is Difficult</h2>
+
+
+<div class="keypoint">
+    Computer Vision is an Ill-Posed Problem.
+</div>
+
+<div class="definition">
+    The real world is 3D, but images are only 2D projections.
+</div>
+
+<div class="memory">
+    🧠 Remember:
+    <br><br>
+    Many different real-world situations can produce the same image.
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">13. Digital Images</h2>
+
+
+<div class="definition">
+    A digital image is composed of pixels arranged in rows and columns.
+</div>
+
+<div class="memory">
+    🧠 Pixel = Smallest unit of a digital image.
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">14. Image Processing Tasks</h2>
+
+
+<ul>
+    <li>Pixel Manipulation</li>
+    <li>Filtering</li>
+    <li>Restoration</li>
+    <li>Enhancement</li>
+    <li>Edge Detection</li>
+    <li>Segmentation</li>
+</ul>
+
+<div class="exam">
+    These are core low-level image processing operations.
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">15. Colour Image Processing</h2>
+
+
+<ul>
+    <li>Colour Spaces</li>
+    <li>Colour Manipulation</li>
+    <li>Colour Analysis</li>
+</ul>
+
+<div class="memory">
+    RGB is the most common colour representation.
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">16. Higher-Level Vision Tasks</h2>
+
+
+<ol>
+    <li>Representation</li>
+    <li>Description</li>
+    <li>Recognition</li>
+    <li>Interpretation</li>
+    <li>Semantic Understanding</li>
+</ol>
+
+<div class="example">
+    Modern deep learning systems perform object detection and scene understanding.
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">17. Emerging Applications</h2>
+
+
+<ul>
+    <li>Visual Captioning</li>
+    <li>Visual Question Answering (VQA)</li>
+    <li>Egocentric Vision</li>
+    <li>Fashion Recommendation Systems</li>
+    <li>Autonomous Systems</li>
+</ul>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">18. Final Exam Summary</h2>
+
+
+<div class="summary">
+
+    <h3>Most Important Points</h3>
+
+    <ul>
+        <li><span class="highlight">Computer Vision:</span> Image/Video → Information</li>
+
+        <li><span class="highlight">Image Processing:</span> Image → Image</li>
+
+        <li><span class="highlight">Graphics:</span> Create images</li>
+
+        <li><span class="highlight">Three Areas:</span> Measurement, Perception, Search</li>
+
+        <li><span class="highlight">Challenge:</span> 3D world projected to 2D images</li>
+
+        <li><span class="highlight">OCR:</span> Image text → Digital text</li>
+
+        <li><span class="highlight">Applications:</span> Face recognition, medical imaging, autonomous vehicles</li>
+
+        <li><span class="highlight">Digital Image:</span> Collection of pixels</li>
+
+    </ul>
+
+</div>
+
+
+</div>
+
+</div>
+
+<div class="lecture-nav" id="lecture-nav"></div>
+
+<script type="text/javascript" src="notes.js"></script>
+
+</body>
+</html>

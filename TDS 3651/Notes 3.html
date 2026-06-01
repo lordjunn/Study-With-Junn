@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CDS6334 - Lecture 3 Notes</title>
+
+<link rel="stylesheet" href="notes.css">
+</head>
+
+<body>
+
+<div class="container">
+
+<header>
+    <a href="../TDS 3651.html"><h1>CDS 6334 - Visual Image Processing</h1></a>
+    <h3>Lecture 3: Image Filtering</h3>
+</header>
+
+<div id="header-config"
+    data-prev="2"
+    data-next="4"
+    data-name="Notes ">
+</div>
+
+<div class="card">
+    <h2 class="section-title">1. What is Image Filtering?</h2>
+
+
+<div class="definition">
+    Image Filtering is a neighbourhood-based processing technique where a pixel is modified using information from surrounding pixels.
+</div>
+
+<div class="keypoint">
+    Unlike point-based processing, filtering uses neighbouring pixels to determine the new value.
+</div>
+
+<div class="memory">
+    🧠 Memory Trick:
+    <br><br>
+    Point Processing = Pixel → Pixel
+    <br>
+    Filtering = Neighbourhood → Pixel
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">2. Why Do We Use Filtering?</h2>
+
+
+<ul>
+    <li>Reduce noise</li>
+    <li>Smooth images</li>
+    <li>Sharpen details</li>
+    <li>Enhance image quality</li>
+    <li>Prepare images for later processing</li>
+</ul>
+
+<div class="exam">
+    Exam Keyword:
+    <br>
+    Neighbourhood Processing
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">3. Common Types of Noise</h2>
+
+
+<table>
+    <tr>
+        <th>Noise Type</th>
+        <th>Description</th>
+    </tr>
+
+    <tr>
+        <td>Salt & Pepper Noise</td>
+        <td>Random black and white pixels</td>
+    </tr>
+
+    <tr>
+        <td>Impulse Noise</td>
+        <td>Random bright pixels</td>
+    </tr>
+
+    <tr>
+        <td>Gaussian Noise</td>
+        <td>Intensity variations following a normal distribution</td>
+    </tr>
+</table>
+
+<div class="memory">
+    🧠 Remember:
+    <br>
+    Salt & Pepper = Isolated extreme pixels
+    <br>
+    Gaussian = Continuous random variation
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">4. Neighbourhood Processing</h2>
+
+
+<div class="definition">
+    Modify a pixel using surrounding pixels within a small window (mask/filter).
+</div>
+
+<div class="example">
+    Example:
+    <br>
+    A 3×3 filter uses 9 pixels to compute one output pixel.
+</div>
+
+<div class="keypoint">
+    The filter slides across the entire image.
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">5. Moving Average Filter</h2>
+
+
+<div class="definition">
+    Replace each pixel with the average of neighbouring pixels.
+</div>
+
+<div class="example">
+    Example Kernel:
+    <br><br>
+    [1 1 1]
+    <br>
+    [1 1 1] ÷ 9
+    <br>
+    [1 1 1]
+</div>
+
+<div class="keypoint">
+    Produces smoothing and noise reduction.
+</div>
+
+<div class="exam">
+    Exam Keyword:
+    <br>
+    Averaging Filter / Box Filter
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">6. Weighted Moving Average</h2>
+
+
+<div class="definition">
+    Nearby pixels contribute more than distant pixels.
+</div>
+
+<div class="example">
+    Example:
+    <br>
+    [1 4 6 4 1] ÷ 16
+</div>
+
+<div class="memory">
+    🧠 Remember:
+    <br>
+    Not all neighbours are equally important.
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">7. Correlation Filtering</h2>
+
+
+<div class="definition">
+    Apply the filter directly on the image without changing the kernel orientation.
+</div>
+
+<div class="keypoint">
+    Each filter value acts as a weight for its corresponding neighbour.
+</div>
+
+<div class="memory">
+    🧠 Shortcut:
+    <br>
+    Correlation = Direct Application
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">8. Boundary Problem</h2>
+
+
+<div class="definition">
+    Filters extend beyond image borders near edges.
+</div>
+
+<table>
+    <tr>
+        <th>Padding Method</th>
+        <th>Description</th>
+    </tr>
+
+    <tr>
+        <td>Zero Padding</td>
+        <td>Fill outside area with 0</td>
+    </tr>
+
+    <tr>
+        <td>Wrap Around</td>
+        <td>Use pixels from opposite side</td>
+    </tr>
+
+    <tr>
+        <td>Copy Edge</td>
+        <td>Repeat border pixels</td>
+    </tr>
+</table>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">9. Gaussian Filter</h2>
+
+
+<div class="definition">
+    A weighted smoothing filter where centre pixels receive larger weights.
+</div>
+
+<div class="keypoint">
+    Produces smoother results while preserving more details than a simple average filter.
+</div>
+
+<div class="exam">
+    Important Parameter:
+    <br>
+    σ (Sigma)
+</div>
+
+<div class="memory">
+    🧠 Sigma Rule:
+    <br>
+    Larger σ → More Blur
+    <br>
+    Smaller σ → Less Blur
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">10. Properties of Smoothing Filters</h2>
+
+
+<ul>
+    <li>Filter values are positive</li>
+    <li>Kernel weights sum to 1</li>
+    <li>Reduce high-frequency components</li>
+    <li>Perform low-pass filtering</li>
+</ul>
+
+<div class="keypoint">
+    Smoothing reduces noise but may remove fine details.
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">11. Convolution</h2>
+
+
+<div class="definition">
+    Convolution flips the kernel horizontally and vertically before filtering.
+</div>
+
+<div class="example">
+    Steps:
+    <ol>
+        <li>Flip kernel</li>
+        <li>Apply correlation process</li>
+        <li>Store result</li>
+    </ol>
+</div>
+
+<div class="memory">
+    🧠 Memory Trick:
+    <br>
+    Convolution = Flip + Correlation
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">12. Correlation vs Convolution</h2>
+
+
+<table>
+    <tr>
+        <th>Correlation</th>
+        <th>Convolution</th>
+    </tr>
+
+    <tr>
+        <td>Kernel not flipped</td>
+        <td>Kernel flipped</td>
+    </tr>
+
+    <tr>
+        <td>Direct filtering</td>
+        <td>Flip then filter</td>
+    </tr>
+
+    <tr>
+        <td>Easier to understand</td>
+        <td>Important in signal processing</td>
+    </tr>
+</table>
+
+<div class="exam">
+    Special Rule:
+    <br>
+    Symmetric Kernel ⇒ Correlation = Convolution
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">13. Filter Separability</h2>
+
+
+<div class="definition">
+    Some filters can be split into horizontal and vertical operations.
+</div>
+
+<div class="keypoint">
+    Reduces computational cost significantly.
+</div>
+
+<div class="memory">
+    🧠 Exam Point:
+    <br>
+    Gaussian Filter is separable.
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">14. Image Sharpening</h2>
+
+
+<div class="definition">
+    Sharpening enhances edges and local intensity differences.
+</div>
+
+<div class="keypoint">
+    Opposite goal of smoothing.
+</div>
+
+<div class="memory">
+    🧠 Remember:
+    <br>
+    Smoothing removes details.
+    <br>
+    Sharpening restores details.
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">15. Unsharp Masking</h2>
+
+
+<div class="definition">
+    One of the most common sharpening techniques.
+</div>
+
+<table>
+    <tr>
+        <th>Step</th>
+        <th>Formula</th>
+    </tr>
+
+    <tr>
+        <td>Extract Details</td>
+        <td>Original − Smoothed</td>
+    </tr>
+
+    <tr>
+        <td>Sharpen Image</td>
+        <td>Original + Details</td>
+    </tr>
+</table>
+
+<div class="exam">
+    Exam Formula:
+    <br>
+    Details = Original − Smoothed
+    <br>
+    Sharpened = Original + Details
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">16. Median Filter</h2>
+
+
+<div class="definition">
+    Replaces a pixel with the median value of neighbouring pixels.
+</div>
+
+<div class="keypoint">
+    Removes outliers without introducing new pixel values.
+</div>
+
+<div class="exam">
+    Best For:
+    <br>
+    Salt & Pepper Noise
+</div>
+
+<div class="memory">
+    🧠 Median ignores extreme values naturally.
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">17. Multi-Stage Median Filter</h2>
+
+
+<div class="definition">
+    Combines multiple median filters from different neighbourhoods.
+</div>
+
+<div class="keypoint">
+    Preserves corners and important image structures better than a standard median filter.
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">18. Alpha-Trimmed Mean Filter</h2>
+
+
+<div class="definition">
+    Hybrid filter between averaging and median filtering.
+</div>
+
+<div class="example">
+    Procedure:
+    <ol>
+        <li>Sort neighbourhood values</li>
+        <li>Remove α/2 smallest values</li>
+        <li>Remove α/2 largest values</li>
+        <li>Average remaining values</li>
+    </ol>
+</div>
+
+<div class="keypoint">
+    Reduces effect of extreme outliers while still using averaging.
+</div>
+
+<div class="memory">
+    🧠 Think:
+    <br>
+    Average + Median = Alpha-Trimmed Mean
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">19. Filter Comparison</h2>
+
+
+<table>
+    <tr>
+        <th>Filter</th>
+        <th>Strength</th>
+        <th>Weakness</th>
+    </tr>
+
+    <tr>
+        <td>Average Filter</td>
+        <td>Simple smoothing</td>
+        <td>Blurry output</td>
+    </tr>
+
+    <tr>
+        <td>Gaussian Filter</td>
+        <td>Better smoothing</td>
+        <td>Still causes blur</td>
+    </tr>
+
+    <tr>
+        <td>Median Filter</td>
+        <td>Excellent for impulse noise</td>
+        <td>May remove fine details</td>
+    </tr>
+
+    <tr>
+        <td>Alpha-Trimmed Mean</td>
+        <td>Balances averaging and median</td>
+        <td>Requires parameter tuning</td>
+    </tr>
+</table>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">20. Final Exam Summary</h2>
+
+
+<div class="summary">
+
+    <h3>Most Important Points</h3>
+
+    <ul>
+        <li><span class="highlight">Filtering:</span> Uses neighbouring pixels.</li>
+
+        <li><span class="highlight">Moving Average:</span> Average of neighbours.</li>
+
+        <li><span class="highlight">Gaussian Filter:</span> Weighted smoothing using σ.</li>
+
+        <li><span class="highlight">Correlation:</span> Apply kernel directly.</li>
+
+        <li><span class="highlight">Convolution:</span> Flip kernel first.</li>
+
+        <li><span class="highlight">Special Rule:</span> Symmetric kernel → Correlation = Convolution.</li>
+
+        <li><span class="highlight">Separability:</span> Gaussian filter is separable.</li>
+
+        <li><span class="highlight">Sharpening:</span> Enhance edges and details.</li>
+
+        <li><span class="highlight">Unsharp Masking:</span> Original + (Original − Smoothed).</li>
+
+        <li><span class="highlight">Median Filter:</span> Best for Salt & Pepper Noise.</li>
+
+        <li><span class="highlight">Alpha-Trimmed Mean:</span> Remove extremes then average.</li>
+
+    </ul>
+
+</div>
+
+
+</div>
+
+<div class="lecture-nav" id="lecture-nav"></div>
+
+<script type="text/javascript" src="notes.js"></script>
+
+</body>
+</html>
+

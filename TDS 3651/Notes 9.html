@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CDS6334 - Lecture 9 Notes</title>
+
+<link rel="stylesheet" href="notes.css">
+</head>
+
+<body>
+
+<div class="container">
+
+<header>
+    <a href="../TDS 3651.html"><h1>CDS 6334 - Visual Image Processing</h1></a>
+    <h3>Lecture 9: Local Invariant Features</h3>
+</header>
+
+<div id="header-config"
+    data-prev="8"
+    data-next="x"
+    data-name="Notes ">
+</div>
+
+<div class="card">
+    <h2 class="section-title">1. Why Local Invariant Features?</h2>
+
+
+<div class="definition">
+    Local invariant features describe small image regions that remain recognizable under transformations.
+</div>
+
+<div class="keypoint">
+    Local features are more robust than global image representations.
+</div>
+
+<div class="memory">
+    🧠 Match small regions instead of entire images.
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">2. Motivation</h2>
+
+
+<div class="definition">
+    Image matching becomes difficult when images differ in scale, rotation, viewpoint or lighting.
+</div>
+
+<div class="keypoint">
+    Local features improve robustness against these changes.
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">3. General Matching Pipeline</h2>
+
+
+<ol>
+    <li>Detect keypoints</li>
+    <li>Define local regions</li>
+    <li>Extract descriptors</li>
+    <li>Match descriptors</li>
+</ol>
+
+<div class="memory">
+    🧠 Detect → Describe → Match
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">4. Main Components of Local Features</h2>
+
+
+<table>
+    <tr>
+        <th>Stage</th>
+        <th>Purpose</th>
+    </tr>
+
+    <tr>
+        <td>Detection</td>
+        <td>Find interest points</td>
+    </tr>
+
+    <tr>
+        <td>Description</td>
+        <td>Create feature vectors</td>
+    </tr>
+
+    <tr>
+        <td>Matching</td>
+        <td>Find correspondences</td>
+    </tr>
+</table>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">5. Requirement: Repeatability</h2>
+
+
+<div class="definition">
+    The same keypoints should be detected independently in different images.
+</div>
+
+<div class="keypoint">
+    Repeatable detectors are necessary for successful matching.
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">6. Requirement: Distinctiveness</h2>
+
+
+<div class="definition">
+    Each feature should have a unique description.
+</div>
+
+<div class="keypoint">
+    Distinctive descriptors reduce false matches.
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">7. Desired Properties</h2>
+
+
+<ul>
+    <li>Repeatability</li>
+    <li>Distinctiveness</li>
+    <li>Compactness</li>
+    <li>Efficiency</li>
+    <li>Locality</li>
+</ul>
+
+<div class="exam">
+    Exam Keyword:
+    <br>
+    Invariance
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">8. Invariance</h2>
+
+
+<div class="definition">
+    Features should remain stable under image transformations.
+</div>
+
+<div class="example">
+    Types:
+    <ul>
+        <li>Translation</li>
+        <li>Rotation</li>
+        <li>Scale</li>
+        <li>Illumination</li>
+    </ul>
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">9. Interest Point Detection</h2>
+
+
+<div class="definition">
+    Detection identifies important image locations suitable for matching.
+</div>
+
+<div class="keypoint">
+    Corners are among the most useful interest points.
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">10. Why Corners?</h2>
+
+
+<div class="definition">
+    Corners contain strong intensity changes in multiple directions.
+</div>
+
+<div class="keypoint">
+    Corners are repeatable and distinctive.
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">11. Good Corner Characteristics</h2>
+
+
+<ul>
+    <li>Easy to recognize locally</li>
+    <li>Large intensity change when shifted</li>
+    <li>Well localized</li>
+</ul>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">12. Harris Corner Detector</h2>
+
+
+<div class="definition">
+    Harris detects corners using image gradient information.
+</div>
+
+<div class="keypoint">
+    Uses a 2×2 matrix of image derivatives.
+</div>
+
+<div class="exam">
+    Important Method:
+    <br>
+    Harris Corner Detector
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">13. Harris Corner Principle</h2>
+
+
+<div class="definition">
+    A corner exists when intensity changes significantly in two directions.
+</div>
+
+<div class="memory">
+    🧠 Large changes in X and Y → Corner
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">14. Eigenvalues Interpretation</h2>
+
+
+<table>
+    <tr>
+        <th>Eigenvalues</th>
+        <th>Meaning</th>
+    </tr>
+
+    <tr>
+        <td>Both Small</td>
+        <td>Flat Region</td>
+    </tr>
+
+    <tr>
+        <td>One Large</td>
+        <td>Edge</td>
+    </tr>
+
+    <tr>
+        <td>Both Large</td>
+        <td>Corner</td>
+    </tr>
+</table>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">15. Harris Detection Steps</h2>
+
+
+<ol>
+    <li>Compute corner response</li>
+    <li>Apply threshold</li>
+    <li>Perform non-maximum suppression</li>
+</ol>
+
+<div class="memory">
+    🧠 Response → Threshold → Local Maxima
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">16. Harris Properties</h2>
+
+
+<table>
+    <tr>
+        <th>Property</th>
+        <th>Supported?</th>
+    </tr>
+
+    <tr>
+        <td>Translation Invariant</td>
+        <td>Yes</td>
+    </tr>
+
+    <tr>
+        <td>Rotation Invariant</td>
+        <td>Yes</td>
+    </tr>
+
+    <tr>
+        <td>Scale Invariant</td>
+        <td>No</td>
+    </tr>
+</table>
+
+<div class="exam">
+    Exam Favourite:
+    <br>
+    Harris is NOT scale invariant.
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">17. Need for Scale Invariance</h2>
+
+
+<div class="definition">
+    The same object may appear at different sizes in different images.
+</div>
+
+<div class="keypoint">
+    Interest points must be detectable across scales.
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">18. Scale-Space Concept</h2>
+
+
+<div class="definition">
+    Features are searched across multiple image scales.
+</div>
+
+<div class="memory">
+    🧠 Search in position AND scale.
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">19. Blob Detection</h2>
+
+
+<div class="definition">
+    Blob detectors locate regions with strong contrast differences.
+</div>
+
+<div class="example">
+    Method:
+    <br>
+    Laplacian of Gaussian (LoG)
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">20. Characteristic Scale</h2>
+
+
+<div class="definition">
+    The best scale is the one producing the maximum Laplacian response.
+</div>
+
+<div class="keypoint">
+    Interest points are local maxima in both position and scale.
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">21. Difference of Gaussians (DoG)</h2>
+
+
+<div class="definition">
+    DoG approximates the Laplacian of Gaussian efficiently.
+</div>
+
+<div class="memory">
+    🧠 DoG ≈ LoG but faster.
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">22. Feature Description</h2>
+
+
+<div class="definition">
+    A descriptor summarizes the appearance around a keypoint.
+</div>
+
+<div class="keypoint">
+    Descriptors are used for matching.
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">23. Raw Patch Descriptors</h2>
+
+
+<div class="definition">
+    A simple descriptor uses pixel intensities directly.
+</div>
+
+<div class="keypoint">
+    Highly sensitive to rotation and translation.
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">24. SIFT</h2>
+
+
+<div class="definition">
+    Scale Invariant Feature Transform (SIFT) is a robust local descriptor.
+</div>
+
+<div class="exam">
+    Important Method:
+    <br>
+    SIFT
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">25. SIFT Procedure</h2>
+
+
+<ol>
+    <li>Detect keypoints using DoG</li>
+    <li>Find dominant orientation</li>
+    <li>Rotate patch to canonical orientation</li>
+    <li>Normalize scale</li>
+    <li>Create descriptor</li>
+</ol>
+
+<div class="memory">
+    🧠 Detect → Orient → Normalize → Describe
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">26. Dominant Orientation</h2>
+
+
+<div class="definition">
+    SIFT computes a histogram of gradient directions.
+</div>
+
+<div class="keypoint">
+    Orientation with highest vote becomes the dominant direction.
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">27. SIFT Descriptor Structure</h2>
+
+
+<div class="example">
+    4 × 4 histogram grid
+    <br>
+    8 orientation bins per grid
+</div>
+
+<div class="keypoint">
+    Descriptor Length:
+    <br>
+    4 × 4 × 8 = 128 values
+</div>
+
+<div class="exam">
+    Exam Favourite:
+    <br>
+    SIFT Descriptor = 128 Dimensions
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">28. Properties of SIFT</h2>
+
+
+<ul>
+    <li>Scale invariant</li>
+    <li>Rotation invariant</li>
+    <li>Partially illumination invariant</li>
+    <li>Robust to viewpoint changes</li>
+</ul>
+
+<div class="memory">
+    🧠 One of the most successful feature descriptors.
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">29. Applications of Local Features</h2>
+
+
+<ul>
+    <li>Stereo matching</li>
+    <li>Motion tracking</li>
+    <li>Panorama stitching</li>
+    <li>Robot navigation</li>
+    <li>3D reconstruction</li>
+    <li>Object recognition</li>
+</ul>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">30. Final Exam Summary</h2>
+
+
+<div class="summary">
+
+    <h3>Most Important Points</h3>
+
+    <ul>
+
+        <li><span class="highlight">Local Features:</span> Detect, describe and match image regions.</li>
+
+        <li><span class="highlight">Requirements:</span> Repeatability and distinctiveness.</li>
+
+        <li><span class="highlight">Invariance:</span> Translation, rotation, scale and illumination.</li>
+
+        <li><span class="highlight">Corners:</span> Strong intensity changes in multiple directions.</li>
+
+        <li><span class="highlight">Harris:</span> Corner detector using image gradients.</li>
+
+        <li><span class="highlight">Harris Properties:</span> Translation & rotation invariant but NOT scale invariant.</li>
+
+        <li><span class="highlight">Scale-Space:</span> Detect features across multiple scales.</li>
+
+        <li><span class="highlight">LoG:</span> Blob detector.</li>
+
+        <li><span class="highlight">DoG:</span> Efficient approximation of LoG.</li>
+
+        <li><span class="highlight">SIFT:</span> Scale Invariant Feature Transform.</li>
+
+        <li><span class="highlight">Dominant Orientation:</span> Provides rotation invariance.</li>
+
+        <li><span class="highlight">SIFT Descriptor:</span> 4×4×8 = 128 dimensions.</li>
+
+        <li><span class="highlight">Applications:</span> Recognition, tracking, mosaicing, 3D reconstruction.</li>
+
+    </ul>
+
+</div>
+
+
+</div>
+
+<div class="lecture-nav" id="lecture-nav"></div>
+
+<script type="text/javascript" src="notes.js"></script>
+
+</div>
+</body>
+</html>
+

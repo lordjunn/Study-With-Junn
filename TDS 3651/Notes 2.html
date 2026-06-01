@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CDS6334 - Lecture 2 Notes</title>
+
+<link rel="stylesheet" href="notes.css">
+</head>
+
+<body>
+
+<div class="container">
+
+<header>
+    <a href="../TDS 3651.html"><h1>CDS 6334 - Visual Image Processing</h1></a>
+    <h3>Lecture 2: Manipulating Pixels</h3>
+</header>
+
+<div id="header-config"
+    data-prev="1"
+    data-next="3"
+    data-name="Notes ">
+</div>
+
+<div class="card">
+    <h2 class="section-title">1. Image Formation</h2>
+
+
+<div class="definition">
+    A digital camera captures light using a sensor array.
+    Each sensor cell converts incoming photons into electrical signals.
+</div>
+
+<div class="memory">
+    🧠 Remember:
+    <br><br>
+    Camera Sensor = Modern replacement for photographic film.
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">2. Digital Images</h2>
+
+
+<div class="definition">
+    Computers store images as discrete numerical values.
+    Continuous real-world images must be digitized before processing.
+</div>
+
+<div class="keypoint">
+    Digitization consists of:
+    <ul>
+        <li>Sampling</li>
+        <li>Quantization</li>
+    </ul>
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">3. Sampling and Quantization</h2>
+
+
+<table>
+    <tr>
+        <th>Process</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td>Sampling</td>
+        <td>Select points on a regular grid</td>
+    </tr>
+    <tr>
+        <td>Quantization</td>
+        <td>Convert values into discrete integers</td>
+    </tr>
+</table>
+
+<div class="exam">
+    Exam Keyword:
+    <br>
+    Continuous Image → Sampling → Quantization → Digital Image
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">4. Pixel Values</h2>
+
+
+<div class="definition">
+    A pixel is the smallest unit of a digital image.
+</div>
+
+<table>
+    <tr>
+        <th>Image Type</th>
+        <th>Representation</th>
+    </tr>
+    <tr>
+        <td>Grayscale</td>
+        <td>0 – 255</td>
+    </tr>
+    <tr>
+        <td>RGB</td>
+        <td>[R,G,B]</td>
+    </tr>
+    <tr>
+        <td>HSV</td>
+        <td>[H,S,V]</td>
+    </tr>
+    <tr>
+        <td>Lab</td>
+        <td>[L,a,b]</td>
+    </tr>
+</table>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">5. Images as Functions</h2>
+
+
+<div class="definition">
+    An image can be represented as a mathematical function:
+    f(x,y)
+</div>
+
+<div class="keypoint">
+    f(x,y) returns the pixel intensity at position (x,y).
+</div>
+
+<div class="memory">
+    🧠 Think:
+    <br>
+    Coordinates → Pixel Value
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">6. Image Representation in Memory</h2>
+
+
+<div class="definition">
+    Colour images are stored as 3D arrays (matrices).
+</div>
+
+<div class="example">
+    im[0,0,0] → Red value of top-left pixel
+    <br>
+    im[0,0] → Complete RGB value of top-left pixel
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">7. Image Bits and Storage</h2>
+
+
+<div class="definition">
+    Number of gray levels:
+    <br>
+    L = 2ᵏ
+</div>
+
+<div class="definition">
+    Storage requirement:
+    <br>
+    B = M × N × k
+</div>
+
+<div class="exam">
+    Frequently tested calculation.
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">8. Image Resolution</h2>
+
+
+<div class="keypoint">
+    Resolution determines the amount of visual detail.
+</div>
+
+<ul>
+    <li>Higher resolution → More detail</li>
+    <li>Higher resolution → Larger file size</li>
+    <li>Lower resolution → Information loss</li>
+</ul>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">9. Subsampling Problems</h2>
+
+
+<ul>
+    <li>Blurred images</li>
+    <li>Pixelation</li>
+    <li>Distortion</li>
+    <li>Loss of details</li>
+</ul>
+
+<div class="exam">
+    Checkerboard Effect:
+    <br>
+    Occurs when resolution becomes too low.
+</div>
+
+<div class="exam">
+    False Contouring:
+    <br>
+    Occurs when gray levels are insufficient.
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">10. Image Size Calculation</h2>
+
+
+<div class="example">
+    Example:
+    <br>
+    1024 × 768 RGB image
+    <br>
+    8 bits per channel
+</div>
+
+<div class="memory">
+    🧠 Formula:
+    <br><br>
+    Total Bits =
+    Width × Height × Channels × Bits per Channel
+</div>
+
+<div class="exam">
+    Common exam calculation question.
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">11. Pixel (Point)-Based Processing</h2>
+
+
+<div class="definition">
+    Every pixel is transformed independently using a transformation function T.
+</div>
+
+<div class="keypoint">
+    Input Pixel → T(r) → Output Pixel
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">12. Arithmetic Operations</h2>
+
+
+<table>
+    <tr>
+        <th>Operation</th>
+        <th>Purpose</th>
+    </tr>
+    <tr>
+        <td>Addition</td>
+        <td>Combine images</td>
+    </tr>
+    <tr>
+        <td>Weighted Blend</td>
+        <td>Create smooth mixtures</td>
+    </tr>
+    <tr>
+        <td>Subtraction</td>
+        <td>Detect changes</td>
+    </tr>
+    <tr>
+        <td>Absolute Difference</td>
+        <td>Highlight changes clearly</td>
+    </tr>
+</table>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">13. Linear Contrast Stretching</h2>
+
+
+<div class="definition">
+    Expands a narrow intensity range into a wider range.
+</div>
+
+<div class="example">
+    Original:
+    [100,150]
+    <br>
+    Target:
+    [0,255]
+</div>
+
+<div class="keypoint">
+    Improves image contrast automatically.
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">14. Piecewise Linear Stretching</h2>
+
+
+<div class="definition">
+    Multiple linear segments can be used to emphasize specific intensity ranges.
+</div>
+
+<div class="exam">
+    Thresholding:
+    <br>
+    Produces a binary image using only two output values.
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">15. Histograms</h2>
+
+
+<div class="definition">
+    A histogram shows the distribution of pixel intensities.
+</div>
+
+<div class="memory">
+    🧠 Histogram tells us:
+    <br>
+    How pixel values are distributed.
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">16. Normalized Histogram</h2>
+
+
+<div class="definition">
+    Each histogram bin is divided by the total number of pixels.
+</div>
+
+<div class="keypoint">
+    Sum of all normalized histogram values = 1
+</div>
+
+<div class="exam">
+    Represents probability distribution of pixel intensities.
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">17. Histogram Interpretation</h2>
+
+
+<table>
+    <tr>
+        <th>Histogram Pattern</th>
+        <th>Meaning</th>
+    </tr>
+    <tr>
+        <td>Left Concentrated</td>
+        <td>Dark Image</td>
+    </tr>
+    <tr>
+        <td>Right Concentrated</td>
+        <td>Bright Image</td>
+    </tr>
+    <tr>
+        <td>Narrow</td>
+        <td>Low Contrast</td>
+    </tr>
+    <tr>
+        <td>Wide</td>
+        <td>High Contrast</td>
+    </tr>
+</table>
+
+<div class="memory">
+    🧠 Histogram shows intensity distribution,
+    NOT spatial arrangement.
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">18. Histogram Equalization</h2>
+
+
+<div class="definition">
+    Histogram Equalization automatically redistributes intensity values to improve contrast.
+</div>
+
+<div class="keypoint">
+    Goal:
+    Make the histogram more uniform.
+</div>
+
+<div class="example">
+    Uses the cumulative distribution function (CDF)
+    to remap pixel values.
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">19. Histogram Equalization Example (Exam Favorite)</h2>
+
+    <div class="definition">
+        Histogram Equalization transforms pixel values using the
+        Cumulative Distribution Function (CDF).
+    </div>
+
+    <div class="memory">
+        🧠 Exam Workflow:
+        <br><br>
+
+        Step 1 → Calculate Histogram h(fₖ)
+        <br>
+        Step 2 → Calculate Probability pF(l)
+        <br>
+        Step 3 → Calculate CDF
+        <br>
+        Step 4 → Compute New Gray Level gₗ
+        <br>
+        Step 5 → Build New Distribution pG(l)
+    </div>
+
+    <table>
+        <tr>
+            <th>Column</th>
+            <th>Meaning</th>
+        </tr>
+
+        <tr>
+            <td>fₖ</td>
+            <td>Original gray level</td>
+        </tr>
+
+        <tr>
+            <td>h(fₖ)</td>
+            <td>Number of pixels</td>
+        </tr>
+
+        <tr>
+            <td>pF(l)</td>
+            <td>Probability = h(fₖ)/Total Pixels</td>
+        </tr>
+
+        <tr>
+            <td>CDF (ĝₗ)</td>
+            <td>Cumulative probability</td>
+        </tr>
+
+        <tr>
+            <td>gₗ</td>
+            <td>Equalized gray level</td>
+        </tr>
+
+        <tr>
+            <td>pG(l)</td>
+            <td>New probability distribution</td>
+        </tr>
+    </table>
+
+    <div class="example">
+        Example:
+        <br>
+        Total Pixels = 400
+        <br>
+        Gray Levels = 8
+        <br>
+        Therefore:
+        <br>
+        L = 8
+        <br>
+        L − 1 = 7
+    </div>
+
+    <div class="definition">
+        Probability Formula:
+        <br><br>
+        pF(l) = h(fₖ) / Total Pixels
+    </div>
+
+    <div class="definition">
+        CDF Formula:
+        <br><br>
+        CDF(k) = Sum of all probabilities from level 0 to k
+    </div>
+
+    <div class="definition">
+        Equalization Formula:
+        <br><br>
+        gₗ = floor(CDF × (L − 1))
+    </div>
+
+    <table>
+        <tr>
+            <th>Original Level</th>
+            <th>CDF</th>
+            <th>gₗ</th>
+        </tr>
+
+        <tr><td>0</td><td>0.19</td><td>1</td></tr>
+        <tr><td>1</td><td>0.44</td><td>3</td></tr>
+        <tr><td>2</td><td>0.65</td><td>4</td></tr>
+        <tr><td>3</td><td>0.81</td><td>5</td></tr>
+        <tr><td>4</td><td>0.89</td><td>6</td></tr>
+        <tr><td>5</td><td>0.95</td><td>6</td></tr>
+        <tr><td>6</td><td>0.98</td><td>6</td></tr>
+        <tr><td>7</td><td>1.00</td><td>7</td></tr>
+    </table>
+
+    <div class="keypoint">
+        Final Mapping:
+        <br><br>
+        0 → 1
+        <br>
+        1 → 3
+        <br>
+        2 → 4
+        <br>
+        3 → 5
+        <br>
+        4 → 6
+        <br>
+        5 → 6
+        <br>
+        6 → 6
+        <br>
+        7 → 7
+    </div>
+
+    <div class="exam">
+        Exam Shortcut:
+        <br><br>
+        After finding CDF,
+        multiply by (L − 1),
+        then take FLOOR value.
+    </div>
+
+    <div class="memory">
+        🧠 Common Mistake:
+        <br><br>
+        Histogram Equalization does NOT guarantee a perfectly
+        uniform histogram.
+        <br>
+        It only attempts to spread intensities more evenly.
+    </div>
+</div>
+
+<div class="card">
+    <h2 class="section-title">20. Neighbourhood Processing</h2>
+
+
+<div class="definition">
+    Pixel values can be modified using information from neighbouring pixels.
+</div>
+
+<div class="memory">
+    🧠 Instead of:
+    <br>
+    Pixel → Pixel
+    <br><br>
+    Use:
+    <br>
+    Neighbourhood → Pixel
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">21. Image Filtering</h2>
+
+
+<div class="definition">
+    A filter (mask) slides across the image and performs computations using nearby pixels.
+</div>
+
+<div class="example">
+    3×3 Averaging Filter:
+    <br>
+    Replaces each pixel with the average of itself and its neighbours.
+</div>
+
+<div class="keypoint">
+    Used for noise reduction and image smoothing.
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">22. Final Exam Summary</h2>
+
+
+<div class="summary">
+
+    <h3>Most Important Points</h3>
+
+    <ul>
+
+        <li><span class="highlight">Digitization:</span> Sampling + Quantization</li>
+
+        <li><span class="highlight">Pixel:</span> Smallest image element</li>
+
+        <li><span class="highlight">Image Function:</span> f(x,y)</li>
+
+        <li><span class="highlight">Storage:</span> B = M × N × k</li>
+
+        <li><span class="highlight">Subsampling:</span> Can cause pixelation and checkerboard effects</li>
+
+        <li><span class="highlight">Point Processing:</span> Transform each pixel independently</li>
+
+        <li><span class="highlight">Histogram:</span> Distribution of pixel intensities</li>
+
+        <li><span class="highlight">Histogram Equalization:</span> Automatic contrast enhancement</li>
+
+        <li><span class="highlight">Neighbourhood Processing:</span> Uses surrounding pixels</li>
+
+        <li><span class="highlight">Filtering:</span> Foundation of image processing techniques</li>
+
+    </ul>
+
+</div>
+
+
+</div>
+
+<div class="lecture-nav" id="lecture-nav"></div>
+
+<script type="text/javascript" src="notes.js"></script>
+
+</body>
+</html>
+

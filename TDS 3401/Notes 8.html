@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CDS6324 - Lecture 8 Notes</title>
+
+<link rel="stylesheet" href="notes.css">
+</head>
+
+<body>
+
+<div class="container">
+
+<header>
+    <h1>CDS 6324 - Data Visualization</h1>
+    <h3>Lecture 8: Interactive Visualization (Animation & Motion)</h3>
+</header>
+
+<div id="header-config"
+    data-prev="7"
+    data-next="x"
+    data-name="Notes ">
+</div>
+
+<div class="card">
+    <h2 class="section-title">1. Why Use Motion & Animation?</h2>
+
+    <div class="definition">
+        Motion and animation are used to encode information,
+        direct attention, explain transitions, and increase engagement.
+    </div>
+
+    <ul>
+        <li>Encode data visually</li>
+        <li>Direct viewer attention</li>
+        <li>Understand system dynamics</li>
+        <li>Understand state transitions</li>
+        <li>Increase audience engagement</li>
+    </ul>
+
+    <div class="memory">
+        🧠 Animation = Attention + Transition + Engagement
+    </div>
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">2. Motion Perception</h2>
+
+    <div class="definition">
+        Motion perception refers to how humans detect and interpret movement.
+    </div>
+
+    <div class="keypoint">
+        Humans can typically track only about
+        <strong>4–6 moving objects simultaneously.</strong>
+    </div>
+
+    <div class="exam">
+        Exam Keyword:
+        <br>
+        Multiple Object Tracking
+    </div>
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">3. Principle of Common Fate</h2>
+
+    <div class="definition">
+        Objects moving in the same direction and speed
+        are perceived as belonging to the same group.
+    </div>
+
+    <div class="example">
+        A collection of dots moving together is naturally
+        interpreted as one object or cluster.
+    </div>
+
+    <div class="memory">
+        🧠 Same Motion → Same Group
+    </div>
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">4. Biological Motion</h2>
+
+    <div class="definition">
+        Humans can recognize motion patterns even from a few moving points.
+    </div>
+
+    <div class="example">
+        Johansson (1973) attached lights to human joints.
+        Observers immediately recognized a walking person
+        despite seeing only moving dots.
+    </div>
+
+    <div class="keypoint">
+        Motion alone can communicate structure and identity.
+    </div>
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">5. Motion Shows Transitions</h2>
+
+    <div class="definition">
+        Animation helps viewers understand how one state changes into another.
+    </div>
+
+    <ul>
+        <li>Shows progression</li>
+        <li>Preserves object identity</li>
+        <li>Improves change tracking</li>
+    </ul>
+
+    <div class="exam">
+        Potential Issues:
+        <br>
+        Too fast → confusion
+        <br>
+        Too slow → boredom
+        <br>
+        Too many moving objects → overload
+    </div>
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">6. Constructing Narratives</h2>
+
+    <blockquote>
+        Humans naturally create stories from moving objects.
+    </blockquote>
+
+    <div class="example">
+        In the Heider-Simmel experiment (1944),
+        participants watched moving shapes.
+        Most viewers interpreted them as characters
+        with intentions and emotions.
+    </div>
+
+    <div class="keypoint">
+        Motion can imply goals, relationships and storytelling.
+    </div>
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">7. Perception of Causality</h2>
+
+    <div class="definition">
+        Certain motion patterns create the impression that
+        one object causes another object to move.
+    </div>
+
+    <table>
+        <tr>
+            <th>Effect</th>
+            <th>Description</th>
+        </tr>
+
+        <tr>
+            <td>Launching Effect</td>
+            <td>One object appears to hit another object</td>
+        </tr>
+
+        <tr>
+            <td>Entraining Effect</td>
+            <td>One object appears to carry another object</td>
+        </tr>
+    </table>
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">8. What is Animation?</h2>
+
+    <div class="definition">
+        Animation is the act of bringing visual elements to life through movement.
+    </div>
+
+    <table>
+        <tr>
+            <th>Characteristic</th>
+            <th>Benefit</th>
+        </tr>
+
+        <tr>
+            <td>Attention</td>
+            <td>Draws viewer focus</td>
+        </tr>
+
+        <tr>
+            <td>Object Constancy</td>
+            <td>Preserves identity during changes</td>
+        </tr>
+
+        <tr>
+            <td>Causality</td>
+            <td>Suggests relationships</td>
+        </tr>
+
+        <tr>
+            <td>Engagement</td>
+            <td>Makes visualization more interesting</td>
+        </tr>
+    </table>
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">9. Principles of Animation</h2>
+
+    <div class="definition">
+        Tversky (2002) proposed two key principles for effective animation.
+    </div>
+
+    <table>
+        <tr>
+            <th>Principle</th>
+            <th>Meaning</th>
+        </tr>
+
+        <tr>
+            <td>Congruence</td>
+            <td>Animation should match the intended message</td>
+        </tr>
+
+        <tr>
+            <td>Apprehension</td>
+            <td>Animation should be easy to perceive and understand</td>
+        </tr>
+    </table>
+
+    <div class="memory">
+        🧠 Congruence = Correct Meaning
+        <br>
+        Apprehension = Easy Understanding
+    </div>
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">10. Three Uses of Animation</h2>
+
+    <table>
+        <tr>
+            <th>Use</th>
+            <th>Purpose</th>
+        </tr>
+
+        <tr>
+            <td>Animation as Narrative</td>
+            <td>Tells a story</td>
+        </tr>
+
+        <tr>
+            <td>Animation as Encoding</td>
+            <td>Represents data values</td>
+        </tr>
+
+        <tr>
+            <td>Animation as Transition</td>
+            <td>Shows changes between states</td>
+        </tr>
+    </table>
+
+    <div class="exam">
+        Exam Favorite:
+        <br>
+        Narrative, Encoding, Transition
+    </div>
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">11. Taxonomy of Transitions</h2>
+
+    <div class="definition">
+        Different types of animated transitions help users understand changes.
+    </div>
+
+    <ol>
+        <li>Transformation of View</li>
+        <li>Change of Representation</li>
+        <li>Transformation of Surface</li>
+        <li>Timestep</li>
+        <li>Change of Data Structure</li>
+        <li>Reordering</li>
+        <li>Filtering</li>
+    </ol>
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">12. 10 Principles of Animated Transitions</h2>
+
+    <h3>Congruence Principles</h3>
+
+    <ol>
+        <li>Respect semantic correspondence</li>
+        <li>Avoid ambiguity</li>
+        <li>Maintain valid graphics during transition</li>
+        <li>Maintain valid mappings across graphics</li>
+    </ol>
+
+    <h3>Apprehension Principles</h3>
+
+    <ol start="5">
+        <li>Group similar transitions</li>
+        <li>Minimize occlusion</li>
+        <li>Maximize predictability</li>
+        <li>Use simple transitions</li>
+        <li>Stage complex transitions</li>
+        <li>Make transitions as long as needed, but not longer</li>
+    </ol>
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">13. Animation in Statistical Charts</h2>
+
+    <div class="keypoint">
+        IBM Design recommends animations should be:
+    </div>
+
+    <ul>
+        <li>Understandable</li>
+        <li>Essential</li>
+        <li>Impactful</li>
+        <li>Consistent</li>
+        <li>Contextual</li>
+    </ul>
+
+    <div class="memory">
+        🧠 UEICC
+        <br>
+        Understandable → Essential → Impactful → Consistent → Contextual
+    </div>
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">14. Does Animation Help?</h2>
+
+    <table>
+        <tr>
+            <th>Benefits</th>
+            <th>Risks</th>
+        </tr>
+
+        <tr>
+            <td>Direct attention</td>
+            <td>Can distract viewers</td>
+        </tr>
+
+        <tr>
+            <td>Track changes</td>
+            <td>May imply false relationships</td>
+        </tr>
+
+        <tr>
+            <td>Show cause and effect</td>
+            <td>May imply false causality</td>
+        </tr>
+
+        <tr>
+            <td>Increase engagement</td>
+            <td>May become chart junk</td>
+        </tr>
+
+        <tr>
+            <td>Preserve object constancy</td>
+            <td>Too fast or too slow hurts understanding</td>
+        </tr>
+    </table>
+
+    <div class="exam">
+        Key Exam Idea:
+        <br>
+        Animation is useful only when it improves understanding.
+        Decorative animation becomes chart junk.
+    </div>
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">15. Final Exam Summary</h2>
+
+    <div class="summary">
+
+        <h3>Most Important Points</h3>
+
+        <ul>
+
+            <li>
+                <span class="highlight">Motion:</span>
+                Directs attention and explains change.
+            </li>
+
+            <li>
+                <span class="highlight">Common Fate:</span>
+                Objects moving together are grouped together.
+            </li>
+
+            <li>
+                <span class="highlight">Animation Principles:</span>
+                Congruence and Apprehension.
+            </li>
+
+            <li>
+                <span class="highlight">Three Uses:</span>
+                Narrative, Encoding, Transition.
+            </li>
+
+            <li>
+                <span class="highlight">Transition Types:</span>
+                View, Representation, Surface, Time, Structure, Reordering, Filtering.
+            </li>
+
+            <li>
+                <span class="highlight">10 Principles:</span>
+                Ensure animations remain understandable.
+            </li>
+
+            <li>
+                <span class="highlight">Animation Tradeoff:</span>
+                Can improve understanding or become chart junk.
+            </li>
+
+        </ul>
+
+    </div>
+
+</div>
+
+</div>
+
+<div class="lecture-nav" id="lecture-nav"></div>
+<script type="text/javascript" src="notes.js"></script>
+
+</body>
+</html>

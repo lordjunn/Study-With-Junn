@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CDS6324 - Lecture 4 Notes</title>
+
+<link rel="stylesheet" href="notes.css">
+</head>
+
+<body>
+
+<div class="container">
+
+<header>
+    <h1>CDS 6324 - Data Visualization</h1>
+    <h3>Lecture 4: Graphical Integrity, Visualization Design & Tools</h3>
+</header>
+
+<div id="header-config"
+    data-prev="3"
+    data-next="5"
+    data-name="Notes ">
+</div>
+
+<div class="card">
+    <h2 class="section-title">1. Graphical Excellence</h2>
+
+
+<div class="definition">
+    Graphical Excellence is the well-designed presentation of interesting data through
+    substance, statistics, and design.
+</div>
+
+<blockquote>
+    Give the viewer the greatest number of ideas
+    in the shortest time
+    with the least ink.
+</blockquote>
+
+<div class="keypoint">
+    Excellent graphics communicate complex ideas with:
+    <ul>
+        <li>Clarity</li>
+        <li>Precision</li>
+        <li>Efficiency</li>
+    </ul>
+</div>
+
+<div class="memory">
+    🧠 Remember:
+    <br><br>
+    Great Visualization =
+    <br>
+    More Ideas + Less Ink
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">2. Achieving Graphical Excellence</h2>
+
+
+<ol>
+    <li>Tell the truth about the data (Graphical Integrity)</li>
+    <li>Visualize with clarity and precision (Design Principles)</li>
+</ol>
+
+<div class="exam">
+    Exam Keyword:
+    <br>
+    Graphical Excellence = Integrity + Design
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">3. Graphical Integrity</h2>
+
+
+<div class="definition">
+    Graphical Integrity means presenting data honestly without misleading viewers.
+</div>
+
+<blockquote>
+    "Not lying with statistics."
+</blockquote>
+
+<div class="keypoint">
+    The purpose is to tell the truth about the data.
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">4. Principle 1: Avoid Distortion (Lie Factor)</h2>
+
+
+<div class="definition">
+    The visual representation of data should be directly proportional
+    to the actual numerical values.
+</div>
+
+<div class="keypoint">
+    Lie Factor measures graphical distortion.
+</div>
+
+<div class="definition">
+    Lie Factor =
+    <br><br>
+    Size of effect shown in graphic
+    <br>
+    ÷
+    <br>
+    Size of effect in data
+</div>
+
+<div class="exam">
+    Accurate Graph:
+    <br><br>
+    Lie Factor = 1.0
+</div>
+
+<div class="memory">
+    🧠 If Lie Factor > 1
+    <br>
+    Effect is exaggerated.
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">5. Principle 2: Avoid Ambiguity</h2>
+
+
+<div class="definition">
+    Use clear, detailed, and thorough labels.
+</div>
+
+<ul>
+    <li>Label axes clearly</li>
+    <li>Explain data directly on charts</li>
+    <li>Annotate important events</li>
+</ul>
+
+<div class="keypoint">
+    Good labeling prevents misunderstanding.
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">6. Principle 3: Show Data Variation, Not Design Variation</h2>
+
+
+<div class="definition">
+    Emphasize changes in data, not decorative chart effects.
+</div>
+
+<div class="example">
+    Fancy graphics can create patterns that do not actually exist.
+</div>
+
+<div class="keypoint">
+    Viewers should notice data changes,
+    not design tricks.
+</div>
+
+<div class="exam">
+    Avoid unnecessary decorations and visual effects.
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">7. Principle 4: Account for Inflation</h2>
+
+
+<div class="definition">
+    Monetary values should be adjusted for inflation when comparing across time.
+</div>
+
+<div class="example">
+    RM100 in 2000 does not have the same value as RM100 today.
+</div>
+
+<div class="keypoint">
+    Adjusted values provide more accurate comparisons.
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">8. Principle 5: Match Dimensions</h2>
+
+
+<div class="definition">
+    The number of visual dimensions should not exceed the number of dimensions in the data.
+</div>
+
+<div class="example">
+    Avoid using 3D bars to represent simple 1D values.
+</div>
+
+<div class="keypoint">
+    Extra dimensions often distort perception.
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">9. Principle 6: Show Data in Context</h2>
+
+
+<div class="definition">
+    Graphics should never quote data out of context.
+</div>
+
+<div class="example">
+    Showing only selected years can create misleading trends.
+</div>
+
+<div class="keypoint">
+    Context helps viewers interpret data correctly.
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">10. Tufte's Six Principles of Graphical Integrity</h2>
+
+
+<table>
+
+    <tr>
+        <th>Principle</th>
+        <th>Main Idea</th>
+    </tr>
+
+    <tr>
+        <td>1</td>
+        <td>Avoid distortion (Lie Factor = 1)</td>
+    </tr>
+
+    <tr>
+        <td>2</td>
+        <td>Use clear labels</td>
+    </tr>
+
+    <tr>
+        <td>3</td>
+        <td>Show data variation, not design variation</td>
+    </tr>
+
+    <tr>
+        <td>4</td>
+        <td>Adjust monetary values for inflation</td>
+    </tr>
+
+    <tr>
+        <td>5</td>
+        <td>Match graphic dimensions to data dimensions</td>
+    </tr>
+
+    <tr>
+        <td>6</td>
+        <td>Provide context</td>
+    </tr>
+
+</table>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">11. Data-Ink Maximization</h2>
+
+
+<div class="definition">
+    Data-Ink Ratio measures how much ink is used to display actual data.
+</div>
+
+<div class="definition">
+    Data-Ink Ratio =
+    <br><br>
+    Data Ink
+    <br>
+    ÷
+    <br>
+    Total Ink Used
+</div>
+
+<div class="keypoint">
+    Maximize data ink and minimize unnecessary ink.
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">12. Tufte's Five Laws of Data-Ink</h2>
+
+
+<ol>
+    <li>Above all else, show the data</li>
+    <li>Maximize the data-ink ratio</li>
+    <li>Erase non-data ink</li>
+    <li>Erase redundant data ink</li>
+    <li>Revise and edit</li>
+</ol>
+
+<div class="memory">
+    🧠 Show → Maximize → Erase → Erase → Revise
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">13. Remove Chartjunk</h2>
+
+
+<div class="definition">
+    Chartjunk refers to unnecessary visual elements that do not communicate information.
+</div>
+
+<div class="example">
+    3D effects, excessive colors, shadows, decorative icons.
+</div>
+
+<div class="keypoint">
+    Chartjunk distracts viewers from the data.
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">14. Multi-Functioning Graphical Elements</h2>
+
+
+<div class="definition">
+    Every graphical element should perform one or more useful data-related functions.
+</div>
+
+<ul>
+    <li>Stem-and-leaf plots</li>
+    <li>Chernoff Faces</li>
+    <li>Coordinate labels as marks</li>
+</ul>
+
+<div class="keypoint">
+    Make every visual element contribute information.
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">15. Data Density</h2>
+
+
+<div class="definition">
+    Data Density measures how much information is displayed in a given graphical area.
+</div>
+
+<div class="definition">
+    Data Density =
+    <br><br>
+    Number of Data Entries
+    <br>
+    ÷
+    <br>
+    Area of Graphic
+</div>
+
+<div class="keypoint">
+    More useful information can be displayed without increasing chart size.
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">16. Small Multiples & Parallel Sequencing</h2>
+
+
+<div class="definition">
+    Small Multiples are a series of similar charts placed together for comparison.
+</div>
+
+<div class="example">
+    Monthly sales charts displayed side-by-side.
+</div>
+
+<div class="keypoint">
+    Makes comparisons easier while maintaining consistency.
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">17. Deceptive Charts to Avoid</h2>
+
+
+<ul>
+    <li>Bars that do not start at zero</li>
+    <li>3D charts</li>
+    <li>Pie charts with many categories</li>
+    <li>Unsynchronized dual axes</li>
+    <li>Reversed scales</li>
+</ul>
+
+<div class="exam">
+    Exam Tip:
+    <br>
+    Most misleading charts violate Graphical Integrity principles.
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">18. Visualization Tool Stack</h2>
+
+
+<table>
+
+    <tr>
+        <th>Layer</th>
+        <th>Examples</th>
+    </tr>
+
+    <tr>
+        <td>Charting Tools</td>
+        <td>Excel, Google Charts</td>
+    </tr>
+
+    <tr>
+        <td>Interactive Exploration</td>
+        <td>Tableau, Qlik, Power BI</td>
+    </tr>
+
+    <tr>
+        <td>Visual Analysis Grammars</td>
+        <td>VizQL, ggplot2, Vega-Lite</td>
+    </tr>
+
+    <tr>
+        <td>Visualization Grammars</td>
+        <td>D3.js, Vega</td>
+    </tr>
+
+    <tr>
+        <td>Component Architectures</td>
+        <td>Prefuse, Flare, VTK</td>
+    </tr>
+
+    <tr>
+        <td>Graphics APIs</td>
+        <td>Python, R, OpenGL, Java2D</td>
+    </tr>
+
+</table>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">19. The KISS Principle</h2>
+
+
+<blockquote>
+    "It seems that perfection is reached not when there is nothing to add,
+    but when there is nothing left to take away."
+</blockquote>
+
+<div class="definition">
+    KISS = Keep It Simple, Stupid.
+</div>
+
+<div class="keypoint">
+    Simplicity improves clarity and understanding.
+</div>
+
+<div class="memory">
+    🧠 Simple charts are usually better charts.
+</div>
+
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">20. Final Exam Summary</h2>
+
+
+<div class="summary">
+
+    <h3>Most Important Points</h3>
+
+    <ul>
+
+        <li><span class="highlight">Graphical Excellence:</span>
+            Most ideas, shortest time, least ink.
+        </li>
+
+        <li><span class="highlight">Lie Factor:</span>
+            Should equal 1.0.
+        </li>
+
+        <li><span class="highlight">Graphical Integrity:</span>
+            Tell the truth about data.
+        </li>
+
+        <li><span class="highlight">Data-Ink Ratio:</span>
+            Maximize data ink.
+        </li>
+
+        <li><span class="highlight">Chartjunk:</span>
+            Remove unnecessary decorations.
+        </li>
+
+        <li><span class="highlight">Data Density:</span>
+            More information per area.
+        </li>
+
+        <li><span class="highlight">Small Multiples:</span>
+            Multiple similar charts for comparison.
+        </li>
+
+        <li><span class="highlight">KISS Principle:</span>
+            Keep visualizations simple.
+        </li>
+
+        <li><span class="highlight">Tool Stack:</span>
+            Excel → Tableau/Power BI → ggplot2 → D3.js → APIs.
+        </li>
+
+    </ul>
+
+</div>
+
+
+</div>
+
+</div>
+
+<div class="lecture-nav" id="lecture-nav"></div>
+<script type="text/javascript" src="notes.js"></script>
+
+</body>
+</html>

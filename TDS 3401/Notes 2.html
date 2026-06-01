@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CDS6324 - Lecture 2 Notes</title>
+
+<link rel="stylesheet" href="notes.css">
+</head>
+
+<body>
+
+<div class="container">
+
+<header>
+    <h1>CDS 6324 - Data Visualization</h1>
+    <h3>Lecture 2: Data & Image Models</h3>
+</header>
+
+<div id="header-config"
+    data-prev="1"
+    data-next="3"
+    data-name="Notes ">
+</div>
+
+<div class="card">
+    <h2 class="section-title">1. Data Models vs Conceptual Models</h2>
+
+    <div class="definition">
+        Data models are formal descriptions of data.
+        Conceptual models are the meanings humans attach to data.
+    </div>
+
+    <table>
+        <tr>
+            <th>Data Model</th>
+            <th>Conceptual Model</th>
+        </tr>
+
+        <tr>
+            <td>1D Float</td>
+            <td>Temperature</td>
+        </tr>
+
+        <tr>
+            <td>3D Vector</td>
+            <td>Spatial Location</td>
+        </tr>
+    </table>
+
+    <div class="memory">
+        🧠 Remember:
+        <br><br>
+        Data Model = Structure
+        <br>
+        Conceptual Model = Meaning
+    </div>
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">2. Taxonomy of Data Types</h2>
+
+    <ul>
+        <li>1D (Sets and Sequences)</li>
+        <li>Temporal Data</li>
+        <li>2D Data (Maps)</li>
+        <li>3D Data (Shapes)</li>
+        <li>nD Data (Relational)</li>
+        <li>Trees (Hierarchies)</li>
+        <li>Networks (Graphs)</li>
+    </ul>
+
+    <div class="memory">
+        🧠 Memory Trick:
+        <br><br>
+        Sequence → Time → Map → Shape → Table → Tree → Graph
+    </div>
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">3. Qualitative vs Quantitative Data</h2>
+
+    <table>
+        <tr>
+            <th>Qualitative</th>
+            <th>Quantitative</th>
+        </tr>
+
+        <tr>
+            <td>Observed</td>
+            <td>Measured</td>
+        </tr>
+
+        <tr>
+            <td>Gender</td>
+            <td>Age</td>
+        </tr>
+
+        <tr>
+            <td>Country</td>
+            <td>Height</td>
+        </tr>
+
+        <tr>
+            <td>Hair Color</td>
+            <td>Weight</td>
+        </tr>
+    </table>
+
+    <div class="memory">
+        🧠 Shortcut:
+        <br><br>
+        Qualitative = WHAT
+        <br>
+        Quantitative = HOW MUCH
+    </div>
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">4. Nominal (N)</h2>
+
+    <div class="definition">
+        Categories without order or ranking.
+    </div>
+
+    <div class="example">
+        Examples:
+        <ul>
+            <li>Gender</li>
+            <li>Country</li>
+            <li>Hair Color</li>
+        </ul>
+    </div>
+
+    <div class="keypoint">
+        Operations:
+        Frequency Count, Percentage, Mode
+    </div>
+
+    <div class="exam">
+        Common Charts:
+        Bar Chart, Pie Chart, Treemap
+    </div>
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">5. Ordinal (O)</h2>
+
+    <div class="definition">
+        Categories with meaningful order.
+    </div>
+
+    <div class="example">
+        Examples:
+        <ul>
+            <li>Gold Medal</li>
+            <li>Silver Medal</li>
+            <li>Bronze Medal</li>
+        </ul>
+    </div>
+
+    <div class="keypoint">
+        Operations:
+        Rank, Median, Frequency Count
+    </div>
+
+    <div class="exam">
+        Common Charts:
+        Ordered Bar Charts, Dot Plots
+    </div>
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">6. Quantitative Data (Q)</h2>
+
+    <table>
+        <tr>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+
+        <tr>
+            <td>Interval</td>
+            <td>No true zero point</td>
+        </tr>
+
+        <tr>
+            <td>Ratio</td>
+            <td>Has a true zero point</td>
+        </tr>
+    </table>
+
+    <div class="example">
+        Interval Example:
+        Temperature (°C)
+    </div>
+
+    <div class="example">
+        Ratio Example:
+        Population Count
+    </div>
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">7. Dimensions vs Measures</h2>
+
+    <table>
+        <tr>
+            <th>Dimensions</th>
+            <th>Measures</th>
+        </tr>
+
+        <tr>
+            <td>Categories</td>
+            <td>Numbers</td>
+        </tr>
+
+        <tr>
+            <td>Year</td>
+            <td>Sales</td>
+        </tr>
+
+        <tr>
+            <td>Gender</td>
+            <td>Revenue</td>
+        </tr>
+    </table>
+
+    <div class="memory">
+        🧠 Easy Rule:
+        <br><br>
+        Dimensions describe.
+        <br>
+        Measures calculate.
+    </div>
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">8. Census Data Example</h2>
+
+    <table>
+        <tr>
+            <th>Variable</th>
+            <th>Type</th>
+        </tr>
+
+        <tr>
+            <td>People Count</td>
+            <td>Q-Ratio</td>
+        </tr>
+
+        <tr>
+            <td>Year</td>
+            <td>Q-Interval</td>
+        </tr>
+
+        <tr>
+            <td>Age</td>
+            <td>Q-Ratio</td>
+        </tr>
+
+        <tr>
+            <td>Sex</td>
+            <td>Nominal</td>
+        </tr>
+
+        <tr>
+            <td>Marital Status</td>
+            <td>Nominal</td>
+        </tr>
+    </table>
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">9. Relational Data Model</h2>
+
+    <div class="definition">
+        Data is organized into tables (relations).
+    </div>
+
+    <table>
+        <tr>
+            <th>Term</th>
+            <th>Meaning</th>
+        </tr>
+
+        <tr>
+            <td>Row</td>
+            <td>Record</td>
+        </tr>
+
+        <tr>
+            <td>Column</td>
+            <td>Attribute</td>
+        </tr>
+
+        <tr>
+            <td>Table</td>
+            <td>Relation</td>
+        </tr>
+    </table>
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">10. SQL Operations</h2>
+
+    <table>
+        <tr>
+            <th>Operation</th>
+            <th>Purpose</th>
+        </tr>
+
+        <tr>
+            <td>SELECT</td>
+            <td>Choose columns</td>
+        </tr>
+
+        <tr>
+            <td>WHERE</td>
+            <td>Filter rows</td>
+        </tr>
+
+        <tr>
+            <td>ORDER BY</td>
+            <td>Sort rows</td>
+        </tr>
+
+        <tr>
+            <td>GROUP BY</td>
+            <td>Aggregate data</td>
+        </tr>
+
+        <tr>
+            <td>JOIN</td>
+            <td>Combine tables</td>
+        </tr>
+    </table>
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">11. Roll-Up and Drill-Down</h2>
+
+    <div class="example">
+        Roll-Up = Summarize data
+    </div>
+
+    <div class="example">
+        Drill-Down = Show more detail
+    </div>
+
+    <div class="memory">
+        🧠 Roll-Up = Zoom Out
+        <br>
+        🧠 Drill-Down = Zoom In
+    </div>
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">12. Tidy Data</h2>
+
+    <div class="definition">
+        Data organization standard proposed by Wickham.
+    </div>
+
+    <ul>
+        <li>Each Variable → Column</li>
+        <li>Each Observation → Row</li>
+        <li>Each Observation Type → Table</li>
+    </ul>
+
+    <div class="exam">
+        Frequently tested concept in data visualization.
+    </div>
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">13. Bertin's Visual Variables</h2>
+
+    <table>
+        <tr>
+            <th>Visual Variable</th>
+            <th>Best For</th>
+        </tr>
+
+        <tr><td>Position</td><td>Quantitative</td></tr>
+        <tr><td>Size</td><td>Quantitative</td></tr>
+        <tr><td>Color Hue</td><td>Nominal</td></tr>
+        <tr><td>Value</td><td>Ordinal</td></tr>
+        <tr><td>Shape</td><td>Nominal</td></tr>
+    </table>
+
+    <div class="memory">
+        🧠 Position is the strongest visual encoding.
+    </div>
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">14. Expressiveness & Effectiveness</h2>
+
+    <div class="definition">
+        Expressiveness:
+        A visualization should show all facts and only the facts.
+    </div>
+
+    <div class="definition">
+        Effectiveness:
+        Information should be easy for humans to perceive.
+    </div>
+
+    <div class="memory">
+        🧠 Expressive = Correct
+        <br>
+        🧠 Effective = Easy to Read
+    </div>
+
+</div>
+
+<div class="card">
+    <h2 class="section-title">15. Final Exam Summary</h2>
+
+    <div class="summary">
+
+        <h3>Most Important Points</h3>
+
+        <ul>
+
+            <li><span class="highlight">N:</span> Nominal = Categories</li>
+
+            <li><span class="highlight">O:</span> Ordinal = Ordered Categories</li>
+
+            <li><span class="highlight">Q:</span> Quantitative = Numeric Values</li>
+
+            <li><span class="highlight">Dimensions:</span> Describe data</li>
+
+            <li><span class="highlight">Measures:</span> Analyze data</li>
+
+            <li><span class="highlight">Tidy Data:</span>
+                Variable = Column,
+                Observation = Row
+            </li>
+
+            <li><span class="highlight">Bertin:</span>
+                Position is the strongest visual channel.
+            </li>
+
+            <li><span class="highlight">Expressiveness:</span>
+                Show correct facts.
+            </li>
+
+            <li><span class="highlight">Effectiveness:</span>
+                Easy to perceive.
+            </li>
+
+        </ul>
+
+    </div>
+
+</div>
+
+</div>
+
+<div class="lecture-nav" id="lecture-nav"></div>
+<script type="text/javascript" src="notes.js"></script>
+
+</body>
+</html>

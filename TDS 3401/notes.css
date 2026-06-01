@@ -1,0 +1,153 @@
+:root{
+    --blue:#2563eb;
+    --green:#16a34a;
+    --yellow:#f59e0b;
+    --red:#dc2626;
+    --purple:#7c3aed;
+
+    --bg:#f8fafc;
+    --card:#ffffff;
+    --text:#1e293b;
+}
+
+body{
+    font-family:Segoe UI, Arial, sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    line-height:1.8;
+    margin:0;
+    padding:30px;
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+}
+
+header{
+    background:linear-gradient(135deg,#2563eb,#7c3aed);
+    color:white;
+    padding:30px;
+    border-radius:16px;
+    margin-bottom:25px;
+}
+
+.card{
+    background:white;
+    padding:25px;
+    margin-bottom:20px;
+    border-radius:15px;
+    box-shadow:0 4px 15px rgba(0,0,0,.08);
+}
+
+h1,h2,h3{
+    margin-top:0;
+}
+
+.section-title{
+    color:var(--blue);
+    border-bottom:3px solid #dbeafe;
+    padding-bottom:10px;
+}
+
+.definition{
+    background:#eff6ff;
+    border-left:6px solid var(--blue);
+    padding:15px;
+    border-radius:10px;
+    margin-top:10px;
+}
+
+.keypoint{
+    background:#f0fdf4;
+    border-left:6px solid var(--green);
+    padding:15px;
+    border-radius:10px;
+    margin-top:10px;
+}
+
+.example{
+    background:#fffbeb;
+    border-left:6px solid var(--yellow);
+    padding:15px;
+    border-radius:10px;
+    margin-top:10px;
+}
+
+.exam{
+    background:#fef2f2;
+    border-left:6px solid var(--red);
+    padding:15px;
+    border-radius:10px;
+    margin-top:10px;
+}
+
+.memory{
+    background:#faf5ff;
+    border-left:6px solid var(--purple);
+    padding:15px;
+    border-radius:10px;
+    margin-top:10px;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:15px;
+}
+
+th{
+    background:#2563eb;
+    color:white;
+}
+
+td,th{
+    padding:12px;
+    border:1px solid #ddd;
+}
+
+ul{
+    padding-left:25px;
+}
+
+.summary{
+    background:#0f172a;
+    color:white;
+    padding:20px;
+    border-radius:15px;
+}
+
+.highlight{
+    color:#fbbf24;
+    font-weight:bold;
+}
+
+blockquote{
+    background:#f1f5f9;
+    padding:15px;
+    border-left:5px solid #2563eb;
+    margin:10px 0;
+}
+
+.lecture-nav{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    margin:40px 0;
+    flex-wrap:wrap;
+}
+
+.nav-btn{
+    background:linear-gradient(135deg,#2563eb,#7c3aed);
+    color:white;
+    text-decoration:none;
+    padding:12px 24px;
+    border-radius:10px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.nav-btn:hover{
+    transform:translateY(-2px);
+    box-shadow:0 5px 15px rgba(0,0,0,.15);
+}

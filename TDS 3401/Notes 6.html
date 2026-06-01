@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CDS6324 - Lecture 6 Notes</title>
+
+<link rel="stylesheet" href="notes.css">
+</head>
+
+<body>
+
+<div class="container">
+
+<header>
+    <h1>CDS 6324 - Data Visualization</h1>
+    <h3>Lecture 6: Dashboard Design and Data Storytelling</h3>
+</header>
+
+<div id="header-config"
+    data-prev="5"
+    data-next="7"
+    data-name="Notes ">
+</div>
+
+<div class="card">
+    <h2 class="section-title">1. Lecture Goals</h2>
+
+    <ul>
+        <li>Compare and evaluate real-world visualizations</li>
+        <li>Identify common design problems</li>
+        <li>Understand dashboard design principles</li>
+        <li>Learn how to communicate insights through storytelling</li>
+    </ul>
+
+    <div class="memory">
+        🧠 This lecture combines:
+        <br><br>
+        Dashboard Design + Data Storytelling
+    </div>
+</div>
+
+<div class="card">
+    <h2 class="section-title">2. Learning from Real-World Examples</h2>
+
+    <div class="definition">
+        Many real-world charts contain design flaws that make data difficult to understand.
+    </div>
+
+    <div class="keypoint">
+        Good visualization often comes from redesigning bad visualization.
+    </div>
+
+    <div class="exam">
+        Common redesign actions:
+        <ul>
+            <li>Use horizontal labels</li>
+            <li>Remove unnecessary axis labels</li>
+            <li>Reduce clutter</li>
+            <li>Improve color choices</li>
+            <li>Improve readability</li>
+        </ul>
+    </div>
+</div>
+
+<div class="card">
+    <h2 class="section-title">3. Common Visualization Problems</h2>
+
+    <table>
+        <tr>
+            <th>Problem</th>
+            <th>Effect</th>
+        </tr>
+
+        <tr>
+            <td>3D Effects</td>
+            <td>Distorts perception</td>
+        </tr>
+
+        <tr>
+            <td>Angled Labels</td>
+            <td>Hard to read</td>
+        </tr>
+
+        <tr>
+            <td>Dark Gridlines</td>
+            <td>Create distractions</td>
+        </tr>
+
+        <tr>
+            <td>Poor Color Choices</td>
+            <td>Reduce clarity</td>
+        </tr>
+
+        <tr>
+            <td>Large Legends</td>
+            <td>Waste space</td>
+        </tr>
+
+        <tr>
+            <td>Too Much Decoration</td>
+            <td>Chartjunk</td>
+        </tr>
+    </table>
+</div>
+
+<div class="card">
+    <h2 class="section-title">4. Moiré Effect</h2>
+
+    <div class="definition">
+        An unwanted visual pattern that appears when repetitive lines or textures overlap.
+    </div>
+
+    <div class="keypoint">
+        Moiré effects create visual noise and distract viewers from the data.
+    </div>
+
+    <div class="exam">
+        Avoid excessive patterns, textures, and dense gridlines.
+    </div>
+</div>
+
+<div class="card">
+    <h2 class="section-title">5. Lollipop Charts</h2>
+
+    <div class="definition">
+        A lollipop chart replaces bars with a line and a dot.
+    </div>
+
+    <div class="keypoint">
+        The true value is represented by the center of the dot.
+    </div>
+
+    <div class="example">
+        Useful for reducing clutter compared to traditional bar charts.
+    </div>
+</div>
+
+<div class="card">
+    <h2 class="section-title">6. Scale Problems</h2>
+
+    <div class="definition">
+        Improper scaling can exaggerate or hide differences in data.
+    </div>
+
+    <div class="exam">
+        Always check:
+        <ul>
+            <li>Axis starting points</li>
+            <li>Axis intervals</li>
+            <li>Consistency of scale</li>
+        </ul>
+    </div>
+
+    <div class="memory">
+        🧠 A chart can technically be correct but still visually misleading.
+    </div>
+</div>
+
+<div class="card">
+    <h2 class="section-title">7. The Kroger Example</h2>
+
+    <div class="example">
+        Kroger increased pharmacy sales from $6.5B to $7.3B despite having fewer stores and fewer pharmacies.
+    </div>
+
+    <div class="keypoint">
+        The original chart missed the most compelling story.
+    </div>
+
+    <div class="exam">
+        Better story:
+        <br><br>
+        12% increase in sales with lower operating costs.
+    </div>
+</div>
+
+<div class="card">
+    <h2 class="section-title">8. The Importance of Storytelling</h2>
+
+    <blockquote>
+        Don't simply show your data — tell a story with it.
+    </blockquote>
+
+    <div class="definition">
+        Data storytelling combines data, visuals, and narrative to communicate insights effectively.
+    </div>
+
+    <div class="memory">
+        🧠 Visualization = Show Data
+        <br>
+        Storytelling = Explain Meaning
+    </div>
+</div>
+
+<div class="card">
+    <h2 class="section-title">9. Dashboard Definition</h2>
+
+    <blockquote>
+        A dashboard is a visual display of the most important information needed to achieve one or more objectives, arranged on a single screen so the information can be monitored at a glance.
+    </blockquote>
+
+    <div class="exam">
+        Stephan Few (2006)
+    </div>
+</div>
+
+<div class="card">
+    <h2 class="section-title">10. Characteristics of a Good Dashboard</h2>
+
+    <ul>
+        <li>Communicates insights quickly</li>
+        <li>Uses visual scanning effectively</li>
+        <li>Supports fast comprehension</li>
+        <li>Focuses on graphics rather than text</li>
+        <li>Designed around user objectives</li>
+    </ul>
+
+    <div class="keypoint">
+        A dashboard should answer important questions at a glance.
+    </div>
+</div>
+
+<div class="card">
+    <h2 class="section-title">11. Types of Dashboards</h2>
+
+    <table>
+        <tr>
+            <th>Dashboard Type</th>
+            <th>Main Purpose</th>
+        </tr>
+
+        <tr>
+            <td>Strategic</td>
+            <td>Monitor organizational goals</td>
+        </tr>
+
+        <tr>
+            <td>Tactical</td>
+            <td>Track projects and department performance</td>
+        </tr>
+
+        <tr>
+            <td>Operational</td>
+            <td>Monitor daily activities in real-time</td>
+        </tr>
+
+        <tr>
+            <td>Analytical</td>
+            <td>Explore data and discover insights</td>
+        </tr>
+    </table>
+</div>
+
+<div class="card">
+    <h2 class="section-title">12. Strategic Dashboards</h2>
+
+    <div class="definition">
+        High-level dashboards used by executives.
+    </div>
+
+    <ul>
+        <li>Focus on organizational goals</li>
+        <li>Monitor business health</li>
+        <li>Updated daily, weekly, or monthly</li>
+        <li>Simple visual displays</li>
+    </ul>
+
+    <div class="memory">
+        🧠 Strategic = Big Picture
+    </div>
+</div>
+
+<div class="card">
+    <h2 class="section-title">13. Tactical Dashboards</h2>
+
+    <div class="definition">
+        Used to monitor departmental performance and projects.
+    </div>
+
+    <ul>
+        <li>Compare budgets and forecasts</li>
+        <li>Track medium-term progress</li>
+        <li>Updated daily or weekly</li>
+        <li>Support analysis</li>
+    </ul>
+
+    <div class="memory">
+        🧠 Tactical = Department Level
+    </div>
+</div>
+
+<div class="card">
+    <h2 class="section-title">14. Operational Dashboards</h2>
+
+    <div class="definition">
+        Monitor daily operations and business processes.
+    </div>
+
+    <ul>
+        <li>Real-time or near real-time updates</li>
+        <li>Focus on operational indicators</li>
+        <li>Use alerts and warnings</li>
+        <li>Support immediate action</li>
+    </ul>
+
+    <div class="memory">
+        🧠 Operational = Right Now
+    </div>
+</div>
+
+<div class="card">
+    <h2 class="section-title">15. Analytical Dashboards</h2>
+
+    <div class="definition">
+        Support deep investigation and exploration of data.
+    </div>
+
+    <ul>
+        <li>Discover patterns</li>
+        <li>Investigate anomalies</li>
+        <li>Perform comparisons</li>
+        <li>Analyze root causes</li>
+    </ul>
+
+    <div class="memory">
+        🧠 Analytical = Why Did It Happen?
+    </div>
+</div>
+
+<div class="card">
+    <h2 class="section-title">16. Data Visualization vs Data Storytelling</h2>
+
+    <table>
+        <tr>
+            <th>Data Visualization</th>
+            <th>Data Storytelling</th>
+        </tr>
+
+        <tr>
+            <td>Displays data visually</td>
+            <td>Communicates insights and meaning</td>
+        </tr>
+
+        <tr>
+            <td>Focuses on charts</td>
+            <td>Focuses on narrative + charts</td>
+        </tr>
+
+        <tr>
+            <td>Shows what happened</td>
+            <td>Explains why it happened</td>
+        </tr>
+    </table>
+</div>
+
+<div class="card">
+    <h2 class="section-title">17. Core Elements of Data Storytelling</h2>
+
+    <table>
+        <tr>
+            <th>Element</th>
+            <th>Purpose</th>
+        </tr>
+
+        <tr>
+            <td>Data</td>
+            <td>Foundation of the story</td>
+        </tr>
+
+        <tr>
+            <td>Narrative</td>
+            <td>Structure of the story</td>
+        </tr>
+
+        <tr>
+            <td>Visuals</td>
+            <td>Reveal patterns and insights</td>
+        </tr>
+    </table>
+
+    <div class="exam">
+        Data + Narrative + Visuals = Data Storytelling
+    </div>
+</div>
+
+<div class="card">
+    <h2 class="section-title">18. Story Structure</h2>
+
+    <table>
+        <tr>
+            <th>Stage</th>
+            <th>Purpose</th>
+        </tr>
+
+        <tr>
+            <td>Attract</td>
+            <td>Grab attention</td>
+        </tr>
+
+        <tr>
+            <td>Engage</td>
+            <td>Guide audience through insights</td>
+        </tr>
+
+        <tr>
+            <td>Punchline</td>
+            <td>Deliver the conclusion</td>
+        </tr>
+    </table>
+
+    <div class="memory">
+        🧠 A-E-P
+        <br>
+        Attract → Engage → Punchline
+    </div>
+</div>
+
+<div class="card">
+    <h2 class="section-title">19. Laws of Attraction</h2>
+
+    <ul>
+        <li>Identify the theme</li>
+        <li>Know your audience</li>
+        <li>Determine the purpose</li>
+        <li>Set the tone</li>
+        <li>Keep it simple</li>
+    </ul>
+
+    <div class="keypoint">
+        The audience should immediately understand why they should care.
+    </div>
+</div>
+
+<div class="card">
+    <h2 class="section-title">20. Rules of Engagement</h2>
+
+    <ul>
+        <li>Choose appropriate visualizations</li>
+        <li>Use size, color and spacing carefully</li>
+        <li>Arrange visuals purposefully</li>
+        <li>Guide viewers through the story</li>
+    </ul>
+
+    <div class="memory">
+        🧠 Don't make the audience work hard.
+    </div>
+</div>
+
+<div class="card">
+    <h2 class="section-title">21. Give Them the Punchline</h2>
+
+    <div class="definition">
+        The conclusion should be obvious and memorable.
+    </div>
+
+    <ul>
+        <li>Conclude clearly</li>
+        <li>Place conclusions strategically</li>
+        <li>Leave a lasting impression</li>
+    </ul>
+
+    <div class="exam">
+        Never leave your audience guessing about the main message.
+    </div>
+</div>
+
+<div class="card">
+    <h2 class="section-title">22. Hans Rosling Example</h2>
+
+    <div class="example">
+        "The Best Stats You've Ever Seen"
+    </div>
+
+    <table>
+        <tr>
+            <th>Stage</th>
+            <th>Example</th>
+        </tr>
+
+        <tr>
+            <td>Attract</td>
+            <td>Challenge common myths</td>
+        </tr>
+
+        <tr>
+            <td>Engage</td>
+            <td>Animated journey through data</td>
+        </tr>
+
+        <tr>
+            <td>Punchline</td>
+            <td>Promote a fact-based view of the world</td>
+        </tr>
+    </table>
+
+    <div class="memory">
+        🧠 One of the best examples of data storytelling.
+    </div>
+</div>
+
+<div class="card">
+    <h2 class="section-title">23. Final Exam Summary</h2>
+
+    <div class="summary">
+
+        <h3>Most Important Points</h3>
+
+        <ul>
+
+            <li><span class="highlight">Dashboard:</span> Important information displayed on a single screen.</li>
+
+            <li><span class="highlight">Dashboard Types:</span> Strategic, Tactical, Operational, Analytical.</li>
+
+            <li><span class="highlight">Strategic:</span> Big-picture organizational goals.</li>
+
+            <li><span class="highlight">Operational:</span> Real-time monitoring.</li>
+
+            <li><span class="highlight">Analytical:</span> Deep data exploration.</li>
+
+            <li><span class="highlight">Data Storytelling:</span> Data + Narrative + Visuals.</li>
+
+            <li><span class="highlight">Story Structure:</span> Attract → Engage → Punchline.</li>
+
+            <li><span class="highlight">Laws of Attraction:</span> Theme, audience, purpose, tone, simplicity.</li>
+
+            <li><span class="highlight">Rules of Engagement:</span> Use visuals, color, layout and guidance effectively.</li>
+
+            <li><span class="highlight">Punchline:</span> Deliver a clear and memorable conclusion.</li>
+
+        </ul>
+
+    </div>
+</div>
+
+</div>
+
+<div class="lecture-nav" id="lecture-nav"></div>
+<script type="text/javascript" src="notes.js"></script>
+
+</body>
+</html>

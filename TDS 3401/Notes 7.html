@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CDS6324 - Lecture 7 Notes</title>
+
+<link rel="stylesheet" href="notes.css">
+</head>
+
+<body>
+
+<div class="container">
+
+<header>
+    <h1>CDS 6324 - Data Visualization</h1>
+    <h3>Lecture 7: Interactive Visualization</h3>
+</header>
+
+<div id="header-config"
+    data-prev="6"
+    data-next="8"
+    data-name="Notes ">
+</div>
+
+<div class="card">
+    <h2 class="section-title">1. Exploratory Data Analysis (EDA)</h2>
+
+    <div class="definition">
+        Exploratory Data Analysis (EDA) is the process of examining data before building visualizations or conducting detailed analysis.
+    </div>
+
+    <div class="keypoint">
+        Before designing a visualization, understand your data first.
+    </div>
+
+    <ul>
+        <li>Distribution of values</li>
+        <li>Data quality issues</li>
+        <li>Outliers</li>
+        <li>Correlations</li>
+        <li>Interesting subsets</li>
+        <li>Potential relationships</li>
+    </ul>
+
+    <div class="exam">
+        EDA was introduced by John Tukey (1977).
+    </div>
+</div>
+
+<div class="card">
+    <h2 class="section-title">2. Why EDA Matters</h2>
+
+    <div class="definition">
+        EDA helps reveal patterns hidden inside raw data.
+    </div>
+
+    <div class="keypoint">
+        Raw tables are difficult to interpret.
+        Visual exploration makes patterns easier to discover.
+    </div>
+
+    <div class="memory">
+        🧠 EDA = Explore Before Explain
+    </div>
+</div>
+
+<div class="card">
+    <h2 class="section-title">3. What EDA Helps You Discover</h2>
+
+    <table>
+        <tr>
+            <th>Goal</th>
+            <th>Purpose</th>
+        </tr>
+
+        <tr>
+            <td>Outliers</td>
+            <td>Detect unusual values</td>
+        </tr>
+
+        <tr>
+            <td>Distributions</td>
+            <td>Check normality or skewness</td>
+        </tr>
+
+        <tr>
+            <td>Correlations</td>
+            <td>Identify relationships</td>
+        </tr>
+
+        <tr>
+            <td>Data Quality</td>
+            <td>Find errors or missing values</td>
+        </tr>
+
+        <tr>
+            <td>Transformations</td>
+            <td>Suggest log or other transformations</td>
+        </tr>
+    </table>
+</div>
+
+<div class="card">
+    <h2 class="section-title">4. Common EDA Visualizations</h2>
+
+    <ul>
+        <li>Histograms</li>
+        <li>Boxplots</li>
+        <li>Dot Plots</li>
+        <li>Scatterplots</li>
+        <li>Summary Statistics</li>
+    </ul>
+
+    <div class="keypoint">
+        Humans are excellent pattern recognizers.
+    </div>
+</div>
+
+<div class="card">
+    <h2 class="section-title">5. Important Statistical Measures</h2>
+
+    <table>
+        <tr>
+            <th>Measure</th>
+            <th>Description</th>
+        </tr>
+
+        <tr>
+            <td>Mean</td>
+            <td>Average value</td>
+        </tr>
+
+        <tr>
+            <td>Median</td>
+            <td>Middle value</td>
+        </tr>
+
+        <tr>
+            <td>Mode</td>
+            <td>Most frequent value</td>
+        </tr>
+
+        <tr>
+            <td>Range</td>
+            <td>Max − Min</td>
+        </tr>
+
+        <tr>
+            <td>Variance</td>
+            <td>Spread of values</td>
+        </tr>
+
+        <tr>
+            <td>Skewness</td>
+            <td>Measure of asymmetry</td>
+        </tr>
+    </table>
+</div>
+
+<div class="card">
+    <h2 class="section-title">6. Quartiles and IQR</h2>
+
+    <div class="definition">
+        Quartiles divide sorted data into four equal parts.
+    </div>
+
+    <ul>
+        <li>Q1 = 25th percentile</li>
+        <li>Q2 = Median (50th percentile)</li>
+        <li>Q3 = 75th percentile</li>
+    </ul>
+
+    <div class="keypoint">
+        Interquartile Range (IQR) = Q3 − Q1
+    </div>
+
+    <div class="exam">
+        IQR is commonly used to detect outliers.
+    </div>
+</div>
+
+<div class="card">
+    <h2 class="section-title">7. EDA in a Nutshell</h2>
+
+    <div class="keypoint">
+        Always inspect every variable in your dataset.
+    </div>
+
+    <ul>
+        <li>Look at distributions</li>
+        <li>Identify unusual values</li>
+        <li>Check assumptions</li>
+        <li>Explore relationships</li>
+    </ul>
+
+    <div class="memory">
+        🧠 Bottom Line:
+        <br><br>
+        Always look at your data before modeling it.
+    </div>
+</div>
+
+<div class="card">
+    <h2 class="section-title">8. What is Interaction?</h2>
+
+    <blockquote>
+        Interaction between people and machines requires mutual intelligibility or shared understanding.
+    </blockquote>
+
+    <div class="definition">
+        Interactive visualization allows users to actively explore and manipulate visual representations of data.
+    </div>
+</div>
+
+<div class="card">
+    <h2 class="section-title">9. Taxonomy of Interaction</h2>
+
+    <table>
+        <tr>
+            <th>Category</th>
+            <th>Techniques</th>
+        </tr>
+
+        <tr>
+            <td>Data & View Specification</td>
+            <td>Visualize, Filter, Sort, Derive</td>
+        </tr>
+
+        <tr>
+            <td>View Manipulation</td>
+            <td>Select, Navigate, Coordinate, Organize</td>
+        </tr>
+
+        <tr>
+            <td>Process & Provenance</td>
+            <td>Record, Annotate, Share, Guide</td>
+        </tr>
+    </table>
+</div>
+
+<div class="card">
+    <h2 class="section-title">10. Data & View Specification</h2>
+
+    <div class="definition">
+        Allows users to determine what data is displayed and how it is displayed.
+    </div>
+
+    <ul>
+        <li>Visualize</li>
+        <li>Filter</li>
+        <li>Sort</li>
+        <li>Derive</li>
+    </ul>
+
+    <div class="memory">
+        🧠 Choose the Data + Choose the View
+    </div>
+</div>
+
+<div class="card">
+    <h2 class="section-title">11. View Manipulation</h2>
+
+    <div class="definition">
+        Allows users to interact directly with visual representations.
+    </div>
+
+    <ul>
+        <li>Select</li>
+        <li>Navigate</li>
+        <li>Coordinate</li>
+        <li>Organize</li>
+    </ul>
+</div>
+
+<div class="card">
+    <h2 class="section-title">12. Process & Provenance</h2>
+
+    <div class="definition">
+        Supports tracking and communicating analysis progress.
+    </div>
+
+    <ul>
+        <li>Record actions</li>
+        <li>Annotate findings</li>
+        <li>Share insights</li>
+        <li>Guide exploration</li>
+    </ul>
+</div>
+
+<div class="card">
+    <h2 class="section-title">13. Reorderable Matrix</h2>
+
+    <div class="definition">
+        Rows and columns can be reordered to reveal patterns and relationships.
+    </div>
+
+    <div class="keypoint">
+        Rearranging data often reveals hidden structures.
+    </div>
+
+    <div class="exam">
+        Used to discover relationships through permutation.
+    </div>
+</div>
+
+<div class="card">
+    <h2 class="section-title">14. Matrix Files & Image Files</h2>
+
+    <table>
+        <tr>
+            <th>Technique</th>
+            <th>Purpose</th>
+        </tr>
+
+        <tr>
+            <td>Image File</td>
+            <td>Represent ordered objects visually</td>
+        </tr>
+
+        <tr>
+            <td>Matrix File</td>
+            <td>Handle very large dimensions</td>
+        </tr>
+    </table>
+
+    <div class="keypoint">
+        Sorting is used to discover correlations.
+    </div>
+</div>
+
+<div class="card">
+    <h2 class="section-title">15. Selection Techniques</h2>
+
+    <table>
+        <tr>
+            <th>Type</th>
+            <th>Example</th>
+        </tr>
+
+        <tr>
+            <td>Point Selection</td>
+            <td>Mouse click, hover, tap</td>
+        </tr>
+
+        <tr>
+            <td>Region Selection</td>
+            <td>Lasso, rubber-band selection</td>
+        </tr>
+    </table>
+
+    <div class="memory">
+        🧠 Point = One Item
+        <br>
+        Region = Many Items
+    </div>
+</div>
+
+<div class="card">
+    <h2 class="section-title">16. Brushing and Linking</h2>
+
+    <div class="definition">
+        Selecting data in one view automatically highlights related data in another view.
+    </div>
+
+    <div class="keypoint">
+        Multiple visualizations become connected.
+    </div>
+
+    <div class="example">
+        Select players with high salaries and see them highlighted in other baseball statistics charts.
+    </div>
+
+    <div class="exam">
+        One of the most important interaction techniques.
+    </div>
+</div>
+
+<div class="card">
+    <h2 class="section-title">17. Linked Highlighting</h2>
+
+    <div class="definition">
+        Highlighting selected data across multiple visualizations simultaneously.
+    </div>
+
+    <div class="keypoint">
+        Helps compare patterns across different views.
+    </div>
+</div>
+
+<div class="card">
+    <h2 class="section-title">18. Dynamic Queries</h2>
+
+    <div class="definition">
+        Interactive filtering where results update immediately as controls are adjusted.
+    </div>
+
+    <div class="example">
+        Adjust a price slider and instantly see matching houses.
+    </div>
+
+    <div class="memory">
+        🧠 Dynamic Queries = Instant Feedback
+    </div>
+</div>
+
+<div class="card">
+    <h2 class="section-title">19. Problems with Text-Based Queries</h2>
+
+    <ul>
+        <li>Rigid syntax</li>
+        <li>Difficult for beginners</li>
+        <li>Slow interaction cycle</li>
+        <li>No guidance for reformulation</li>
+        <li>Results often returned as tables</li>
+    </ul>
+</div>
+
+<div class="card">
+    <h2 class="section-title">20. Direct Manipulation</h2>
+
+    <div class="definition">
+        Users interact directly with visual objects rather than typing commands.
+    </div>
+
+    <ul>
+        <li>Point and click</li>
+        <li>Drag and drop</li>
+        <li>Immediate feedback</li>
+        <li>Reversible actions</li>
+    </ul>
+
+    <div class="keypoint">
+        Easier and more intuitive than textual queries.
+    </div>
+</div>
+
+<div class="card">
+    <h2 class="section-title">21. Dynamic Query Advantages & Disadvantages</h2>
+
+    <table>
+        <tr>
+            <th>Pros</th>
+            <th>Cons</th>
+        </tr>
+
+        <tr>
+            <td>Easy for beginners</td>
+            <td>Limited query complexity</td>
+        </tr>
+
+        <tr>
+            <td>Fast exploration</td>
+            <td>Many controls may clutter interface</td>
+        </tr>
+
+        <tr>
+            <td>Immediate feedback</td>
+            <td>Screen space limitations</td>
+        </tr>
+    </table>
+</div>
+
+<div class="card">
+    <h2 class="section-title">22. Trellis Display</h2>
+
+    <div class="definition">
+        A framework that divides data into multiple panels based on categories.
+    </div>
+
+    <div class="keypoint">
+        Allows easy comparison across groups.
+    </div>
+
+    <div class="example">
+        Split a scatterplot by gender or political affiliation.
+    </div>
+</div>
+
+<div class="card">
+    <h2 class="section-title">23. Big Data Visualization</h2>
+
+    <div class="definition">
+        Interactive visualization must remain responsive even with billions of records.
+    </div>
+
+    <div class="exam">
+        Two Major Challenges:
+        <ul>
+            <li>Effective visual encoding</li>
+            <li>Real-time interaction</li>
+        </ul>
+    </div>
+</div>
+
+<div class="card">
+    <h2 class="section-title">24. Big Data Techniques</h2>
+
+    <table>
+        <tr>
+            <th>Technique</th>
+            <th>Purpose</th>
+        </tr>
+
+        <tr>
+            <td>Sampling</td>
+            <td>Use subset of data</td>
+        </tr>
+
+        <tr>
+            <td>Binning</td>
+            <td>Group values together</td>
+        </tr>
+
+        <tr>
+            <td>Modeling</td>
+            <td>Represent patterns efficiently</td>
+        </tr>
+
+        <tr>
+            <td>Aggregation</td>
+            <td>Summarize large datasets</td>
+        </tr>
+    </table>
+
+    <div class="memory">
+        🧠 Don't visualize billions of records directly.
+        Summarize first.
+    </div>
+</div>
+
+<div class="card">
+    <h2 class="section-title">25. Final Exam Summary</h2>
+
+    <div class="summary">
+
+        <h3>Most Important Points</h3>
+
+        <ul>
+
+            <li><span class="highlight">EDA:</span> Explore data before visualization.</li>
+
+            <li><span class="highlight">Tukey (1977):</span> Introduced EDA.</li>
+
+            <li><span class="highlight">EDA Goals:</span> Find distributions, outliers, correlations and quality issues.</li>
+
+            <li><span class="highlight">Taxonomy of Interaction:</span> Data & View Specification, View Manipulation, Process & Provenance.</li>
+
+            <li><span class="highlight">Selection:</span> Point selection and region selection.</li>
+
+            <li><span class="highlight">Brushing & Linking:</span> Highlight related data across views.</li>
+
+            <li><span class="highlight">Dynamic Queries:</span> Interactive filtering with immediate feedback.</li>
+
+            <li><span class="highlight">Direct Manipulation:</span> Pointing instead of typing.</li>
+
+            <li><span class="highlight">Trellis Displays:</span> Compare categories using multiple panels.</li>
+
+            <li><span class="highlight">Big Data:</span> Use sampling, binning, modeling and aggregation.</li>
+
+        </ul>
+
+    </div>
+</div>
+
+</div>
+
+<div class="lecture-nav" id="lecture-nav"></div>
+<script type="text/javascript" src="notes.js"></script>
+
+
+</body>
+</html>

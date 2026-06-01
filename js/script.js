@@ -235,7 +235,7 @@ const countStartDates = [
 const countDownDates = [
    // new Date("24 May, 2026 23:59:00").getTime(), // DV 
     //new Date("24 May, 2026 23:59:00").getTime(), // VIP
-    new Date("3 Jun, 2026 18:00:00").getTime(),
+    new Date("3 Jun, 2026 20:15:00").getTime(),
     new Date("5 Jun, 2026 18:00:00").getTime(), 
     new Date("25 Jun, 2026 10:00:00").getTime(), // VIP Q2
     new Date("26 Jun, 2026 23:59:59").getTime(), // DV

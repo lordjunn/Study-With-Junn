@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TDS 3651 - Final Exam Summary</title>
+    <link rel="stylesheet" href="../css/notes2.css">
+    <style>
+        /* Additional styles for the combined summaries page */
+        .summary-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 30px;
+            background: linear-gradient(135deg, #2563eb, #7c3aed);
+            color: white;
+            border-radius: 16px;
+        }
+
+        .page-header h1 {
+            margin: 0;
+            font-size: 2.2rem;
+            font-weight: 700;
+        }
+
+        .page-header p {
+            margin: 15px 0 0;
+            opacity: 0.95;
+            font-size: 1.1rem;
+        }
+
+        /* Adjust summary section for the combined page */
+        #combined-summaries .card h2.section-title {
+            color: var(--blue);
+            border-bottom: 3px solid #dbeafe;
+            padding-bottom: 8px;
+            margin-bottom: 15px;
+        }
+
+        #combined-summaries .summary {
+            background: var(--card);
+            color: var(--text);
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,.08);
+        }
+
+        #combined-summaries .summary h3 {
+            margin-top: 0;
+            color: var(--blue);
+            font-size: 1.2rem;
+            border-bottom: 2px solid #dbeafe;
+            padding-bottom: 10px;
+        }
+
+        #combined-summaries .summary ul {
+            margin: 0;
+            padding-left: 25px;
+        }
+
+        #combined-summaries .summary li {
+            margin-bottom: 12px;
+            line-height: 1.6;
+        }
+
+        #combined-summaries footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 30px;
+            color: var(--text);
+            opacity: 0.8;
+        }
+
+        footer a {
+            color: var(--blue);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="summary-container" id="combined-summaries">
+        <header>
+            <h1>TDS 3651 - Image Processing & Computer Vision</h1>
+            <p><a href="#">Notes Summary</a></p>
+        </header>
+
+        <!-- Notes 1 Summary -->
+        <div class="card">
+            <h2 class="section-title">1. Final Exam Summary - Computer Vision Fundamentals</h2>
+            <div class="summary">
+                <h3>Most Important Points</h3>
+                <ul>
+                    <li><span class="highlight">Computer Vision:</span> Image/Video → Information</li>
+                    <li><span class="highlight">Image Processing:</span> Image → Image</li>
+                    <li><span class="highlight">Graphics:</span> Create images</li>
+                    <li><span class="highlight">Three Areas:</span> Measurement, Perception, Search</li>
+                    <li><span class="highlight">Challenge:</span> 3D world projected to 2D images</li>
+                    <li><span class="highlight">OCR:</span> Image text → Digital text</li>
+                    <li><span class="highlight">Applications:</span> Face recognition, medical imaging, autonomous vehicles</li>
+                    <li><span class="highlight">Digital Image:</span> Collection of pixels</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Notes 2 Summary -->
+        <div class="card">
+            <h2 class="section-title">2. Final Exam Summary - Digitization & Filtering</h2>
+            <div class="summary">
+                <h3>Most Important Points</h3>
+                <ul>
+                    <li><span class="highlight">Digitization:</span> Sampling + Quantization</li>
+                    <li><span class="highlight">Pixel:</span> Smallest image element</li>
+                    <li><span class="highlight">Image Function:</span> f(x,y)</li>
+                    <li><span class="highlight">Storage:</span> B = M × N × k</li>
+                    <li><span class="highlight">Subsampling:</span> Can cause pixelation and checkerboard effects</li>
+                    <li><span class="highlight">Point Processing:</span> Transform each pixel independently</li>
+                    <li><span class="highlight">Histogram:</span> Distribution of pixel intensities</li>
+                    <li><span class="highlight">Histogram Equalization:</span> Automatic contrast enhancement</li>
+                    <li><span class="highlight">Neighbourhood Processing:</span> Uses surrounding pixels</li>
+                    <li><span class="highlight">Filtering:</span> Foundation of image processing techniques</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Notes 3 Summary -->
+        <div class="card">
+            <h2 class="section-title">3. Final Exam Summary - Filtering Techniques</h2>
+            <div class="summary">
+                <h3>Most Important Points</h3>
+                <ul>
+                    <li><span class="highlight">Filtering:</span> Uses neighbouring pixels.</li>
+                    <li><span class="highlight">Moving Average:</span> Average of neighbours.</li>
+                    <li><span class="highlight">Gaussian Filter:</span> Weighted smoothing using σ.</li>
+                    <li><span class="highlight">Correlation:</span> Apply kernel directly.</li>
+                    <li><span class="highlight">Convolution:</span> Flip kernel first.</li>
+                    <li><span class="highlight">Special Rule:</span> Symmetric kernel → Correlation = Convolution.</li>
+                    <li><span class="highlight">Separability:</span> Gaussian filter is separable.</li>
+                    <li><span class="highlight">Sharpening:</span> Enhance edges and details.</li>
+                    <li><span class="highlight">Unsharp Masking:</span> Original + (Original − Smoothed).</li>
+                    <li><span class="highlight">Median Filter:</span> Best for Salt & Pepper Noise.</li>
+                    <li><span class="highlight">Alpha-Trimmed Mean:</span> Remove extremes then average.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Notes 4 Summary -->
+        <div class="card">
+            <h2 class="section-title">4. Final Exam Summary - Edge Detection</h2>
+            <div class="summary">
+                <h3>Most Important Points</h3>
+                <ul>
+                    <li><span class="highlight">Edge:</span> Sudden intensity change.</li>
+                    <li><span class="highlight">Gradient:</span> Measures intensity change.</li>
+                    <li><span class="highlight">Gradient Magnitude:</span> Edge strength.</li>
+                    <li><span class="highlight">Noise:</span> Causes false edges.</li>
+                    <li><span class="highlight">DoG / LoG:</span> Edge detection operators.</li>
+                    <li><span class="highlight">Sigma:</span> Controls smoothing.</li>
+                    <li><span class="highlight">Thresholding:</span> Select edges.</li>
+                    <li><span class="highlight">Canny:</span> Gaussian + NMS + Hysteresis.</li>
+                    <li><span class="highlight">Non-Max Suppression:</span> Produces thin edges.</li>
+                    <li><span class="highlight">Hysteresis:</span> Dual threshold linking.</li>
+                    <li><span class="highlight">Edge Linking:</span> Connects edges.</li>
+                    <li><span class="highlight">Precision & Recall:</span> Evaluation metrics.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Notes 5 Summary -->
+        <div class="card">
+            <h2 class="section-title">5. Final Exam Summary - Binary Images & Morphology</h2>
+            <div class="summary">
+                <h3>Most Important Points</h3>
+                <ul>
+                    <li><span class="highlight">Binary Image:</span> Foreground/background only.</li>
+                    <li><span class="highlight">Thresholding:</span> Grayscale → Binary.</li>
+                    <li><span class="highlight">Histogram:</span> Helps choose threshold.</li>
+                    <li><span class="highlight">Dilation:</span> Expands objects.</li>
+                    <li><span class="highlight">Erosion:</span> Shrinks objects.</li>
+                    <li><span class="highlight">Opening:</span> Removes small noise.</li>
+                    <li><span class="highlight">Closing:</span> Fills gaps.</li>
+                    <li><span class="highlight">Structuring Element:</span> Morphology mask.</li>
+                    <li><span class="highlight">Connected Components:</span> Labels objects.</li>
+                    <li><span class="highlight">4-Connected:</span> No diagonals.</li>
+                    <li><span class="highlight">8-Connected:</span> Includes diagonals.</li>
+                    <li><span class="highlight">Area:</span> Pixel count.</li>
+                    <li><span class="highlight">Centroid:</span> Object center.</li>
+                    <li><span class="highlight">Bounding Box:</span> Object boundary.</li>
+                    <li><span class="highlight">Circularity:</span> Shape roundness.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Notes 6 Summary -->
+        <div class="card">
+            <h2 class="section-title">6. Final Exam Summary - Colour Image Processing</h2>
+            <div class="summary">
+                <h3>Most Important Points</h3>
+                <ul>
+                    <li><span class="highlight">Colour:</span> Light + perception.</li>
+                    <li><span class="highlight">Visible Spectrum:</span> 400–700 nm.</li>
+                    <li><span class="highlight">Rods:</span> Brightness vision.</li>
+                    <li><span class="highlight">Cones:</span> Colour vision.</li>
+                    <li><span class="highlight">RGB:</span> Additive model.</li>
+                    <li><span class="highlight">CMYK:</span> Subtractive model.</li>
+                    <li><span class="highlight">HSV:</span> Hue, Saturation, Value.</li>
+                    <li><span class="highlight">YCbCr:</span> Luminance + chrominance.</li>
+                    <li><span class="highlight">Colour Gamut:</span> Range of colours.</li>
+                    <li><span class="highlight">LAB/LUV:</span> Perceptual colour spaces.</li>
+                    <li><span class="highlight">CBIR:</span> Colour-based retrieval.</li>
+                    <li><span class="highlight">Applications:</span> Skin detection, colourization.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Notes 7 Summary -->
+        <div class="card">
+            <h2 class="section-title">7. Final Exam Summary - Texture Analysis</h2>
+            <div class="summary">
+                <h3>Most Important Points</h3>
+                <ul>
+                    <li><span class="highlight">Texture:</span> Repeated patterns.</li>
+                    <li><span class="highlight">Analysis:</span> Segment, classify, synthesize.</li>
+                    <li><span class="highlight">Filter Bank:</span> Extract features.</li>
+                    <li><span class="highlight">LM Filters:</span> 48 filters.</li>
+                    <li><span class="highlight">Feature Vector:</span> Texture description.</li>
+                    <li><span class="highlight">Distance:</span> Similarity measure.</li>
+                    <li><span class="highlight">Clustering:</span> Group textures.</li>
+                    <li><span class="highlight">K-Means:</span> Iterative clustering.</li>
+                    <li><span class="highlight">Textons:</span> Texture primitives.</li>
+                    <li><span class="highlight">Histogram:</span> Frequency distribution.</li>
+                    <li><span class="highlight">Applications:</span> Classification, retrieval.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Notes 8 Summary -->
+        <div class="card">
+            <h2 class="section-title">8. Final Exam Summary - Segmentation Methods</h2>
+            <div class="summary">
+                <h3>Most Important Points</h3>
+                <ul>
+                    <li><span class="highlight">Segmentation:</span> Divide image regions.</li>
+                    <li><span class="highlight">Gestalt:</span> Human grouping rules.</li>
+                    <li><span class="highlight">Thresholding:</span> Intensity-based split.</li>
+                    <li><span class="highlight">Clustering:</span> Group similar pixels.</li>
+                    <li><span class="highlight">K-Means:</span> Assign-update-repeat.</li>
+                    <li><span class="highlight">Feature Space:</span> Colour, texture, position.</li>
+                    <li><span class="highlight">Superpixels:</span> Pixel grouping units.</li>
+                    <li><span class="highlight">Graph Cuts:</span> Remove weak links.</li>
+                    <li><span class="highlight">Normalized Cuts:</span> Spectral method.</li>
+                    <li><span class="highlight">Felzenszwalb:</span> Fast graph segmentation.</li>
+                    <li><span class="highlight">SLIC:</span> Superpixel algorithm.</li>
+                    <li><span class="highlight">FCN:</span> Semantic segmentation.</li>
+                    <li><span class="highlight">Mask R-CNN:</span> Instance segmentation.</li>
+                    <li><span class="highlight">SAM:</span> Prompt-based segmentation.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Notes 9 Summary -->
+        <div class="card">
+            <h2 class="section-title">9. Final Exam Summary - Local Features</h2>
+            <div class="summary">
+                <h3>Most Important Points</h3>
+                <ul>
+                    <li><span class="highlight">Local Features:</span> Detect and match regions.</li>
+                    <li><span class="highlight">Requirements:</span> Repeatable, distinctive.</li>
+                    <li><span class="highlight">Invariance:</span> Scale, rotation, illumination.</li>
+                    <li><span class="highlight">Corners:</span> Multi-direction intensity change.</li>
+                    <li><span class="highlight">Harris:</span> Corner detector.</li>
+                    <li><span class="highlight">Scale-Space:</span> Multi-scale detection.</li>
+                    <li><span class="highlight">LoG:</span> Blob detection.</li>
+                    <li><span class="highlight">DoG:</span> Fast LoG approximation.</li>
+                    <li><span class="highlight">SIFT:</span> Scale invariant features.</li>
+                    <li><span class="highlight">Orientation:</span> Rotation invariance.</li>
+                    <li><span class="highlight">Descriptor:</span> 128-dim vector.</li>
+                    <li><span class="highlight">Applications:</span> Recognition, tracking, 3D reconstruction.</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Notes 10 Summary -->
+
+        <div class="card">
+            <h2 class="section-title">10. Final Exam Summary - Visual Words & Feature Indexing</h2>
+            <div class="summary">
+                <h3>Most Important Points</h3>
+                <ul>
+                    <li><span class="highlight">Feature Indexing:</span> Enables efficient matching in large image databases.</li>
+                    <li><span class="highlight">Descriptor Space:</span> Local features represented as high-dimensional vectors (e.g. SIFT).</li>
+                    <li><span class="highlight">Visual Words:</span> Quantized local descriptors treated as image "words".</li>
+                    <li><span class="highlight">Visual Vocabulary:</span> Collection of visual words created through clustering.</li>
+                    <li><span class="highlight">k-Means:</span> Common algorithm used to form visual vocabularies.</li>
+                    <li><span class="highlight">Quantization:</span> Assign descriptors to the nearest cluster center.</li>
+                    <li><span class="highlight">Textons:</span> Cluster centers representing texture primitives.</li>
+                    <li><span class="highlight">Bag of Visual Words (BoVW):</span> Represents an image using a histogram of visual word occurrences.</li>
+                    <li><span class="highlight">Histogram Representation:</span> Counts frequencies of visual words in an image.</li>
+                    <li><span class="highlight">Cosine Similarity:</span> Measures similarity between BoVW vectors.</li>
+                    <li><span class="highlight">Inverted File Index:</span> Maps visual words to images containing them.</li>
+                    <li><span class="highlight">Sparse Representation:</span> Efficient storage because most words do not occur in every image.</li>
+                    <li><span class="highlight">tf-idf:</span> Emphasizes important words while downweighting common words.</li>
+                    <li><span class="highlight">BoVW Limitation:</span> Ignores spatial relationships between features.</li>
+                    <li><span class="highlight">Improvements:</span> Visual phrases, spatial verification, image sub-grids.</li>
+                    <li><span class="highlight">Image Retrieval:</span> Find images or objects similar to a query image.</li>
+                    <li><span class="highlight">Video Google:</span> Classic object retrieval system using visual words.</li>
+                    <li><span class="highlight">Precision:</span> Relevant Retrieved / Retrieved.</li>
+                    <li><span class="highlight">Recall:</span> Relevant Retrieved / Total Relevant.</li>
+                    <li><span class="highlight">Applications:</span> Image search, object retrieval, large-scale visual databases.</li>
+                </ul>
+            </div>
+        </div>
+
+    <footer>
+        <p>💡 <em>"The best visuals are the kind that you can believe."</em></p>
+        <p><a href="../TDS 3651.html">← Back to TDS 3651 Course Page</a></p>
+    </footer>
+
+        <!-- Script for theme toggle and navigation -->
+        <script type="text/javascript" src="../js/theme.js"></script>
+    </div>
+
+</body>
+</html>

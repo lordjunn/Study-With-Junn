@@ -49,6 +49,12 @@ function formatExactCountdownTime(countDownDate) {
 
 function createCountdownElements(containerId, countDownDate) {
     const container = document.getElementById(containerId);
+
+    if (!container) {
+        console.warn(`Container "${containerId}" not found.`);
+        return null;
+    }
+
     const demo = document.createElement('p');
     const progressBar = document.createElement('div');
     const progressBarFill = document.createElement('div');
@@ -204,8 +210,19 @@ function updateCountdown(countDownDate, countStartDate, { demo, progressBar, pro
 // Function to initialize countdowns
 function initializeCountdowns(countDownDates, countStartDates, containerIds) {
     countDownDates.forEach((countDownDate, index) => {
-        const { demo, progressBar, progressBarFill, demo2 } = createCountdownElements(containerIds[index], countDownDate);
-        updateCountdown(countDownDate, countStartDates[index], { demo, progressBar, progressBarFill, demo2 });
+
+        const elements = createCountdownElements(
+            containerIds[index],
+            countDownDate
+        );
+
+        if (!elements) return;
+
+        updateCountdown(
+            countDownDate,
+            countStartDates[index],
+            elements
+        );
     });
 }
 
@@ -230,8 +247,8 @@ const countStartDates = [
 
 const countDownDates = [
     new Date("25 Jun, 2026 10:00:00").getTime(), // VIP Q2
-    new Date("26 Jun, 2026 23:59:59").getTime(), // DV
-    new Date("3 Jul, 2026 23:59:59").getTime(),  // VIP
+    new Date("5 Jul, 2026 23:59:59").getTime(), // DV
+    new Date("5 Jul, 2026 23:59:59").getTime(),  // VIP
     new Date("27 Jul, 2026 00:00:00").getTime(), // END
 ];
 

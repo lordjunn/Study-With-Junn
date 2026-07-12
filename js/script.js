@@ -239,21 +239,18 @@ function closeDisclaimer() {
 }
 
 const countStartDates = [
-    new Date("6 Jul, 2026 00:00:00").getTime(),
-    new Date("6 Jul, 2026 00:00:00").getTime(),
+    new Date("7 Jul, 2026 20:48:00").getTime(),
     new Date("30 Mar, 2026 00:00:00").getTime(),
 ];
 
 const countDownDates = [
-    new Date("8 Jul, 2026 13:00:00").getTime(),
-    new Date("11 Jul, 2026 15:00:00").getTime(),
-    new Date("27 Jul, 2026 00:00:00").getTime(), // END
+    new Date("16 Jul, 2026 15:00:00").getTime(),
+    new Date("16 Aug, 2026 00:00:00").getTime(), // END
 ];
 
 const containerIds = [
     "countdown-container-1",
     "countdown-container-2",
-    "countdown-container-3",
 ];
 
 initializeCountdowns(countDownDates, countStartDates, containerIds);

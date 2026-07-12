@@ -3,123 +3,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://lordjunn.github.io/Study-With-Junn/index.html</loc>
-    <lastmod>2026-02-28</lastmod>
+    <lastmod>2026-07-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://lordjunn.github.io/Study-With-Junn/Credits.html</loc>
-    <lastmod>2026-02-28</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://lordjunn.github.io/Study-With-Junn/Update%20logs.html</loc>
+    <lastmod>2026-07-06</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lordjunn.github.io/Study-With-Junn/Credits.html</loc>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://lordjunn.github.io/Study-With-Junn/Math%201.html</loc>
     <lastmod>2026-02-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://lordjunn.github.io/Study-With-Junn/Math%202.html</loc>
-    <lastmod>2026-02-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://lordjunn.github.io/Study-With-Junn/Math%203.html</loc>
-    <lastmod>2026-02-28</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://lordjunn.github.io/Study-With-Junn/PPP%20PDS.html</loc>
-    <lastmod>2026-02-28</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://lordjunn.github.io/Study-With-Junn/TCP%202101.html</loc>
-    <lastmod>2026-02-28</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://lordjunn.github.io/Study-With-Junn/TCS%203351.html</loc>
-    <lastmod>2026-02-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://lordjunn.github.io/Study-With-Junn/TDS%202201.html</loc>
-    <lastmod>2026-02-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://lordjunn.github.io/Study-With-Junn/TDS%203301.html</loc>
-    <lastmod>2026-02-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://lordjunn.github.io/Study-With-Junn/TDS%203651.html</loc>
-    <lastmod>2026-02-28</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://lordjunn.github.io/Study-With-Junn/TDS%203851.html</loc>
-    <lastmod>2026-02-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://lordjunn.github.io/Study-With-Junn/TMA%201101.html</loc>
-    <lastmod>2026-02-28</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://lordjunn.github.io/Study-With-Junn/TMA%201201.html</loc>
-    <lastmod>2026-02-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://lordjunn.github.io/Study-With-Junn/TMA%201301.html</loc>
-    <lastmod>2026-02-28</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://lordjunn.github.io/Study-With-Junn/TSE%202101.html</loc>
-    <lastmod>2026-02-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://lordjunn.github.io/Study-With-Junn/TSN%201101.html</loc>
-    <lastmod>2026-02-28</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://lordjunn.github.io/Study-With-Junn/TSN%202101.html</loc>
-    <lastmod>2026-02-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://lordjunn.github.io/Study-With-Junn/TSN%202201.html</loc>
-    <lastmod>2026-02-28</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://lordjunn.github.io/Study-With-Junn/Update%20logs.html</loc>
-    <lastmod>2026-02-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://lordjunn.github.io/Study-With-Junn/Math%201/Module%201.1.html</loc>
@@ -338,6 +242,12 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://lordjunn.github.io/Study-With-Junn/Math%202.html</loc>
+    <lastmod>2026-02-24</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://lordjunn.github.io/Study-With-Junn/Math%202/All%20in%20one.html</loc>
     <lastmod>2026-02-28</lastmod>
     <changefreq>yearly</changefreq>
@@ -500,6 +410,12 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://lordjunn.github.io/Study-With-Junn/Math%203.html</loc>
+    <lastmod>2026-02-28</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://lordjunn.github.io/Study-With-Junn/Math%203/All%20in%201.html</loc>
     <lastmod>2026-02-28</lastmod>
     <changefreq>yearly</changefreq>
@@ -650,6 +566,12 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://lordjunn.github.io/Study-With-Junn/PPP%20PDS.html</loc>
+    <lastmod>2026-02-28</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://lordjunn.github.io/Study-With-Junn/PPP/Exams.html</loc>
     <lastmod>2026-02-28</lastmod>
     <changefreq>yearly</changefreq>
@@ -776,8 +698,20 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://lordjunn.github.io/Study-With-Junn/TCP%202101.html</loc>
+    <lastmod>2026-02-28</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://lordjunn.github.io/Study-With-Junn/TCP%202101/Exams.html</loc>
     <lastmod>2026-02-28</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://lordjunn.github.io/Study-With-Junn/TCS%203351.html</loc>
+    <lastmod>2026-02-24</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -854,6 +788,12 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://lordjunn.github.io/Study-With-Junn/TDS%202201.html</loc>
+    <lastmod>2026-02-24</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://lordjunn.github.io/Study-With-Junn/TDS%202201/Exams.html</loc>
     <lastmod>2026-02-28</lastmod>
     <changefreq>yearly</changefreq>
@@ -896,6 +836,12 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://lordjunn.github.io/Study-With-Junn/TDS%203301.html</loc>
+    <lastmod>2026-05-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://lordjunn.github.io/Study-With-Junn/TDS%203301/Exams.html</loc>
     <lastmod>2026-02-28</lastmod>
     <changefreq>yearly</changefreq>
@@ -903,19 +849,151 @@
   </url>
   <url>
     <loc>https://lordjunn.github.io/Study-With-Junn/TDS%203301/Module%201.html</loc>
-    <lastmod>2026-02-28</lastmod>
+    <lastmod>2026-05-22</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://lordjunn.github.io/Study-With-Junn/TDS%203301/Module%202.html</loc>
-    <lastmod>2026-02-28</lastmod>
+    <lastmod>2026-05-22</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://lordjunn.github.io/Study-With-Junn/TDS%203301/Module%203.html</loc>
-    <lastmod>2026-02-28</lastmod>
+    <lastmod>2026-05-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://lordjunn.github.io/Study-With-Junn/TDS%203401.html</loc>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://lordjunn.github.io/Study-With-Junn/TDS%203401/Module%201.html</loc>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://lordjunn.github.io/Study-With-Junn/TDS%203401/Module%2010.html</loc>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://lordjunn.github.io/Study-With-Junn/TDS%203401/Module%2011.html</loc>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://lordjunn.github.io/Study-With-Junn/TDS%203401/Module%202.html</loc>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://lordjunn.github.io/Study-With-Junn/TDS%203401/Module%203.html</loc>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://lordjunn.github.io/Study-With-Junn/TDS%203401/Module%204.html</loc>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://lordjunn.github.io/Study-With-Junn/TDS%203401/Module%205.html</loc>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://lordjunn.github.io/Study-With-Junn/TDS%203401/Module%206.html</loc>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://lordjunn.github.io/Study-With-Junn/TDS%203401/Module%207.html</loc>
+    <lastmod>2026-05-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://lordjunn.github.io/Study-With-Junn/TDS%203401/Module%208.html</loc>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://lordjunn.github.io/Study-With-Junn/TDS%203401/Module%209.html</loc>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://lordjunn.github.io/Study-With-Junn/TDS%203401/Notes%201.html</loc>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://lordjunn.github.io/Study-With-Junn/TDS%203401/Notes%202.html</loc>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://lordjunn.github.io/Study-With-Junn/TDS%203401/Notes%203.html</loc>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://lordjunn.github.io/Study-With-Junn/TDS%203401/Notes%204.html</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://lordjunn.github.io/Study-With-Junn/TDS%203401/Notes%205.html</loc>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://lordjunn.github.io/Study-With-Junn/TDS%203401/Notes%206.html</loc>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://lordjunn.github.io/Study-With-Junn/TDS%203401/Notes%207.html</loc>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://lordjunn.github.io/Study-With-Junn/TDS%203401/Notes%208.html</loc>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://lordjunn.github.io/Study-With-Junn/TDS%203401/Notes.html</loc>
+    <lastmod>2026-06-07</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://lordjunn.github.io/Study-With-Junn/TDS%203651.html</loc>
+    <lastmod>2026-06-21</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -926,38 +1004,176 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://lordjunn.github.io/Study-With-Junn/TDS%203651/Module%201.html</loc>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://lordjunn.github.io/Study-With-Junn/TDS%203651/Module%2010.html</loc>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://lordjunn.github.io/Study-With-Junn/TDS%203651/Module%202.html</loc>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://lordjunn.github.io/Study-With-Junn/TDS%203651/Module%203.html</loc>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://lordjunn.github.io/Study-With-Junn/TDS%203651/Module%204.html</loc>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://lordjunn.github.io/Study-With-Junn/TDS%203651/Module%205.html</loc>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://lordjunn.github.io/Study-With-Junn/TDS%203651/Module%206.html</loc>
+    <lastmod>2026-05-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://lordjunn.github.io/Study-With-Junn/TDS%203651/Module%207.html</loc>
+    <lastmod>2026-05-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://lordjunn.github.io/Study-With-Junn/TDS%203651/Module%208.html</loc>
+    <lastmod>2026-05-31</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://lordjunn.github.io/Study-With-Junn/TDS%203651/Module%209.html</loc>
+    <lastmod>2026-05-31</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://lordjunn.github.io/Study-With-Junn/TDS%203651/Notes%201.html</loc>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://lordjunn.github.io/Study-With-Junn/TDS%203651/Notes%2010.html</loc>
+    <lastmod>2026-06-21</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://lordjunn.github.io/Study-With-Junn/TDS%203651/Notes%202.html</loc>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://lordjunn.github.io/Study-With-Junn/TDS%203651/Notes%203.html</loc>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://lordjunn.github.io/Study-With-Junn/TDS%203651/Notes%204.html</loc>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://lordjunn.github.io/Study-With-Junn/TDS%203651/Notes%205.html</loc>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://lordjunn.github.io/Study-With-Junn/TDS%203651/Notes%206.html</loc>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://lordjunn.github.io/Study-With-Junn/TDS%203651/Notes%207.html</loc>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://lordjunn.github.io/Study-With-Junn/TDS%203651/Notes%208.html</loc>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://lordjunn.github.io/Study-With-Junn/TDS%203651/Notes%209.html</loc>
+    <lastmod>2026-06-21</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://lordjunn.github.io/Study-With-Junn/TDS%203651/Notes.html</loc>
+    <lastmod>2026-06-21</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://lordjunn.github.io/Study-With-Junn/TDS%203651/Quiz.html</loc>
+    <lastmod>2026-05-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://lordjunn.github.io/Study-With-Junn/TDS%203851.html</loc>
+    <lastmod>2026-05-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://lordjunn.github.io/Study-With-Junn/TDS%203851/Module%201.html</loc>
-    <lastmod>2026-02-28</lastmod>
+    <lastmod>2026-05-22</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://lordjunn.github.io/Study-With-Junn/TDS%203851/Module%202.html</loc>
-    <lastmod>2026-02-28</lastmod>
+    <lastmod>2026-05-22</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://lordjunn.github.io/Study-With-Junn/TDS%203851/Module%203.html</loc>
-    <lastmod>2026-02-28</lastmod>
+    <lastmod>2026-05-22</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://lordjunn.github.io/Study-With-Junn/TDS%203851/Module%204.html</loc>
-    <lastmod>2026-02-28</lastmod>
+    <lastmod>2026-05-22</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://lordjunn.github.io/Study-With-Junn/TDS%203851/Module%205.html</loc>
-    <lastmod>2026-02-28</lastmod>
+    <lastmod>2026-05-22</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://lordjunn.github.io/Study-With-Junn/TDS%203851/Notes.html</loc>
-    <lastmod>2026-02-28</lastmod>
+    <lastmod>2026-04-01</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -969,6 +1185,12 @@
   </url>
   <url>
     <loc>https://lordjunn.github.io/Study-With-Junn/TDS%203851/Tests.html</loc>
+    <lastmod>2026-02-28</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://lordjunn.github.io/Study-With-Junn/TMA%201101.html</loc>
     <lastmod>2026-02-28</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
@@ -1088,6 +1310,12 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://lordjunn.github.io/Study-With-Junn/TMA%201201.html</loc>
+    <lastmod>2026-02-24</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://lordjunn.github.io/Study-With-Junn/TMA%201201/Exams.html</loc>
     <lastmod>2026-02-28</lastmod>
     <changefreq>yearly</changefreq>
@@ -1202,6 +1430,12 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://lordjunn.github.io/Study-With-Junn/TMA%201301.html</loc>
+    <lastmod>2026-02-28</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://lordjunn.github.io/Study-With-Junn/TMA%201301/Exams.html</loc>
     <lastmod>2026-02-28</lastmod>
     <changefreq>yearly</changefreq>
@@ -1274,6 +1508,12 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://lordjunn.github.io/Study-With-Junn/TSE%202101.html</loc>
+    <lastmod>2026-02-24</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://lordjunn.github.io/Study-With-Junn/TSE%202101/Exams.html</loc>
     <lastmod>2026-02-28</lastmod>
     <changefreq>yearly</changefreq>
@@ -1317,6 +1557,12 @@
   </url>
   <url>
     <loc>https://lordjunn.github.io/Study-With-Junn/TSE%202101/Module%207.html</loc>
+    <lastmod>2026-02-28</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://lordjunn.github.io/Study-With-Junn/TSN%201101.html</loc>
     <lastmod>2026-02-28</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
@@ -1366,6 +1612,12 @@
   <url>
     <loc>https://lordjunn.github.io/Study-With-Junn/TSN%201101/Module%20B1.html</loc>
     <lastmod>2026-02-28</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://lordjunn.github.io/Study-With-Junn/TSN%202101.html</loc>
+    <lastmod>2026-02-24</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -1466,6 +1718,12 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://lordjunn.github.io/Study-With-Junn/TSN%202201.html</loc>
+    <lastmod>2026-02-28</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://lordjunn.github.io/Study-With-Junn/TSN%202201/Exams.html</loc>
     <lastmod>2026-02-28</lastmod>
     <changefreq>yearly</changefreq>
@@ -1473,6 +1731,24 @@
   </url>
   <url>
     <loc>https://lordjunn.github.io/Study-With-Junn/TSN%202201/Tests.html</loc>
+    <lastmod>2026-02-28</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://lordjunn.github.io/Study-With-Junn/_unused/TMA1101_Notes1_Copy2.html</loc>
+    <lastmod>2026-02-28</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://lordjunn.github.io/Study-With-Junn/_unused/TMA1101_Notes1_Copy3.html</loc>
+    <lastmod>2026-02-28</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://lordjunn.github.io/Study-With-Junn/_unused/TMA1101_Notes2_dupe.html</loc>
     <lastmod>2026-02-28</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
